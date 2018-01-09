@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ClinicaHistoriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+      <Schema Namespace="ClinicaHistoriaModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AREA_TRABAJO">
           <Key>
             <PropertyRef Name="ID_AREA" />
@@ -185,13 +185,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ClinicaHistoriaModelStoreContainer">
-          <EntitySet Name="AREA_TRABAJO" EntityType="Self.AREA_TRABAJO" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="CONSULTA" EntityType="Self.CONSULTA" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="DETALLE_CONSULTA" EntityType="Self.DETALLE_CONSULTA" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="EMPLEADOS" EntityType="Self.EMPLEADOS" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="HISTORIAS" EntityType="Self.HISTORIAS" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+        <EntityContainer Name="ClinicaHistoriaModel1StoreContainer">
+          <EntitySet Name="AREA_TRABAJO" EntityType="Self.AREA_TRABAJO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CONSULTA" EntityType="Self.CONSULTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DETALLE_CONSULTA" EntityType="Self.DETALLE_CONSULTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMPLEADOS" EntityType="Self.EMPLEADOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HISTORIAS" EntityType="Self.HISTORIAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_AREA_TRA_REFERENCE_EMPLEADO" Association="Self.FK_AREA_TRA_REFERENCE_EMPLEADO">
             <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
             <End Role="AREA_TRABAJO" EntitySet="AREA_TRABAJO" />
@@ -225,7 +225,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ClinicaHistoriaModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+      <Schema Namespace="ClinicaHistoriaModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="AREA_TRABAJO">
           <Key>
             <PropertyRef Name="ID_AREA" />
@@ -420,7 +420,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ClinicaHistoriaEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ClinicaHistoriaEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AREA_TRABAJO" EntityType="Self.AREA_TRABAJO" />
           <EntitySet Name="CONSULTA" EntityType="Self.CONSULTA" />
           <EntitySet Name="DETALLE_CONSULTA" EntityType="Self.DETALLE_CONSULTA" />
@@ -460,10 +460,10 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
-        <EntityContainerMapping StorageEntityContainer="ClinicaHistoriaModelStoreContainer" CdmEntityContainer="ClinicaHistoriaEntities">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ClinicaHistoriaModel1StoreContainer" CdmEntityContainer="ClinicaHistoriaEntities1">
           <EntitySetMapping Name="AREA_TRABAJO">
-            <EntityTypeMapping TypeName="ClinicaHistoriaModel.AREA_TRABAJO">
+            <EntityTypeMapping TypeName="ClinicaHistoriaModel1.AREA_TRABAJO">
               <MappingFragment StoreEntitySet="AREA_TRABAJO">
                 <ScalarProperty Name="ID_AREA" ColumnName="ID_AREA" />
                 <ScalarProperty Name="CEDULA_EMP" ColumnName="CEDULA_EMP" />
@@ -475,7 +475,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CONSULTA">
-            <EntityTypeMapping TypeName="ClinicaHistoriaModel.CONSULTA">
+            <EntityTypeMapping TypeName="ClinicaHistoriaModel1.CONSULTA">
               <MappingFragment StoreEntitySet="CONSULTA">
                 <ScalarProperty Name="ID_CON" ColumnName="ID_CON" />
                 <ScalarProperty Name="ID_H" ColumnName="ID_H" />
@@ -492,7 +492,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DETALLE_CONSULTA">
-            <EntityTypeMapping TypeName="ClinicaHistoriaModel.DETALLE_CONSULTA">
+            <EntityTypeMapping TypeName="ClinicaHistoriaModel1.DETALLE_CONSULTA">
               <MappingFragment StoreEntitySet="DETALLE_CONSULTA">
                 <ScalarProperty Name="ID_MEDICAMENTO" ColumnName="ID_MEDICAMENTO" />
                 <ScalarProperty Name="ID_CON" ColumnName="ID_CON" />
@@ -503,7 +503,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EMPLEADOS">
-            <EntityTypeMapping TypeName="ClinicaHistoriaModel.EMPLEADOS">
+            <EntityTypeMapping TypeName="ClinicaHistoriaModel1.EMPLEADOS">
               <MappingFragment StoreEntitySet="EMPLEADOS">
                 <ScalarProperty Name="CEDULA_EMP" ColumnName="CEDULA_EMP" />
                 <ScalarProperty Name="ID_AREA" ColumnName="ID_AREA" />
@@ -522,7 +522,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HISTORIAS">
-            <EntityTypeMapping TypeName="ClinicaHistoriaModel.HISTORIAS">
+            <EntityTypeMapping TypeName="ClinicaHistoriaModel1.HISTORIAS">
               <MappingFragment StoreEntitySet="HISTORIAS">
                 <ScalarProperty Name="PADRE_H" ColumnName="PADRE_H" />
                 <ScalarProperty Name="MADRE_H" ColumnName="MADRE_H" />
@@ -556,7 +556,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="USUARIOS">
-            <EntityTypeMapping TypeName="ClinicaHistoriaModel.USUARIOS">
+            <EntityTypeMapping TypeName="ClinicaHistoriaModel1.USUARIOS">
               <MappingFragment StoreEntitySet="USUARIOS">
                 <ScalarProperty Name="CEDULA_EMP" ColumnName="CEDULA_EMP" />
                 <ScalarProperty Name="PASWORD_USER" ColumnName="PASWORD_USER" />
@@ -569,22 +569,22 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <edmx:Designer>
-    <edmx:Connection>
-      <edmx:DesignerInfoPropertySet>
-        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
-      </edmx:DesignerInfoPropertySet>
-    </edmx:Connection>
-    <edmx:Options>
-      <edmx:DesignerInfoPropertySet>
-        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <edmx:DesignerProperty Name="EnablePluralization" Value="false" />
-        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <edmx:DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
-      </edmx:DesignerInfoPropertySet>
-    </edmx:Options>
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <edmx:Diagrams />
-  </edmx:Designer>
+    <Diagrams></Diagrams>
+  </Designer>
 </edmx:Edmx>
