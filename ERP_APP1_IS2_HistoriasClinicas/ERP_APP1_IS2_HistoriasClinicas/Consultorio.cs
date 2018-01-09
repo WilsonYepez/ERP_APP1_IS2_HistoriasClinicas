@@ -8,6 +8,6 @@ namespace ERP_APP1_IS2_HistoriasClinicas
 {
     public class Consultorio
     {
-        
+
     }
 }
