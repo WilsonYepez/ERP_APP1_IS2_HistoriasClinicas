@@ -80,32 +80,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model2.edmx</DependentUpon>
     </Compile>
-    <Compile Include="ModelHistorias.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelHistorias.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelHistorias.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelHistorias.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelHistorias.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelHistorias.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecursosHumanosLS.cs" />
     <Compile Include="USUARIOS.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="ModelHistorias.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelHistorias.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
@@ -115,9 +94,6 @@
     </EntityDeploy>
     <None Include="Model2.edmx.diagram">
       <DependentUpon>Model2.edmx</DependentUpon>
-    </None>
-    <None Include="ModelHistorias.edmx.diagram">
-      <DependentUpon>ModelHistorias.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -131,16 +107,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model2.edmx</DependentUpon>
       <LastGenOutput>Model2.cs</LastGenOutput>
-    </Content>
-    <Content Include="ModelHistorias.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelHistorias.Context.cs</LastGenOutput>
-      <DependentUpon>ModelHistorias.edmx</DependentUpon>
-    </Content>
-    <Content Include="ModelHistorias.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelHistorias.edmx</DependentUpon>
-      <LastGenOutput>ModelHistorias.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

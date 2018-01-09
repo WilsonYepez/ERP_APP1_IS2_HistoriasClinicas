@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace ERP_APP1_IS2_HistoriasClinicas
 {
-    public class Class1
-    {
         public class Areas2
         {
             public decimal ID_AREA { get; set; }
@@ -95,5 +93,4 @@ namespace ERP_APP1_IS2_HistoriasClinicas
             public string PASWORD_USER { get; set; }
             public string TIPO { get; set; }
         }
-    }
 }
