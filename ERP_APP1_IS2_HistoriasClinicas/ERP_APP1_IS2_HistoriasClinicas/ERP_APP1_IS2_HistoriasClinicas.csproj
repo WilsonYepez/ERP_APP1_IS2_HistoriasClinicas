@@ -52,7 +52,6 @@
     <Compile Include="AREA_TRABAJO.cs">
       <DependentUpon>ModelHistorias.tt</DependentUpon>
     </Compile>
-    <Compile Include="ClasesObjetos.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="CONSULTA.cs">
       <DependentUpon>ModelHistorias.tt</DependentUpon>
