@@ -56,7 +56,6 @@
     <Compile Include="CONSULTA.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
-    <Compile Include="Consultorio.cs" />
     <Compile Include="DETALLE_CONSULTA.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
