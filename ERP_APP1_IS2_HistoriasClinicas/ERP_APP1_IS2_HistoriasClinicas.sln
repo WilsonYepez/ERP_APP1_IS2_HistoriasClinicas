@@ -8,6 +8,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ServiciosDistribuidos_ERP_APP1_IS2_HistoriasClinicas", "..\..\ServiciosDistribuidos_ERP_APP1_IS2_HistoriasClinicas\", "{567523F9-32B5-4BC3-B556-AC9B725CF2CC}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{7d5b5a82-96a8-4d64-a2f4-b2d5f9074d28}|ERP_APP1_IS2_HistoriasClinicas.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_34638"
 		Debug.AspNetCompiler.PhysicalPath = "..\..\ServiciosDistribuidos_ERP_APP1_IS2_HistoriasClinicas\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_34638\"
