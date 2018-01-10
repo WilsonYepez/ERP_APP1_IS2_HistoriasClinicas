@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ERP_HistoriasClinicas
 {
-    class Consultorio
+    public class Consultorio
     {
         //CRUD HISTORIAS CLINICAS
         public Historias2[] listado_historias()
@@ -98,10 +98,10 @@ namespace ERP_HistoriasClinicas
             }
         }
 
-        public int insertar_historia(string CEDULA_EMP, string PADRE_H, string MADRE_H, string FALLECIDO_P_H, string FALLECIDO_M_H, string CAUSAS_P_H, string CAUSAS_M_H, Decimal NUM_H_H,
-                        Decimal VIVO_H_H, Decimal MUERTE_H_H, string CAUSAS_H_H, Decimal SON_H, Decimal VIVO_SON_H, Decimal MUERTOS_SON_H, string CAUSAS_SON_H, string ALCOHOL_H, string TABACO_H,
-                        string DROGAS_H, string FRECUENCIA_TAB_H, string FRECUENCIA_ALC_H, string FRECUENCIA_DRO_H, string ALIMENTACION_H, string DIPSIA_H,
-                        string PARADIPSIA, string FRECUENCIA_PARADIPSIA, string INSOMNIO_H, string FRECUENCIA_INSOM_H, string OTRO_H)
+        public int insertar_historia(string CEDULA_EMP, string PADRE_H, string MADRE_H, string FALLECIDO_P_H, string FALLECIDO_M_H, string CAUSAS_P_H, string CAUSAS_M_H, decimal NUM_H_H,
+                    decimal VIVO_H_H, decimal MUERTE_H_H, string CAUSAS_H_H, decimal SON_H, decimal VIVO_SON_H, decimal MUERTOS_SON_H, string CAUSAS_SON_H, string ALCOHOL_H, string TABACO_H,
+                    string DROGAS_H, string FRECUENCIA_TAB_H, string FRECUENCIA_ALC_H, string FRECUENCIA_DRO_H, string ALIMENTACION_H, string DIPSIA_H,
+                    string PARADIPSIA, string FRECUENCIA_PARADIPSIA, string INSOMNIO_H, string FRECUENCIA_INSOM_H, string OTRO_H)
         {
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {
@@ -112,10 +112,10 @@ namespace ERP_HistoriasClinicas
             }
         }
 
-        public int actualizar_hitoria(string CEDULA_EMP, string PADRE_H, string MADRE_H, string FALLECIDO_P_H, string FALLECIDO_M_H, string CAUSAS_P_H, string CAUSAS_M_H, Decimal NUM_H_H,
-                        Decimal VIVO_H_H, Decimal MUERTE_H_H, string CAUSAS_H_H, Decimal SON_H, Decimal VIVO_SON_H, Decimal MUERTOS_SON_H, string CAUSAS_SON_H, string ALCOHOL_H, string TABACO_H,
-                        string DROGAS_H, string FRECUENCIA_TAB_H, string FRECUENCIA_ALC_H, string FRECUENCIA_DRO_H, string ALIMENTACION_H, string DIPSIA_H,
-                        string PARADIPSIA, string FRECUENCIA_PARADIPSIA, string INSOMNIO_H, string FRECUENCIA_INSOM_H, string OTRO_H)
+        public int actualizar_hitoria(string CEDULA_EMP, string PADRE_H, string MADRE_H, string FALLECIDO_P_H, string FALLECIDO_M_H, string CAUSAS_P_H, string CAUSAS_M_H, decimal NUM_H_H,
+                    decimal VIVO_H_H, decimal MUERTE_H_H, string CAUSAS_H_H, decimal SON_H, decimal VIVO_SON_H, decimal MUERTOS_SON_H, string CAUSAS_SON_H, string ALCOHOL_H, string TABACO_H,
+                    string DROGAS_H, string FRECUENCIA_TAB_H, string FRECUENCIA_ALC_H, string FRECUENCIA_DRO_H, string ALIMENTACION_H, string DIPSIA_H,
+                    string PARADIPSIA, string FRECUENCIA_PARADIPSIA, string INSOMNIO_H, string FRECUENCIA_INSOM_H, string OTRO_H)
         {
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {

@@ -89,7 +89,7 @@ namespace ERP_HistoriasClinicas
             return 0;
 
         }
-        public int actualizar_area(decimal ID_AREA, string NOMBRE_AREA, string GERENCIA_AREA, string DESCRIPCION_AREA, string ESTADO_AREA)
+        public int actualizar_area(Decimal ID_AREA, string NOMBRE_AREA, string GERENCIA_AREA, string DESCRIPCION_AREA, string ESTADO_AREA)
         {
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {
