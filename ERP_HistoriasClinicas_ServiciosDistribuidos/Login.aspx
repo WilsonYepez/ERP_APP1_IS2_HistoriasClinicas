@@ -25,12 +25,14 @@
     </head>
 
     <body>
+        
         <div class="page-container">
+            <form method="post" runat="server">
             <asp:Image ID="Image1" runat="server" ImageUrl="~/images/logo kankor.png" Height="189px" Width="131px" />
             <h1>Inicio de Sesión</h1>
-            <form method="post" runat="server">
                 <asp:TextBox ID="TextBox1" runat="server"  CssClass="username" placeholder="Usuario"></asp:TextBox>
                 <asp:TextBox ID="TextBox2" runat="server" placeholder="Contraseña"></asp:TextBox>
+                <a href="">Olvide mi contraseña? </a>
                 <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Iniciar Sesión" CssClass="button" BackColor="#ff6600"/>
                 
                 <div class="error"><span>+</span></div>

@@ -16,6 +16,10 @@ body {
     background-image:url("images/320411.jpg");
 }
 
+p{
+    text-align: right;
+}
+
 .page-container {
     margin: 120px auto 0 auto;
 }
