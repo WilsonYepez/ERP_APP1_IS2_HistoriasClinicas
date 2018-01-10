@@ -7,16 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-
-public partial class DETALLE_CONSULTA
+namespace ERP_HistoriasClinicas
 {
-    public string ID_DET { get; set; }
-    public Nullable<decimal> ID_CON { get; set; }
-    public Nullable<decimal> CANTIDAD_DET { get; set; }
-    public Nullable<decimal> PVP_DET { get; set; }
-    public Nullable<decimal> CANTDES_DET { get; set; }
-
-    public virtual CABECERA_CONSULTA CABECERA_CONSULTA { get; set; }
+    using System;
+    using System.Collections.Generic;
+    
+    public partial class DETALLE_CONSULTA
+    {
+        public string ID_DET { get; set; }
+        public Nullable<decimal> ID_CON { get; set; }
+        public Nullable<decimal> CANTIDAD_DET { get; set; }
+        public Nullable<decimal> PVP_DET { get; set; }
+        public Nullable<decimal> CANTDES_DET { get; set; }
+    
+        public virtual CABECERA_CONSULTA CABECERA_CONSULTA { get; set; }
+    }
 }

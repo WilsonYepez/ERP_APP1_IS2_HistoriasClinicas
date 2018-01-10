@@ -7,39 +7,42 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-
-public partial class HISTORIAS
+namespace ERP_HistoriasClinicas
 {
-    public string CEDULA_EMP { get; set; }
-    public string PADRE_H { get; set; }
-    public string MADRE_H { get; set; }
-    public string FALLECIDO_P_H { get; set; }
-    public string FALLECIDO_M_H { get; set; }
-    public string CAUSAS_P_H { get; set; }
-    public string CAUSAS_M_H { get; set; }
-    public Nullable<decimal> NUM_H_H { get; set; }
-    public Nullable<decimal> VIVO_H_H { get; set; }
-    public Nullable<decimal> MUERTE_H_H { get; set; }
-    public string CAUSAS_H_H { get; set; }
-    public Nullable<decimal> SON_H { get; set; }
-    public Nullable<decimal> VIVO_SON_H { get; set; }
-    public Nullable<decimal> MUERTOS_SON_H { get; set; }
-    public string CAUSAS_SON_H { get; set; }
-    public string ALCOHOL_H { get; set; }
-    public string TABACO_H { get; set; }
-    public string DROGAS_H { get; set; }
-    public string FRECUENCIA_TAB_H { get; set; }
-    public string FRECUENCIA_ALC_H { get; set; }
-    public string FRECUENCIA_DRO_H { get; set; }
-    public string ALIMENTACION_H { get; set; }
-    public string DIPSIA_H { get; set; }
-    public string PARADIPSIA { get; set; }
-    public string FRECUENCIA_PARADIPSIA { get; set; }
-    public string INSOMNIO_H { get; set; }
-    public string FRECUENCIA_INSOM_H { get; set; }
-    public string OTRO_H { get; set; }
-
-    public virtual PERSONA PERSONA { get; set; }
+    using System;
+    using System.Collections.Generic;
+    
+    public partial class HISTORIAS
+    {
+        public string CEDULA_EMP { get; set; }
+        public string PADRE_H { get; set; }
+        public string MADRE_H { get; set; }
+        public string FALLECIDO_P_H { get; set; }
+        public string FALLECIDO_M_H { get; set; }
+        public string CAUSAS_P_H { get; set; }
+        public string CAUSAS_M_H { get; set; }
+        public Nullable<decimal> NUM_H_H { get; set; }
+        public Nullable<decimal> VIVO_H_H { get; set; }
+        public Nullable<decimal> MUERTE_H_H { get; set; }
+        public string CAUSAS_H_H { get; set; }
+        public Nullable<decimal> SON_H { get; set; }
+        public Nullable<decimal> VIVO_SON_H { get; set; }
+        public Nullable<decimal> MUERTOS_SON_H { get; set; }
+        public string CAUSAS_SON_H { get; set; }
+        public string ALCOHOL_H { get; set; }
+        public string TABACO_H { get; set; }
+        public string DROGAS_H { get; set; }
+        public string FRECUENCIA_TAB_H { get; set; }
+        public string FRECUENCIA_ALC_H { get; set; }
+        public string FRECUENCIA_DRO_H { get; set; }
+        public string ALIMENTACION_H { get; set; }
+        public string DIPSIA_H { get; set; }
+        public string PARADIPSIA { get; set; }
+        public string FRECUENCIA_PARADIPSIA { get; set; }
+        public string INSOMNIO_H { get; set; }
+        public string FRECUENCIA_INSOM_H { get; set; }
+        public string OTRO_H { get; set; }
+    
+        public virtual PERSONA PERSONA { get; set; }
+    }
 }

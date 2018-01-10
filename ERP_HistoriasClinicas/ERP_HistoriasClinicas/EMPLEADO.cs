@@ -7,16 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-
-public partial class EMPLEADO
+namespace ERP_HistoriasClinicas
 {
-    public string CEDULA_EMP { get; set; }
-    public decimal ID_AREA { get; set; }
-    public string CARGO_US { get; set; }
-    public string PASWORD_US { get; set; }
-
-    public virtual AREA_TRABAJO AREA_TRABAJO { get; set; }
-    public virtual PERSONA PERSONA { get; set; }
+    using System;
+    using System.Collections.Generic;
+    
+    public partial class EMPLEADO
+    {
+        public string CEDULA_EMP { get; set; }
+        public decimal ID_AREA { get; set; }
+        public string CARGO_US { get; set; }
+        public string PASWORD_US { get; set; }
+    
+        public virtual AREA_TRABAJO AREA_TRABAJO { get; set; }
+        public virtual PERSONA PERSONA { get; set; }
+    }
 }

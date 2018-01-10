@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ERP_HistoriasClinicasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ERP_HistoriasClinicasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AREA_TRABAJO">
           <Key>
             <PropertyRef Name="ID_AREA" />
@@ -453,8 +453,7 @@ advertencia 6002: La tabla o vista 'ERP_HistoriasClinicas.dbo.listado_facturacio
             <End Role="HISTORIAS" EntitySet="HISTORIAS" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ERP_HistoriasClinicasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -677,23 +676,23 @@ advertencia 6002: La tabla o vista 'ERP_HistoriasClinicas.dbo.listado_facturacio
             <End Role="HISTORIAS" EntitySet="HISTORIAS" />
           </AssociationSet>
           <FunctionImport Name="trx_Get_AreaTrabajo" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_AreaTrabajo_Result)">
-            <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
+          <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="trx_Get_AreaTrabajosAll" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_AreaTrabajosAll_Result)" />
           <FunctionImport Name="trx_Get_CabeceraConsultasAll" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_CabeceraConsultasAll_Result)" />
           <FunctionImport Name="trx_Get_CabeceraConsultum" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_CabeceraConsultum_Result)">
-            <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
+          <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="trx_Get_DetalleConsultasAll" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_DetalleConsultasAll_Result)" />
           <FunctionImport Name="trx_Get_DetalleConsultum" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_DetalleConsultum_Result)">
-            <Parameter Name="ID_DET" Mode="In" Type="String" />
+          <Parameter Name="ID_DET" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="trx_Get_Empleado" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_Empleado_Result)">
-            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+          <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="trx_Get_EmpleadosAll" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_EmpleadosAll_Result)" />
           <FunctionImport Name="trx_Get_Historia" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_Historia_Result)">
-            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+          <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="trx_Get_HistoriasAll" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_HistoriasAll_Result)" />
           <FunctionImport Name="trx_Insert_AreaTrabajo">
@@ -759,19 +758,19 @@ advertencia 6002: La tabla o vista 'ERP_HistoriasClinicas.dbo.listado_facturacio
             <Parameter Name="OTRO_H" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="trx_Remove_AreaTrabajo">
-            <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
+          <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="trx_Remove_CabeceraConsultum">
-            <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
+          <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="trx_Remove_DetalleConsultum">
-            <Parameter Name="ID_DET" Mode="In" Type="String" />
+          <Parameter Name="ID_DET" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="trx_Remove_Empleado">
-            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+          <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="trx_Remove_Historia">
-            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+          <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="trx_Save_AreaTrabajo" ReturnType="Collection(Decimal)">
             <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />

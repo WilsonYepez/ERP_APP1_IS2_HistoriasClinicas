@@ -7,29 +7,32 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-
-public partial class CABECERA_CONSULTA
+namespace ERP_HistoriasClinicas
 {
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public CABECERA_CONSULTA()
+    using System;
+    using System.Collections.Generic;
+    
+    public partial class CABECERA_CONSULTA
     {
-        this.DETALLE_CONSULTA = new HashSet<DETALLE_CONSULTA>();
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CABECERA_CONSULTA()
+        {
+            this.DETALLE_CONSULTA = new HashSet<DETALLE_CONSULTA>();
+        }
+    
+        public decimal ID_CON { get; set; }
+        public string CEDULA_EMP { get; set; }
+        public string INDICACIONES_CON { get; set; }
+        public string MOTIVO_CON { get; set; }
+        public Nullable<decimal> PRESION_CON { get; set; }
+        public Nullable<System.DateTime> FECHA_CON { get; set; }
+        public Nullable<decimal> PESO_CON { get; set; }
+        public Nullable<decimal> TEMPERATURA_CON { get; set; }
+        public string SINTOMAS_CON { get; set; }
+        public string OBSERVACIONES_CON { get; set; }
+    
+        public virtual PERSONA PERSONA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DETALLE_CONSULTA> DETALLE_CONSULTA { get; set; }
     }
-
-    public decimal ID_CON { get; set; }
-    public string CEDULA_EMP { get; set; }
-    public string INDICACIONES_CON { get; set; }
-    public string MOTIVO_CON { get; set; }
-    public Nullable<decimal> PRESION_CON { get; set; }
-    public Nullable<System.DateTime> FECHA_CON { get; set; }
-    public Nullable<decimal> PESO_CON { get; set; }
-    public Nullable<decimal> TEMPERATURA_CON { get; set; }
-    public string SINTOMAS_CON { get; set; }
-    public string OBSERVACIONES_CON { get; set; }
-
-    public virtual PERSONA PERSONA { get; set; }
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-    public virtual ICollection<DETALLE_CONSULTA> DETALLE_CONSULTA { get; set; }
 }
