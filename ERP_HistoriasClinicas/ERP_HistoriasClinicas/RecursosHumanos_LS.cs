@@ -316,5 +316,37 @@ namespace ERP_HistoriasClinicas
             }
             return 0;
         }
+        //Listado_Facturacion
+        public Listado_facturacion2[] Listado_Facturacion()
+        {
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var lst = from d in ctx.listado_facturacion
+                          select d;
+                Listado_facturacion2[] r = new Listado_facturacion2[lst.Count()];
+                int i = 0;
+                foreach (var d in lst)
+                {
+                    r[i++] = new Listado_facturacion2
+                    {
+                        CEDULA_EMP = d.CEDULA_EMP,
+                        ACTIVO_EMP = d.ACTIVO_EMP,
+                        CIUDADNACI_EMP = d.CIUDADNACI_EMP,
+                        DIRECCIO_EMP = d.DIRECCIO_EMP,
+                        EMAIL_EMP = d.EMAIL_EMP,
+                        ESTADO_EMP = d.ESTADO_EMP,
+                        NACIFECHA_EMP = d.NACIFECHA_EMP,
+                        NACIONALIDAD_EMP = d.NACIONALIDAD_EMP,
+                        NOMBRES_EMP = d.NOMBRES_EMP,
+                        TELEFONO_EMP = d.TELEFONO_EMP,
+                        CARGO_US = d.CARGO_US,
+                        DESCRIPCION_AREA = d.DESCRIPCION_AREA,
+                        NOMBRE_AREA=d.NOMBRE_AREA
+                        
+                    };
+                }
+                return r;
+            }
+        }
     }
 }
