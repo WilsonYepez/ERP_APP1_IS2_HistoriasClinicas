@@ -7,31 +7,34 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-
-public partial class PERSONA
+namespace ERP_HistoriasClinicas
 {
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public PERSONA()
+    using System;
+    using System.Collections.Generic;
+    
+    public partial class PERSONA
     {
-        this.CABECERA_CONSULTA = new HashSet<CABECERA_CONSULTA>();
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public PERSONA()
+        {
+            this.CABECERA_CONSULTA = new HashSet<CABECERA_CONSULTA>();
+        }
+    
+        public string CEDULA_EMP { get; set; }
+        public string NOMBRES_EMP { get; set; }
+        public System.DateTime NACIFECHA_EMP { get; set; }
+        public string NACIONALIDAD_EMP { get; set; }
+        public string DIRECCIO_EMP { get; set; }
+        public string TELEFONO_EMP { get; set; }
+        public string EMAIL_EMP { get; set; }
+        public string ESTADO_EMP { get; set; }
+        public string TIPO_EMP { get; set; }
+        public string ACTIVO_EMP { get; set; }
+        public string CIUDADNACI_EMP { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CABECERA_CONSULTA> CABECERA_CONSULTA { get; set; }
+        public virtual EMPLEADO EMPLEADO { get; set; }
+        public virtual HISTORIAS HISTORIAS { get; set; }
     }
-
-    public string CEDULA_EMP { get; set; }
-    public string NOMBRES_EMP { get; set; }
-    public System.DateTime NACIFECHA_EMP { get; set; }
-    public string NACIONALIDAD_EMP { get; set; }
-    public string DIRECCIO_EMP { get; set; }
-    public string TELEFONO_EMP { get; set; }
-    public string EMAIL_EMP { get; set; }
-    public string ESTADO_EMP { get; set; }
-    public string TIPO_EMP { get; set; }
-    public string ACTIVO_EMP { get; set; }
-    public string CIUDADNACI_EMP { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-    public virtual ICollection<CABECERA_CONSULTA> CABECERA_CONSULTA { get; set; }
-    public virtual EMPLEADO EMPLEADO { get; set; }
-    public virtual HISTORIAS HISTORIAS { get; set; }
 }

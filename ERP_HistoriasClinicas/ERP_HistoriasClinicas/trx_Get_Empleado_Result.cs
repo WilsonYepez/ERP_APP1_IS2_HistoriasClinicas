@@ -7,13 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-
-public partial class trx_Get_Empleado_Result
+namespace ERP_HistoriasClinicas
 {
-    public string CEDULA_EMP { get; set; }
-    public decimal ID_AREA { get; set; }
-    public string CARGO_US { get; set; }
-    public string PASWORD_US { get; set; }
+    using System;
+    
+    public partial class trx_Get_Empleado_Result
+    {
+        public string CEDULA_EMP { get; set; }
+        public decimal ID_AREA { get; set; }
+        public string CARGO_US { get; set; }
+        public string PASWORD_US { get; set; }
+    }
 }
