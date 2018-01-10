@@ -24,6 +24,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ServiciosDistribuidos_ERP_H
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "4372"
+		SlnRelativePath = "..\ServiciosDistribuidos_ERP_HistoriasClinicas\"
 	EndProjectSection
 EndProject
 Global
