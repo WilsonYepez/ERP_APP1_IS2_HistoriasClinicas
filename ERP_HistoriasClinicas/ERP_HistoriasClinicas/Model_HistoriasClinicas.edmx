@@ -1,0 +1,1515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ERP_HistoriasClinicasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AREA_TRABAJO">
+          <Key>
+            <PropertyRef Name="ID_AREA" />
+          </Key>
+          <Property Name="ID_AREA" Type="numeric" Precision="15" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE_AREA" Type="varchar" MaxLength="150" />
+          <Property Name="GERENCIA_AREA" Type="varchar" MaxLength="200" />
+          <Property Name="DESCRIPCION_AREA" Type="text" />
+          <Property Name="ESTADO_AREA" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CABECERA_CONSULTA">
+          <Key>
+            <PropertyRef Name="ID_CON" />
+          </Key>
+          <Property Name="ID_CON" Type="numeric" Precision="15" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CEDULA_EMP" Type="varchar" MaxLength="13" />
+          <Property Name="INDICACIONES_CON" Type="text" />
+          <Property Name="MOTIVO_CON" Type="text" />
+          <Property Name="PRESION_CON" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="FECHA_CON" Type="datetime" />
+          <Property Name="PESO_CON" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="TEMPERATURA_CON" Type="numeric" Precision="2" Scale="0" />
+          <Property Name="SINTOMAS_CON" Type="text" />
+          <Property Name="OBSERVACIONES_CON" Type="text" />
+        </EntityType>
+        <EntityType Name="DETALLE_CONSULTA">
+          <Key>
+            <PropertyRef Name="ID_DET" />
+          </Key>
+          <Property Name="ID_DET" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="ID_CON" Type="numeric" Precision="15" Scale="0" />
+          <Property Name="CANTIDAD_DET" Type="numeric" Precision="2" Scale="0" />
+          <Property Name="PVP_DET" Type="decimal" Precision="4" Scale="2" />
+          <Property Name="CANTDES_DET" Type="numeric" Precision="3" Scale="0" />
+        </EntityType>
+        <EntityType Name="EMPLEADO">
+          <Key>
+            <PropertyRef Name="CEDULA_EMP" />
+          </Key>
+          <Property Name="CEDULA_EMP" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="ID_AREA" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+          <Property Name="CARGO_US" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="PASWORD_US" Type="varchar" MaxLength="26" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HISTORIAS">
+          <Key>
+            <PropertyRef Name="CEDULA_EMP" />
+          </Key>
+          <Property Name="CEDULA_EMP" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="PADRE_H" Type="varchar" MaxLength="200" />
+          <Property Name="MADRE_H" Type="varchar" MaxLength="200" />
+          <Property Name="FALLECIDO_P_H" Type="char" MaxLength="2" />
+          <Property Name="FALLECIDO_M_H" Type="char" MaxLength="2" />
+          <Property Name="CAUSAS_P_H" Type="text" />
+          <Property Name="CAUSAS_M_H" Type="text" />
+          <Property Name="NUM_H_H" Type="numeric" Precision="2" Scale="0" />
+          <Property Name="VIVO_H_H" Type="numeric" Precision="2" Scale="0" />
+          <Property Name="MUERTE_H_H" Type="numeric" Precision="2" Scale="0" />
+          <Property Name="CAUSAS_H_H" Type="text" />
+          <Property Name="SON_H" Type="numeric" Precision="2" Scale="0" />
+          <Property Name="VIVO_SON_H" Type="numeric" Precision="2" Scale="0" />
+          <Property Name="MUERTOS_SON_H" Type="numeric" Precision="2" Scale="0" />
+          <Property Name="CAUSAS_SON_H" Type="text" />
+          <Property Name="ALCOHOL_H" Type="char" MaxLength="2" />
+          <Property Name="TABACO_H" Type="char" MaxLength="2" />
+          <Property Name="DROGAS_H" Type="char" MaxLength="2" />
+          <Property Name="FRECUENCIA_TAB_H" Type="text" />
+          <Property Name="FRECUENCIA_ALC_H" Type="text" />
+          <Property Name="FRECUENCIA_DRO_H" Type="text" />
+          <Property Name="ALIMENTACION_H" Type="text" />
+          <Property Name="DIPSIA_H" Type="char" MaxLength="2" />
+          <Property Name="PARADIPSIA" Type="char" MaxLength="2" />
+          <Property Name="FRECUENCIA_PARADIPSIA" Type="text" />
+          <Property Name="INSOMNIO_H" Type="char" MaxLength="2" />
+          <Property Name="FRECUENCIA_INSOM_H" Type="text" />
+          <Property Name="OTRO_H" Type="text" />
+        </EntityType>
+        <EntityType Name="PERSONA">
+          <Key>
+            <PropertyRef Name="CEDULA_EMP" />
+          </Key>
+          <Property Name="CEDULA_EMP" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="NOMBRES_EMP" Type="varchar" MaxLength="400" Nullable="false" />
+          <Property Name="NACIFECHA_EMP" Type="datetime" Nullable="false" />
+          <Property Name="NACIONALIDAD_EMP" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DIRECCIO_EMP" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="TELEFONO_EMP" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="EMAIL_EMP" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ESTADO_EMP" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="TIPO_EMP" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="ACTIVO_EMP" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CIUDADNACI_EMP" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ERP_HistoriasClinicas.dbo.listado_facturacion' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="listado_facturacion">
+          <Key>
+            <PropertyRef Name="CEDULA_EMP" />
+            <PropertyRef Name="NOMBRES_EMP" />
+            <PropertyRef Name="NACIFECHA_EMP" />
+            <PropertyRef Name="NACIONALIDAD_EMP" />
+            <PropertyRef Name="DIRECCIO_EMP" />
+            <PropertyRef Name="TELEFONO_EMP" />
+            <PropertyRef Name="EMAIL_EMP" />
+            <PropertyRef Name="ESTADO_EMP" />
+            <PropertyRef Name="ACTIVO_EMP" />
+            <PropertyRef Name="CARGO_US" />
+          </Key>
+          <Property Name="CEDULA_EMP" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="NOMBRES_EMP" Type="varchar" MaxLength="400" Nullable="false" />
+          <Property Name="NACIFECHA_EMP" Type="datetime" Nullable="false" />
+          <Property Name="NACIONALIDAD_EMP" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DIRECCIO_EMP" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="TELEFONO_EMP" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="EMAIL_EMP" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ESTADO_EMP" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ACTIVO_EMP" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CIUDADNACI_EMP" Type="varchar" MaxLength="150" />
+          <Property Name="CARGO_US" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="NOMBRE_AREA" Type="varchar" MaxLength="150" />
+          <Property Name="DESCRIPCION_AREA" Type="text" />
+        </EntityType>
+        <Association Name="FK_CABECERA_REFERENCE_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="0..1" />
+          <End Role="CABECERA_CONSULTA" Type="Self.CABECERA_CONSULTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="CEDULA_EMP" />
+            </Principal>
+            <Dependent Role="CABECERA_CONSULTA">
+              <PropertyRef Name="CEDULA_EMP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DETALLE__REFERENCE_CABECERA">
+          <End Role="CABECERA_CONSULTA" Type="Self.CABECERA_CONSULTA" Multiplicity="0..1" />
+          <End Role="DETALLE_CONSULTA" Type="Self.DETALLE_CONSULTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CABECERA_CONSULTA">
+              <PropertyRef Name="ID_CON" />
+            </Principal>
+            <Dependent Role="DETALLE_CONSULTA">
+              <PropertyRef Name="ID_CON" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPLEADO_REFERENCE_AREA_TRA">
+          <End Role="AREA_TRABAJO" Type="Self.AREA_TRABAJO" Multiplicity="1" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AREA_TRABAJO">
+              <PropertyRef Name="ID_AREA" />
+            </Principal>
+            <Dependent Role="EMPLEADO">
+              <PropertyRef Name="ID_AREA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPLEADO_REFERENCE_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="1" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="CEDULA_EMP" />
+            </Principal>
+            <Dependent Role="EMPLEADO">
+              <PropertyRef Name="CEDULA_EMP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIA_REFERENCE_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="1" />
+          <End Role="HISTORIAS" Type="Self.HISTORIAS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="CEDULA_EMP" />
+            </Principal>
+            <Dependent Role="HISTORIAS">
+              <PropertyRef Name="CEDULA_EMP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="trx_Get_AreaTrabajo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_AREA" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="trx_Get_AreaTrabajosAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="trx_Get_CabeceraConsultasAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="trx_Get_CabeceraConsultum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_CON" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="trx_Get_DetalleConsultasAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="trx_Get_DetalleConsultum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_DET" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="trx_Get_Empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CEDULA_EMP" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="trx_Get_EmpleadosAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="trx_Get_Historia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CEDULA_EMP" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="trx_Get_HistoriasAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="trx_Insert_AreaTrabajo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_AREA" Type="numeric" Mode="In" />
+          <Parameter Name="NOMBRE_AREA" Type="varchar" Mode="In" />
+          <Parameter Name="GERENCIA_AREA" Type="varchar" Mode="In" />
+          <Parameter Name="DESCRIPCION_AREA" Type="text" Mode="In" />
+          <Parameter Name="ESTADO_AREA" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="trx_Insert_CabeceraConsultum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_CON" Type="numeric" Mode="In" />
+          <Parameter Name="CEDULA_EMP" Type="varchar" Mode="In" />
+          <Parameter Name="INDICACIONES_CON" Type="text" Mode="In" />
+          <Parameter Name="MOTIVO_CON" Type="text" Mode="In" />
+          <Parameter Name="PRESION_CON" Type="numeric" Mode="In" />
+          <Parameter Name="FECHA_CON" Type="datetime" Mode="In" />
+          <Parameter Name="PESO_CON" Type="decimal" Mode="In" />
+          <Parameter Name="TEMPERATURA_CON" Type="numeric" Mode="In" />
+          <Parameter Name="SINTOMAS_CON" Type="text" Mode="In" />
+          <Parameter Name="OBSERVACIONES_CON" Type="text" Mode="In" />
+        </Function>
+        <Function Name="trx_Insert_DetalleConsultum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_DET" Type="varchar" Mode="In" />
+          <Parameter Name="ID_CON" Type="numeric" Mode="In" />
+          <Parameter Name="CANTIDAD_DET" Type="numeric" Mode="In" />
+          <Parameter Name="PVP_DET" Type="decimal" Mode="In" />
+          <Parameter Name="CANTDES_DET" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="trx_Insert_Empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CEDULA_EMP" Type="varchar" Mode="In" />
+          <Parameter Name="ID_AREA" Type="numeric" Mode="In" />
+          <Parameter Name="CARGO_US" Type="varchar" Mode="In" />
+          <Parameter Name="PASWORD_US" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="trx_Insert_Historia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CEDULA_EMP" Type="varchar" Mode="In" />
+          <Parameter Name="PADRE_H" Type="varchar" Mode="In" />
+          <Parameter Name="MADRE_H" Type="varchar" Mode="In" />
+          <Parameter Name="FALLECIDO_P_H" Type="char" Mode="In" />
+          <Parameter Name="FALLECIDO_M_H" Type="char" Mode="In" />
+          <Parameter Name="CAUSAS_P_H" Type="text" Mode="In" />
+          <Parameter Name="CAUSAS_M_H" Type="text" Mode="In" />
+          <Parameter Name="NUM_H_H" Type="numeric" Mode="In" />
+          <Parameter Name="VIVO_H_H" Type="numeric" Mode="In" />
+          <Parameter Name="MUERTE_H_H" Type="numeric" Mode="In" />
+          <Parameter Name="CAUSAS_H_H" Type="text" Mode="In" />
+          <Parameter Name="SON_H" Type="numeric" Mode="In" />
+          <Parameter Name="VIVO_SON_H" Type="numeric" Mode="In" />
+          <Parameter Name="MUERTOS_SON_H" Type="numeric" Mode="In" />
+          <Parameter Name="CAUSAS_SON_H" Type="text" Mode="In" />
+          <Parameter Name="ALCOHOL_H" Type="char" Mode="In" />
+          <Parameter Name="TABACO_H" Type="char" Mode="In" />
+          <Parameter Name="DROGAS_H" Type="char" Mode="In" />
+          <Parameter Name="FRECUENCIA_TAB_H" Type="text" Mode="In" />
+          <Parameter Name="FRECUENCIA_ALC_H" Type="text" Mode="In" />
+          <Parameter Name="FRECUENCIA_DRO_H" Type="text" Mode="In" />
+          <Parameter Name="ALIMENTACION_H" Type="text" Mode="In" />
+          <Parameter Name="DIPSIA_H" Type="char" Mode="In" />
+          <Parameter Name="PARADIPSIA" Type="char" Mode="In" />
+          <Parameter Name="FRECUENCIA_PARADIPSIA" Type="text" Mode="In" />
+          <Parameter Name="INSOMNIO_H" Type="char" Mode="In" />
+          <Parameter Name="FRECUENCIA_INSOM_H" Type="text" Mode="In" />
+          <Parameter Name="OTRO_H" Type="text" Mode="In" />
+        </Function>
+        <Function Name="trx_Remove_AreaTrabajo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_AREA" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="trx_Remove_CabeceraConsultum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_CON" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="trx_Remove_DetalleConsultum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_DET" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="trx_Remove_Empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CEDULA_EMP" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="trx_Remove_Historia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CEDULA_EMP" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="trx_Save_AreaTrabajo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_AREA" Type="numeric" Mode="In" />
+          <Parameter Name="NOMBRE_AREA" Type="varchar" Mode="In" />
+          <Parameter Name="GERENCIA_AREA" Type="varchar" Mode="In" />
+          <Parameter Name="DESCRIPCION_AREA" Type="text" Mode="In" />
+          <Parameter Name="ESTADO_AREA" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="trx_Save_CabeceraConsultum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_CON" Type="numeric" Mode="In" />
+          <Parameter Name="CEDULA_EMP" Type="varchar" Mode="In" />
+          <Parameter Name="INDICACIONES_CON" Type="text" Mode="In" />
+          <Parameter Name="MOTIVO_CON" Type="text" Mode="In" />
+          <Parameter Name="PRESION_CON" Type="numeric" Mode="In" />
+          <Parameter Name="FECHA_CON" Type="datetime" Mode="In" />
+          <Parameter Name="PESO_CON" Type="decimal" Mode="In" />
+          <Parameter Name="TEMPERATURA_CON" Type="numeric" Mode="In" />
+          <Parameter Name="SINTOMAS_CON" Type="text" Mode="In" />
+          <Parameter Name="OBSERVACIONES_CON" Type="text" Mode="In" />
+        </Function>
+        <Function Name="trx_Save_DetalleConsultum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_DET" Type="varchar" Mode="In" />
+          <Parameter Name="ID_CON" Type="numeric" Mode="In" />
+          <Parameter Name="CANTIDAD_DET" Type="numeric" Mode="In" />
+          <Parameter Name="PVP_DET" Type="decimal" Mode="In" />
+          <Parameter Name="CANTDES_DET" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="trx_Save_Empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CEDULA_EMP" Type="varchar" Mode="In" />
+          <Parameter Name="ID_AREA" Type="numeric" Mode="In" />
+          <Parameter Name="CARGO_US" Type="varchar" Mode="In" />
+          <Parameter Name="PASWORD_US" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="trx_Save_Historia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CEDULA_EMP" Type="varchar" Mode="In" />
+          <Parameter Name="PADRE_H" Type="varchar" Mode="In" />
+          <Parameter Name="MADRE_H" Type="varchar" Mode="In" />
+          <Parameter Name="FALLECIDO_P_H" Type="char" Mode="In" />
+          <Parameter Name="FALLECIDO_M_H" Type="char" Mode="In" />
+          <Parameter Name="CAUSAS_P_H" Type="text" Mode="In" />
+          <Parameter Name="CAUSAS_M_H" Type="text" Mode="In" />
+          <Parameter Name="NUM_H_H" Type="numeric" Mode="In" />
+          <Parameter Name="VIVO_H_H" Type="numeric" Mode="In" />
+          <Parameter Name="MUERTE_H_H" Type="numeric" Mode="In" />
+          <Parameter Name="CAUSAS_H_H" Type="text" Mode="In" />
+          <Parameter Name="SON_H" Type="numeric" Mode="In" />
+          <Parameter Name="VIVO_SON_H" Type="numeric" Mode="In" />
+          <Parameter Name="MUERTOS_SON_H" Type="numeric" Mode="In" />
+          <Parameter Name="CAUSAS_SON_H" Type="text" Mode="In" />
+          <Parameter Name="ALCOHOL_H" Type="char" Mode="In" />
+          <Parameter Name="TABACO_H" Type="char" Mode="In" />
+          <Parameter Name="DROGAS_H" Type="char" Mode="In" />
+          <Parameter Name="FRECUENCIA_TAB_H" Type="text" Mode="In" />
+          <Parameter Name="FRECUENCIA_ALC_H" Type="text" Mode="In" />
+          <Parameter Name="FRECUENCIA_DRO_H" Type="text" Mode="In" />
+          <Parameter Name="ALIMENTACION_H" Type="text" Mode="In" />
+          <Parameter Name="DIPSIA_H" Type="char" Mode="In" />
+          <Parameter Name="PARADIPSIA" Type="char" Mode="In" />
+          <Parameter Name="FRECUENCIA_PARADIPSIA" Type="text" Mode="In" />
+          <Parameter Name="INSOMNIO_H" Type="char" Mode="In" />
+          <Parameter Name="FRECUENCIA_INSOM_H" Type="text" Mode="In" />
+          <Parameter Name="OTRO_H" Type="text" Mode="In" />
+        </Function>
+        <Function Name="trx_Update_AreaTrabajo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_AREA" Type="numeric" Mode="In" />
+          <Parameter Name="NOMBRE_AREA" Type="varchar" Mode="In" />
+          <Parameter Name="GERENCIA_AREA" Type="varchar" Mode="In" />
+          <Parameter Name="DESCRIPCION_AREA" Type="text" Mode="In" />
+          <Parameter Name="ESTADO_AREA" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="trx_Update_CabeceraConsultum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_CON" Type="numeric" Mode="In" />
+          <Parameter Name="CEDULA_EMP" Type="varchar" Mode="In" />
+          <Parameter Name="INDICACIONES_CON" Type="text" Mode="In" />
+          <Parameter Name="MOTIVO_CON" Type="text" Mode="In" />
+          <Parameter Name="PRESION_CON" Type="numeric" Mode="In" />
+          <Parameter Name="FECHA_CON" Type="datetime" Mode="In" />
+          <Parameter Name="PESO_CON" Type="decimal" Mode="In" />
+          <Parameter Name="TEMPERATURA_CON" Type="numeric" Mode="In" />
+          <Parameter Name="SINTOMAS_CON" Type="text" Mode="In" />
+          <Parameter Name="OBSERVACIONES_CON" Type="text" Mode="In" />
+        </Function>
+        <Function Name="trx_Update_DetalleConsultum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_DET" Type="varchar" Mode="In" />
+          <Parameter Name="ID_CON" Type="numeric" Mode="In" />
+          <Parameter Name="CANTIDAD_DET" Type="numeric" Mode="In" />
+          <Parameter Name="PVP_DET" Type="decimal" Mode="In" />
+          <Parameter Name="CANTDES_DET" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="trx_Update_Empleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CEDULA_EMP" Type="varchar" Mode="In" />
+          <Parameter Name="ID_AREA" Type="numeric" Mode="In" />
+          <Parameter Name="CARGO_US" Type="varchar" Mode="In" />
+          <Parameter Name="PASWORD_US" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="trx_Update_Historia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CEDULA_EMP" Type="varchar" Mode="In" />
+          <Parameter Name="PADRE_H" Type="varchar" Mode="In" />
+          <Parameter Name="MADRE_H" Type="varchar" Mode="In" />
+          <Parameter Name="FALLECIDO_P_H" Type="char" Mode="In" />
+          <Parameter Name="FALLECIDO_M_H" Type="char" Mode="In" />
+          <Parameter Name="CAUSAS_P_H" Type="text" Mode="In" />
+          <Parameter Name="CAUSAS_M_H" Type="text" Mode="In" />
+          <Parameter Name="NUM_H_H" Type="numeric" Mode="In" />
+          <Parameter Name="VIVO_H_H" Type="numeric" Mode="In" />
+          <Parameter Name="MUERTE_H_H" Type="numeric" Mode="In" />
+          <Parameter Name="CAUSAS_H_H" Type="text" Mode="In" />
+          <Parameter Name="SON_H" Type="numeric" Mode="In" />
+          <Parameter Name="VIVO_SON_H" Type="numeric" Mode="In" />
+          <Parameter Name="MUERTOS_SON_H" Type="numeric" Mode="In" />
+          <Parameter Name="CAUSAS_SON_H" Type="text" Mode="In" />
+          <Parameter Name="ALCOHOL_H" Type="char" Mode="In" />
+          <Parameter Name="TABACO_H" Type="char" Mode="In" />
+          <Parameter Name="DROGAS_H" Type="char" Mode="In" />
+          <Parameter Name="FRECUENCIA_TAB_H" Type="text" Mode="In" />
+          <Parameter Name="FRECUENCIA_ALC_H" Type="text" Mode="In" />
+          <Parameter Name="FRECUENCIA_DRO_H" Type="text" Mode="In" />
+          <Parameter Name="ALIMENTACION_H" Type="text" Mode="In" />
+          <Parameter Name="DIPSIA_H" Type="char" Mode="In" />
+          <Parameter Name="PARADIPSIA" Type="char" Mode="In" />
+          <Parameter Name="FRECUENCIA_PARADIPSIA" Type="text" Mode="In" />
+          <Parameter Name="INSOMNIO_H" Type="char" Mode="In" />
+          <Parameter Name="FRECUENCIA_INSOM_H" Type="text" Mode="In" />
+          <Parameter Name="OTRO_H" Type="text" Mode="In" />
+        </Function>
+        <EntityContainer Name="ERP_HistoriasClinicasModelStoreContainer">
+          <EntitySet Name="AREA_TRABAJO" EntityType="Self.AREA_TRABAJO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CABECERA_CONSULTA" EntityType="Self.CABECERA_CONSULTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DETALLE_CONSULTA" EntityType="Self.DETALLE_CONSULTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HISTORIAS" EntityType="Self.HISTORIAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PERSONA" EntityType="Self.PERSONA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="listado_facturacion" EntityType="Self.listado_facturacion" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [listado_facturacion].[CEDULA_EMP] AS [CEDULA_EMP], 
+    [listado_facturacion].[NOMBRES_EMP] AS [NOMBRES_EMP], 
+    [listado_facturacion].[NACIFECHA_EMP] AS [NACIFECHA_EMP], 
+    [listado_facturacion].[NACIONALIDAD_EMP] AS [NACIONALIDAD_EMP], 
+    [listado_facturacion].[DIRECCIO_EMP] AS [DIRECCIO_EMP], 
+    [listado_facturacion].[TELEFONO_EMP] AS [TELEFONO_EMP], 
+    [listado_facturacion].[EMAIL_EMP] AS [EMAIL_EMP], 
+    [listado_facturacion].[ESTADO_EMP] AS [ESTADO_EMP], 
+    [listado_facturacion].[ACTIVO_EMP] AS [ACTIVO_EMP], 
+    [listado_facturacion].[CIUDADNACI_EMP] AS [CIUDADNACI_EMP], 
+    [listado_facturacion].[CARGO_US] AS [CARGO_US], 
+    [listado_facturacion].[NOMBRE_AREA] AS [NOMBRE_AREA], 
+    [listado_facturacion].[DESCRIPCION_AREA] AS [DESCRIPCION_AREA]
+    FROM [dbo].[listado_facturacion] AS [listado_facturacion]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_CABECERA_REFERENCE_PERSONA" Association="Self.FK_CABECERA_REFERENCE_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="CABECERA_CONSULTA" EntitySet="CABECERA_CONSULTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DETALLE__REFERENCE_CABECERA" Association="Self.FK_DETALLE__REFERENCE_CABECERA">
+            <End Role="CABECERA_CONSULTA" EntitySet="CABECERA_CONSULTA" />
+            <End Role="DETALLE_CONSULTA" EntitySet="DETALLE_CONSULTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPLEADO_REFERENCE_AREA_TRA" Association="Self.FK_EMPLEADO_REFERENCE_AREA_TRA">
+            <End Role="AREA_TRABAJO" EntitySet="AREA_TRABAJO" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPLEADO_REFERENCE_PERSONA" Association="Self.FK_EMPLEADO_REFERENCE_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIA_REFERENCE_PERSONA" Association="Self.FK_HISTORIA_REFERENCE_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="HISTORIAS" EntitySet="HISTORIAS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ERP_HistoriasClinicasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AREA_TRABAJO">
+          <Key>
+            <PropertyRef Name="ID_AREA" />
+          </Key>
+          <Property Name="ID_AREA" Type="Decimal" Precision="15" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE_AREA" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="GERENCIA_AREA" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION_AREA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO_AREA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Self.FK_EMPLEADO_REFERENCE_AREA_TRA" FromRole="AREA_TRABAJO" ToRole="EMPLEADO" />
+        </EntityType>
+        <EntityType Name="CABECERA_CONSULTA">
+          <Key>
+            <PropertyRef Name="ID_CON" />
+          </Key>
+          <Property Name="ID_CON" Type="Decimal" Precision="15" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CEDULA_EMP" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="INDICACIONES_CON" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MOTIVO_CON" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PRESION_CON" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="FECHA_CON" Type="DateTime" Precision="3" />
+          <Property Name="PESO_CON" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="TEMPERATURA_CON" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="SINTOMAS_CON" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OBSERVACIONES_CON" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PERSONA" Relationship="Self.FK_CABECERA_REFERENCE_PERSONA" FromRole="CABECERA_CONSULTA" ToRole="PERSONA" />
+          <NavigationProperty Name="DETALLE_CONSULTA" Relationship="Self.FK_DETALLE__REFERENCE_CABECERA" FromRole="CABECERA_CONSULTA" ToRole="DETALLE_CONSULTA" />
+        </EntityType>
+        <EntityType Name="DETALLE_CONSULTA">
+          <Key>
+            <PropertyRef Name="ID_DET" />
+          </Key>
+          <Property Name="ID_DET" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_CON" Type="Decimal" Precision="15" Scale="0" />
+          <Property Name="CANTIDAD_DET" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="PVP_DET" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="CANTDES_DET" Type="Decimal" Precision="3" Scale="0" />
+          <NavigationProperty Name="CABECERA_CONSULTA" Relationship="Self.FK_DETALLE__REFERENCE_CABECERA" FromRole="DETALLE_CONSULTA" ToRole="CABECERA_CONSULTA" />
+        </EntityType>
+        <EntityType Name="EMPLEADO">
+          <Key>
+            <PropertyRef Name="CEDULA_EMP" />
+          </Key>
+          <Property Name="CEDULA_EMP" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_AREA" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+          <Property Name="CARGO_US" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASWORD_US" Type="String" MaxLength="26" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AREA_TRABAJO" Relationship="Self.FK_EMPLEADO_REFERENCE_AREA_TRA" FromRole="EMPLEADO" ToRole="AREA_TRABAJO" />
+          <NavigationProperty Name="PERSONA" Relationship="Self.FK_EMPLEADO_REFERENCE_PERSONA" FromRole="EMPLEADO" ToRole="PERSONA" />
+        </EntityType>
+        <EntityType Name="HISTORIAS">
+          <Key>
+            <PropertyRef Name="CEDULA_EMP" />
+          </Key>
+          <Property Name="CEDULA_EMP" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PADRE_H" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="MADRE_H" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FALLECIDO_P_H" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="FALLECIDO_M_H" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="CAUSAS_P_H" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CAUSAS_M_H" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NUM_H_H" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="VIVO_H_H" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="MUERTE_H_H" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="CAUSAS_H_H" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SON_H" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="VIVO_SON_H" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="MUERTOS_SON_H" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="CAUSAS_SON_H" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ALCOHOL_H" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="TABACO_H" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="DROGAS_H" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="FRECUENCIA_TAB_H" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FRECUENCIA_ALC_H" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FRECUENCIA_DRO_H" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ALIMENTACION_H" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DIPSIA_H" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="PARADIPSIA" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="FRECUENCIA_PARADIPSIA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="INSOMNIO_H" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="FRECUENCIA_INSOM_H" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OTRO_H" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PERSONA" Relationship="Self.FK_HISTORIA_REFERENCE_PERSONA" FromRole="HISTORIAS" ToRole="PERSONA" />
+        </EntityType>
+        <EntityType Name="PERSONA">
+          <Key>
+            <PropertyRef Name="CEDULA_EMP" />
+          </Key>
+          <Property Name="CEDULA_EMP" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBRES_EMP" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NACIFECHA_EMP" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NACIONALIDAD_EMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIRECCIO_EMP" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONO_EMP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMAIL_EMP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTADO_EMP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIPO_EMP" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ACTIVO_EMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CIUDADNACI_EMP" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CABECERA_CONSULTA" Relationship="Self.FK_CABECERA_REFERENCE_PERSONA" FromRole="PERSONA" ToRole="CABECERA_CONSULTA" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Self.FK_EMPLEADO_REFERENCE_PERSONA" FromRole="PERSONA" ToRole="EMPLEADO" />
+          <NavigationProperty Name="HISTORIAS" Relationship="Self.FK_HISTORIA_REFERENCE_PERSONA" FromRole="PERSONA" ToRole="HISTORIAS" />
+        </EntityType>
+        <EntityType Name="listado_facturacion">
+          <Key>
+            <PropertyRef Name="CEDULA_EMP" />
+            <PropertyRef Name="NOMBRES_EMP" />
+            <PropertyRef Name="NACIFECHA_EMP" />
+            <PropertyRef Name="NACIONALIDAD_EMP" />
+            <PropertyRef Name="DIRECCIO_EMP" />
+            <PropertyRef Name="TELEFONO_EMP" />
+            <PropertyRef Name="EMAIL_EMP" />
+            <PropertyRef Name="ESTADO_EMP" />
+            <PropertyRef Name="ACTIVO_EMP" />
+            <PropertyRef Name="CARGO_US" />
+          </Key>
+          <Property Name="CEDULA_EMP" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBRES_EMP" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NACIFECHA_EMP" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NACIONALIDAD_EMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIRECCIO_EMP" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONO_EMP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMAIL_EMP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTADO_EMP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ACTIVO_EMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CIUDADNACI_EMP" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CARGO_US" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBRE_AREA" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION_AREA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_EMPLEADO_REFERENCE_AREA_TRA">
+          <End Role="AREA_TRABAJO" Type="Self.AREA_TRABAJO" Multiplicity="1" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AREA_TRABAJO">
+              <PropertyRef Name="ID_AREA" />
+            </Principal>
+            <Dependent Role="EMPLEADO">
+              <PropertyRef Name="ID_AREA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CABECERA_REFERENCE_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="0..1" />
+          <End Role="CABECERA_CONSULTA" Type="Self.CABECERA_CONSULTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="CEDULA_EMP" />
+            </Principal>
+            <Dependent Role="CABECERA_CONSULTA">
+              <PropertyRef Name="CEDULA_EMP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DETALLE__REFERENCE_CABECERA">
+          <End Role="CABECERA_CONSULTA" Type="Self.CABECERA_CONSULTA" Multiplicity="0..1" />
+          <End Role="DETALLE_CONSULTA" Type="Self.DETALLE_CONSULTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CABECERA_CONSULTA">
+              <PropertyRef Name="ID_CON" />
+            </Principal>
+            <Dependent Role="DETALLE_CONSULTA">
+              <PropertyRef Name="ID_CON" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPLEADO_REFERENCE_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="1" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="CEDULA_EMP" />
+            </Principal>
+            <Dependent Role="EMPLEADO">
+              <PropertyRef Name="CEDULA_EMP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIA_REFERENCE_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="1" />
+          <End Role="HISTORIAS" Type="Self.HISTORIAS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="CEDULA_EMP" />
+            </Principal>
+            <Dependent Role="HISTORIAS">
+              <PropertyRef Name="CEDULA_EMP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ERP_HistoriasClinicasEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AREA_TRABAJO" EntityType="Self.AREA_TRABAJO" />
+          <EntitySet Name="CABECERA_CONSULTA" EntityType="Self.CABECERA_CONSULTA" />
+          <EntitySet Name="DETALLE_CONSULTA" EntityType="Self.DETALLE_CONSULTA" />
+          <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" />
+          <EntitySet Name="HISTORIAS" EntityType="Self.HISTORIAS" />
+          <EntitySet Name="PERSONA" EntityType="Self.PERSONA" />
+          <EntitySet Name="listado_facturacion" EntityType="Self.listado_facturacion" />
+          <AssociationSet Name="FK_EMPLEADO_REFERENCE_AREA_TRA" Association="Self.FK_EMPLEADO_REFERENCE_AREA_TRA">
+            <End Role="AREA_TRABAJO" EntitySet="AREA_TRABAJO" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CABECERA_REFERENCE_PERSONA" Association="Self.FK_CABECERA_REFERENCE_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="CABECERA_CONSULTA" EntitySet="CABECERA_CONSULTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DETALLE__REFERENCE_CABECERA" Association="Self.FK_DETALLE__REFERENCE_CABECERA">
+            <End Role="CABECERA_CONSULTA" EntitySet="CABECERA_CONSULTA" />
+            <End Role="DETALLE_CONSULTA" EntitySet="DETALLE_CONSULTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPLEADO_REFERENCE_PERSONA" Association="Self.FK_EMPLEADO_REFERENCE_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIA_REFERENCE_PERSONA" Association="Self.FK_HISTORIA_REFERENCE_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="HISTORIAS" EntitySet="HISTORIAS" />
+          </AssociationSet>
+          <FunctionImport Name="trx_Get_AreaTrabajo" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_AreaTrabajo_Result)">
+            <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Get_AreaTrabajosAll" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_AreaTrabajosAll_Result)" />
+          <FunctionImport Name="trx_Get_CabeceraConsultasAll" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_CabeceraConsultasAll_Result)" />
+          <FunctionImport Name="trx_Get_CabeceraConsultum" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_CabeceraConsultum_Result)">
+            <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Get_DetalleConsultasAll" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_DetalleConsultasAll_Result)" />
+          <FunctionImport Name="trx_Get_DetalleConsultum" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_DetalleConsultum_Result)">
+            <Parameter Name="ID_DET" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Get_Empleado" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_Empleado_Result)">
+            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Get_EmpleadosAll" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_EmpleadosAll_Result)" />
+          <FunctionImport Name="trx_Get_Historia" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_Historia_Result)">
+            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Get_HistoriasAll" ReturnType="Collection(ERP_HistoriasClinicasModel.trx_Get_HistoriasAll_Result)" />
+          <FunctionImport Name="trx_Insert_AreaTrabajo">
+            <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
+            <Parameter Name="NOMBRE_AREA" Mode="In" Type="String" />
+            <Parameter Name="GERENCIA_AREA" Mode="In" Type="String" />
+            <Parameter Name="DESCRIPCION_AREA" Mode="In" Type="String" />
+            <Parameter Name="ESTADO_AREA" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Insert_CabeceraConsultum">
+            <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
+            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+            <Parameter Name="INDICACIONES_CON" Mode="In" Type="String" />
+            <Parameter Name="MOTIVO_CON" Mode="In" Type="String" />
+            <Parameter Name="PRESION_CON" Mode="In" Type="Decimal" />
+            <Parameter Name="FECHA_CON" Mode="In" Type="DateTime" />
+            <Parameter Name="PESO_CON" Mode="In" Type="Decimal" />
+            <Parameter Name="TEMPERATURA_CON" Mode="In" Type="Decimal" />
+            <Parameter Name="SINTOMAS_CON" Mode="In" Type="String" />
+            <Parameter Name="OBSERVACIONES_CON" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Insert_DetalleConsultum">
+            <Parameter Name="ID_DET" Mode="In" Type="String" />
+            <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
+            <Parameter Name="CANTIDAD_DET" Mode="In" Type="Decimal" />
+            <Parameter Name="PVP_DET" Mode="In" Type="Decimal" />
+            <Parameter Name="CANTDES_DET" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Insert_Empleado">
+            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+            <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
+            <Parameter Name="CARGO_US" Mode="In" Type="String" />
+            <Parameter Name="PASWORD_US" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Insert_Historia">
+            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+            <Parameter Name="PADRE_H" Mode="In" Type="String" />
+            <Parameter Name="MADRE_H" Mode="In" Type="String" />
+            <Parameter Name="FALLECIDO_P_H" Mode="In" Type="String" />
+            <Parameter Name="FALLECIDO_M_H" Mode="In" Type="String" />
+            <Parameter Name="CAUSAS_P_H" Mode="In" Type="String" />
+            <Parameter Name="CAUSAS_M_H" Mode="In" Type="String" />
+            <Parameter Name="NUM_H_H" Mode="In" Type="Decimal" />
+            <Parameter Name="VIVO_H_H" Mode="In" Type="Decimal" />
+            <Parameter Name="MUERTE_H_H" Mode="In" Type="Decimal" />
+            <Parameter Name="CAUSAS_H_H" Mode="In" Type="String" />
+            <Parameter Name="SON_H" Mode="In" Type="Decimal" />
+            <Parameter Name="VIVO_SON_H" Mode="In" Type="Decimal" />
+            <Parameter Name="MUERTOS_SON_H" Mode="In" Type="Decimal" />
+            <Parameter Name="CAUSAS_SON_H" Mode="In" Type="String" />
+            <Parameter Name="ALCOHOL_H" Mode="In" Type="String" />
+            <Parameter Name="TABACO_H" Mode="In" Type="String" />
+            <Parameter Name="DROGAS_H" Mode="In" Type="String" />
+            <Parameter Name="FRECUENCIA_TAB_H" Mode="In" Type="String" />
+            <Parameter Name="FRECUENCIA_ALC_H" Mode="In" Type="String" />
+            <Parameter Name="FRECUENCIA_DRO_H" Mode="In" Type="String" />
+            <Parameter Name="ALIMENTACION_H" Mode="In" Type="String" />
+            <Parameter Name="DIPSIA_H" Mode="In" Type="String" />
+            <Parameter Name="PARADIPSIA" Mode="In" Type="String" />
+            <Parameter Name="FRECUENCIA_PARADIPSIA" Mode="In" Type="String" />
+            <Parameter Name="INSOMNIO_H" Mode="In" Type="String" />
+            <Parameter Name="FRECUENCIA_INSOM_H" Mode="In" Type="String" />
+            <Parameter Name="OTRO_H" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Remove_AreaTrabajo">
+            <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Remove_CabeceraConsultum">
+            <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Remove_DetalleConsultum">
+            <Parameter Name="ID_DET" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Remove_Empleado">
+            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Remove_Historia">
+            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Save_AreaTrabajo" ReturnType="Collection(Decimal)">
+            <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
+            <Parameter Name="NOMBRE_AREA" Mode="In" Type="String" />
+            <Parameter Name="GERENCIA_AREA" Mode="In" Type="String" />
+            <Parameter Name="DESCRIPCION_AREA" Mode="In" Type="String" />
+            <Parameter Name="ESTADO_AREA" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Save_CabeceraConsultum" ReturnType="Collection(Decimal)">
+            <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
+            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+            <Parameter Name="INDICACIONES_CON" Mode="In" Type="String" />
+            <Parameter Name="MOTIVO_CON" Mode="In" Type="String" />
+            <Parameter Name="PRESION_CON" Mode="In" Type="Decimal" />
+            <Parameter Name="FECHA_CON" Mode="In" Type="DateTime" />
+            <Parameter Name="PESO_CON" Mode="In" Type="Decimal" />
+            <Parameter Name="TEMPERATURA_CON" Mode="In" Type="Decimal" />
+            <Parameter Name="SINTOMAS_CON" Mode="In" Type="String" />
+            <Parameter Name="OBSERVACIONES_CON" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Save_DetalleConsultum" ReturnType="Collection(String)">
+            <Parameter Name="ID_DET" Mode="In" Type="String" />
+            <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
+            <Parameter Name="CANTIDAD_DET" Mode="In" Type="Decimal" />
+            <Parameter Name="PVP_DET" Mode="In" Type="Decimal" />
+            <Parameter Name="CANTDES_DET" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Save_Empleado" ReturnType="Collection(String)">
+            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+            <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
+            <Parameter Name="CARGO_US" Mode="In" Type="String" />
+            <Parameter Name="PASWORD_US" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Save_Historia" ReturnType="Collection(String)">
+            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+            <Parameter Name="PADRE_H" Mode="In" Type="String" />
+            <Parameter Name="MADRE_H" Mode="In" Type="String" />
+            <Parameter Name="FALLECIDO_P_H" Mode="In" Type="String" />
+            <Parameter Name="FALLECIDO_M_H" Mode="In" Type="String" />
+            <Parameter Name="CAUSAS_P_H" Mode="In" Type="String" />
+            <Parameter Name="CAUSAS_M_H" Mode="In" Type="String" />
+            <Parameter Name="NUM_H_H" Mode="In" Type="Decimal" />
+            <Parameter Name="VIVO_H_H" Mode="In" Type="Decimal" />
+            <Parameter Name="MUERTE_H_H" Mode="In" Type="Decimal" />
+            <Parameter Name="CAUSAS_H_H" Mode="In" Type="String" />
+            <Parameter Name="SON_H" Mode="In" Type="Decimal" />
+            <Parameter Name="VIVO_SON_H" Mode="In" Type="Decimal" />
+            <Parameter Name="MUERTOS_SON_H" Mode="In" Type="Decimal" />
+            <Parameter Name="CAUSAS_SON_H" Mode="In" Type="String" />
+            <Parameter Name="ALCOHOL_H" Mode="In" Type="String" />
+            <Parameter Name="TABACO_H" Mode="In" Type="String" />
+            <Parameter Name="DROGAS_H" Mode="In" Type="String" />
+            <Parameter Name="FRECUENCIA_TAB_H" Mode="In" Type="String" />
+            <Parameter Name="FRECUENCIA_ALC_H" Mode="In" Type="String" />
+            <Parameter Name="FRECUENCIA_DRO_H" Mode="In" Type="String" />
+            <Parameter Name="ALIMENTACION_H" Mode="In" Type="String" />
+            <Parameter Name="DIPSIA_H" Mode="In" Type="String" />
+            <Parameter Name="PARADIPSIA" Mode="In" Type="String" />
+            <Parameter Name="FRECUENCIA_PARADIPSIA" Mode="In" Type="String" />
+            <Parameter Name="INSOMNIO_H" Mode="In" Type="String" />
+            <Parameter Name="FRECUENCIA_INSOM_H" Mode="In" Type="String" />
+            <Parameter Name="OTRO_H" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Update_AreaTrabajo">
+            <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
+            <Parameter Name="NOMBRE_AREA" Mode="In" Type="String" />
+            <Parameter Name="GERENCIA_AREA" Mode="In" Type="String" />
+            <Parameter Name="DESCRIPCION_AREA" Mode="In" Type="String" />
+            <Parameter Name="ESTADO_AREA" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Update_CabeceraConsultum">
+            <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
+            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+            <Parameter Name="INDICACIONES_CON" Mode="In" Type="String" />
+            <Parameter Name="MOTIVO_CON" Mode="In" Type="String" />
+            <Parameter Name="PRESION_CON" Mode="In" Type="Decimal" />
+            <Parameter Name="FECHA_CON" Mode="In" Type="DateTime" />
+            <Parameter Name="PESO_CON" Mode="In" Type="Decimal" />
+            <Parameter Name="TEMPERATURA_CON" Mode="In" Type="Decimal" />
+            <Parameter Name="SINTOMAS_CON" Mode="In" Type="String" />
+            <Parameter Name="OBSERVACIONES_CON" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Update_DetalleConsultum">
+            <Parameter Name="ID_DET" Mode="In" Type="String" />
+            <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
+            <Parameter Name="CANTIDAD_DET" Mode="In" Type="Decimal" />
+            <Parameter Name="PVP_DET" Mode="In" Type="Decimal" />
+            <Parameter Name="CANTDES_DET" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Update_Empleado">
+            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+            <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
+            <Parameter Name="CARGO_US" Mode="In" Type="String" />
+            <Parameter Name="PASWORD_US" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="trx_Update_Historia">
+            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+            <Parameter Name="PADRE_H" Mode="In" Type="String" />
+            <Parameter Name="MADRE_H" Mode="In" Type="String" />
+            <Parameter Name="FALLECIDO_P_H" Mode="In" Type="String" />
+            <Parameter Name="FALLECIDO_M_H" Mode="In" Type="String" />
+            <Parameter Name="CAUSAS_P_H" Mode="In" Type="String" />
+            <Parameter Name="CAUSAS_M_H" Mode="In" Type="String" />
+            <Parameter Name="NUM_H_H" Mode="In" Type="Decimal" />
+            <Parameter Name="VIVO_H_H" Mode="In" Type="Decimal" />
+            <Parameter Name="MUERTE_H_H" Mode="In" Type="Decimal" />
+            <Parameter Name="CAUSAS_H_H" Mode="In" Type="String" />
+            <Parameter Name="SON_H" Mode="In" Type="Decimal" />
+            <Parameter Name="VIVO_SON_H" Mode="In" Type="Decimal" />
+            <Parameter Name="MUERTOS_SON_H" Mode="In" Type="Decimal" />
+            <Parameter Name="CAUSAS_SON_H" Mode="In" Type="String" />
+            <Parameter Name="ALCOHOL_H" Mode="In" Type="String" />
+            <Parameter Name="TABACO_H" Mode="In" Type="String" />
+            <Parameter Name="DROGAS_H" Mode="In" Type="String" />
+            <Parameter Name="FRECUENCIA_TAB_H" Mode="In" Type="String" />
+            <Parameter Name="FRECUENCIA_ALC_H" Mode="In" Type="String" />
+            <Parameter Name="FRECUENCIA_DRO_H" Mode="In" Type="String" />
+            <Parameter Name="ALIMENTACION_H" Mode="In" Type="String" />
+            <Parameter Name="DIPSIA_H" Mode="In" Type="String" />
+            <Parameter Name="PARADIPSIA" Mode="In" Type="String" />
+            <Parameter Name="FRECUENCIA_PARADIPSIA" Mode="In" Type="String" />
+            <Parameter Name="INSOMNIO_H" Mode="In" Type="String" />
+            <Parameter Name="FRECUENCIA_INSOM_H" Mode="In" Type="String" />
+            <Parameter Name="OTRO_H" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="trx_Get_AreaTrabajo_Result">
+          <Property Type="Decimal" Name="ID_AREA" Nullable="false" Precision="15" Scale="0" />
+          <Property Type="String" Name="NOMBRE_AREA" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="GERENCIA_AREA" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="DESCRIPCION_AREA" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="ESTADO_AREA" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="trx_Get_AreaTrabajosAll_Result">
+          <Property Type="Decimal" Name="ID_AREA" Nullable="false" Precision="15" Scale="0" />
+          <Property Type="String" Name="NOMBRE_AREA" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="GERENCIA_AREA" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="DESCRIPCION_AREA" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="ESTADO_AREA" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="trx_Get_CabeceraConsultasAll_Result">
+          <Property Type="Decimal" Name="ID_CON" Nullable="false" Precision="15" Scale="0" />
+          <Property Type="String" Name="CEDULA_EMP" Nullable="true" MaxLength="13" />
+          <Property Type="String" Name="INDICACIONES_CON" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="MOTIVO_CON" Nullable="true" MaxLength="Max" />
+          <Property Type="Decimal" Name="PRESION_CON" Nullable="true" Precision="3" Scale="0" />
+          <Property Type="DateTime" Name="FECHA_CON" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="PESO_CON" Nullable="true" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="TEMPERATURA_CON" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="String" Name="SINTOMAS_CON" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="OBSERVACIONES_CON" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="trx_Get_CabeceraConsultum_Result">
+          <Property Type="Decimal" Name="ID_CON" Nullable="false" Precision="15" Scale="0" />
+          <Property Type="String" Name="CEDULA_EMP" Nullable="true" MaxLength="13" />
+          <Property Type="String" Name="INDICACIONES_CON" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="MOTIVO_CON" Nullable="true" MaxLength="Max" />
+          <Property Type="Decimal" Name="PRESION_CON" Nullable="true" Precision="3" Scale="0" />
+          <Property Type="DateTime" Name="FECHA_CON" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="PESO_CON" Nullable="true" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="TEMPERATURA_CON" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="String" Name="SINTOMAS_CON" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="OBSERVACIONES_CON" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="trx_Get_DetalleConsultasAll_Result">
+          <Property Type="String" Name="ID_DET" Nullable="false" MaxLength="15" />
+          <Property Type="Decimal" Name="ID_CON" Nullable="true" Precision="15" Scale="0" />
+          <Property Type="Decimal" Name="CANTIDAD_DET" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="Decimal" Name="PVP_DET" Nullable="true" Precision="4" Scale="2" />
+          <Property Type="Decimal" Name="CANTDES_DET" Nullable="true" Precision="3" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="trx_Get_DetalleConsultum_Result">
+          <Property Type="String" Name="ID_DET" Nullable="false" MaxLength="15" />
+          <Property Type="Decimal" Name="ID_CON" Nullable="true" Precision="15" Scale="0" />
+          <Property Type="Decimal" Name="CANTIDAD_DET" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="Decimal" Name="PVP_DET" Nullable="true" Precision="4" Scale="2" />
+          <Property Type="Decimal" Name="CANTDES_DET" Nullable="true" Precision="3" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="trx_Get_Empleado_Result">
+          <Property Type="String" Name="CEDULA_EMP" Nullable="false" MaxLength="13" />
+          <Property Type="Decimal" Name="ID_AREA" Nullable="false" Precision="15" Scale="0" />
+          <Property Type="String" Name="CARGO_US" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="PASWORD_US" Nullable="false" MaxLength="26" />
+        </ComplexType>
+        <ComplexType Name="trx_Get_EmpleadosAll_Result">
+          <Property Type="String" Name="CEDULA_EMP" Nullable="false" MaxLength="13" />
+          <Property Type="Decimal" Name="ID_AREA" Nullable="false" Precision="15" Scale="0" />
+          <Property Type="String" Name="CARGO_US" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="PASWORD_US" Nullable="false" MaxLength="26" />
+        </ComplexType>
+        <ComplexType Name="trx_Get_Historia_Result">
+          <Property Type="String" Name="CEDULA_EMP" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="PADRE_H" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="MADRE_H" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="FALLECIDO_P_H" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="FALLECIDO_M_H" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="CAUSAS_P_H" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="CAUSAS_M_H" Nullable="true" MaxLength="Max" />
+          <Property Type="Decimal" Name="NUM_H_H" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="Decimal" Name="VIVO_H_H" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="Decimal" Name="MUERTE_H_H" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="String" Name="CAUSAS_H_H" Nullable="true" MaxLength="Max" />
+          <Property Type="Decimal" Name="SON_H" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="Decimal" Name="VIVO_SON_H" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="Decimal" Name="MUERTOS_SON_H" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="String" Name="CAUSAS_SON_H" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="ALCOHOL_H" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="TABACO_H" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="DROGAS_H" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="FRECUENCIA_TAB_H" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="FRECUENCIA_ALC_H" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="FRECUENCIA_DRO_H" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="ALIMENTACION_H" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="DIPSIA_H" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="PARADIPSIA" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="FRECUENCIA_PARADIPSIA" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="INSOMNIO_H" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="FRECUENCIA_INSOM_H" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="OTRO_H" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="trx_Get_HistoriasAll_Result">
+          <Property Type="String" Name="CEDULA_EMP" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="PADRE_H" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="MADRE_H" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="FALLECIDO_P_H" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="FALLECIDO_M_H" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="CAUSAS_P_H" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="CAUSAS_M_H" Nullable="true" MaxLength="Max" />
+          <Property Type="Decimal" Name="NUM_H_H" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="Decimal" Name="VIVO_H_H" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="Decimal" Name="MUERTE_H_H" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="String" Name="CAUSAS_H_H" Nullable="true" MaxLength="Max" />
+          <Property Type="Decimal" Name="SON_H" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="Decimal" Name="VIVO_SON_H" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="Decimal" Name="MUERTOS_SON_H" Nullable="true" Precision="2" Scale="0" />
+          <Property Type="String" Name="CAUSAS_SON_H" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="ALCOHOL_H" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="TABACO_H" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="DROGAS_H" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="FRECUENCIA_TAB_H" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="FRECUENCIA_ALC_H" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="FRECUENCIA_DRO_H" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="ALIMENTACION_H" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="DIPSIA_H" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="PARADIPSIA" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="FRECUENCIA_PARADIPSIA" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="INSOMNIO_H" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="FRECUENCIA_INSOM_H" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="OTRO_H" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ERP_HistoriasClinicasModelStoreContainer" CdmEntityContainer="ERP_HistoriasClinicasEntities">
+          <EntitySetMapping Name="AREA_TRABAJO">
+            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.AREA_TRABAJO">
+              <MappingFragment StoreEntitySet="AREA_TRABAJO">
+                <ScalarProperty Name="ID_AREA" ColumnName="ID_AREA" />
+                <ScalarProperty Name="NOMBRE_AREA" ColumnName="NOMBRE_AREA" />
+                <ScalarProperty Name="GERENCIA_AREA" ColumnName="GERENCIA_AREA" />
+                <ScalarProperty Name="DESCRIPCION_AREA" ColumnName="DESCRIPCION_AREA" />
+                <ScalarProperty Name="ESTADO_AREA" ColumnName="ESTADO_AREA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.AREA_TRABAJO">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Insert_AreaTrabajo">
+                  <ScalarProperty Name="ESTADO_AREA" ParameterName="ESTADO_AREA" />
+                  <ScalarProperty Name="DESCRIPCION_AREA" ParameterName="DESCRIPCION_AREA" />
+                  <ScalarProperty Name="GERENCIA_AREA" ParameterName="GERENCIA_AREA" />
+                  <ScalarProperty Name="NOMBRE_AREA" ParameterName="NOMBRE_AREA" />
+                  <ScalarProperty Name="ID_AREA" ParameterName="ID_AREA" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Update_AreaTrabajo">
+                  <ScalarProperty Name="ESTADO_AREA" ParameterName="ESTADO_AREA" Version="Current" />
+                  <ScalarProperty Name="DESCRIPCION_AREA" ParameterName="DESCRIPCION_AREA" Version="Current" />
+                  <ScalarProperty Name="GERENCIA_AREA" ParameterName="GERENCIA_AREA" Version="Current" />
+                  <ScalarProperty Name="NOMBRE_AREA" ParameterName="NOMBRE_AREA" Version="Current" />
+                  <ScalarProperty Name="ID_AREA" ParameterName="ID_AREA" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Remove_AreaTrabajo">
+                  <ScalarProperty Name="ID_AREA" ParameterName="ID_AREA" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CABECERA_CONSULTA">
+            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.CABECERA_CONSULTA">
+              <MappingFragment StoreEntitySet="CABECERA_CONSULTA">
+                <ScalarProperty Name="ID_CON" ColumnName="ID_CON" />
+                <ScalarProperty Name="CEDULA_EMP" ColumnName="CEDULA_EMP" />
+                <ScalarProperty Name="INDICACIONES_CON" ColumnName="INDICACIONES_CON" />
+                <ScalarProperty Name="MOTIVO_CON" ColumnName="MOTIVO_CON" />
+                <ScalarProperty Name="PRESION_CON" ColumnName="PRESION_CON" />
+                <ScalarProperty Name="FECHA_CON" ColumnName="FECHA_CON" />
+                <ScalarProperty Name="PESO_CON" ColumnName="PESO_CON" />
+                <ScalarProperty Name="TEMPERATURA_CON" ColumnName="TEMPERATURA_CON" />
+                <ScalarProperty Name="SINTOMAS_CON" ColumnName="SINTOMAS_CON" />
+                <ScalarProperty Name="OBSERVACIONES_CON" ColumnName="OBSERVACIONES_CON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.CABECERA_CONSULTA">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Insert_CabeceraConsultum">
+                  <ScalarProperty Name="OBSERVACIONES_CON" ParameterName="OBSERVACIONES_CON" />
+                  <ScalarProperty Name="SINTOMAS_CON" ParameterName="SINTOMAS_CON" />
+                  <ScalarProperty Name="TEMPERATURA_CON" ParameterName="TEMPERATURA_CON" />
+                  <ScalarProperty Name="PESO_CON" ParameterName="PESO_CON" />
+                  <ScalarProperty Name="FECHA_CON" ParameterName="FECHA_CON" />
+                  <ScalarProperty Name="PRESION_CON" ParameterName="PRESION_CON" />
+                  <ScalarProperty Name="MOTIVO_CON" ParameterName="MOTIVO_CON" />
+                  <ScalarProperty Name="INDICACIONES_CON" ParameterName="INDICACIONES_CON" />
+                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" />
+                  <ScalarProperty Name="ID_CON" ParameterName="ID_CON" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Update_CabeceraConsultum">
+                  <ScalarProperty Name="OBSERVACIONES_CON" ParameterName="OBSERVACIONES_CON" Version="Current" />
+                  <ScalarProperty Name="SINTOMAS_CON" ParameterName="SINTOMAS_CON" Version="Current" />
+                  <ScalarProperty Name="TEMPERATURA_CON" ParameterName="TEMPERATURA_CON" Version="Current" />
+                  <ScalarProperty Name="PESO_CON" ParameterName="PESO_CON" Version="Current" />
+                  <ScalarProperty Name="FECHA_CON" ParameterName="FECHA_CON" Version="Current" />
+                  <ScalarProperty Name="PRESION_CON" ParameterName="PRESION_CON" Version="Current" />
+                  <ScalarProperty Name="MOTIVO_CON" ParameterName="MOTIVO_CON" Version="Current" />
+                  <ScalarProperty Name="INDICACIONES_CON" ParameterName="INDICACIONES_CON" Version="Current" />
+                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" Version="Current" />
+                  <ScalarProperty Name="ID_CON" ParameterName="ID_CON" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Remove_CabeceraConsultum">
+                  <ScalarProperty Name="ID_CON" ParameterName="ID_CON" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DETALLE_CONSULTA">
+            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.DETALLE_CONSULTA">
+              <MappingFragment StoreEntitySet="DETALLE_CONSULTA">
+                <ScalarProperty Name="ID_DET" ColumnName="ID_DET" />
+                <ScalarProperty Name="ID_CON" ColumnName="ID_CON" />
+                <ScalarProperty Name="CANTIDAD_DET" ColumnName="CANTIDAD_DET" />
+                <ScalarProperty Name="PVP_DET" ColumnName="PVP_DET" />
+                <ScalarProperty Name="CANTDES_DET" ColumnName="CANTDES_DET" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.DETALLE_CONSULTA">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Insert_DetalleConsultum">
+                  <ScalarProperty Name="CANTDES_DET" ParameterName="CANTDES_DET" />
+                  <ScalarProperty Name="PVP_DET" ParameterName="PVP_DET" />
+                  <ScalarProperty Name="CANTIDAD_DET" ParameterName="CANTIDAD_DET" />
+                  <ScalarProperty Name="ID_CON" ParameterName="ID_CON" />
+                  <ScalarProperty Name="ID_DET" ParameterName="ID_DET" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Update_DetalleConsultum">
+                  <ScalarProperty Name="CANTDES_DET" ParameterName="CANTDES_DET" Version="Current" />
+                  <ScalarProperty Name="PVP_DET" ParameterName="PVP_DET" Version="Current" />
+                  <ScalarProperty Name="CANTIDAD_DET" ParameterName="CANTIDAD_DET" Version="Current" />
+                  <ScalarProperty Name="ID_CON" ParameterName="ID_CON" Version="Current" />
+                  <ScalarProperty Name="ID_DET" ParameterName="ID_DET" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Remove_DetalleConsultum">
+                  <ScalarProperty Name="ID_DET" ParameterName="ID_DET" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPLEADO">
+            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.EMPLEADO">
+              <MappingFragment StoreEntitySet="EMPLEADO">
+                <ScalarProperty Name="CEDULA_EMP" ColumnName="CEDULA_EMP" />
+                <ScalarProperty Name="ID_AREA" ColumnName="ID_AREA" />
+                <ScalarProperty Name="CARGO_US" ColumnName="CARGO_US" />
+                <ScalarProperty Name="PASWORD_US" ColumnName="PASWORD_US" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.EMPLEADO">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Insert_Empleado">
+                  <ScalarProperty Name="PASWORD_US" ParameterName="PASWORD_US" />
+                  <ScalarProperty Name="CARGO_US" ParameterName="CARGO_US" />
+                  <ScalarProperty Name="ID_AREA" ParameterName="ID_AREA" />
+                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Update_Empleado">
+                  <ScalarProperty Name="PASWORD_US" ParameterName="PASWORD_US" Version="Current" />
+                  <ScalarProperty Name="CARGO_US" ParameterName="CARGO_US" Version="Current" />
+                  <ScalarProperty Name="ID_AREA" ParameterName="ID_AREA" Version="Current" />
+                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Remove_Empleado">
+                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HISTORIAS">
+            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.HISTORIAS">
+              <MappingFragment StoreEntitySet="HISTORIAS">
+                <ScalarProperty Name="CEDULA_EMP" ColumnName="CEDULA_EMP" />
+                <ScalarProperty Name="PADRE_H" ColumnName="PADRE_H" />
+                <ScalarProperty Name="MADRE_H" ColumnName="MADRE_H" />
+                <ScalarProperty Name="FALLECIDO_P_H" ColumnName="FALLECIDO_P_H" />
+                <ScalarProperty Name="FALLECIDO_M_H" ColumnName="FALLECIDO_M_H" />
+                <ScalarProperty Name="CAUSAS_P_H" ColumnName="CAUSAS_P_H" />
+                <ScalarProperty Name="CAUSAS_M_H" ColumnName="CAUSAS_M_H" />
+                <ScalarProperty Name="NUM_H_H" ColumnName="NUM_H_H" />
+                <ScalarProperty Name="VIVO_H_H" ColumnName="VIVO_H_H" />
+                <ScalarProperty Name="MUERTE_H_H" ColumnName="MUERTE_H_H" />
+                <ScalarProperty Name="CAUSAS_H_H" ColumnName="CAUSAS_H_H" />
+                <ScalarProperty Name="SON_H" ColumnName="SON_H" />
+                <ScalarProperty Name="VIVO_SON_H" ColumnName="VIVO_SON_H" />
+                <ScalarProperty Name="MUERTOS_SON_H" ColumnName="MUERTOS_SON_H" />
+                <ScalarProperty Name="CAUSAS_SON_H" ColumnName="CAUSAS_SON_H" />
+                <ScalarProperty Name="ALCOHOL_H" ColumnName="ALCOHOL_H" />
+                <ScalarProperty Name="TABACO_H" ColumnName="TABACO_H" />
+                <ScalarProperty Name="DROGAS_H" ColumnName="DROGAS_H" />
+                <ScalarProperty Name="FRECUENCIA_TAB_H" ColumnName="FRECUENCIA_TAB_H" />
+                <ScalarProperty Name="FRECUENCIA_ALC_H" ColumnName="FRECUENCIA_ALC_H" />
+                <ScalarProperty Name="FRECUENCIA_DRO_H" ColumnName="FRECUENCIA_DRO_H" />
+                <ScalarProperty Name="ALIMENTACION_H" ColumnName="ALIMENTACION_H" />
+                <ScalarProperty Name="DIPSIA_H" ColumnName="DIPSIA_H" />
+                <ScalarProperty Name="PARADIPSIA" ColumnName="PARADIPSIA" />
+                <ScalarProperty Name="FRECUENCIA_PARADIPSIA" ColumnName="FRECUENCIA_PARADIPSIA" />
+                <ScalarProperty Name="INSOMNIO_H" ColumnName="INSOMNIO_H" />
+                <ScalarProperty Name="FRECUENCIA_INSOM_H" ColumnName="FRECUENCIA_INSOM_H" />
+                <ScalarProperty Name="OTRO_H" ColumnName="OTRO_H" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.HISTORIAS">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Insert_Historia">
+                  <ScalarProperty Name="OTRO_H" ParameterName="OTRO_H" />
+                  <ScalarProperty Name="FRECUENCIA_INSOM_H" ParameterName="FRECUENCIA_INSOM_H" />
+                  <ScalarProperty Name="INSOMNIO_H" ParameterName="INSOMNIO_H" />
+                  <ScalarProperty Name="FRECUENCIA_PARADIPSIA" ParameterName="FRECUENCIA_PARADIPSIA" />
+                  <ScalarProperty Name="PARADIPSIA" ParameterName="PARADIPSIA" />
+                  <ScalarProperty Name="DIPSIA_H" ParameterName="DIPSIA_H" />
+                  <ScalarProperty Name="ALIMENTACION_H" ParameterName="ALIMENTACION_H" />
+                  <ScalarProperty Name="FRECUENCIA_DRO_H" ParameterName="FRECUENCIA_DRO_H" />
+                  <ScalarProperty Name="FRECUENCIA_ALC_H" ParameterName="FRECUENCIA_ALC_H" />
+                  <ScalarProperty Name="FRECUENCIA_TAB_H" ParameterName="FRECUENCIA_TAB_H" />
+                  <ScalarProperty Name="DROGAS_H" ParameterName="DROGAS_H" />
+                  <ScalarProperty Name="TABACO_H" ParameterName="TABACO_H" />
+                  <ScalarProperty Name="ALCOHOL_H" ParameterName="ALCOHOL_H" />
+                  <ScalarProperty Name="CAUSAS_SON_H" ParameterName="CAUSAS_SON_H" />
+                  <ScalarProperty Name="MUERTOS_SON_H" ParameterName="MUERTOS_SON_H" />
+                  <ScalarProperty Name="VIVO_SON_H" ParameterName="VIVO_SON_H" />
+                  <ScalarProperty Name="SON_H" ParameterName="SON_H" />
+                  <ScalarProperty Name="CAUSAS_H_H" ParameterName="CAUSAS_H_H" />
+                  <ScalarProperty Name="MUERTE_H_H" ParameterName="MUERTE_H_H" />
+                  <ScalarProperty Name="VIVO_H_H" ParameterName="VIVO_H_H" />
+                  <ScalarProperty Name="NUM_H_H" ParameterName="NUM_H_H" />
+                  <ScalarProperty Name="CAUSAS_M_H" ParameterName="CAUSAS_M_H" />
+                  <ScalarProperty Name="CAUSAS_P_H" ParameterName="CAUSAS_P_H" />
+                  <ScalarProperty Name="FALLECIDO_M_H" ParameterName="FALLECIDO_M_H" />
+                  <ScalarProperty Name="FALLECIDO_P_H" ParameterName="FALLECIDO_P_H" />
+                  <ScalarProperty Name="MADRE_H" ParameterName="MADRE_H" />
+                  <ScalarProperty Name="PADRE_H" ParameterName="PADRE_H" />
+                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Update_Historia">
+                  <ScalarProperty Name="OTRO_H" ParameterName="OTRO_H" Version="Current" />
+                  <ScalarProperty Name="FRECUENCIA_INSOM_H" ParameterName="FRECUENCIA_INSOM_H" Version="Current" />
+                  <ScalarProperty Name="INSOMNIO_H" ParameterName="INSOMNIO_H" Version="Current" />
+                  <ScalarProperty Name="FRECUENCIA_PARADIPSIA" ParameterName="FRECUENCIA_PARADIPSIA" Version="Current" />
+                  <ScalarProperty Name="PARADIPSIA" ParameterName="PARADIPSIA" Version="Current" />
+                  <ScalarProperty Name="DIPSIA_H" ParameterName="DIPSIA_H" Version="Current" />
+                  <ScalarProperty Name="ALIMENTACION_H" ParameterName="ALIMENTACION_H" Version="Current" />
+                  <ScalarProperty Name="FRECUENCIA_DRO_H" ParameterName="FRECUENCIA_DRO_H" Version="Current" />
+                  <ScalarProperty Name="FRECUENCIA_ALC_H" ParameterName="FRECUENCIA_ALC_H" Version="Current" />
+                  <ScalarProperty Name="FRECUENCIA_TAB_H" ParameterName="FRECUENCIA_TAB_H" Version="Current" />
+                  <ScalarProperty Name="DROGAS_H" ParameterName="DROGAS_H" Version="Current" />
+                  <ScalarProperty Name="TABACO_H" ParameterName="TABACO_H" Version="Current" />
+                  <ScalarProperty Name="ALCOHOL_H" ParameterName="ALCOHOL_H" Version="Current" />
+                  <ScalarProperty Name="CAUSAS_SON_H" ParameterName="CAUSAS_SON_H" Version="Current" />
+                  <ScalarProperty Name="MUERTOS_SON_H" ParameterName="MUERTOS_SON_H" Version="Current" />
+                  <ScalarProperty Name="VIVO_SON_H" ParameterName="VIVO_SON_H" Version="Current" />
+                  <ScalarProperty Name="SON_H" ParameterName="SON_H" Version="Current" />
+                  <ScalarProperty Name="CAUSAS_H_H" ParameterName="CAUSAS_H_H" Version="Current" />
+                  <ScalarProperty Name="MUERTE_H_H" ParameterName="MUERTE_H_H" Version="Current" />
+                  <ScalarProperty Name="VIVO_H_H" ParameterName="VIVO_H_H" Version="Current" />
+                  <ScalarProperty Name="NUM_H_H" ParameterName="NUM_H_H" Version="Current" />
+                  <ScalarProperty Name="CAUSAS_M_H" ParameterName="CAUSAS_M_H" Version="Current" />
+                  <ScalarProperty Name="CAUSAS_P_H" ParameterName="CAUSAS_P_H" Version="Current" />
+                  <ScalarProperty Name="FALLECIDO_M_H" ParameterName="FALLECIDO_M_H" Version="Current" />
+                  <ScalarProperty Name="FALLECIDO_P_H" ParameterName="FALLECIDO_P_H" Version="Current" />
+                  <ScalarProperty Name="MADRE_H" ParameterName="MADRE_H" Version="Current" />
+                  <ScalarProperty Name="PADRE_H" ParameterName="PADRE_H" Version="Current" />
+                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Remove_Historia">
+                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSONA">
+            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.PERSONA">
+              <MappingFragment StoreEntitySet="PERSONA">
+                <ScalarProperty Name="CEDULA_EMP" ColumnName="CEDULA_EMP" />
+                <ScalarProperty Name="NOMBRES_EMP" ColumnName="NOMBRES_EMP" />
+                <ScalarProperty Name="NACIFECHA_EMP" ColumnName="NACIFECHA_EMP" />
+                <ScalarProperty Name="NACIONALIDAD_EMP" ColumnName="NACIONALIDAD_EMP" />
+                <ScalarProperty Name="DIRECCIO_EMP" ColumnName="DIRECCIO_EMP" />
+                <ScalarProperty Name="TELEFONO_EMP" ColumnName="TELEFONO_EMP" />
+                <ScalarProperty Name="EMAIL_EMP" ColumnName="EMAIL_EMP" />
+                <ScalarProperty Name="ESTADO_EMP" ColumnName="ESTADO_EMP" />
+                <ScalarProperty Name="TIPO_EMP" ColumnName="TIPO_EMP" />
+                <ScalarProperty Name="ACTIVO_EMP" ColumnName="ACTIVO_EMP" />
+                <ScalarProperty Name="CIUDADNACI_EMP" ColumnName="CIUDADNACI_EMP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="listado_facturacion">
+            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.listado_facturacion">
+              <MappingFragment StoreEntitySet="listado_facturacion">
+                <ScalarProperty Name="CEDULA_EMP" ColumnName="CEDULA_EMP" />
+                <ScalarProperty Name="NOMBRES_EMP" ColumnName="NOMBRES_EMP" />
+                <ScalarProperty Name="NACIFECHA_EMP" ColumnName="NACIFECHA_EMP" />
+                <ScalarProperty Name="NACIONALIDAD_EMP" ColumnName="NACIONALIDAD_EMP" />
+                <ScalarProperty Name="DIRECCIO_EMP" ColumnName="DIRECCIO_EMP" />
+                <ScalarProperty Name="TELEFONO_EMP" ColumnName="TELEFONO_EMP" />
+                <ScalarProperty Name="EMAIL_EMP" ColumnName="EMAIL_EMP" />
+                <ScalarProperty Name="ESTADO_EMP" ColumnName="ESTADO_EMP" />
+                <ScalarProperty Name="ACTIVO_EMP" ColumnName="ACTIVO_EMP" />
+                <ScalarProperty Name="CIUDADNACI_EMP" ColumnName="CIUDADNACI_EMP" />
+                <ScalarProperty Name="CARGO_US" ColumnName="CARGO_US" />
+                <ScalarProperty Name="NOMBRE_AREA" ColumnName="NOMBRE_AREA" />
+                <ScalarProperty Name="DESCRIPCION_AREA" ColumnName="DESCRIPCION_AREA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="trx_Get_AreaTrabajo" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Get_AreaTrabajo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_HistoriasClinicasModel.trx_Get_AreaTrabajo_Result">
+                <ScalarProperty Name="ID_AREA" ColumnName="ID_AREA" />
+                <ScalarProperty Name="NOMBRE_AREA" ColumnName="NOMBRE_AREA" />
+                <ScalarProperty Name="GERENCIA_AREA" ColumnName="GERENCIA_AREA" />
+                <ScalarProperty Name="DESCRIPCION_AREA" ColumnName="DESCRIPCION_AREA" />
+                <ScalarProperty Name="ESTADO_AREA" ColumnName="ESTADO_AREA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="trx_Get_AreaTrabajosAll" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Get_AreaTrabajosAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_HistoriasClinicasModel.trx_Get_AreaTrabajosAll_Result">
+                <ScalarProperty Name="ID_AREA" ColumnName="ID_AREA" />
+                <ScalarProperty Name="NOMBRE_AREA" ColumnName="NOMBRE_AREA" />
+                <ScalarProperty Name="GERENCIA_AREA" ColumnName="GERENCIA_AREA" />
+                <ScalarProperty Name="DESCRIPCION_AREA" ColumnName="DESCRIPCION_AREA" />
+                <ScalarProperty Name="ESTADO_AREA" ColumnName="ESTADO_AREA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="trx_Get_CabeceraConsultasAll" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Get_CabeceraConsultasAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_HistoriasClinicasModel.trx_Get_CabeceraConsultasAll_Result">
+                <ScalarProperty Name="ID_CON" ColumnName="ID_CON" />
+                <ScalarProperty Name="CEDULA_EMP" ColumnName="CEDULA_EMP" />
+                <ScalarProperty Name="INDICACIONES_CON" ColumnName="INDICACIONES_CON" />
+                <ScalarProperty Name="MOTIVO_CON" ColumnName="MOTIVO_CON" />
+                <ScalarProperty Name="PRESION_CON" ColumnName="PRESION_CON" />
+                <ScalarProperty Name="FECHA_CON" ColumnName="FECHA_CON" />
+                <ScalarProperty Name="PESO_CON" ColumnName="PESO_CON" />
+                <ScalarProperty Name="TEMPERATURA_CON" ColumnName="TEMPERATURA_CON" />
+                <ScalarProperty Name="SINTOMAS_CON" ColumnName="SINTOMAS_CON" />
+                <ScalarProperty Name="OBSERVACIONES_CON" ColumnName="OBSERVACIONES_CON" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="trx_Get_CabeceraConsultum" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Get_CabeceraConsultum">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_HistoriasClinicasModel.trx_Get_CabeceraConsultum_Result">
+                <ScalarProperty Name="ID_CON" ColumnName="ID_CON" />
+                <ScalarProperty Name="CEDULA_EMP" ColumnName="CEDULA_EMP" />
+                <ScalarProperty Name="INDICACIONES_CON" ColumnName="INDICACIONES_CON" />
+                <ScalarProperty Name="MOTIVO_CON" ColumnName="MOTIVO_CON" />
+                <ScalarProperty Name="PRESION_CON" ColumnName="PRESION_CON" />
+                <ScalarProperty Name="FECHA_CON" ColumnName="FECHA_CON" />
+                <ScalarProperty Name="PESO_CON" ColumnName="PESO_CON" />
+                <ScalarProperty Name="TEMPERATURA_CON" ColumnName="TEMPERATURA_CON" />
+                <ScalarProperty Name="SINTOMAS_CON" ColumnName="SINTOMAS_CON" />
+                <ScalarProperty Name="OBSERVACIONES_CON" ColumnName="OBSERVACIONES_CON" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="trx_Get_DetalleConsultasAll" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Get_DetalleConsultasAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_HistoriasClinicasModel.trx_Get_DetalleConsultasAll_Result">
+                <ScalarProperty Name="ID_DET" ColumnName="ID_DET" />
+                <ScalarProperty Name="ID_CON" ColumnName="ID_CON" />
+                <ScalarProperty Name="CANTIDAD_DET" ColumnName="CANTIDAD_DET" />
+                <ScalarProperty Name="PVP_DET" ColumnName="PVP_DET" />
+                <ScalarProperty Name="CANTDES_DET" ColumnName="CANTDES_DET" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="trx_Get_DetalleConsultum" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Get_DetalleConsultum">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_HistoriasClinicasModel.trx_Get_DetalleConsultum_Result">
+                <ScalarProperty Name="ID_DET" ColumnName="ID_DET" />
+                <ScalarProperty Name="ID_CON" ColumnName="ID_CON" />
+                <ScalarProperty Name="CANTIDAD_DET" ColumnName="CANTIDAD_DET" />
+                <ScalarProperty Name="PVP_DET" ColumnName="PVP_DET" />
+                <ScalarProperty Name="CANTDES_DET" ColumnName="CANTDES_DET" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="trx_Get_Empleado" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Get_Empleado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_HistoriasClinicasModel.trx_Get_Empleado_Result">
+                <ScalarProperty Name="CEDULA_EMP" ColumnName="CEDULA_EMP" />
+                <ScalarProperty Name="ID_AREA" ColumnName="ID_AREA" />
+                <ScalarProperty Name="CARGO_US" ColumnName="CARGO_US" />
+                <ScalarProperty Name="PASWORD_US" ColumnName="PASWORD_US" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="trx_Get_EmpleadosAll" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Get_EmpleadosAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_HistoriasClinicasModel.trx_Get_EmpleadosAll_Result">
+                <ScalarProperty Name="CEDULA_EMP" ColumnName="CEDULA_EMP" />
+                <ScalarProperty Name="ID_AREA" ColumnName="ID_AREA" />
+                <ScalarProperty Name="CARGO_US" ColumnName="CARGO_US" />
+                <ScalarProperty Name="PASWORD_US" ColumnName="PASWORD_US" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="trx_Get_Historia" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Get_Historia">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_HistoriasClinicasModel.trx_Get_Historia_Result">
+                <ScalarProperty Name="CEDULA_EMP" ColumnName="CEDULA_EMP" />
+                <ScalarProperty Name="PADRE_H" ColumnName="PADRE_H" />
+                <ScalarProperty Name="MADRE_H" ColumnName="MADRE_H" />
+                <ScalarProperty Name="FALLECIDO_P_H" ColumnName="FALLECIDO_P_H" />
+                <ScalarProperty Name="FALLECIDO_M_H" ColumnName="FALLECIDO_M_H" />
+                <ScalarProperty Name="CAUSAS_P_H" ColumnName="CAUSAS_P_H" />
+                <ScalarProperty Name="CAUSAS_M_H" ColumnName="CAUSAS_M_H" />
+                <ScalarProperty Name="NUM_H_H" ColumnName="NUM_H_H" />
+                <ScalarProperty Name="VIVO_H_H" ColumnName="VIVO_H_H" />
+                <ScalarProperty Name="MUERTE_H_H" ColumnName="MUERTE_H_H" />
+                <ScalarProperty Name="CAUSAS_H_H" ColumnName="CAUSAS_H_H" />
+                <ScalarProperty Name="SON_H" ColumnName="SON_H" />
+                <ScalarProperty Name="VIVO_SON_H" ColumnName="VIVO_SON_H" />
+                <ScalarProperty Name="MUERTOS_SON_H" ColumnName="MUERTOS_SON_H" />
+                <ScalarProperty Name="CAUSAS_SON_H" ColumnName="CAUSAS_SON_H" />
+                <ScalarProperty Name="ALCOHOL_H" ColumnName="ALCOHOL_H" />
+                <ScalarProperty Name="TABACO_H" ColumnName="TABACO_H" />
+                <ScalarProperty Name="DROGAS_H" ColumnName="DROGAS_H" />
+                <ScalarProperty Name="FRECUENCIA_TAB_H" ColumnName="FRECUENCIA_TAB_H" />
+                <ScalarProperty Name="FRECUENCIA_ALC_H" ColumnName="FRECUENCIA_ALC_H" />
+                <ScalarProperty Name="FRECUENCIA_DRO_H" ColumnName="FRECUENCIA_DRO_H" />
+                <ScalarProperty Name="ALIMENTACION_H" ColumnName="ALIMENTACION_H" />
+                <ScalarProperty Name="DIPSIA_H" ColumnName="DIPSIA_H" />
+                <ScalarProperty Name="PARADIPSIA" ColumnName="PARADIPSIA" />
+                <ScalarProperty Name="FRECUENCIA_PARADIPSIA" ColumnName="FRECUENCIA_PARADIPSIA" />
+                <ScalarProperty Name="INSOMNIO_H" ColumnName="INSOMNIO_H" />
+                <ScalarProperty Name="FRECUENCIA_INSOM_H" ColumnName="FRECUENCIA_INSOM_H" />
+                <ScalarProperty Name="OTRO_H" ColumnName="OTRO_H" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="trx_Get_HistoriasAll" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Get_HistoriasAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_HistoriasClinicasModel.trx_Get_HistoriasAll_Result">
+                <ScalarProperty Name="CEDULA_EMP" ColumnName="CEDULA_EMP" />
+                <ScalarProperty Name="PADRE_H" ColumnName="PADRE_H" />
+                <ScalarProperty Name="MADRE_H" ColumnName="MADRE_H" />
+                <ScalarProperty Name="FALLECIDO_P_H" ColumnName="FALLECIDO_P_H" />
+                <ScalarProperty Name="FALLECIDO_M_H" ColumnName="FALLECIDO_M_H" />
+                <ScalarProperty Name="CAUSAS_P_H" ColumnName="CAUSAS_P_H" />
+                <ScalarProperty Name="CAUSAS_M_H" ColumnName="CAUSAS_M_H" />
+                <ScalarProperty Name="NUM_H_H" ColumnName="NUM_H_H" />
+                <ScalarProperty Name="VIVO_H_H" ColumnName="VIVO_H_H" />
+                <ScalarProperty Name="MUERTE_H_H" ColumnName="MUERTE_H_H" />
+                <ScalarProperty Name="CAUSAS_H_H" ColumnName="CAUSAS_H_H" />
+                <ScalarProperty Name="SON_H" ColumnName="SON_H" />
+                <ScalarProperty Name="VIVO_SON_H" ColumnName="VIVO_SON_H" />
+                <ScalarProperty Name="MUERTOS_SON_H" ColumnName="MUERTOS_SON_H" />
+                <ScalarProperty Name="CAUSAS_SON_H" ColumnName="CAUSAS_SON_H" />
+                <ScalarProperty Name="ALCOHOL_H" ColumnName="ALCOHOL_H" />
+                <ScalarProperty Name="TABACO_H" ColumnName="TABACO_H" />
+                <ScalarProperty Name="DROGAS_H" ColumnName="DROGAS_H" />
+                <ScalarProperty Name="FRECUENCIA_TAB_H" ColumnName="FRECUENCIA_TAB_H" />
+                <ScalarProperty Name="FRECUENCIA_ALC_H" ColumnName="FRECUENCIA_ALC_H" />
+                <ScalarProperty Name="FRECUENCIA_DRO_H" ColumnName="FRECUENCIA_DRO_H" />
+                <ScalarProperty Name="ALIMENTACION_H" ColumnName="ALIMENTACION_H" />
+                <ScalarProperty Name="DIPSIA_H" ColumnName="DIPSIA_H" />
+                <ScalarProperty Name="PARADIPSIA" ColumnName="PARADIPSIA" />
+                <ScalarProperty Name="FRECUENCIA_PARADIPSIA" ColumnName="FRECUENCIA_PARADIPSIA" />
+                <ScalarProperty Name="INSOMNIO_H" ColumnName="INSOMNIO_H" />
+                <ScalarProperty Name="FRECUENCIA_INSOM_H" ColumnName="FRECUENCIA_INSOM_H" />
+                <ScalarProperty Name="OTRO_H" ColumnName="OTRO_H" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="trx_Insert_AreaTrabajo" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Insert_AreaTrabajo" />
+          <FunctionImportMapping FunctionImportName="trx_Insert_CabeceraConsultum" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Insert_CabeceraConsultum" />
+          <FunctionImportMapping FunctionImportName="trx_Insert_DetalleConsultum" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Insert_DetalleConsultum" />
+          <FunctionImportMapping FunctionImportName="trx_Insert_Empleado" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Insert_Empleado" />
+          <FunctionImportMapping FunctionImportName="trx_Insert_Historia" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Insert_Historia" />
+          <FunctionImportMapping FunctionImportName="trx_Remove_AreaTrabajo" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Remove_AreaTrabajo" />
+          <FunctionImportMapping FunctionImportName="trx_Remove_CabeceraConsultum" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Remove_CabeceraConsultum" />
+          <FunctionImportMapping FunctionImportName="trx_Remove_DetalleConsultum" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Remove_DetalleConsultum" />
+          <FunctionImportMapping FunctionImportName="trx_Remove_Empleado" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Remove_Empleado" />
+          <FunctionImportMapping FunctionImportName="trx_Remove_Historia" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Remove_Historia" />
+          <FunctionImportMapping FunctionImportName="trx_Save_AreaTrabajo" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Save_AreaTrabajo" />
+          <FunctionImportMapping FunctionImportName="trx_Save_CabeceraConsultum" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Save_CabeceraConsultum" />
+          <FunctionImportMapping FunctionImportName="trx_Save_DetalleConsultum" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Save_DetalleConsultum" />
+          <FunctionImportMapping FunctionImportName="trx_Save_Empleado" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Save_Empleado" />
+          <FunctionImportMapping FunctionImportName="trx_Save_Historia" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Save_Historia" />
+          <FunctionImportMapping FunctionImportName="trx_Update_AreaTrabajo" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Update_AreaTrabajo" />
+          <FunctionImportMapping FunctionImportName="trx_Update_CabeceraConsultum" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Update_CabeceraConsultum" />
+          <FunctionImportMapping FunctionImportName="trx_Update_DetalleConsultum" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Update_DetalleConsultum" />
+          <FunctionImportMapping FunctionImportName="trx_Update_Empleado" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Update_Empleado" />
+          <FunctionImportMapping FunctionImportName="trx_Update_Historia" FunctionName="ERP_HistoriasClinicasModel.Store.trx_Update_Historia" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
