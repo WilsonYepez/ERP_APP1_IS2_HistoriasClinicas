@@ -150,6 +150,7 @@ namespace ERP_HistoriasClinicas
         {
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {
+
                 var d = new EMPLEADO();
                 d.CEDULA_EMP = CEDULA_EMP;
                 d.CARGO_US = CARGO_US;
