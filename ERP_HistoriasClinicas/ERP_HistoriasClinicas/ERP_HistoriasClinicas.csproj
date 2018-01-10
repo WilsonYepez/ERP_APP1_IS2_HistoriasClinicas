@@ -56,6 +56,7 @@
     </Compile>
     <Compile Include="ClaseDatosObjetos.cs" />
     <Compile Include="Consultorio.cs" />
+    <Compile Include="Control.cs" />
     <Compile Include="DETALLE_CONSULTA.cs">
       <DependentUpon>Model_HistoriasClinicas.tt</DependentUpon>
     </Compile>

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 /// <summary>
 /// Descripción breve de WebService
@@ -221,5 +224,15 @@ public ERP_HistoriasClinicas.Listado_facturacion2[] Listado_Facturacion()
     public int borrar_detalle(string ID_DET)
     {
         return new ERP_HistoriasClinicas.Consultorio().borrar_detalle(ID_DET);
+    }
+
+    [WebMethod]
+    public DataSet login(string uname, string pwd)
+    {
+        SqlDataAdapter da = new SqlDataAdapter("select * from EMPLEADO where CEDULA_EMP ='" + uname + "' and PASWORD_US='" + pwd + "' ",
+            @"data source=.;Initial Catalog=ERP_HistoriasClinicas;Integrated Security=True");
+        DataSet ds = new DataSet();
+        da.Fill(ds);
+        return ds;
     }
 }
