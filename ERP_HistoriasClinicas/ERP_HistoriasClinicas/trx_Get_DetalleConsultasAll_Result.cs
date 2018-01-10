@@ -7,16 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ERP_HistoriasClinicas
+using System;
+using System.Collections.Generic;
+
+public partial class trx_Get_DetalleConsultasAll_Result
 {
-    using System;
-    
-    public partial class trx_Get_DetalleConsultasAll_Result
-    {
-        public string ID_DET { get; set; }
-        public Nullable<decimal> ID_CON { get; set; }
-        public Nullable<decimal> CANTIDAD_DET { get; set; }
-        public Nullable<decimal> PVP_DET { get; set; }
-        public Nullable<decimal> CANTDES_DET { get; set; }
-    }
+    public string ID_DET { get; set; }
+    public Nullable<decimal> ID_CON { get; set; }
+    public Nullable<decimal> CANTIDAD_DET { get; set; }
+    public Nullable<decimal> PVP_DET { get; set; }
+    public Nullable<decimal> CANTDES_DET { get; set; }
 }

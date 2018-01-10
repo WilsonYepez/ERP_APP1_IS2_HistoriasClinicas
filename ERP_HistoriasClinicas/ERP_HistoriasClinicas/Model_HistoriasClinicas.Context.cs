@@ -7,846 +7,843 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ERP_HistoriasClinicas
+using System;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Core.Objects;
+using System.Linq;
+
+public partial class ERP_HistoriasClinicasEntities : DbContext
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
-    using System.Data.Entity.Core.Objects;
-    using System.Linq;
-    
-    public partial class ERP_HistoriasClinicasEntities : DbContext
+    public ERP_HistoriasClinicasEntities()
+        : base("name=ERP_HistoriasClinicasEntities")
     {
-        public ERP_HistoriasClinicasEntities()
-            : base("name=ERP_HistoriasClinicasEntities")
-        {
-        }
-    
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
-    
-        public virtual DbSet<AREA_TRABAJO> AREA_TRABAJO { get; set; }
-        public virtual DbSet<CABECERA_CONSULTA> CABECERA_CONSULTA { get; set; }
-        public virtual DbSet<DETALLE_CONSULTA> DETALLE_CONSULTA { get; set; }
-        public virtual DbSet<EMPLEADO> EMPLEADO { get; set; }
-        public virtual DbSet<HISTORIAS> HISTORIAS { get; set; }
-        public virtual DbSet<PERSONA> PERSONA { get; set; }
-        public virtual DbSet<listado_facturacion> listado_facturacion { get; set; }
-    
-        public virtual ObjectResult<trx_Get_AreaTrabajo_Result> trx_Get_AreaTrabajo(Nullable<decimal> iD_AREA)
-        {
-            var iD_AREAParameter = iD_AREA.HasValue ?
-                new ObjectParameter("ID_AREA", iD_AREA) :
-                new ObjectParameter("ID_AREA", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_AreaTrabajo_Result>("trx_Get_AreaTrabajo", iD_AREAParameter);
-        }
-    
-        public virtual ObjectResult<trx_Get_AreaTrabajosAll_Result> trx_Get_AreaTrabajosAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_AreaTrabajosAll_Result>("trx_Get_AreaTrabajosAll");
-        }
-    
-        public virtual ObjectResult<trx_Get_CabeceraConsultasAll_Result> trx_Get_CabeceraConsultasAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_CabeceraConsultasAll_Result>("trx_Get_CabeceraConsultasAll");
-        }
-    
-        public virtual ObjectResult<trx_Get_CabeceraConsultum_Result> trx_Get_CabeceraConsultum(Nullable<decimal> iD_CON)
-        {
-            var iD_CONParameter = iD_CON.HasValue ?
-                new ObjectParameter("ID_CON", iD_CON) :
-                new ObjectParameter("ID_CON", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_CabeceraConsultum_Result>("trx_Get_CabeceraConsultum", iD_CONParameter);
-        }
-    
-        public virtual ObjectResult<trx_Get_DetalleConsultasAll_Result> trx_Get_DetalleConsultasAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_DetalleConsultasAll_Result>("trx_Get_DetalleConsultasAll");
-        }
-    
-        public virtual ObjectResult<trx_Get_DetalleConsultum_Result> trx_Get_DetalleConsultum(string iD_DET)
-        {
-            var iD_DETParameter = iD_DET != null ?
-                new ObjectParameter("ID_DET", iD_DET) :
-                new ObjectParameter("ID_DET", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_DetalleConsultum_Result>("trx_Get_DetalleConsultum", iD_DETParameter);
-        }
-    
-        public virtual ObjectResult<trx_Get_Empleado_Result> trx_Get_Empleado(string cEDULA_EMP)
-        {
-            var cEDULA_EMPParameter = cEDULA_EMP != null ?
-                new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
-                new ObjectParameter("CEDULA_EMP", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_Empleado_Result>("trx_Get_Empleado", cEDULA_EMPParameter);
-        }
-    
-        public virtual ObjectResult<trx_Get_EmpleadosAll_Result> trx_Get_EmpleadosAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_EmpleadosAll_Result>("trx_Get_EmpleadosAll");
-        }
-    
-        public virtual ObjectResult<trx_Get_Historia_Result> trx_Get_Historia(string cEDULA_EMP)
-        {
-            var cEDULA_EMPParameter = cEDULA_EMP != null ?
-                new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
-                new ObjectParameter("CEDULA_EMP", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_Historia_Result>("trx_Get_Historia", cEDULA_EMPParameter);
-        }
-    
-        public virtual ObjectResult<trx_Get_HistoriasAll_Result> trx_Get_HistoriasAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_HistoriasAll_Result>("trx_Get_HistoriasAll");
-        }
-    
-        public virtual int trx_Insert_AreaTrabajo(Nullable<decimal> iD_AREA, string nOMBRE_AREA, string gERENCIA_AREA, string dESCRIPCION_AREA, string eSTADO_AREA)
-        {
-            var iD_AREAParameter = iD_AREA.HasValue ?
-                new ObjectParameter("ID_AREA", iD_AREA) :
-                new ObjectParameter("ID_AREA", typeof(decimal));
-    
-            var nOMBRE_AREAParameter = nOMBRE_AREA != null ?
-                new ObjectParameter("NOMBRE_AREA", nOMBRE_AREA) :
-                new ObjectParameter("NOMBRE_AREA", typeof(string));
-    
-            var gERENCIA_AREAParameter = gERENCIA_AREA != null ?
-                new ObjectParameter("GERENCIA_AREA", gERENCIA_AREA) :
-                new ObjectParameter("GERENCIA_AREA", typeof(string));
-    
-            var dESCRIPCION_AREAParameter = dESCRIPCION_AREA != null ?
-                new ObjectParameter("DESCRIPCION_AREA", dESCRIPCION_AREA) :
-                new ObjectParameter("DESCRIPCION_AREA", typeof(string));
-    
-            var eSTADO_AREAParameter = eSTADO_AREA != null ?
-                new ObjectParameter("ESTADO_AREA", eSTADO_AREA) :
-                new ObjectParameter("ESTADO_AREA", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Insert_AreaTrabajo", iD_AREAParameter, nOMBRE_AREAParameter, gERENCIA_AREAParameter, dESCRIPCION_AREAParameter, eSTADO_AREAParameter);
-        }
-    
-        public virtual int trx_Insert_CabeceraConsultum(Nullable<decimal> iD_CON, string cEDULA_EMP, string iNDICACIONES_CON, string mOTIVO_CON, Nullable<decimal> pRESION_CON, Nullable<System.DateTime> fECHA_CON, Nullable<decimal> pESO_CON, Nullable<decimal> tEMPERATURA_CON, string sINTOMAS_CON, string oBSERVACIONES_CON)
-        {
-            var iD_CONParameter = iD_CON.HasValue ?
-                new ObjectParameter("ID_CON", iD_CON) :
-                new ObjectParameter("ID_CON", typeof(decimal));
-    
-            var cEDULA_EMPParameter = cEDULA_EMP != null ?
-                new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
-                new ObjectParameter("CEDULA_EMP", typeof(string));
-    
-            var iNDICACIONES_CONParameter = iNDICACIONES_CON != null ?
-                new ObjectParameter("INDICACIONES_CON", iNDICACIONES_CON) :
-                new ObjectParameter("INDICACIONES_CON", typeof(string));
-    
-            var mOTIVO_CONParameter = mOTIVO_CON != null ?
-                new ObjectParameter("MOTIVO_CON", mOTIVO_CON) :
-                new ObjectParameter("MOTIVO_CON", typeof(string));
-    
-            var pRESION_CONParameter = pRESION_CON.HasValue ?
-                new ObjectParameter("PRESION_CON", pRESION_CON) :
-                new ObjectParameter("PRESION_CON", typeof(decimal));
-    
-            var fECHA_CONParameter = fECHA_CON.HasValue ?
-                new ObjectParameter("FECHA_CON", fECHA_CON) :
-                new ObjectParameter("FECHA_CON", typeof(System.DateTime));
-    
-            var pESO_CONParameter = pESO_CON.HasValue ?
-                new ObjectParameter("PESO_CON", pESO_CON) :
-                new ObjectParameter("PESO_CON", typeof(decimal));
-    
-            var tEMPERATURA_CONParameter = tEMPERATURA_CON.HasValue ?
-                new ObjectParameter("TEMPERATURA_CON", tEMPERATURA_CON) :
-                new ObjectParameter("TEMPERATURA_CON", typeof(decimal));
-    
-            var sINTOMAS_CONParameter = sINTOMAS_CON != null ?
-                new ObjectParameter("SINTOMAS_CON", sINTOMAS_CON) :
-                new ObjectParameter("SINTOMAS_CON", typeof(string));
-    
-            var oBSERVACIONES_CONParameter = oBSERVACIONES_CON != null ?
-                new ObjectParameter("OBSERVACIONES_CON", oBSERVACIONES_CON) :
-                new ObjectParameter("OBSERVACIONES_CON", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Insert_CabeceraConsultum", iD_CONParameter, cEDULA_EMPParameter, iNDICACIONES_CONParameter, mOTIVO_CONParameter, pRESION_CONParameter, fECHA_CONParameter, pESO_CONParameter, tEMPERATURA_CONParameter, sINTOMAS_CONParameter, oBSERVACIONES_CONParameter);
-        }
-    
-        public virtual int trx_Insert_DetalleConsultum(string iD_DET, Nullable<decimal> iD_CON, Nullable<decimal> cANTIDAD_DET, Nullable<decimal> pVP_DET, Nullable<decimal> cANTDES_DET)
-        {
-            var iD_DETParameter = iD_DET != null ?
-                new ObjectParameter("ID_DET", iD_DET) :
-                new ObjectParameter("ID_DET", typeof(string));
-    
-            var iD_CONParameter = iD_CON.HasValue ?
-                new ObjectParameter("ID_CON", iD_CON) :
-                new ObjectParameter("ID_CON", typeof(decimal));
-    
-            var cANTIDAD_DETParameter = cANTIDAD_DET.HasValue ?
-                new ObjectParameter("CANTIDAD_DET", cANTIDAD_DET) :
-                new ObjectParameter("CANTIDAD_DET", typeof(decimal));
-    
-            var pVP_DETParameter = pVP_DET.HasValue ?
-                new ObjectParameter("PVP_DET", pVP_DET) :
-                new ObjectParameter("PVP_DET", typeof(decimal));
-    
-            var cANTDES_DETParameter = cANTDES_DET.HasValue ?
-                new ObjectParameter("CANTDES_DET", cANTDES_DET) :
-                new ObjectParameter("CANTDES_DET", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Insert_DetalleConsultum", iD_DETParameter, iD_CONParameter, cANTIDAD_DETParameter, pVP_DETParameter, cANTDES_DETParameter);
-        }
-    
-        public virtual int trx_Insert_Empleado(string cEDULA_EMP, Nullable<decimal> iD_AREA, string cARGO_US, string pASWORD_US)
-        {
-            var cEDULA_EMPParameter = cEDULA_EMP != null ?
-                new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
-                new ObjectParameter("CEDULA_EMP", typeof(string));
-    
-            var iD_AREAParameter = iD_AREA.HasValue ?
-                new ObjectParameter("ID_AREA", iD_AREA) :
-                new ObjectParameter("ID_AREA", typeof(decimal));
-    
-            var cARGO_USParameter = cARGO_US != null ?
-                new ObjectParameter("CARGO_US", cARGO_US) :
-                new ObjectParameter("CARGO_US", typeof(string));
-    
-            var pASWORD_USParameter = pASWORD_US != null ?
-                new ObjectParameter("PASWORD_US", pASWORD_US) :
-                new ObjectParameter("PASWORD_US", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Insert_Empleado", cEDULA_EMPParameter, iD_AREAParameter, cARGO_USParameter, pASWORD_USParameter);
-        }
-    
-        public virtual int trx_Insert_Historia(string cEDULA_EMP, string pADRE_H, string mADRE_H, string fALLECIDO_P_H, string fALLECIDO_M_H, string cAUSAS_P_H, string cAUSAS_M_H, Nullable<decimal> nUM_H_H, Nullable<decimal> vIVO_H_H, Nullable<decimal> mUERTE_H_H, string cAUSAS_H_H, Nullable<decimal> sON_H, Nullable<decimal> vIVO_SON_H, Nullable<decimal> mUERTOS_SON_H, string cAUSAS_SON_H, string aLCOHOL_H, string tABACO_H, string dROGAS_H, string fRECUENCIA_TAB_H, string fRECUENCIA_ALC_H, string fRECUENCIA_DRO_H, string aLIMENTACION_H, string dIPSIA_H, string pARADIPSIA, string fRECUENCIA_PARADIPSIA, string iNSOMNIO_H, string fRECUENCIA_INSOM_H, string oTRO_H)
-        {
-            var cEDULA_EMPParameter = cEDULA_EMP != null ?
-                new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
-                new ObjectParameter("CEDULA_EMP", typeof(string));
-    
-            var pADRE_HParameter = pADRE_H != null ?
-                new ObjectParameter("PADRE_H", pADRE_H) :
-                new ObjectParameter("PADRE_H", typeof(string));
-    
-            var mADRE_HParameter = mADRE_H != null ?
-                new ObjectParameter("MADRE_H", mADRE_H) :
-                new ObjectParameter("MADRE_H", typeof(string));
-    
-            var fALLECIDO_P_HParameter = fALLECIDO_P_H != null ?
-                new ObjectParameter("FALLECIDO_P_H", fALLECIDO_P_H) :
-                new ObjectParameter("FALLECIDO_P_H", typeof(string));
-    
-            var fALLECIDO_M_HParameter = fALLECIDO_M_H != null ?
-                new ObjectParameter("FALLECIDO_M_H", fALLECIDO_M_H) :
-                new ObjectParameter("FALLECIDO_M_H", typeof(string));
-    
-            var cAUSAS_P_HParameter = cAUSAS_P_H != null ?
-                new ObjectParameter("CAUSAS_P_H", cAUSAS_P_H) :
-                new ObjectParameter("CAUSAS_P_H", typeof(string));
-    
-            var cAUSAS_M_HParameter = cAUSAS_M_H != null ?
-                new ObjectParameter("CAUSAS_M_H", cAUSAS_M_H) :
-                new ObjectParameter("CAUSAS_M_H", typeof(string));
-    
-            var nUM_H_HParameter = nUM_H_H.HasValue ?
-                new ObjectParameter("NUM_H_H", nUM_H_H) :
-                new ObjectParameter("NUM_H_H", typeof(decimal));
-    
-            var vIVO_H_HParameter = vIVO_H_H.HasValue ?
-                new ObjectParameter("VIVO_H_H", vIVO_H_H) :
-                new ObjectParameter("VIVO_H_H", typeof(decimal));
-    
-            var mUERTE_H_HParameter = mUERTE_H_H.HasValue ?
-                new ObjectParameter("MUERTE_H_H", mUERTE_H_H) :
-                new ObjectParameter("MUERTE_H_H", typeof(decimal));
-    
-            var cAUSAS_H_HParameter = cAUSAS_H_H != null ?
-                new ObjectParameter("CAUSAS_H_H", cAUSAS_H_H) :
-                new ObjectParameter("CAUSAS_H_H", typeof(string));
-    
-            var sON_HParameter = sON_H.HasValue ?
-                new ObjectParameter("SON_H", sON_H) :
-                new ObjectParameter("SON_H", typeof(decimal));
-    
-            var vIVO_SON_HParameter = vIVO_SON_H.HasValue ?
-                new ObjectParameter("VIVO_SON_H", vIVO_SON_H) :
-                new ObjectParameter("VIVO_SON_H", typeof(decimal));
-    
-            var mUERTOS_SON_HParameter = mUERTOS_SON_H.HasValue ?
-                new ObjectParameter("MUERTOS_SON_H", mUERTOS_SON_H) :
-                new ObjectParameter("MUERTOS_SON_H", typeof(decimal));
-    
-            var cAUSAS_SON_HParameter = cAUSAS_SON_H != null ?
-                new ObjectParameter("CAUSAS_SON_H", cAUSAS_SON_H) :
-                new ObjectParameter("CAUSAS_SON_H", typeof(string));
-    
-            var aLCOHOL_HParameter = aLCOHOL_H != null ?
-                new ObjectParameter("ALCOHOL_H", aLCOHOL_H) :
-                new ObjectParameter("ALCOHOL_H", typeof(string));
-    
-            var tABACO_HParameter = tABACO_H != null ?
-                new ObjectParameter("TABACO_H", tABACO_H) :
-                new ObjectParameter("TABACO_H", typeof(string));
-    
-            var dROGAS_HParameter = dROGAS_H != null ?
-                new ObjectParameter("DROGAS_H", dROGAS_H) :
-                new ObjectParameter("DROGAS_H", typeof(string));
-    
-            var fRECUENCIA_TAB_HParameter = fRECUENCIA_TAB_H != null ?
-                new ObjectParameter("FRECUENCIA_TAB_H", fRECUENCIA_TAB_H) :
-                new ObjectParameter("FRECUENCIA_TAB_H", typeof(string));
-    
-            var fRECUENCIA_ALC_HParameter = fRECUENCIA_ALC_H != null ?
-                new ObjectParameter("FRECUENCIA_ALC_H", fRECUENCIA_ALC_H) :
-                new ObjectParameter("FRECUENCIA_ALC_H", typeof(string));
-    
-            var fRECUENCIA_DRO_HParameter = fRECUENCIA_DRO_H != null ?
-                new ObjectParameter("FRECUENCIA_DRO_H", fRECUENCIA_DRO_H) :
-                new ObjectParameter("FRECUENCIA_DRO_H", typeof(string));
-    
-            var aLIMENTACION_HParameter = aLIMENTACION_H != null ?
-                new ObjectParameter("ALIMENTACION_H", aLIMENTACION_H) :
-                new ObjectParameter("ALIMENTACION_H", typeof(string));
-    
-            var dIPSIA_HParameter = dIPSIA_H != null ?
-                new ObjectParameter("DIPSIA_H", dIPSIA_H) :
-                new ObjectParameter("DIPSIA_H", typeof(string));
-    
-            var pARADIPSIAParameter = pARADIPSIA != null ?
-                new ObjectParameter("PARADIPSIA", pARADIPSIA) :
-                new ObjectParameter("PARADIPSIA", typeof(string));
-    
-            var fRECUENCIA_PARADIPSIAParameter = fRECUENCIA_PARADIPSIA != null ?
-                new ObjectParameter("FRECUENCIA_PARADIPSIA", fRECUENCIA_PARADIPSIA) :
-                new ObjectParameter("FRECUENCIA_PARADIPSIA", typeof(string));
-    
-            var iNSOMNIO_HParameter = iNSOMNIO_H != null ?
-                new ObjectParameter("INSOMNIO_H", iNSOMNIO_H) :
-                new ObjectParameter("INSOMNIO_H", typeof(string));
-    
-            var fRECUENCIA_INSOM_HParameter = fRECUENCIA_INSOM_H != null ?
-                new ObjectParameter("FRECUENCIA_INSOM_H", fRECUENCIA_INSOM_H) :
-                new ObjectParameter("FRECUENCIA_INSOM_H", typeof(string));
-    
-            var oTRO_HParameter = oTRO_H != null ?
-                new ObjectParameter("OTRO_H", oTRO_H) :
-                new ObjectParameter("OTRO_H", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Insert_Historia", cEDULA_EMPParameter, pADRE_HParameter, mADRE_HParameter, fALLECIDO_P_HParameter, fALLECIDO_M_HParameter, cAUSAS_P_HParameter, cAUSAS_M_HParameter, nUM_H_HParameter, vIVO_H_HParameter, mUERTE_H_HParameter, cAUSAS_H_HParameter, sON_HParameter, vIVO_SON_HParameter, mUERTOS_SON_HParameter, cAUSAS_SON_HParameter, aLCOHOL_HParameter, tABACO_HParameter, dROGAS_HParameter, fRECUENCIA_TAB_HParameter, fRECUENCIA_ALC_HParameter, fRECUENCIA_DRO_HParameter, aLIMENTACION_HParameter, dIPSIA_HParameter, pARADIPSIAParameter, fRECUENCIA_PARADIPSIAParameter, iNSOMNIO_HParameter, fRECUENCIA_INSOM_HParameter, oTRO_HParameter);
-        }
-    
-        public virtual int trx_Remove_AreaTrabajo(Nullable<decimal> iD_AREA)
-        {
-            var iD_AREAParameter = iD_AREA.HasValue ?
-                new ObjectParameter("ID_AREA", iD_AREA) :
-                new ObjectParameter("ID_AREA", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Remove_AreaTrabajo", iD_AREAParameter);
-        }
-    
-        public virtual int trx_Remove_CabeceraConsultum(Nullable<decimal> iD_CON)
-        {
-            var iD_CONParameter = iD_CON.HasValue ?
-                new ObjectParameter("ID_CON", iD_CON) :
-                new ObjectParameter("ID_CON", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Remove_CabeceraConsultum", iD_CONParameter);
-        }
-    
-        public virtual int trx_Remove_DetalleConsultum(string iD_DET)
-        {
-            var iD_DETParameter = iD_DET != null ?
-                new ObjectParameter("ID_DET", iD_DET) :
-                new ObjectParameter("ID_DET", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Remove_DetalleConsultum", iD_DETParameter);
-        }
-    
-        public virtual int trx_Remove_Empleado(string cEDULA_EMP)
-        {
-            var cEDULA_EMPParameter = cEDULA_EMP != null ?
-                new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
-                new ObjectParameter("CEDULA_EMP", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Remove_Empleado", cEDULA_EMPParameter);
-        }
-    
-        public virtual int trx_Remove_Historia(string cEDULA_EMP)
-        {
-            var cEDULA_EMPParameter = cEDULA_EMP != null ?
-                new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
-                new ObjectParameter("CEDULA_EMP", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Remove_Historia", cEDULA_EMPParameter);
-        }
-    
-        public virtual ObjectResult<Nullable<decimal>> trx_Save_AreaTrabajo(Nullable<decimal> iD_AREA, string nOMBRE_AREA, string gERENCIA_AREA, string dESCRIPCION_AREA, string eSTADO_AREA)
-        {
-            var iD_AREAParameter = iD_AREA.HasValue ?
-                new ObjectParameter("ID_AREA", iD_AREA) :
-                new ObjectParameter("ID_AREA", typeof(decimal));
-    
-            var nOMBRE_AREAParameter = nOMBRE_AREA != null ?
-                new ObjectParameter("NOMBRE_AREA", nOMBRE_AREA) :
-                new ObjectParameter("NOMBRE_AREA", typeof(string));
-    
-            var gERENCIA_AREAParameter = gERENCIA_AREA != null ?
-                new ObjectParameter("GERENCIA_AREA", gERENCIA_AREA) :
-                new ObjectParameter("GERENCIA_AREA", typeof(string));
-    
-            var dESCRIPCION_AREAParameter = dESCRIPCION_AREA != null ?
-                new ObjectParameter("DESCRIPCION_AREA", dESCRIPCION_AREA) :
-                new ObjectParameter("DESCRIPCION_AREA", typeof(string));
-    
-            var eSTADO_AREAParameter = eSTADO_AREA != null ?
-                new ObjectParameter("ESTADO_AREA", eSTADO_AREA) :
-                new ObjectParameter("ESTADO_AREA", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("trx_Save_AreaTrabajo", iD_AREAParameter, nOMBRE_AREAParameter, gERENCIA_AREAParameter, dESCRIPCION_AREAParameter, eSTADO_AREAParameter);
-        }
-    
-        public virtual ObjectResult<Nullable<decimal>> trx_Save_CabeceraConsultum(Nullable<decimal> iD_CON, string cEDULA_EMP, string iNDICACIONES_CON, string mOTIVO_CON, Nullable<decimal> pRESION_CON, Nullable<System.DateTime> fECHA_CON, Nullable<decimal> pESO_CON, Nullable<decimal> tEMPERATURA_CON, string sINTOMAS_CON, string oBSERVACIONES_CON)
-        {
-            var iD_CONParameter = iD_CON.HasValue ?
-                new ObjectParameter("ID_CON", iD_CON) :
-                new ObjectParameter("ID_CON", typeof(decimal));
-    
-            var cEDULA_EMPParameter = cEDULA_EMP != null ?
-                new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
-                new ObjectParameter("CEDULA_EMP", typeof(string));
-    
-            var iNDICACIONES_CONParameter = iNDICACIONES_CON != null ?
-                new ObjectParameter("INDICACIONES_CON", iNDICACIONES_CON) :
-                new ObjectParameter("INDICACIONES_CON", typeof(string));
-    
-            var mOTIVO_CONParameter = mOTIVO_CON != null ?
-                new ObjectParameter("MOTIVO_CON", mOTIVO_CON) :
-                new ObjectParameter("MOTIVO_CON", typeof(string));
-    
-            var pRESION_CONParameter = pRESION_CON.HasValue ?
-                new ObjectParameter("PRESION_CON", pRESION_CON) :
-                new ObjectParameter("PRESION_CON", typeof(decimal));
-    
-            var fECHA_CONParameter = fECHA_CON.HasValue ?
-                new ObjectParameter("FECHA_CON", fECHA_CON) :
-                new ObjectParameter("FECHA_CON", typeof(System.DateTime));
-    
-            var pESO_CONParameter = pESO_CON.HasValue ?
-                new ObjectParameter("PESO_CON", pESO_CON) :
-                new ObjectParameter("PESO_CON", typeof(decimal));
-    
-            var tEMPERATURA_CONParameter = tEMPERATURA_CON.HasValue ?
-                new ObjectParameter("TEMPERATURA_CON", tEMPERATURA_CON) :
-                new ObjectParameter("TEMPERATURA_CON", typeof(decimal));
-    
-            var sINTOMAS_CONParameter = sINTOMAS_CON != null ?
-                new ObjectParameter("SINTOMAS_CON", sINTOMAS_CON) :
-                new ObjectParameter("SINTOMAS_CON", typeof(string));
-    
-            var oBSERVACIONES_CONParameter = oBSERVACIONES_CON != null ?
-                new ObjectParameter("OBSERVACIONES_CON", oBSERVACIONES_CON) :
-                new ObjectParameter("OBSERVACIONES_CON", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("trx_Save_CabeceraConsultum", iD_CONParameter, cEDULA_EMPParameter, iNDICACIONES_CONParameter, mOTIVO_CONParameter, pRESION_CONParameter, fECHA_CONParameter, pESO_CONParameter, tEMPERATURA_CONParameter, sINTOMAS_CONParameter, oBSERVACIONES_CONParameter);
-        }
-    
-        public virtual ObjectResult<string> trx_Save_DetalleConsultum(string iD_DET, Nullable<decimal> iD_CON, Nullable<decimal> cANTIDAD_DET, Nullable<decimal> pVP_DET, Nullable<decimal> cANTDES_DET)
-        {
-            var iD_DETParameter = iD_DET != null ?
-                new ObjectParameter("ID_DET", iD_DET) :
-                new ObjectParameter("ID_DET", typeof(string));
-    
-            var iD_CONParameter = iD_CON.HasValue ?
-                new ObjectParameter("ID_CON", iD_CON) :
-                new ObjectParameter("ID_CON", typeof(decimal));
-    
-            var cANTIDAD_DETParameter = cANTIDAD_DET.HasValue ?
-                new ObjectParameter("CANTIDAD_DET", cANTIDAD_DET) :
-                new ObjectParameter("CANTIDAD_DET", typeof(decimal));
-    
-            var pVP_DETParameter = pVP_DET.HasValue ?
-                new ObjectParameter("PVP_DET", pVP_DET) :
-                new ObjectParameter("PVP_DET", typeof(decimal));
-    
-            var cANTDES_DETParameter = cANTDES_DET.HasValue ?
-                new ObjectParameter("CANTDES_DET", cANTDES_DET) :
-                new ObjectParameter("CANTDES_DET", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("trx_Save_DetalleConsultum", iD_DETParameter, iD_CONParameter, cANTIDAD_DETParameter, pVP_DETParameter, cANTDES_DETParameter);
-        }
-    
-        public virtual ObjectResult<string> trx_Save_Empleado(string cEDULA_EMP, Nullable<decimal> iD_AREA, string cARGO_US, string pASWORD_US)
-        {
-            var cEDULA_EMPParameter = cEDULA_EMP != null ?
-                new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
-                new ObjectParameter("CEDULA_EMP", typeof(string));
-    
-            var iD_AREAParameter = iD_AREA.HasValue ?
-                new ObjectParameter("ID_AREA", iD_AREA) :
-                new ObjectParameter("ID_AREA", typeof(decimal));
-    
-            var cARGO_USParameter = cARGO_US != null ?
-                new ObjectParameter("CARGO_US", cARGO_US) :
-                new ObjectParameter("CARGO_US", typeof(string));
-    
-            var pASWORD_USParameter = pASWORD_US != null ?
-                new ObjectParameter("PASWORD_US", pASWORD_US) :
-                new ObjectParameter("PASWORD_US", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("trx_Save_Empleado", cEDULA_EMPParameter, iD_AREAParameter, cARGO_USParameter, pASWORD_USParameter);
-        }
-    
-        public virtual ObjectResult<string> trx_Save_Historia(string cEDULA_EMP, string pADRE_H, string mADRE_H, string fALLECIDO_P_H, string fALLECIDO_M_H, string cAUSAS_P_H, string cAUSAS_M_H, Nullable<decimal> nUM_H_H, Nullable<decimal> vIVO_H_H, Nullable<decimal> mUERTE_H_H, string cAUSAS_H_H, Nullable<decimal> sON_H, Nullable<decimal> vIVO_SON_H, Nullable<decimal> mUERTOS_SON_H, string cAUSAS_SON_H, string aLCOHOL_H, string tABACO_H, string dROGAS_H, string fRECUENCIA_TAB_H, string fRECUENCIA_ALC_H, string fRECUENCIA_DRO_H, string aLIMENTACION_H, string dIPSIA_H, string pARADIPSIA, string fRECUENCIA_PARADIPSIA, string iNSOMNIO_H, string fRECUENCIA_INSOM_H, string oTRO_H)
-        {
-            var cEDULA_EMPParameter = cEDULA_EMP != null ?
-                new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
-                new ObjectParameter("CEDULA_EMP", typeof(string));
-    
-            var pADRE_HParameter = pADRE_H != null ?
-                new ObjectParameter("PADRE_H", pADRE_H) :
-                new ObjectParameter("PADRE_H", typeof(string));
-    
-            var mADRE_HParameter = mADRE_H != null ?
-                new ObjectParameter("MADRE_H", mADRE_H) :
-                new ObjectParameter("MADRE_H", typeof(string));
-    
-            var fALLECIDO_P_HParameter = fALLECIDO_P_H != null ?
-                new ObjectParameter("FALLECIDO_P_H", fALLECIDO_P_H) :
-                new ObjectParameter("FALLECIDO_P_H", typeof(string));
-    
-            var fALLECIDO_M_HParameter = fALLECIDO_M_H != null ?
-                new ObjectParameter("FALLECIDO_M_H", fALLECIDO_M_H) :
-                new ObjectParameter("FALLECIDO_M_H", typeof(string));
-    
-            var cAUSAS_P_HParameter = cAUSAS_P_H != null ?
-                new ObjectParameter("CAUSAS_P_H", cAUSAS_P_H) :
-                new ObjectParameter("CAUSAS_P_H", typeof(string));
-    
-            var cAUSAS_M_HParameter = cAUSAS_M_H != null ?
-                new ObjectParameter("CAUSAS_M_H", cAUSAS_M_H) :
-                new ObjectParameter("CAUSAS_M_H", typeof(string));
-    
-            var nUM_H_HParameter = nUM_H_H.HasValue ?
-                new ObjectParameter("NUM_H_H", nUM_H_H) :
-                new ObjectParameter("NUM_H_H", typeof(decimal));
-    
-            var vIVO_H_HParameter = vIVO_H_H.HasValue ?
-                new ObjectParameter("VIVO_H_H", vIVO_H_H) :
-                new ObjectParameter("VIVO_H_H", typeof(decimal));
-    
-            var mUERTE_H_HParameter = mUERTE_H_H.HasValue ?
-                new ObjectParameter("MUERTE_H_H", mUERTE_H_H) :
-                new ObjectParameter("MUERTE_H_H", typeof(decimal));
-    
-            var cAUSAS_H_HParameter = cAUSAS_H_H != null ?
-                new ObjectParameter("CAUSAS_H_H", cAUSAS_H_H) :
-                new ObjectParameter("CAUSAS_H_H", typeof(string));
-    
-            var sON_HParameter = sON_H.HasValue ?
-                new ObjectParameter("SON_H", sON_H) :
-                new ObjectParameter("SON_H", typeof(decimal));
-    
-            var vIVO_SON_HParameter = vIVO_SON_H.HasValue ?
-                new ObjectParameter("VIVO_SON_H", vIVO_SON_H) :
-                new ObjectParameter("VIVO_SON_H", typeof(decimal));
-    
-            var mUERTOS_SON_HParameter = mUERTOS_SON_H.HasValue ?
-                new ObjectParameter("MUERTOS_SON_H", mUERTOS_SON_H) :
-                new ObjectParameter("MUERTOS_SON_H", typeof(decimal));
-    
-            var cAUSAS_SON_HParameter = cAUSAS_SON_H != null ?
-                new ObjectParameter("CAUSAS_SON_H", cAUSAS_SON_H) :
-                new ObjectParameter("CAUSAS_SON_H", typeof(string));
-    
-            var aLCOHOL_HParameter = aLCOHOL_H != null ?
-                new ObjectParameter("ALCOHOL_H", aLCOHOL_H) :
-                new ObjectParameter("ALCOHOL_H", typeof(string));
-    
-            var tABACO_HParameter = tABACO_H != null ?
-                new ObjectParameter("TABACO_H", tABACO_H) :
-                new ObjectParameter("TABACO_H", typeof(string));
-    
-            var dROGAS_HParameter = dROGAS_H != null ?
-                new ObjectParameter("DROGAS_H", dROGAS_H) :
-                new ObjectParameter("DROGAS_H", typeof(string));
-    
-            var fRECUENCIA_TAB_HParameter = fRECUENCIA_TAB_H != null ?
-                new ObjectParameter("FRECUENCIA_TAB_H", fRECUENCIA_TAB_H) :
-                new ObjectParameter("FRECUENCIA_TAB_H", typeof(string));
-    
-            var fRECUENCIA_ALC_HParameter = fRECUENCIA_ALC_H != null ?
-                new ObjectParameter("FRECUENCIA_ALC_H", fRECUENCIA_ALC_H) :
-                new ObjectParameter("FRECUENCIA_ALC_H", typeof(string));
-    
-            var fRECUENCIA_DRO_HParameter = fRECUENCIA_DRO_H != null ?
-                new ObjectParameter("FRECUENCIA_DRO_H", fRECUENCIA_DRO_H) :
-                new ObjectParameter("FRECUENCIA_DRO_H", typeof(string));
-    
-            var aLIMENTACION_HParameter = aLIMENTACION_H != null ?
-                new ObjectParameter("ALIMENTACION_H", aLIMENTACION_H) :
-                new ObjectParameter("ALIMENTACION_H", typeof(string));
-    
-            var dIPSIA_HParameter = dIPSIA_H != null ?
-                new ObjectParameter("DIPSIA_H", dIPSIA_H) :
-                new ObjectParameter("DIPSIA_H", typeof(string));
-    
-            var pARADIPSIAParameter = pARADIPSIA != null ?
-                new ObjectParameter("PARADIPSIA", pARADIPSIA) :
-                new ObjectParameter("PARADIPSIA", typeof(string));
-    
-            var fRECUENCIA_PARADIPSIAParameter = fRECUENCIA_PARADIPSIA != null ?
-                new ObjectParameter("FRECUENCIA_PARADIPSIA", fRECUENCIA_PARADIPSIA) :
-                new ObjectParameter("FRECUENCIA_PARADIPSIA", typeof(string));
-    
-            var iNSOMNIO_HParameter = iNSOMNIO_H != null ?
-                new ObjectParameter("INSOMNIO_H", iNSOMNIO_H) :
-                new ObjectParameter("INSOMNIO_H", typeof(string));
-    
-            var fRECUENCIA_INSOM_HParameter = fRECUENCIA_INSOM_H != null ?
-                new ObjectParameter("FRECUENCIA_INSOM_H", fRECUENCIA_INSOM_H) :
-                new ObjectParameter("FRECUENCIA_INSOM_H", typeof(string));
-    
-            var oTRO_HParameter = oTRO_H != null ?
-                new ObjectParameter("OTRO_H", oTRO_H) :
-                new ObjectParameter("OTRO_H", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("trx_Save_Historia", cEDULA_EMPParameter, pADRE_HParameter, mADRE_HParameter, fALLECIDO_P_HParameter, fALLECIDO_M_HParameter, cAUSAS_P_HParameter, cAUSAS_M_HParameter, nUM_H_HParameter, vIVO_H_HParameter, mUERTE_H_HParameter, cAUSAS_H_HParameter, sON_HParameter, vIVO_SON_HParameter, mUERTOS_SON_HParameter, cAUSAS_SON_HParameter, aLCOHOL_HParameter, tABACO_HParameter, dROGAS_HParameter, fRECUENCIA_TAB_HParameter, fRECUENCIA_ALC_HParameter, fRECUENCIA_DRO_HParameter, aLIMENTACION_HParameter, dIPSIA_HParameter, pARADIPSIAParameter, fRECUENCIA_PARADIPSIAParameter, iNSOMNIO_HParameter, fRECUENCIA_INSOM_HParameter, oTRO_HParameter);
-        }
-    
-        public virtual int trx_Update_AreaTrabajo(Nullable<decimal> iD_AREA, string nOMBRE_AREA, string gERENCIA_AREA, string dESCRIPCION_AREA, string eSTADO_AREA)
-        {
-            var iD_AREAParameter = iD_AREA.HasValue ?
-                new ObjectParameter("ID_AREA", iD_AREA) :
-                new ObjectParameter("ID_AREA", typeof(decimal));
-    
-            var nOMBRE_AREAParameter = nOMBRE_AREA != null ?
-                new ObjectParameter("NOMBRE_AREA", nOMBRE_AREA) :
-                new ObjectParameter("NOMBRE_AREA", typeof(string));
-    
-            var gERENCIA_AREAParameter = gERENCIA_AREA != null ?
-                new ObjectParameter("GERENCIA_AREA", gERENCIA_AREA) :
-                new ObjectParameter("GERENCIA_AREA", typeof(string));
-    
-            var dESCRIPCION_AREAParameter = dESCRIPCION_AREA != null ?
-                new ObjectParameter("DESCRIPCION_AREA", dESCRIPCION_AREA) :
-                new ObjectParameter("DESCRIPCION_AREA", typeof(string));
-    
-            var eSTADO_AREAParameter = eSTADO_AREA != null ?
-                new ObjectParameter("ESTADO_AREA", eSTADO_AREA) :
-                new ObjectParameter("ESTADO_AREA", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Update_AreaTrabajo", iD_AREAParameter, nOMBRE_AREAParameter, gERENCIA_AREAParameter, dESCRIPCION_AREAParameter, eSTADO_AREAParameter);
-        }
-    
-        public virtual int trx_Update_CabeceraConsultum(Nullable<decimal> iD_CON, string cEDULA_EMP, string iNDICACIONES_CON, string mOTIVO_CON, Nullable<decimal> pRESION_CON, Nullable<System.DateTime> fECHA_CON, Nullable<decimal> pESO_CON, Nullable<decimal> tEMPERATURA_CON, string sINTOMAS_CON, string oBSERVACIONES_CON)
-        {
-            var iD_CONParameter = iD_CON.HasValue ?
-                new ObjectParameter("ID_CON", iD_CON) :
-                new ObjectParameter("ID_CON", typeof(decimal));
-    
-            var cEDULA_EMPParameter = cEDULA_EMP != null ?
-                new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
-                new ObjectParameter("CEDULA_EMP", typeof(string));
-    
-            var iNDICACIONES_CONParameter = iNDICACIONES_CON != null ?
-                new ObjectParameter("INDICACIONES_CON", iNDICACIONES_CON) :
-                new ObjectParameter("INDICACIONES_CON", typeof(string));
-    
-            var mOTIVO_CONParameter = mOTIVO_CON != null ?
-                new ObjectParameter("MOTIVO_CON", mOTIVO_CON) :
-                new ObjectParameter("MOTIVO_CON", typeof(string));
-    
-            var pRESION_CONParameter = pRESION_CON.HasValue ?
-                new ObjectParameter("PRESION_CON", pRESION_CON) :
-                new ObjectParameter("PRESION_CON", typeof(decimal));
-    
-            var fECHA_CONParameter = fECHA_CON.HasValue ?
-                new ObjectParameter("FECHA_CON", fECHA_CON) :
-                new ObjectParameter("FECHA_CON", typeof(System.DateTime));
-    
-            var pESO_CONParameter = pESO_CON.HasValue ?
-                new ObjectParameter("PESO_CON", pESO_CON) :
-                new ObjectParameter("PESO_CON", typeof(decimal));
-    
-            var tEMPERATURA_CONParameter = tEMPERATURA_CON.HasValue ?
-                new ObjectParameter("TEMPERATURA_CON", tEMPERATURA_CON) :
-                new ObjectParameter("TEMPERATURA_CON", typeof(decimal));
-    
-            var sINTOMAS_CONParameter = sINTOMAS_CON != null ?
-                new ObjectParameter("SINTOMAS_CON", sINTOMAS_CON) :
-                new ObjectParameter("SINTOMAS_CON", typeof(string));
-    
-            var oBSERVACIONES_CONParameter = oBSERVACIONES_CON != null ?
-                new ObjectParameter("OBSERVACIONES_CON", oBSERVACIONES_CON) :
-                new ObjectParameter("OBSERVACIONES_CON", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Update_CabeceraConsultum", iD_CONParameter, cEDULA_EMPParameter, iNDICACIONES_CONParameter, mOTIVO_CONParameter, pRESION_CONParameter, fECHA_CONParameter, pESO_CONParameter, tEMPERATURA_CONParameter, sINTOMAS_CONParameter, oBSERVACIONES_CONParameter);
-        }
-    
-        public virtual int trx_Update_DetalleConsultum(string iD_DET, Nullable<decimal> iD_CON, Nullable<decimal> cANTIDAD_DET, Nullable<decimal> pVP_DET, Nullable<decimal> cANTDES_DET)
-        {
-            var iD_DETParameter = iD_DET != null ?
-                new ObjectParameter("ID_DET", iD_DET) :
-                new ObjectParameter("ID_DET", typeof(string));
-    
-            var iD_CONParameter = iD_CON.HasValue ?
-                new ObjectParameter("ID_CON", iD_CON) :
-                new ObjectParameter("ID_CON", typeof(decimal));
-    
-            var cANTIDAD_DETParameter = cANTIDAD_DET.HasValue ?
-                new ObjectParameter("CANTIDAD_DET", cANTIDAD_DET) :
-                new ObjectParameter("CANTIDAD_DET", typeof(decimal));
-    
-            var pVP_DETParameter = pVP_DET.HasValue ?
-                new ObjectParameter("PVP_DET", pVP_DET) :
-                new ObjectParameter("PVP_DET", typeof(decimal));
-    
-            var cANTDES_DETParameter = cANTDES_DET.HasValue ?
-                new ObjectParameter("CANTDES_DET", cANTDES_DET) :
-                new ObjectParameter("CANTDES_DET", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Update_DetalleConsultum", iD_DETParameter, iD_CONParameter, cANTIDAD_DETParameter, pVP_DETParameter, cANTDES_DETParameter);
-        }
-    
-        public virtual int trx_Update_Empleado(string cEDULA_EMP, Nullable<decimal> iD_AREA, string cARGO_US, string pASWORD_US)
-        {
-            var cEDULA_EMPParameter = cEDULA_EMP != null ?
-                new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
-                new ObjectParameter("CEDULA_EMP", typeof(string));
-    
-            var iD_AREAParameter = iD_AREA.HasValue ?
-                new ObjectParameter("ID_AREA", iD_AREA) :
-                new ObjectParameter("ID_AREA", typeof(decimal));
-    
-            var cARGO_USParameter = cARGO_US != null ?
-                new ObjectParameter("CARGO_US", cARGO_US) :
-                new ObjectParameter("CARGO_US", typeof(string));
-    
-            var pASWORD_USParameter = pASWORD_US != null ?
-                new ObjectParameter("PASWORD_US", pASWORD_US) :
-                new ObjectParameter("PASWORD_US", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Update_Empleado", cEDULA_EMPParameter, iD_AREAParameter, cARGO_USParameter, pASWORD_USParameter);
-        }
-    
-        public virtual int trx_Update_Historia(string cEDULA_EMP, string pADRE_H, string mADRE_H, string fALLECIDO_P_H, string fALLECIDO_M_H, string cAUSAS_P_H, string cAUSAS_M_H, Nullable<decimal> nUM_H_H, Nullable<decimal> vIVO_H_H, Nullable<decimal> mUERTE_H_H, string cAUSAS_H_H, Nullable<decimal> sON_H, Nullable<decimal> vIVO_SON_H, Nullable<decimal> mUERTOS_SON_H, string cAUSAS_SON_H, string aLCOHOL_H, string tABACO_H, string dROGAS_H, string fRECUENCIA_TAB_H, string fRECUENCIA_ALC_H, string fRECUENCIA_DRO_H, string aLIMENTACION_H, string dIPSIA_H, string pARADIPSIA, string fRECUENCIA_PARADIPSIA, string iNSOMNIO_H, string fRECUENCIA_INSOM_H, string oTRO_H)
-        {
-            var cEDULA_EMPParameter = cEDULA_EMP != null ?
-                new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
-                new ObjectParameter("CEDULA_EMP", typeof(string));
-    
-            var pADRE_HParameter = pADRE_H != null ?
-                new ObjectParameter("PADRE_H", pADRE_H) :
-                new ObjectParameter("PADRE_H", typeof(string));
-    
-            var mADRE_HParameter = mADRE_H != null ?
-                new ObjectParameter("MADRE_H", mADRE_H) :
-                new ObjectParameter("MADRE_H", typeof(string));
-    
-            var fALLECIDO_P_HParameter = fALLECIDO_P_H != null ?
-                new ObjectParameter("FALLECIDO_P_H", fALLECIDO_P_H) :
-                new ObjectParameter("FALLECIDO_P_H", typeof(string));
-    
-            var fALLECIDO_M_HParameter = fALLECIDO_M_H != null ?
-                new ObjectParameter("FALLECIDO_M_H", fALLECIDO_M_H) :
-                new ObjectParameter("FALLECIDO_M_H", typeof(string));
-    
-            var cAUSAS_P_HParameter = cAUSAS_P_H != null ?
-                new ObjectParameter("CAUSAS_P_H", cAUSAS_P_H) :
-                new ObjectParameter("CAUSAS_P_H", typeof(string));
-    
-            var cAUSAS_M_HParameter = cAUSAS_M_H != null ?
-                new ObjectParameter("CAUSAS_M_H", cAUSAS_M_H) :
-                new ObjectParameter("CAUSAS_M_H", typeof(string));
-    
-            var nUM_H_HParameter = nUM_H_H.HasValue ?
-                new ObjectParameter("NUM_H_H", nUM_H_H) :
-                new ObjectParameter("NUM_H_H", typeof(decimal));
-    
-            var vIVO_H_HParameter = vIVO_H_H.HasValue ?
-                new ObjectParameter("VIVO_H_H", vIVO_H_H) :
-                new ObjectParameter("VIVO_H_H", typeof(decimal));
-    
-            var mUERTE_H_HParameter = mUERTE_H_H.HasValue ?
-                new ObjectParameter("MUERTE_H_H", mUERTE_H_H) :
-                new ObjectParameter("MUERTE_H_H", typeof(decimal));
-    
-            var cAUSAS_H_HParameter = cAUSAS_H_H != null ?
-                new ObjectParameter("CAUSAS_H_H", cAUSAS_H_H) :
-                new ObjectParameter("CAUSAS_H_H", typeof(string));
-    
-            var sON_HParameter = sON_H.HasValue ?
-                new ObjectParameter("SON_H", sON_H) :
-                new ObjectParameter("SON_H", typeof(decimal));
-    
-            var vIVO_SON_HParameter = vIVO_SON_H.HasValue ?
-                new ObjectParameter("VIVO_SON_H", vIVO_SON_H) :
-                new ObjectParameter("VIVO_SON_H", typeof(decimal));
-    
-            var mUERTOS_SON_HParameter = mUERTOS_SON_H.HasValue ?
-                new ObjectParameter("MUERTOS_SON_H", mUERTOS_SON_H) :
-                new ObjectParameter("MUERTOS_SON_H", typeof(decimal));
-    
-            var cAUSAS_SON_HParameter = cAUSAS_SON_H != null ?
-                new ObjectParameter("CAUSAS_SON_H", cAUSAS_SON_H) :
-                new ObjectParameter("CAUSAS_SON_H", typeof(string));
-    
-            var aLCOHOL_HParameter = aLCOHOL_H != null ?
-                new ObjectParameter("ALCOHOL_H", aLCOHOL_H) :
-                new ObjectParameter("ALCOHOL_H", typeof(string));
-    
-            var tABACO_HParameter = tABACO_H != null ?
-                new ObjectParameter("TABACO_H", tABACO_H) :
-                new ObjectParameter("TABACO_H", typeof(string));
-    
-            var dROGAS_HParameter = dROGAS_H != null ?
-                new ObjectParameter("DROGAS_H", dROGAS_H) :
-                new ObjectParameter("DROGAS_H", typeof(string));
-    
-            var fRECUENCIA_TAB_HParameter = fRECUENCIA_TAB_H != null ?
-                new ObjectParameter("FRECUENCIA_TAB_H", fRECUENCIA_TAB_H) :
-                new ObjectParameter("FRECUENCIA_TAB_H", typeof(string));
-    
-            var fRECUENCIA_ALC_HParameter = fRECUENCIA_ALC_H != null ?
-                new ObjectParameter("FRECUENCIA_ALC_H", fRECUENCIA_ALC_H) :
-                new ObjectParameter("FRECUENCIA_ALC_H", typeof(string));
-    
-            var fRECUENCIA_DRO_HParameter = fRECUENCIA_DRO_H != null ?
-                new ObjectParameter("FRECUENCIA_DRO_H", fRECUENCIA_DRO_H) :
-                new ObjectParameter("FRECUENCIA_DRO_H", typeof(string));
-    
-            var aLIMENTACION_HParameter = aLIMENTACION_H != null ?
-                new ObjectParameter("ALIMENTACION_H", aLIMENTACION_H) :
-                new ObjectParameter("ALIMENTACION_H", typeof(string));
-    
-            var dIPSIA_HParameter = dIPSIA_H != null ?
-                new ObjectParameter("DIPSIA_H", dIPSIA_H) :
-                new ObjectParameter("DIPSIA_H", typeof(string));
-    
-            var pARADIPSIAParameter = pARADIPSIA != null ?
-                new ObjectParameter("PARADIPSIA", pARADIPSIA) :
-                new ObjectParameter("PARADIPSIA", typeof(string));
-    
-            var fRECUENCIA_PARADIPSIAParameter = fRECUENCIA_PARADIPSIA != null ?
-                new ObjectParameter("FRECUENCIA_PARADIPSIA", fRECUENCIA_PARADIPSIA) :
-                new ObjectParameter("FRECUENCIA_PARADIPSIA", typeof(string));
-    
-            var iNSOMNIO_HParameter = iNSOMNIO_H != null ?
-                new ObjectParameter("INSOMNIO_H", iNSOMNIO_H) :
-                new ObjectParameter("INSOMNIO_H", typeof(string));
-    
-            var fRECUENCIA_INSOM_HParameter = fRECUENCIA_INSOM_H != null ?
-                new ObjectParameter("FRECUENCIA_INSOM_H", fRECUENCIA_INSOM_H) :
-                new ObjectParameter("FRECUENCIA_INSOM_H", typeof(string));
-    
-            var oTRO_HParameter = oTRO_H != null ?
-                new ObjectParameter("OTRO_H", oTRO_H) :
-                new ObjectParameter("OTRO_H", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Update_Historia", cEDULA_EMPParameter, pADRE_HParameter, mADRE_HParameter, fALLECIDO_P_HParameter, fALLECIDO_M_HParameter, cAUSAS_P_HParameter, cAUSAS_M_HParameter, nUM_H_HParameter, vIVO_H_HParameter, mUERTE_H_HParameter, cAUSAS_H_HParameter, sON_HParameter, vIVO_SON_HParameter, mUERTOS_SON_HParameter, cAUSAS_SON_HParameter, aLCOHOL_HParameter, tABACO_HParameter, dROGAS_HParameter, fRECUENCIA_TAB_HParameter, fRECUENCIA_ALC_HParameter, fRECUENCIA_DRO_HParameter, aLIMENTACION_HParameter, dIPSIA_HParameter, pARADIPSIAParameter, fRECUENCIA_PARADIPSIAParameter, iNSOMNIO_HParameter, fRECUENCIA_INSOM_HParameter, oTRO_HParameter);
-        }
+    }
+
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    {
+        throw new UnintentionalCodeFirstException();
+    }
+
+    public virtual DbSet<AREA_TRABAJO> AREA_TRABAJO { get; set; }
+    public virtual DbSet<CABECERA_CONSULTA> CABECERA_CONSULTA { get; set; }
+    public virtual DbSet<DETALLE_CONSULTA> DETALLE_CONSULTA { get; set; }
+    public virtual DbSet<EMPLEADO> EMPLEADO { get; set; }
+    public virtual DbSet<HISTORIAS> HISTORIAS { get; set; }
+    public virtual DbSet<PERSONA> PERSONA { get; set; }
+    public virtual DbSet<listado_facturacion> listado_facturacion { get; set; }
+
+    public virtual ObjectResult<trx_Get_AreaTrabajo_Result> trx_Get_AreaTrabajo(Nullable<decimal> iD_AREA)
+    {
+        var iD_AREAParameter = iD_AREA.HasValue ?
+            new ObjectParameter("ID_AREA", iD_AREA) :
+            new ObjectParameter("ID_AREA", typeof(decimal));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_AreaTrabajo_Result>("trx_Get_AreaTrabajo", iD_AREAParameter);
+    }
+
+    public virtual ObjectResult<trx_Get_AreaTrabajosAll_Result> trx_Get_AreaTrabajosAll()
+    {
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_AreaTrabajosAll_Result>("trx_Get_AreaTrabajosAll");
+    }
+
+    public virtual ObjectResult<trx_Get_CabeceraConsultasAll_Result> trx_Get_CabeceraConsultasAll()
+    {
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_CabeceraConsultasAll_Result>("trx_Get_CabeceraConsultasAll");
+    }
+
+    public virtual ObjectResult<trx_Get_CabeceraConsultum_Result> trx_Get_CabeceraConsultum(Nullable<decimal> iD_CON)
+    {
+        var iD_CONParameter = iD_CON.HasValue ?
+            new ObjectParameter("ID_CON", iD_CON) :
+            new ObjectParameter("ID_CON", typeof(decimal));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_CabeceraConsultum_Result>("trx_Get_CabeceraConsultum", iD_CONParameter);
+    }
+
+    public virtual ObjectResult<trx_Get_DetalleConsultasAll_Result> trx_Get_DetalleConsultasAll()
+    {
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_DetalleConsultasAll_Result>("trx_Get_DetalleConsultasAll");
+    }
+
+    public virtual ObjectResult<trx_Get_DetalleConsultum_Result> trx_Get_DetalleConsultum(string iD_DET)
+    {
+        var iD_DETParameter = iD_DET != null ?
+            new ObjectParameter("ID_DET", iD_DET) :
+            new ObjectParameter("ID_DET", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_DetalleConsultum_Result>("trx_Get_DetalleConsultum", iD_DETParameter);
+    }
+
+    public virtual ObjectResult<trx_Get_Empleado_Result> trx_Get_Empleado(string cEDULA_EMP)
+    {
+        var cEDULA_EMPParameter = cEDULA_EMP != null ?
+            new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
+            new ObjectParameter("CEDULA_EMP", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_Empleado_Result>("trx_Get_Empleado", cEDULA_EMPParameter);
+    }
+
+    public virtual ObjectResult<trx_Get_EmpleadosAll_Result> trx_Get_EmpleadosAll()
+    {
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_EmpleadosAll_Result>("trx_Get_EmpleadosAll");
+    }
+
+    public virtual ObjectResult<trx_Get_Historia_Result> trx_Get_Historia(string cEDULA_EMP)
+    {
+        var cEDULA_EMPParameter = cEDULA_EMP != null ?
+            new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
+            new ObjectParameter("CEDULA_EMP", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_Historia_Result>("trx_Get_Historia", cEDULA_EMPParameter);
+    }
+
+    public virtual ObjectResult<trx_Get_HistoriasAll_Result> trx_Get_HistoriasAll()
+    {
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<trx_Get_HistoriasAll_Result>("trx_Get_HistoriasAll");
+    }
+
+    public virtual int trx_Insert_AreaTrabajo(Nullable<decimal> iD_AREA, string nOMBRE_AREA, string gERENCIA_AREA, string dESCRIPCION_AREA, string eSTADO_AREA)
+    {
+        var iD_AREAParameter = iD_AREA.HasValue ?
+            new ObjectParameter("ID_AREA", iD_AREA) :
+            new ObjectParameter("ID_AREA", typeof(decimal));
+
+        var nOMBRE_AREAParameter = nOMBRE_AREA != null ?
+            new ObjectParameter("NOMBRE_AREA", nOMBRE_AREA) :
+            new ObjectParameter("NOMBRE_AREA", typeof(string));
+
+        var gERENCIA_AREAParameter = gERENCIA_AREA != null ?
+            new ObjectParameter("GERENCIA_AREA", gERENCIA_AREA) :
+            new ObjectParameter("GERENCIA_AREA", typeof(string));
+
+        var dESCRIPCION_AREAParameter = dESCRIPCION_AREA != null ?
+            new ObjectParameter("DESCRIPCION_AREA", dESCRIPCION_AREA) :
+            new ObjectParameter("DESCRIPCION_AREA", typeof(string));
+
+        var eSTADO_AREAParameter = eSTADO_AREA != null ?
+            new ObjectParameter("ESTADO_AREA", eSTADO_AREA) :
+            new ObjectParameter("ESTADO_AREA", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Insert_AreaTrabajo", iD_AREAParameter, nOMBRE_AREAParameter, gERENCIA_AREAParameter, dESCRIPCION_AREAParameter, eSTADO_AREAParameter);
+    }
+
+    public virtual int trx_Insert_CabeceraConsultum(Nullable<decimal> iD_CON, string cEDULA_EMP, string iNDICACIONES_CON, string mOTIVO_CON, Nullable<decimal> pRESION_CON, Nullable<System.DateTime> fECHA_CON, Nullable<decimal> pESO_CON, Nullable<decimal> tEMPERATURA_CON, string sINTOMAS_CON, string oBSERVACIONES_CON)
+    {
+        var iD_CONParameter = iD_CON.HasValue ?
+            new ObjectParameter("ID_CON", iD_CON) :
+            new ObjectParameter("ID_CON", typeof(decimal));
+
+        var cEDULA_EMPParameter = cEDULA_EMP != null ?
+            new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
+            new ObjectParameter("CEDULA_EMP", typeof(string));
+
+        var iNDICACIONES_CONParameter = iNDICACIONES_CON != null ?
+            new ObjectParameter("INDICACIONES_CON", iNDICACIONES_CON) :
+            new ObjectParameter("INDICACIONES_CON", typeof(string));
+
+        var mOTIVO_CONParameter = mOTIVO_CON != null ?
+            new ObjectParameter("MOTIVO_CON", mOTIVO_CON) :
+            new ObjectParameter("MOTIVO_CON", typeof(string));
+
+        var pRESION_CONParameter = pRESION_CON.HasValue ?
+            new ObjectParameter("PRESION_CON", pRESION_CON) :
+            new ObjectParameter("PRESION_CON", typeof(decimal));
+
+        var fECHA_CONParameter = fECHA_CON.HasValue ?
+            new ObjectParameter("FECHA_CON", fECHA_CON) :
+            new ObjectParameter("FECHA_CON", typeof(System.DateTime));
+
+        var pESO_CONParameter = pESO_CON.HasValue ?
+            new ObjectParameter("PESO_CON", pESO_CON) :
+            new ObjectParameter("PESO_CON", typeof(decimal));
+
+        var tEMPERATURA_CONParameter = tEMPERATURA_CON.HasValue ?
+            new ObjectParameter("TEMPERATURA_CON", tEMPERATURA_CON) :
+            new ObjectParameter("TEMPERATURA_CON", typeof(decimal));
+
+        var sINTOMAS_CONParameter = sINTOMAS_CON != null ?
+            new ObjectParameter("SINTOMAS_CON", sINTOMAS_CON) :
+            new ObjectParameter("SINTOMAS_CON", typeof(string));
+
+        var oBSERVACIONES_CONParameter = oBSERVACIONES_CON != null ?
+            new ObjectParameter("OBSERVACIONES_CON", oBSERVACIONES_CON) :
+            new ObjectParameter("OBSERVACIONES_CON", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Insert_CabeceraConsultum", iD_CONParameter, cEDULA_EMPParameter, iNDICACIONES_CONParameter, mOTIVO_CONParameter, pRESION_CONParameter, fECHA_CONParameter, pESO_CONParameter, tEMPERATURA_CONParameter, sINTOMAS_CONParameter, oBSERVACIONES_CONParameter);
+    }
+
+    public virtual int trx_Insert_DetalleConsultum(string iD_DET, Nullable<decimal> iD_CON, Nullable<decimal> cANTIDAD_DET, Nullable<decimal> pVP_DET, Nullable<decimal> cANTDES_DET)
+    {
+        var iD_DETParameter = iD_DET != null ?
+            new ObjectParameter("ID_DET", iD_DET) :
+            new ObjectParameter("ID_DET", typeof(string));
+
+        var iD_CONParameter = iD_CON.HasValue ?
+            new ObjectParameter("ID_CON", iD_CON) :
+            new ObjectParameter("ID_CON", typeof(decimal));
+
+        var cANTIDAD_DETParameter = cANTIDAD_DET.HasValue ?
+            new ObjectParameter("CANTIDAD_DET", cANTIDAD_DET) :
+            new ObjectParameter("CANTIDAD_DET", typeof(decimal));
+
+        var pVP_DETParameter = pVP_DET.HasValue ?
+            new ObjectParameter("PVP_DET", pVP_DET) :
+            new ObjectParameter("PVP_DET", typeof(decimal));
+
+        var cANTDES_DETParameter = cANTDES_DET.HasValue ?
+            new ObjectParameter("CANTDES_DET", cANTDES_DET) :
+            new ObjectParameter("CANTDES_DET", typeof(decimal));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Insert_DetalleConsultum", iD_DETParameter, iD_CONParameter, cANTIDAD_DETParameter, pVP_DETParameter, cANTDES_DETParameter);
+    }
+
+    public virtual int trx_Insert_Empleado(string cEDULA_EMP, Nullable<decimal> iD_AREA, string cARGO_US, string pASWORD_US)
+    {
+        var cEDULA_EMPParameter = cEDULA_EMP != null ?
+            new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
+            new ObjectParameter("CEDULA_EMP", typeof(string));
+
+        var iD_AREAParameter = iD_AREA.HasValue ?
+            new ObjectParameter("ID_AREA", iD_AREA) :
+            new ObjectParameter("ID_AREA", typeof(decimal));
+
+        var cARGO_USParameter = cARGO_US != null ?
+            new ObjectParameter("CARGO_US", cARGO_US) :
+            new ObjectParameter("CARGO_US", typeof(string));
+
+        var pASWORD_USParameter = pASWORD_US != null ?
+            new ObjectParameter("PASWORD_US", pASWORD_US) :
+            new ObjectParameter("PASWORD_US", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Insert_Empleado", cEDULA_EMPParameter, iD_AREAParameter, cARGO_USParameter, pASWORD_USParameter);
+    }
+
+    public virtual int trx_Insert_Historia(string cEDULA_EMP, string pADRE_H, string mADRE_H, string fALLECIDO_P_H, string fALLECIDO_M_H, string cAUSAS_P_H, string cAUSAS_M_H, Nullable<decimal> nUM_H_H, Nullable<decimal> vIVO_H_H, Nullable<decimal> mUERTE_H_H, string cAUSAS_H_H, Nullable<decimal> sON_H, Nullable<decimal> vIVO_SON_H, Nullable<decimal> mUERTOS_SON_H, string cAUSAS_SON_H, string aLCOHOL_H, string tABACO_H, string dROGAS_H, string fRECUENCIA_TAB_H, string fRECUENCIA_ALC_H, string fRECUENCIA_DRO_H, string aLIMENTACION_H, string dIPSIA_H, string pARADIPSIA, string fRECUENCIA_PARADIPSIA, string iNSOMNIO_H, string fRECUENCIA_INSOM_H, string oTRO_H)
+    {
+        var cEDULA_EMPParameter = cEDULA_EMP != null ?
+            new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
+            new ObjectParameter("CEDULA_EMP", typeof(string));
+
+        var pADRE_HParameter = pADRE_H != null ?
+            new ObjectParameter("PADRE_H", pADRE_H) :
+            new ObjectParameter("PADRE_H", typeof(string));
+
+        var mADRE_HParameter = mADRE_H != null ?
+            new ObjectParameter("MADRE_H", mADRE_H) :
+            new ObjectParameter("MADRE_H", typeof(string));
+
+        var fALLECIDO_P_HParameter = fALLECIDO_P_H != null ?
+            new ObjectParameter("FALLECIDO_P_H", fALLECIDO_P_H) :
+            new ObjectParameter("FALLECIDO_P_H", typeof(string));
+
+        var fALLECIDO_M_HParameter = fALLECIDO_M_H != null ?
+            new ObjectParameter("FALLECIDO_M_H", fALLECIDO_M_H) :
+            new ObjectParameter("FALLECIDO_M_H", typeof(string));
+
+        var cAUSAS_P_HParameter = cAUSAS_P_H != null ?
+            new ObjectParameter("CAUSAS_P_H", cAUSAS_P_H) :
+            new ObjectParameter("CAUSAS_P_H", typeof(string));
+
+        var cAUSAS_M_HParameter = cAUSAS_M_H != null ?
+            new ObjectParameter("CAUSAS_M_H", cAUSAS_M_H) :
+            new ObjectParameter("CAUSAS_M_H", typeof(string));
+
+        var nUM_H_HParameter = nUM_H_H.HasValue ?
+            new ObjectParameter("NUM_H_H", nUM_H_H) :
+            new ObjectParameter("NUM_H_H", typeof(decimal));
+
+        var vIVO_H_HParameter = vIVO_H_H.HasValue ?
+            new ObjectParameter("VIVO_H_H", vIVO_H_H) :
+            new ObjectParameter("VIVO_H_H", typeof(decimal));
+
+        var mUERTE_H_HParameter = mUERTE_H_H.HasValue ?
+            new ObjectParameter("MUERTE_H_H", mUERTE_H_H) :
+            new ObjectParameter("MUERTE_H_H", typeof(decimal));
+
+        var cAUSAS_H_HParameter = cAUSAS_H_H != null ?
+            new ObjectParameter("CAUSAS_H_H", cAUSAS_H_H) :
+            new ObjectParameter("CAUSAS_H_H", typeof(string));
+
+        var sON_HParameter = sON_H.HasValue ?
+            new ObjectParameter("SON_H", sON_H) :
+            new ObjectParameter("SON_H", typeof(decimal));
+
+        var vIVO_SON_HParameter = vIVO_SON_H.HasValue ?
+            new ObjectParameter("VIVO_SON_H", vIVO_SON_H) :
+            new ObjectParameter("VIVO_SON_H", typeof(decimal));
+
+        var mUERTOS_SON_HParameter = mUERTOS_SON_H.HasValue ?
+            new ObjectParameter("MUERTOS_SON_H", mUERTOS_SON_H) :
+            new ObjectParameter("MUERTOS_SON_H", typeof(decimal));
+
+        var cAUSAS_SON_HParameter = cAUSAS_SON_H != null ?
+            new ObjectParameter("CAUSAS_SON_H", cAUSAS_SON_H) :
+            new ObjectParameter("CAUSAS_SON_H", typeof(string));
+
+        var aLCOHOL_HParameter = aLCOHOL_H != null ?
+            new ObjectParameter("ALCOHOL_H", aLCOHOL_H) :
+            new ObjectParameter("ALCOHOL_H", typeof(string));
+
+        var tABACO_HParameter = tABACO_H != null ?
+            new ObjectParameter("TABACO_H", tABACO_H) :
+            new ObjectParameter("TABACO_H", typeof(string));
+
+        var dROGAS_HParameter = dROGAS_H != null ?
+            new ObjectParameter("DROGAS_H", dROGAS_H) :
+            new ObjectParameter("DROGAS_H", typeof(string));
+
+        var fRECUENCIA_TAB_HParameter = fRECUENCIA_TAB_H != null ?
+            new ObjectParameter("FRECUENCIA_TAB_H", fRECUENCIA_TAB_H) :
+            new ObjectParameter("FRECUENCIA_TAB_H", typeof(string));
+
+        var fRECUENCIA_ALC_HParameter = fRECUENCIA_ALC_H != null ?
+            new ObjectParameter("FRECUENCIA_ALC_H", fRECUENCIA_ALC_H) :
+            new ObjectParameter("FRECUENCIA_ALC_H", typeof(string));
+
+        var fRECUENCIA_DRO_HParameter = fRECUENCIA_DRO_H != null ?
+            new ObjectParameter("FRECUENCIA_DRO_H", fRECUENCIA_DRO_H) :
+            new ObjectParameter("FRECUENCIA_DRO_H", typeof(string));
+
+        var aLIMENTACION_HParameter = aLIMENTACION_H != null ?
+            new ObjectParameter("ALIMENTACION_H", aLIMENTACION_H) :
+            new ObjectParameter("ALIMENTACION_H", typeof(string));
+
+        var dIPSIA_HParameter = dIPSIA_H != null ?
+            new ObjectParameter("DIPSIA_H", dIPSIA_H) :
+            new ObjectParameter("DIPSIA_H", typeof(string));
+
+        var pARADIPSIAParameter = pARADIPSIA != null ?
+            new ObjectParameter("PARADIPSIA", pARADIPSIA) :
+            new ObjectParameter("PARADIPSIA", typeof(string));
+
+        var fRECUENCIA_PARADIPSIAParameter = fRECUENCIA_PARADIPSIA != null ?
+            new ObjectParameter("FRECUENCIA_PARADIPSIA", fRECUENCIA_PARADIPSIA) :
+            new ObjectParameter("FRECUENCIA_PARADIPSIA", typeof(string));
+
+        var iNSOMNIO_HParameter = iNSOMNIO_H != null ?
+            new ObjectParameter("INSOMNIO_H", iNSOMNIO_H) :
+            new ObjectParameter("INSOMNIO_H", typeof(string));
+
+        var fRECUENCIA_INSOM_HParameter = fRECUENCIA_INSOM_H != null ?
+            new ObjectParameter("FRECUENCIA_INSOM_H", fRECUENCIA_INSOM_H) :
+            new ObjectParameter("FRECUENCIA_INSOM_H", typeof(string));
+
+        var oTRO_HParameter = oTRO_H != null ?
+            new ObjectParameter("OTRO_H", oTRO_H) :
+            new ObjectParameter("OTRO_H", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Insert_Historia", cEDULA_EMPParameter, pADRE_HParameter, mADRE_HParameter, fALLECIDO_P_HParameter, fALLECIDO_M_HParameter, cAUSAS_P_HParameter, cAUSAS_M_HParameter, nUM_H_HParameter, vIVO_H_HParameter, mUERTE_H_HParameter, cAUSAS_H_HParameter, sON_HParameter, vIVO_SON_HParameter, mUERTOS_SON_HParameter, cAUSAS_SON_HParameter, aLCOHOL_HParameter, tABACO_HParameter, dROGAS_HParameter, fRECUENCIA_TAB_HParameter, fRECUENCIA_ALC_HParameter, fRECUENCIA_DRO_HParameter, aLIMENTACION_HParameter, dIPSIA_HParameter, pARADIPSIAParameter, fRECUENCIA_PARADIPSIAParameter, iNSOMNIO_HParameter, fRECUENCIA_INSOM_HParameter, oTRO_HParameter);
+    }
+
+    public virtual int trx_Remove_AreaTrabajo(Nullable<decimal> iD_AREA)
+    {
+        var iD_AREAParameter = iD_AREA.HasValue ?
+            new ObjectParameter("ID_AREA", iD_AREA) :
+            new ObjectParameter("ID_AREA", typeof(decimal));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Remove_AreaTrabajo", iD_AREAParameter);
+    }
+
+    public virtual int trx_Remove_CabeceraConsultum(Nullable<decimal> iD_CON)
+    {
+        var iD_CONParameter = iD_CON.HasValue ?
+            new ObjectParameter("ID_CON", iD_CON) :
+            new ObjectParameter("ID_CON", typeof(decimal));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Remove_CabeceraConsultum", iD_CONParameter);
+    }
+
+    public virtual int trx_Remove_DetalleConsultum(string iD_DET)
+    {
+        var iD_DETParameter = iD_DET != null ?
+            new ObjectParameter("ID_DET", iD_DET) :
+            new ObjectParameter("ID_DET", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Remove_DetalleConsultum", iD_DETParameter);
+    }
+
+    public virtual int trx_Remove_Empleado(string cEDULA_EMP)
+    {
+        var cEDULA_EMPParameter = cEDULA_EMP != null ?
+            new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
+            new ObjectParameter("CEDULA_EMP", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Remove_Empleado", cEDULA_EMPParameter);
+    }
+
+    public virtual int trx_Remove_Historia(string cEDULA_EMP)
+    {
+        var cEDULA_EMPParameter = cEDULA_EMP != null ?
+            new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
+            new ObjectParameter("CEDULA_EMP", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Remove_Historia", cEDULA_EMPParameter);
+    }
+
+    public virtual ObjectResult<Nullable<decimal>> trx_Save_AreaTrabajo(Nullable<decimal> iD_AREA, string nOMBRE_AREA, string gERENCIA_AREA, string dESCRIPCION_AREA, string eSTADO_AREA)
+    {
+        var iD_AREAParameter = iD_AREA.HasValue ?
+            new ObjectParameter("ID_AREA", iD_AREA) :
+            new ObjectParameter("ID_AREA", typeof(decimal));
+
+        var nOMBRE_AREAParameter = nOMBRE_AREA != null ?
+            new ObjectParameter("NOMBRE_AREA", nOMBRE_AREA) :
+            new ObjectParameter("NOMBRE_AREA", typeof(string));
+
+        var gERENCIA_AREAParameter = gERENCIA_AREA != null ?
+            new ObjectParameter("GERENCIA_AREA", gERENCIA_AREA) :
+            new ObjectParameter("GERENCIA_AREA", typeof(string));
+
+        var dESCRIPCION_AREAParameter = dESCRIPCION_AREA != null ?
+            new ObjectParameter("DESCRIPCION_AREA", dESCRIPCION_AREA) :
+            new ObjectParameter("DESCRIPCION_AREA", typeof(string));
+
+        var eSTADO_AREAParameter = eSTADO_AREA != null ?
+            new ObjectParameter("ESTADO_AREA", eSTADO_AREA) :
+            new ObjectParameter("ESTADO_AREA", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("trx_Save_AreaTrabajo", iD_AREAParameter, nOMBRE_AREAParameter, gERENCIA_AREAParameter, dESCRIPCION_AREAParameter, eSTADO_AREAParameter);
+    }
+
+    public virtual ObjectResult<Nullable<decimal>> trx_Save_CabeceraConsultum(Nullable<decimal> iD_CON, string cEDULA_EMP, string iNDICACIONES_CON, string mOTIVO_CON, Nullable<decimal> pRESION_CON, Nullable<System.DateTime> fECHA_CON, Nullable<decimal> pESO_CON, Nullable<decimal> tEMPERATURA_CON, string sINTOMAS_CON, string oBSERVACIONES_CON)
+    {
+        var iD_CONParameter = iD_CON.HasValue ?
+            new ObjectParameter("ID_CON", iD_CON) :
+            new ObjectParameter("ID_CON", typeof(decimal));
+
+        var cEDULA_EMPParameter = cEDULA_EMP != null ?
+            new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
+            new ObjectParameter("CEDULA_EMP", typeof(string));
+
+        var iNDICACIONES_CONParameter = iNDICACIONES_CON != null ?
+            new ObjectParameter("INDICACIONES_CON", iNDICACIONES_CON) :
+            new ObjectParameter("INDICACIONES_CON", typeof(string));
+
+        var mOTIVO_CONParameter = mOTIVO_CON != null ?
+            new ObjectParameter("MOTIVO_CON", mOTIVO_CON) :
+            new ObjectParameter("MOTIVO_CON", typeof(string));
+
+        var pRESION_CONParameter = pRESION_CON.HasValue ?
+            new ObjectParameter("PRESION_CON", pRESION_CON) :
+            new ObjectParameter("PRESION_CON", typeof(decimal));
+
+        var fECHA_CONParameter = fECHA_CON.HasValue ?
+            new ObjectParameter("FECHA_CON", fECHA_CON) :
+            new ObjectParameter("FECHA_CON", typeof(System.DateTime));
+
+        var pESO_CONParameter = pESO_CON.HasValue ?
+            new ObjectParameter("PESO_CON", pESO_CON) :
+            new ObjectParameter("PESO_CON", typeof(decimal));
+
+        var tEMPERATURA_CONParameter = tEMPERATURA_CON.HasValue ?
+            new ObjectParameter("TEMPERATURA_CON", tEMPERATURA_CON) :
+            new ObjectParameter("TEMPERATURA_CON", typeof(decimal));
+
+        var sINTOMAS_CONParameter = sINTOMAS_CON != null ?
+            new ObjectParameter("SINTOMAS_CON", sINTOMAS_CON) :
+            new ObjectParameter("SINTOMAS_CON", typeof(string));
+
+        var oBSERVACIONES_CONParameter = oBSERVACIONES_CON != null ?
+            new ObjectParameter("OBSERVACIONES_CON", oBSERVACIONES_CON) :
+            new ObjectParameter("OBSERVACIONES_CON", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("trx_Save_CabeceraConsultum", iD_CONParameter, cEDULA_EMPParameter, iNDICACIONES_CONParameter, mOTIVO_CONParameter, pRESION_CONParameter, fECHA_CONParameter, pESO_CONParameter, tEMPERATURA_CONParameter, sINTOMAS_CONParameter, oBSERVACIONES_CONParameter);
+    }
+
+    public virtual ObjectResult<string> trx_Save_DetalleConsultum(string iD_DET, Nullable<decimal> iD_CON, Nullable<decimal> cANTIDAD_DET, Nullable<decimal> pVP_DET, Nullable<decimal> cANTDES_DET)
+    {
+        var iD_DETParameter = iD_DET != null ?
+            new ObjectParameter("ID_DET", iD_DET) :
+            new ObjectParameter("ID_DET", typeof(string));
+
+        var iD_CONParameter = iD_CON.HasValue ?
+            new ObjectParameter("ID_CON", iD_CON) :
+            new ObjectParameter("ID_CON", typeof(decimal));
+
+        var cANTIDAD_DETParameter = cANTIDAD_DET.HasValue ?
+            new ObjectParameter("CANTIDAD_DET", cANTIDAD_DET) :
+            new ObjectParameter("CANTIDAD_DET", typeof(decimal));
+
+        var pVP_DETParameter = pVP_DET.HasValue ?
+            new ObjectParameter("PVP_DET", pVP_DET) :
+            new ObjectParameter("PVP_DET", typeof(decimal));
+
+        var cANTDES_DETParameter = cANTDES_DET.HasValue ?
+            new ObjectParameter("CANTDES_DET", cANTDES_DET) :
+            new ObjectParameter("CANTDES_DET", typeof(decimal));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("trx_Save_DetalleConsultum", iD_DETParameter, iD_CONParameter, cANTIDAD_DETParameter, pVP_DETParameter, cANTDES_DETParameter);
+    }
+
+    public virtual ObjectResult<string> trx_Save_Empleado(string cEDULA_EMP, Nullable<decimal> iD_AREA, string cARGO_US, string pASWORD_US)
+    {
+        var cEDULA_EMPParameter = cEDULA_EMP != null ?
+            new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
+            new ObjectParameter("CEDULA_EMP", typeof(string));
+
+        var iD_AREAParameter = iD_AREA.HasValue ?
+            new ObjectParameter("ID_AREA", iD_AREA) :
+            new ObjectParameter("ID_AREA", typeof(decimal));
+
+        var cARGO_USParameter = cARGO_US != null ?
+            new ObjectParameter("CARGO_US", cARGO_US) :
+            new ObjectParameter("CARGO_US", typeof(string));
+
+        var pASWORD_USParameter = pASWORD_US != null ?
+            new ObjectParameter("PASWORD_US", pASWORD_US) :
+            new ObjectParameter("PASWORD_US", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("trx_Save_Empleado", cEDULA_EMPParameter, iD_AREAParameter, cARGO_USParameter, pASWORD_USParameter);
+    }
+
+    public virtual ObjectResult<string> trx_Save_Historia(string cEDULA_EMP, string pADRE_H, string mADRE_H, string fALLECIDO_P_H, string fALLECIDO_M_H, string cAUSAS_P_H, string cAUSAS_M_H, Nullable<decimal> nUM_H_H, Nullable<decimal> vIVO_H_H, Nullable<decimal> mUERTE_H_H, string cAUSAS_H_H, Nullable<decimal> sON_H, Nullable<decimal> vIVO_SON_H, Nullable<decimal> mUERTOS_SON_H, string cAUSAS_SON_H, string aLCOHOL_H, string tABACO_H, string dROGAS_H, string fRECUENCIA_TAB_H, string fRECUENCIA_ALC_H, string fRECUENCIA_DRO_H, string aLIMENTACION_H, string dIPSIA_H, string pARADIPSIA, string fRECUENCIA_PARADIPSIA, string iNSOMNIO_H, string fRECUENCIA_INSOM_H, string oTRO_H)
+    {
+        var cEDULA_EMPParameter = cEDULA_EMP != null ?
+            new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
+            new ObjectParameter("CEDULA_EMP", typeof(string));
+
+        var pADRE_HParameter = pADRE_H != null ?
+            new ObjectParameter("PADRE_H", pADRE_H) :
+            new ObjectParameter("PADRE_H", typeof(string));
+
+        var mADRE_HParameter = mADRE_H != null ?
+            new ObjectParameter("MADRE_H", mADRE_H) :
+            new ObjectParameter("MADRE_H", typeof(string));
+
+        var fALLECIDO_P_HParameter = fALLECIDO_P_H != null ?
+            new ObjectParameter("FALLECIDO_P_H", fALLECIDO_P_H) :
+            new ObjectParameter("FALLECIDO_P_H", typeof(string));
+
+        var fALLECIDO_M_HParameter = fALLECIDO_M_H != null ?
+            new ObjectParameter("FALLECIDO_M_H", fALLECIDO_M_H) :
+            new ObjectParameter("FALLECIDO_M_H", typeof(string));
+
+        var cAUSAS_P_HParameter = cAUSAS_P_H != null ?
+            new ObjectParameter("CAUSAS_P_H", cAUSAS_P_H) :
+            new ObjectParameter("CAUSAS_P_H", typeof(string));
+
+        var cAUSAS_M_HParameter = cAUSAS_M_H != null ?
+            new ObjectParameter("CAUSAS_M_H", cAUSAS_M_H) :
+            new ObjectParameter("CAUSAS_M_H", typeof(string));
+
+        var nUM_H_HParameter = nUM_H_H.HasValue ?
+            new ObjectParameter("NUM_H_H", nUM_H_H) :
+            new ObjectParameter("NUM_H_H", typeof(decimal));
+
+        var vIVO_H_HParameter = vIVO_H_H.HasValue ?
+            new ObjectParameter("VIVO_H_H", vIVO_H_H) :
+            new ObjectParameter("VIVO_H_H", typeof(decimal));
+
+        var mUERTE_H_HParameter = mUERTE_H_H.HasValue ?
+            new ObjectParameter("MUERTE_H_H", mUERTE_H_H) :
+            new ObjectParameter("MUERTE_H_H", typeof(decimal));
+
+        var cAUSAS_H_HParameter = cAUSAS_H_H != null ?
+            new ObjectParameter("CAUSAS_H_H", cAUSAS_H_H) :
+            new ObjectParameter("CAUSAS_H_H", typeof(string));
+
+        var sON_HParameter = sON_H.HasValue ?
+            new ObjectParameter("SON_H", sON_H) :
+            new ObjectParameter("SON_H", typeof(decimal));
+
+        var vIVO_SON_HParameter = vIVO_SON_H.HasValue ?
+            new ObjectParameter("VIVO_SON_H", vIVO_SON_H) :
+            new ObjectParameter("VIVO_SON_H", typeof(decimal));
+
+        var mUERTOS_SON_HParameter = mUERTOS_SON_H.HasValue ?
+            new ObjectParameter("MUERTOS_SON_H", mUERTOS_SON_H) :
+            new ObjectParameter("MUERTOS_SON_H", typeof(decimal));
+
+        var cAUSAS_SON_HParameter = cAUSAS_SON_H != null ?
+            new ObjectParameter("CAUSAS_SON_H", cAUSAS_SON_H) :
+            new ObjectParameter("CAUSAS_SON_H", typeof(string));
+
+        var aLCOHOL_HParameter = aLCOHOL_H != null ?
+            new ObjectParameter("ALCOHOL_H", aLCOHOL_H) :
+            new ObjectParameter("ALCOHOL_H", typeof(string));
+
+        var tABACO_HParameter = tABACO_H != null ?
+            new ObjectParameter("TABACO_H", tABACO_H) :
+            new ObjectParameter("TABACO_H", typeof(string));
+
+        var dROGAS_HParameter = dROGAS_H != null ?
+            new ObjectParameter("DROGAS_H", dROGAS_H) :
+            new ObjectParameter("DROGAS_H", typeof(string));
+
+        var fRECUENCIA_TAB_HParameter = fRECUENCIA_TAB_H != null ?
+            new ObjectParameter("FRECUENCIA_TAB_H", fRECUENCIA_TAB_H) :
+            new ObjectParameter("FRECUENCIA_TAB_H", typeof(string));
+
+        var fRECUENCIA_ALC_HParameter = fRECUENCIA_ALC_H != null ?
+            new ObjectParameter("FRECUENCIA_ALC_H", fRECUENCIA_ALC_H) :
+            new ObjectParameter("FRECUENCIA_ALC_H", typeof(string));
+
+        var fRECUENCIA_DRO_HParameter = fRECUENCIA_DRO_H != null ?
+            new ObjectParameter("FRECUENCIA_DRO_H", fRECUENCIA_DRO_H) :
+            new ObjectParameter("FRECUENCIA_DRO_H", typeof(string));
+
+        var aLIMENTACION_HParameter = aLIMENTACION_H != null ?
+            new ObjectParameter("ALIMENTACION_H", aLIMENTACION_H) :
+            new ObjectParameter("ALIMENTACION_H", typeof(string));
+
+        var dIPSIA_HParameter = dIPSIA_H != null ?
+            new ObjectParameter("DIPSIA_H", dIPSIA_H) :
+            new ObjectParameter("DIPSIA_H", typeof(string));
+
+        var pARADIPSIAParameter = pARADIPSIA != null ?
+            new ObjectParameter("PARADIPSIA", pARADIPSIA) :
+            new ObjectParameter("PARADIPSIA", typeof(string));
+
+        var fRECUENCIA_PARADIPSIAParameter = fRECUENCIA_PARADIPSIA != null ?
+            new ObjectParameter("FRECUENCIA_PARADIPSIA", fRECUENCIA_PARADIPSIA) :
+            new ObjectParameter("FRECUENCIA_PARADIPSIA", typeof(string));
+
+        var iNSOMNIO_HParameter = iNSOMNIO_H != null ?
+            new ObjectParameter("INSOMNIO_H", iNSOMNIO_H) :
+            new ObjectParameter("INSOMNIO_H", typeof(string));
+
+        var fRECUENCIA_INSOM_HParameter = fRECUENCIA_INSOM_H != null ?
+            new ObjectParameter("FRECUENCIA_INSOM_H", fRECUENCIA_INSOM_H) :
+            new ObjectParameter("FRECUENCIA_INSOM_H", typeof(string));
+
+        var oTRO_HParameter = oTRO_H != null ?
+            new ObjectParameter("OTRO_H", oTRO_H) :
+            new ObjectParameter("OTRO_H", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("trx_Save_Historia", cEDULA_EMPParameter, pADRE_HParameter, mADRE_HParameter, fALLECIDO_P_HParameter, fALLECIDO_M_HParameter, cAUSAS_P_HParameter, cAUSAS_M_HParameter, nUM_H_HParameter, vIVO_H_HParameter, mUERTE_H_HParameter, cAUSAS_H_HParameter, sON_HParameter, vIVO_SON_HParameter, mUERTOS_SON_HParameter, cAUSAS_SON_HParameter, aLCOHOL_HParameter, tABACO_HParameter, dROGAS_HParameter, fRECUENCIA_TAB_HParameter, fRECUENCIA_ALC_HParameter, fRECUENCIA_DRO_HParameter, aLIMENTACION_HParameter, dIPSIA_HParameter, pARADIPSIAParameter, fRECUENCIA_PARADIPSIAParameter, iNSOMNIO_HParameter, fRECUENCIA_INSOM_HParameter, oTRO_HParameter);
+    }
+
+    public virtual int trx_Update_AreaTrabajo(Nullable<decimal> iD_AREA, string nOMBRE_AREA, string gERENCIA_AREA, string dESCRIPCION_AREA, string eSTADO_AREA)
+    {
+        var iD_AREAParameter = iD_AREA.HasValue ?
+            new ObjectParameter("ID_AREA", iD_AREA) :
+            new ObjectParameter("ID_AREA", typeof(decimal));
+
+        var nOMBRE_AREAParameter = nOMBRE_AREA != null ?
+            new ObjectParameter("NOMBRE_AREA", nOMBRE_AREA) :
+            new ObjectParameter("NOMBRE_AREA", typeof(string));
+
+        var gERENCIA_AREAParameter = gERENCIA_AREA != null ?
+            new ObjectParameter("GERENCIA_AREA", gERENCIA_AREA) :
+            new ObjectParameter("GERENCIA_AREA", typeof(string));
+
+        var dESCRIPCION_AREAParameter = dESCRIPCION_AREA != null ?
+            new ObjectParameter("DESCRIPCION_AREA", dESCRIPCION_AREA) :
+            new ObjectParameter("DESCRIPCION_AREA", typeof(string));
+
+        var eSTADO_AREAParameter = eSTADO_AREA != null ?
+            new ObjectParameter("ESTADO_AREA", eSTADO_AREA) :
+            new ObjectParameter("ESTADO_AREA", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Update_AreaTrabajo", iD_AREAParameter, nOMBRE_AREAParameter, gERENCIA_AREAParameter, dESCRIPCION_AREAParameter, eSTADO_AREAParameter);
+    }
+
+    public virtual int trx_Update_CabeceraConsultum(Nullable<decimal> iD_CON, string cEDULA_EMP, string iNDICACIONES_CON, string mOTIVO_CON, Nullable<decimal> pRESION_CON, Nullable<System.DateTime> fECHA_CON, Nullable<decimal> pESO_CON, Nullable<decimal> tEMPERATURA_CON, string sINTOMAS_CON, string oBSERVACIONES_CON)
+    {
+        var iD_CONParameter = iD_CON.HasValue ?
+            new ObjectParameter("ID_CON", iD_CON) :
+            new ObjectParameter("ID_CON", typeof(decimal));
+
+        var cEDULA_EMPParameter = cEDULA_EMP != null ?
+            new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
+            new ObjectParameter("CEDULA_EMP", typeof(string));
+
+        var iNDICACIONES_CONParameter = iNDICACIONES_CON != null ?
+            new ObjectParameter("INDICACIONES_CON", iNDICACIONES_CON) :
+            new ObjectParameter("INDICACIONES_CON", typeof(string));
+
+        var mOTIVO_CONParameter = mOTIVO_CON != null ?
+            new ObjectParameter("MOTIVO_CON", mOTIVO_CON) :
+            new ObjectParameter("MOTIVO_CON", typeof(string));
+
+        var pRESION_CONParameter = pRESION_CON.HasValue ?
+            new ObjectParameter("PRESION_CON", pRESION_CON) :
+            new ObjectParameter("PRESION_CON", typeof(decimal));
+
+        var fECHA_CONParameter = fECHA_CON.HasValue ?
+            new ObjectParameter("FECHA_CON", fECHA_CON) :
+            new ObjectParameter("FECHA_CON", typeof(System.DateTime));
+
+        var pESO_CONParameter = pESO_CON.HasValue ?
+            new ObjectParameter("PESO_CON", pESO_CON) :
+            new ObjectParameter("PESO_CON", typeof(decimal));
+
+        var tEMPERATURA_CONParameter = tEMPERATURA_CON.HasValue ?
+            new ObjectParameter("TEMPERATURA_CON", tEMPERATURA_CON) :
+            new ObjectParameter("TEMPERATURA_CON", typeof(decimal));
+
+        var sINTOMAS_CONParameter = sINTOMAS_CON != null ?
+            new ObjectParameter("SINTOMAS_CON", sINTOMAS_CON) :
+            new ObjectParameter("SINTOMAS_CON", typeof(string));
+
+        var oBSERVACIONES_CONParameter = oBSERVACIONES_CON != null ?
+            new ObjectParameter("OBSERVACIONES_CON", oBSERVACIONES_CON) :
+            new ObjectParameter("OBSERVACIONES_CON", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Update_CabeceraConsultum", iD_CONParameter, cEDULA_EMPParameter, iNDICACIONES_CONParameter, mOTIVO_CONParameter, pRESION_CONParameter, fECHA_CONParameter, pESO_CONParameter, tEMPERATURA_CONParameter, sINTOMAS_CONParameter, oBSERVACIONES_CONParameter);
+    }
+
+    public virtual int trx_Update_DetalleConsultum(string iD_DET, Nullable<decimal> iD_CON, Nullable<decimal> cANTIDAD_DET, Nullable<decimal> pVP_DET, Nullable<decimal> cANTDES_DET)
+    {
+        var iD_DETParameter = iD_DET != null ?
+            new ObjectParameter("ID_DET", iD_DET) :
+            new ObjectParameter("ID_DET", typeof(string));
+
+        var iD_CONParameter = iD_CON.HasValue ?
+            new ObjectParameter("ID_CON", iD_CON) :
+            new ObjectParameter("ID_CON", typeof(decimal));
+
+        var cANTIDAD_DETParameter = cANTIDAD_DET.HasValue ?
+            new ObjectParameter("CANTIDAD_DET", cANTIDAD_DET) :
+            new ObjectParameter("CANTIDAD_DET", typeof(decimal));
+
+        var pVP_DETParameter = pVP_DET.HasValue ?
+            new ObjectParameter("PVP_DET", pVP_DET) :
+            new ObjectParameter("PVP_DET", typeof(decimal));
+
+        var cANTDES_DETParameter = cANTDES_DET.HasValue ?
+            new ObjectParameter("CANTDES_DET", cANTDES_DET) :
+            new ObjectParameter("CANTDES_DET", typeof(decimal));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Update_DetalleConsultum", iD_DETParameter, iD_CONParameter, cANTIDAD_DETParameter, pVP_DETParameter, cANTDES_DETParameter);
+    }
+
+    public virtual int trx_Update_Empleado(string cEDULA_EMP, Nullable<decimal> iD_AREA, string cARGO_US, string pASWORD_US)
+    {
+        var cEDULA_EMPParameter = cEDULA_EMP != null ?
+            new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
+            new ObjectParameter("CEDULA_EMP", typeof(string));
+
+        var iD_AREAParameter = iD_AREA.HasValue ?
+            new ObjectParameter("ID_AREA", iD_AREA) :
+            new ObjectParameter("ID_AREA", typeof(decimal));
+
+        var cARGO_USParameter = cARGO_US != null ?
+            new ObjectParameter("CARGO_US", cARGO_US) :
+            new ObjectParameter("CARGO_US", typeof(string));
+
+        var pASWORD_USParameter = pASWORD_US != null ?
+            new ObjectParameter("PASWORD_US", pASWORD_US) :
+            new ObjectParameter("PASWORD_US", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Update_Empleado", cEDULA_EMPParameter, iD_AREAParameter, cARGO_USParameter, pASWORD_USParameter);
+    }
+
+    public virtual int trx_Update_Historia(string cEDULA_EMP, string pADRE_H, string mADRE_H, string fALLECIDO_P_H, string fALLECIDO_M_H, string cAUSAS_P_H, string cAUSAS_M_H, Nullable<decimal> nUM_H_H, Nullable<decimal> vIVO_H_H, Nullable<decimal> mUERTE_H_H, string cAUSAS_H_H, Nullable<decimal> sON_H, Nullable<decimal> vIVO_SON_H, Nullable<decimal> mUERTOS_SON_H, string cAUSAS_SON_H, string aLCOHOL_H, string tABACO_H, string dROGAS_H, string fRECUENCIA_TAB_H, string fRECUENCIA_ALC_H, string fRECUENCIA_DRO_H, string aLIMENTACION_H, string dIPSIA_H, string pARADIPSIA, string fRECUENCIA_PARADIPSIA, string iNSOMNIO_H, string fRECUENCIA_INSOM_H, string oTRO_H)
+    {
+        var cEDULA_EMPParameter = cEDULA_EMP != null ?
+            new ObjectParameter("CEDULA_EMP", cEDULA_EMP) :
+            new ObjectParameter("CEDULA_EMP", typeof(string));
+
+        var pADRE_HParameter = pADRE_H != null ?
+            new ObjectParameter("PADRE_H", pADRE_H) :
+            new ObjectParameter("PADRE_H", typeof(string));
+
+        var mADRE_HParameter = mADRE_H != null ?
+            new ObjectParameter("MADRE_H", mADRE_H) :
+            new ObjectParameter("MADRE_H", typeof(string));
+
+        var fALLECIDO_P_HParameter = fALLECIDO_P_H != null ?
+            new ObjectParameter("FALLECIDO_P_H", fALLECIDO_P_H) :
+            new ObjectParameter("FALLECIDO_P_H", typeof(string));
+
+        var fALLECIDO_M_HParameter = fALLECIDO_M_H != null ?
+            new ObjectParameter("FALLECIDO_M_H", fALLECIDO_M_H) :
+            new ObjectParameter("FALLECIDO_M_H", typeof(string));
+
+        var cAUSAS_P_HParameter = cAUSAS_P_H != null ?
+            new ObjectParameter("CAUSAS_P_H", cAUSAS_P_H) :
+            new ObjectParameter("CAUSAS_P_H", typeof(string));
+
+        var cAUSAS_M_HParameter = cAUSAS_M_H != null ?
+            new ObjectParameter("CAUSAS_M_H", cAUSAS_M_H) :
+            new ObjectParameter("CAUSAS_M_H", typeof(string));
+
+        var nUM_H_HParameter = nUM_H_H.HasValue ?
+            new ObjectParameter("NUM_H_H", nUM_H_H) :
+            new ObjectParameter("NUM_H_H", typeof(decimal));
+
+        var vIVO_H_HParameter = vIVO_H_H.HasValue ?
+            new ObjectParameter("VIVO_H_H", vIVO_H_H) :
+            new ObjectParameter("VIVO_H_H", typeof(decimal));
+
+        var mUERTE_H_HParameter = mUERTE_H_H.HasValue ?
+            new ObjectParameter("MUERTE_H_H", mUERTE_H_H) :
+            new ObjectParameter("MUERTE_H_H", typeof(decimal));
+
+        var cAUSAS_H_HParameter = cAUSAS_H_H != null ?
+            new ObjectParameter("CAUSAS_H_H", cAUSAS_H_H) :
+            new ObjectParameter("CAUSAS_H_H", typeof(string));
+
+        var sON_HParameter = sON_H.HasValue ?
+            new ObjectParameter("SON_H", sON_H) :
+            new ObjectParameter("SON_H", typeof(decimal));
+
+        var vIVO_SON_HParameter = vIVO_SON_H.HasValue ?
+            new ObjectParameter("VIVO_SON_H", vIVO_SON_H) :
+            new ObjectParameter("VIVO_SON_H", typeof(decimal));
+
+        var mUERTOS_SON_HParameter = mUERTOS_SON_H.HasValue ?
+            new ObjectParameter("MUERTOS_SON_H", mUERTOS_SON_H) :
+            new ObjectParameter("MUERTOS_SON_H", typeof(decimal));
+
+        var cAUSAS_SON_HParameter = cAUSAS_SON_H != null ?
+            new ObjectParameter("CAUSAS_SON_H", cAUSAS_SON_H) :
+            new ObjectParameter("CAUSAS_SON_H", typeof(string));
+
+        var aLCOHOL_HParameter = aLCOHOL_H != null ?
+            new ObjectParameter("ALCOHOL_H", aLCOHOL_H) :
+            new ObjectParameter("ALCOHOL_H", typeof(string));
+
+        var tABACO_HParameter = tABACO_H != null ?
+            new ObjectParameter("TABACO_H", tABACO_H) :
+            new ObjectParameter("TABACO_H", typeof(string));
+
+        var dROGAS_HParameter = dROGAS_H != null ?
+            new ObjectParameter("DROGAS_H", dROGAS_H) :
+            new ObjectParameter("DROGAS_H", typeof(string));
+
+        var fRECUENCIA_TAB_HParameter = fRECUENCIA_TAB_H != null ?
+            new ObjectParameter("FRECUENCIA_TAB_H", fRECUENCIA_TAB_H) :
+            new ObjectParameter("FRECUENCIA_TAB_H", typeof(string));
+
+        var fRECUENCIA_ALC_HParameter = fRECUENCIA_ALC_H != null ?
+            new ObjectParameter("FRECUENCIA_ALC_H", fRECUENCIA_ALC_H) :
+            new ObjectParameter("FRECUENCIA_ALC_H", typeof(string));
+
+        var fRECUENCIA_DRO_HParameter = fRECUENCIA_DRO_H != null ?
+            new ObjectParameter("FRECUENCIA_DRO_H", fRECUENCIA_DRO_H) :
+            new ObjectParameter("FRECUENCIA_DRO_H", typeof(string));
+
+        var aLIMENTACION_HParameter = aLIMENTACION_H != null ?
+            new ObjectParameter("ALIMENTACION_H", aLIMENTACION_H) :
+            new ObjectParameter("ALIMENTACION_H", typeof(string));
+
+        var dIPSIA_HParameter = dIPSIA_H != null ?
+            new ObjectParameter("DIPSIA_H", dIPSIA_H) :
+            new ObjectParameter("DIPSIA_H", typeof(string));
+
+        var pARADIPSIAParameter = pARADIPSIA != null ?
+            new ObjectParameter("PARADIPSIA", pARADIPSIA) :
+            new ObjectParameter("PARADIPSIA", typeof(string));
+
+        var fRECUENCIA_PARADIPSIAParameter = fRECUENCIA_PARADIPSIA != null ?
+            new ObjectParameter("FRECUENCIA_PARADIPSIA", fRECUENCIA_PARADIPSIA) :
+            new ObjectParameter("FRECUENCIA_PARADIPSIA", typeof(string));
+
+        var iNSOMNIO_HParameter = iNSOMNIO_H != null ?
+            new ObjectParameter("INSOMNIO_H", iNSOMNIO_H) :
+            new ObjectParameter("INSOMNIO_H", typeof(string));
+
+        var fRECUENCIA_INSOM_HParameter = fRECUENCIA_INSOM_H != null ?
+            new ObjectParameter("FRECUENCIA_INSOM_H", fRECUENCIA_INSOM_H) :
+            new ObjectParameter("FRECUENCIA_INSOM_H", typeof(string));
+
+        var oTRO_HParameter = oTRO_H != null ?
+            new ObjectParameter("OTRO_H", oTRO_H) :
+            new ObjectParameter("OTRO_H", typeof(string));
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("trx_Update_Historia", cEDULA_EMPParameter, pADRE_HParameter, mADRE_HParameter, fALLECIDO_P_HParameter, fALLECIDO_M_HParameter, cAUSAS_P_HParameter, cAUSAS_M_HParameter, nUM_H_HParameter, vIVO_H_HParameter, mUERTE_H_HParameter, cAUSAS_H_HParameter, sON_HParameter, vIVO_SON_HParameter, mUERTOS_SON_HParameter, cAUSAS_SON_HParameter, aLCOHOL_HParameter, tABACO_HParameter, dROGAS_HParameter, fRECUENCIA_TAB_HParameter, fRECUENCIA_ALC_HParameter, fRECUENCIA_DRO_HParameter, aLIMENTACION_HParameter, dIPSIA_HParameter, pARADIPSIAParameter, fRECUENCIA_PARADIPSIAParameter, iNSOMNIO_HParameter, fRECUENCIA_INSOM_HParameter, oTRO_HParameter);
     }
 }

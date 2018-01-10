@@ -7,26 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ERP_HistoriasClinicas
+using System;
+using System.Collections.Generic;
+
+public partial class AREA_TRABAJO
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class AREA_TRABAJO
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public AREA_TRABAJO()
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AREA_TRABAJO()
-        {
-            this.EMPLEADO = new HashSet<EMPLEADO>();
-        }
-    
-        public decimal ID_AREA { get; set; }
-        public string NOMBRE_AREA { get; set; }
-        public string GERENCIA_AREA { get; set; }
-        public string DESCRIPCION_AREA { get; set; }
-        public string ESTADO_AREA { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EMPLEADO> EMPLEADO { get; set; }
+        this.EMPLEADO = new HashSet<EMPLEADO>();
     }
+
+    public decimal ID_AREA { get; set; }
+    public string NOMBRE_AREA { get; set; }
+    public string GERENCIA_AREA { get; set; }
+    public string DESCRIPCION_AREA { get; set; }
+    public string ESTADO_AREA { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<EMPLEADO> EMPLEADO { get; set; }
 }

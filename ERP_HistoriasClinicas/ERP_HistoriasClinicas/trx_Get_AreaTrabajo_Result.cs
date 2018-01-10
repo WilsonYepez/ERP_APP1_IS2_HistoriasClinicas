@@ -7,16 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ERP_HistoriasClinicas
+using System;
+using System.Collections.Generic;
+
+public partial class trx_Get_AreaTrabajo_Result
 {
-    using System;
-    
-    public partial class trx_Get_AreaTrabajo_Result
-    {
-        public decimal ID_AREA { get; set; }
-        public string NOMBRE_AREA { get; set; }
-        public string GERENCIA_AREA { get; set; }
-        public string DESCRIPCION_AREA { get; set; }
-        public string ESTADO_AREA { get; set; }
-    }
+    public decimal ID_AREA { get; set; }
+    public string NOMBRE_AREA { get; set; }
+    public string GERENCIA_AREA { get; set; }
+    public string DESCRIPCION_AREA { get; set; }
+    public string ESTADO_AREA { get; set; }
 }

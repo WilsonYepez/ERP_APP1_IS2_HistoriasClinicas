@@ -5,24 +5,24 @@ VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP_HistoriasClinicas", "ERP_HistoriasClinicas\ERP_HistoriasClinicas.csproj", "{FA608374-BC5C-4CDC-BAD8-657C521881DE}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ServiciosDistribuidos_ERP_HistoriasClinicas", "..\ServiciosDistribuidos_ERP_HistoriasClinicas\", "{2A048AE0-764F-43CA-975D-49CC8EED431D}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ServiciosDistribuidos_ERP_HistoriasClinicas(1)", "ServiciosDistribuidos_ERP_HistoriasClinicas\", "{5FDFBF99-66A5-4FD8-A22A-2FA32B3044B6}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_4372"
-		Debug.AspNetCompiler.PhysicalPath = "..\ServiciosDistribuidos_ERP_HistoriasClinicas\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4372\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_4436"
+		Debug.AspNetCompiler.PhysicalPath = "ServiciosDistribuidos_ERP_HistoriasClinicas\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4436\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_4372"
-		Release.AspNetCompiler.PhysicalPath = "..\ServiciosDistribuidos_ERP_HistoriasClinicas\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4372\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_4436"
+		Release.AspNetCompiler.PhysicalPath = "ServiciosDistribuidos_ERP_HistoriasClinicas\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4436\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "4372"
+		VWDPort = "4436"
 	EndProjectSection
 EndProject
 Global
@@ -35,10 +35,10 @@ Global
 		{FA608374-BC5C-4CDC-BAD8-657C521881DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA608374-BC5C-4CDC-BAD8-657C521881DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA608374-BC5C-4CDC-BAD8-657C521881DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2A048AE0-764F-43CA-975D-49CC8EED431D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A048AE0-764F-43CA-975D-49CC8EED431D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A048AE0-764F-43CA-975D-49CC8EED431D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A048AE0-764F-43CA-975D-49CC8EED431D}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{5FDFBF99-66A5-4FD8-A22A-2FA32B3044B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FDFBF99-66A5-4FD8-A22A-2FA32B3044B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FDFBF99-66A5-4FD8-A22A-2FA32B3044B6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FDFBF99-66A5-4FD8-A22A-2FA32B3044B6}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
