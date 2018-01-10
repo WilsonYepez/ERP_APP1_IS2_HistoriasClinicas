@@ -1037,27 +1037,6 @@ advertencia 6002: La tabla o vista 'ERP_HistoriasClinicas.dbo.listado_facturacio
                 <ScalarProperty Name="ESTADO_AREA" ColumnName="ESTADO_AREA" />
               </MappingFragment>
             </EntityTypeMapping>
-            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.AREA_TRABAJO">
-              <ModificationFunctionMapping>
-                <InsertFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Insert_AreaTrabajo">
-                  <ScalarProperty Name="ESTADO_AREA" ParameterName="ESTADO_AREA" />
-                  <ScalarProperty Name="DESCRIPCION_AREA" ParameterName="DESCRIPCION_AREA" />
-                  <ScalarProperty Name="GERENCIA_AREA" ParameterName="GERENCIA_AREA" />
-                  <ScalarProperty Name="NOMBRE_AREA" ParameterName="NOMBRE_AREA" />
-                  <ScalarProperty Name="ID_AREA" ParameterName="ID_AREA" />
-                </InsertFunction>
-                <UpdateFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Update_AreaTrabajo">
-                  <ScalarProperty Name="ESTADO_AREA" ParameterName="ESTADO_AREA" Version="Current" />
-                  <ScalarProperty Name="DESCRIPCION_AREA" ParameterName="DESCRIPCION_AREA" Version="Current" />
-                  <ScalarProperty Name="GERENCIA_AREA" ParameterName="GERENCIA_AREA" Version="Current" />
-                  <ScalarProperty Name="NOMBRE_AREA" ParameterName="NOMBRE_AREA" Version="Current" />
-                  <ScalarProperty Name="ID_AREA" ParameterName="ID_AREA" Version="Current" />
-                </UpdateFunction>
-                <DeleteFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Remove_AreaTrabajo">
-                  <ScalarProperty Name="ID_AREA" ParameterName="ID_AREA" />
-                </DeleteFunction>
-              </ModificationFunctionMapping>
-            </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CABECERA_CONSULTA">
             <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.CABECERA_CONSULTA">
@@ -1074,37 +1053,6 @@ advertencia 6002: La tabla o vista 'ERP_HistoriasClinicas.dbo.listado_facturacio
                 <ScalarProperty Name="OBSERVACIONES_CON" ColumnName="OBSERVACIONES_CON" />
               </MappingFragment>
             </EntityTypeMapping>
-            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.CABECERA_CONSULTA">
-              <ModificationFunctionMapping>
-                <InsertFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Insert_CabeceraConsultum">
-                  <ScalarProperty Name="OBSERVACIONES_CON" ParameterName="OBSERVACIONES_CON" />
-                  <ScalarProperty Name="SINTOMAS_CON" ParameterName="SINTOMAS_CON" />
-                  <ScalarProperty Name="TEMPERATURA_CON" ParameterName="TEMPERATURA_CON" />
-                  <ScalarProperty Name="PESO_CON" ParameterName="PESO_CON" />
-                  <ScalarProperty Name="FECHA_CON" ParameterName="FECHA_CON" />
-                  <ScalarProperty Name="PRESION_CON" ParameterName="PRESION_CON" />
-                  <ScalarProperty Name="MOTIVO_CON" ParameterName="MOTIVO_CON" />
-                  <ScalarProperty Name="INDICACIONES_CON" ParameterName="INDICACIONES_CON" />
-                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" />
-                  <ScalarProperty Name="ID_CON" ParameterName="ID_CON" />
-                </InsertFunction>
-                <UpdateFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Update_CabeceraConsultum">
-                  <ScalarProperty Name="OBSERVACIONES_CON" ParameterName="OBSERVACIONES_CON" Version="Current" />
-                  <ScalarProperty Name="SINTOMAS_CON" ParameterName="SINTOMAS_CON" Version="Current" />
-                  <ScalarProperty Name="TEMPERATURA_CON" ParameterName="TEMPERATURA_CON" Version="Current" />
-                  <ScalarProperty Name="PESO_CON" ParameterName="PESO_CON" Version="Current" />
-                  <ScalarProperty Name="FECHA_CON" ParameterName="FECHA_CON" Version="Current" />
-                  <ScalarProperty Name="PRESION_CON" ParameterName="PRESION_CON" Version="Current" />
-                  <ScalarProperty Name="MOTIVO_CON" ParameterName="MOTIVO_CON" Version="Current" />
-                  <ScalarProperty Name="INDICACIONES_CON" ParameterName="INDICACIONES_CON" Version="Current" />
-                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" Version="Current" />
-                  <ScalarProperty Name="ID_CON" ParameterName="ID_CON" Version="Current" />
-                </UpdateFunction>
-                <DeleteFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Remove_CabeceraConsultum">
-                  <ScalarProperty Name="ID_CON" ParameterName="ID_CON" />
-                </DeleteFunction>
-              </ModificationFunctionMapping>
-            </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DETALLE_CONSULTA">
             <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.DETALLE_CONSULTA">
@@ -1116,27 +1064,6 @@ advertencia 6002: La tabla o vista 'ERP_HistoriasClinicas.dbo.listado_facturacio
                 <ScalarProperty Name="CANTDES_DET" ColumnName="CANTDES_DET" />
               </MappingFragment>
             </EntityTypeMapping>
-            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.DETALLE_CONSULTA">
-              <ModificationFunctionMapping>
-                <InsertFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Insert_DetalleConsultum">
-                  <ScalarProperty Name="CANTDES_DET" ParameterName="CANTDES_DET" />
-                  <ScalarProperty Name="PVP_DET" ParameterName="PVP_DET" />
-                  <ScalarProperty Name="CANTIDAD_DET" ParameterName="CANTIDAD_DET" />
-                  <ScalarProperty Name="ID_CON" ParameterName="ID_CON" />
-                  <ScalarProperty Name="ID_DET" ParameterName="ID_DET" />
-                </InsertFunction>
-                <UpdateFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Update_DetalleConsultum">
-                  <ScalarProperty Name="CANTDES_DET" ParameterName="CANTDES_DET" Version="Current" />
-                  <ScalarProperty Name="PVP_DET" ParameterName="PVP_DET" Version="Current" />
-                  <ScalarProperty Name="CANTIDAD_DET" ParameterName="CANTIDAD_DET" Version="Current" />
-                  <ScalarProperty Name="ID_CON" ParameterName="ID_CON" Version="Current" />
-                  <ScalarProperty Name="ID_DET" ParameterName="ID_DET" Version="Current" />
-                </UpdateFunction>
-                <DeleteFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Remove_DetalleConsultum">
-                  <ScalarProperty Name="ID_DET" ParameterName="ID_DET" />
-                </DeleteFunction>
-              </ModificationFunctionMapping>
-            </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EMPLEADO">
             <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.EMPLEADO">
@@ -1146,25 +1073,6 @@ advertencia 6002: La tabla o vista 'ERP_HistoriasClinicas.dbo.listado_facturacio
                 <ScalarProperty Name="CARGO_US" ColumnName="CARGO_US" />
                 <ScalarProperty Name="PASWORD_US" ColumnName="PASWORD_US" />
               </MappingFragment>
-            </EntityTypeMapping>
-            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.EMPLEADO">
-              <ModificationFunctionMapping>
-                <InsertFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Insert_Empleado">
-                  <ScalarProperty Name="PASWORD_US" ParameterName="PASWORD_US" />
-                  <ScalarProperty Name="CARGO_US" ParameterName="CARGO_US" />
-                  <ScalarProperty Name="ID_AREA" ParameterName="ID_AREA" />
-                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" />
-                </InsertFunction>
-                <UpdateFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Update_Empleado">
-                  <ScalarProperty Name="PASWORD_US" ParameterName="PASWORD_US" Version="Current" />
-                  <ScalarProperty Name="CARGO_US" ParameterName="CARGO_US" Version="Current" />
-                  <ScalarProperty Name="ID_AREA" ParameterName="ID_AREA" Version="Current" />
-                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" Version="Current" />
-                </UpdateFunction>
-                <DeleteFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Remove_Empleado">
-                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" />
-                </DeleteFunction>
-              </ModificationFunctionMapping>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HISTORIAS">
@@ -1199,73 +1107,6 @@ advertencia 6002: La tabla o vista 'ERP_HistoriasClinicas.dbo.listado_facturacio
                 <ScalarProperty Name="FRECUENCIA_INSOM_H" ColumnName="FRECUENCIA_INSOM_H" />
                 <ScalarProperty Name="OTRO_H" ColumnName="OTRO_H" />
               </MappingFragment>
-            </EntityTypeMapping>
-            <EntityTypeMapping TypeName="ERP_HistoriasClinicasModel.HISTORIAS">
-              <ModificationFunctionMapping>
-                <InsertFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Insert_Historia">
-                  <ScalarProperty Name="OTRO_H" ParameterName="OTRO_H" />
-                  <ScalarProperty Name="FRECUENCIA_INSOM_H" ParameterName="FRECUENCIA_INSOM_H" />
-                  <ScalarProperty Name="INSOMNIO_H" ParameterName="INSOMNIO_H" />
-                  <ScalarProperty Name="FRECUENCIA_PARADIPSIA" ParameterName="FRECUENCIA_PARADIPSIA" />
-                  <ScalarProperty Name="PARADIPSIA" ParameterName="PARADIPSIA" />
-                  <ScalarProperty Name="DIPSIA_H" ParameterName="DIPSIA_H" />
-                  <ScalarProperty Name="ALIMENTACION_H" ParameterName="ALIMENTACION_H" />
-                  <ScalarProperty Name="FRECUENCIA_DRO_H" ParameterName="FRECUENCIA_DRO_H" />
-                  <ScalarProperty Name="FRECUENCIA_ALC_H" ParameterName="FRECUENCIA_ALC_H" />
-                  <ScalarProperty Name="FRECUENCIA_TAB_H" ParameterName="FRECUENCIA_TAB_H" />
-                  <ScalarProperty Name="DROGAS_H" ParameterName="DROGAS_H" />
-                  <ScalarProperty Name="TABACO_H" ParameterName="TABACO_H" />
-                  <ScalarProperty Name="ALCOHOL_H" ParameterName="ALCOHOL_H" />
-                  <ScalarProperty Name="CAUSAS_SON_H" ParameterName="CAUSAS_SON_H" />
-                  <ScalarProperty Name="MUERTOS_SON_H" ParameterName="MUERTOS_SON_H" />
-                  <ScalarProperty Name="VIVO_SON_H" ParameterName="VIVO_SON_H" />
-                  <ScalarProperty Name="SON_H" ParameterName="SON_H" />
-                  <ScalarProperty Name="CAUSAS_H_H" ParameterName="CAUSAS_H_H" />
-                  <ScalarProperty Name="MUERTE_H_H" ParameterName="MUERTE_H_H" />
-                  <ScalarProperty Name="VIVO_H_H" ParameterName="VIVO_H_H" />
-                  <ScalarProperty Name="NUM_H_H" ParameterName="NUM_H_H" />
-                  <ScalarProperty Name="CAUSAS_M_H" ParameterName="CAUSAS_M_H" />
-                  <ScalarProperty Name="CAUSAS_P_H" ParameterName="CAUSAS_P_H" />
-                  <ScalarProperty Name="FALLECIDO_M_H" ParameterName="FALLECIDO_M_H" />
-                  <ScalarProperty Name="FALLECIDO_P_H" ParameterName="FALLECIDO_P_H" />
-                  <ScalarProperty Name="MADRE_H" ParameterName="MADRE_H" />
-                  <ScalarProperty Name="PADRE_H" ParameterName="PADRE_H" />
-                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" />
-                </InsertFunction>
-                <UpdateFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Update_Historia">
-                  <ScalarProperty Name="OTRO_H" ParameterName="OTRO_H" Version="Current" />
-                  <ScalarProperty Name="FRECUENCIA_INSOM_H" ParameterName="FRECUENCIA_INSOM_H" Version="Current" />
-                  <ScalarProperty Name="INSOMNIO_H" ParameterName="INSOMNIO_H" Version="Current" />
-                  <ScalarProperty Name="FRECUENCIA_PARADIPSIA" ParameterName="FRECUENCIA_PARADIPSIA" Version="Current" />
-                  <ScalarProperty Name="PARADIPSIA" ParameterName="PARADIPSIA" Version="Current" />
-                  <ScalarProperty Name="DIPSIA_H" ParameterName="DIPSIA_H" Version="Current" />
-                  <ScalarProperty Name="ALIMENTACION_H" ParameterName="ALIMENTACION_H" Version="Current" />
-                  <ScalarProperty Name="FRECUENCIA_DRO_H" ParameterName="FRECUENCIA_DRO_H" Version="Current" />
-                  <ScalarProperty Name="FRECUENCIA_ALC_H" ParameterName="FRECUENCIA_ALC_H" Version="Current" />
-                  <ScalarProperty Name="FRECUENCIA_TAB_H" ParameterName="FRECUENCIA_TAB_H" Version="Current" />
-                  <ScalarProperty Name="DROGAS_H" ParameterName="DROGAS_H" Version="Current" />
-                  <ScalarProperty Name="TABACO_H" ParameterName="TABACO_H" Version="Current" />
-                  <ScalarProperty Name="ALCOHOL_H" ParameterName="ALCOHOL_H" Version="Current" />
-                  <ScalarProperty Name="CAUSAS_SON_H" ParameterName="CAUSAS_SON_H" Version="Current" />
-                  <ScalarProperty Name="MUERTOS_SON_H" ParameterName="MUERTOS_SON_H" Version="Current" />
-                  <ScalarProperty Name="VIVO_SON_H" ParameterName="VIVO_SON_H" Version="Current" />
-                  <ScalarProperty Name="SON_H" ParameterName="SON_H" Version="Current" />
-                  <ScalarProperty Name="CAUSAS_H_H" ParameterName="CAUSAS_H_H" Version="Current" />
-                  <ScalarProperty Name="MUERTE_H_H" ParameterName="MUERTE_H_H" Version="Current" />
-                  <ScalarProperty Name="VIVO_H_H" ParameterName="VIVO_H_H" Version="Current" />
-                  <ScalarProperty Name="NUM_H_H" ParameterName="NUM_H_H" Version="Current" />
-                  <ScalarProperty Name="CAUSAS_M_H" ParameterName="CAUSAS_M_H" Version="Current" />
-                  <ScalarProperty Name="CAUSAS_P_H" ParameterName="CAUSAS_P_H" Version="Current" />
-                  <ScalarProperty Name="FALLECIDO_M_H" ParameterName="FALLECIDO_M_H" Version="Current" />
-                  <ScalarProperty Name="FALLECIDO_P_H" ParameterName="FALLECIDO_P_H" Version="Current" />
-                  <ScalarProperty Name="MADRE_H" ParameterName="MADRE_H" Version="Current" />
-                  <ScalarProperty Name="PADRE_H" ParameterName="PADRE_H" Version="Current" />
-                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" Version="Current" />
-                </UpdateFunction>
-                <DeleteFunction FunctionName="ERP_HistoriasClinicasModel.Store.trx_Remove_Historia">
-                  <ScalarProperty Name="CEDULA_EMP" ParameterName="CEDULA_EMP" />
-                </DeleteFunction>
-              </ModificationFunctionMapping>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PERSONA">
