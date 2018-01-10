@@ -148,24 +148,41 @@ namespace ERP_HistoriasClinicas
         {
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {
-                ctx.trx_Update_Historia(CEDULA_EMP, PADRE_H, MADRE_H, FALLECIDO_P_H, FALLECIDO_M_H, CAUSAS_P_H, CAUSAS_M_H, NUM_H_H, VIVO_H_H, MUERTE_H_H, CAUSAS_H_H,
-                    SON_H, VIVO_SON_H, MUERTOS_SON_H, CAUSAS_SON_H, ALCOHOL_H, TABACO_H, DROGAS_H, FRECUENCIA_TAB_H, FRECUENCIA_ALC_H, FRECUENCIA_DRO_H, ALIMENTACION_H, DIPSIA_H,
-                    PARADIPSIA, FRECUENCIA_PARADIPSIA, INSOMNIO_H, FRECUENCIA_INSOM_H, OTRO_H);
+                var d = ctx.HISTORIAS.Find(CEDULA_EMP);
+                if (d!=null)
+                {
+                    d.PADRE_H = PADRE_H;
+                    d.MADRE_H = MADRE_H;
+                    d.FALLECIDO_P_H = FALLECIDO_P_H;
+                    d.FALLECIDO_M_H = FALLECIDO_M_H;
+                    d.CAUSAS_P_H = CAUSAS_P_H;
+                    d.CAUSAS_M_H = CAUSAS_M_H;
+                    d.NUM_H_H = NUM_H_H;
+                    d.VIVO_H_H = VIVO_H_H;
+                    d.MUERTE_H_H = MUERTE_H_H;
+                    d.CAUSAS_H_H = CAUSAS_H_H;
+                    d.SON_H = SON_H;
+                    d.VIVO_SON_H = VIVO_SON_H;
+                    d.MUERTOS_SON_H = MUERTOS_SON_H;
+                    d.CAUSAS_SON_H = CAUSAS_SON_H;
+                    d.ALCOHOL_H = ALCOHOL_H;
+                    d.TABACO_H = TABACO_H;
+                    d.DROGAS_H = DROGAS_H;
+                    d.FRECUENCIA_TAB_H = FRECUENCIA_TAB_H;
+                    d.FRECUENCIA_ALC_H = FRECUENCIA_ALC_H;
+                    d.FRECUENCIA_DRO_H = FRECUENCIA_DRO_H;
+                    d.ALIMENTACION_H = ALIMENTACION_H;
+                    d.DIPSIA_H = DIPSIA_H;
+                    d.PARADIPSIA = PARADIPSIA;
+                    d.FRECUENCIA_PARADIPSIA = FRECUENCIA_PARADIPSIA;
+                    d.INSOMNIO_H = INSOMNIO_H;
+                    d.FRECUENCIA_INSOM_H = FRECUENCIA_INSOM_H;
+                    d.OTRO_H = OTRO_H;
+
+                    ctx.SaveChanges();
+                }
                 return 0;
             }
-        }
-
-        public int borrar_historia(string CEDULA_EMP)
-        {
-            using (var ctx = new ERP_HistoriasClinicasEntities())
-            {
-                    var d = ctx.HISTORIAS.Find(CEDULA_EMP);
-                    if (d != null)
-                    {
-                        ctx.HISTORIAS.Remove(d);
-                    }
-            }
-            return 0;
         }
 
         //CRUD CONSULTA
@@ -228,10 +245,22 @@ namespace ERP_HistoriasClinicas
         {
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {
-                ctx.trx_Insert_CabeceraConsultum(ID_CON,CEDULA_EMP, INDICACIONES_CON,MOTIVO_CON, PRESION_CON, FECHA_CON, PESO_CON, TEMPERATURA_CON, 
-                    SINTOMAS_CON,OBSERVACIONES_CON);
-                return 0;
+                var d = new CABECERA_CONSULTA();
+                d.ID_CON = ID_CON;
+                d.CEDULA_EMP = CEDULA_EMP;
+                d.INDICACIONES_CON = INDICACIONES_CON;
+                d.MOTIVO_CON = MOTIVO_CON;
+                d.PRESION_CON = PRESION_CON;
+                d.FECHA_CON = FECHA_CON;
+                d.PESO_CON = PESO_CON;
+                d.TEMPERATURA_CON = TEMPERATURA_CON;
+                d.SINTOMAS_CON = SINTOMAS_CON;
+                d.OBSERVACIONES_CON = OBSERVACIONES_CON;
+
+                ctx.CABECERA_CONSULTA.Add(d);
+                ctx.SaveChanges();
             }
+            return 0;
         }
 
         public int actualizar_consulta(Decimal ID_CON, string CEDULA_EMP, string INDICACIONES_CON, string MOTIVO_CON, Decimal PRESION_CON,
@@ -239,8 +268,21 @@ namespace ERP_HistoriasClinicas
         {
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {
-                ctx.trx_Update_CabeceraConsultum(ID_CON, CEDULA_EMP, INDICACIONES_CON, MOTIVO_CON, PRESION_CON, FECHA_CON, PESO_CON, TEMPERATURA_CON,
-                    SINTOMAS_CON, OBSERVACIONES_CON);
+                var d = ctx.CABECERA_CONSULTA.Find(ID_CON);
+                if (d!=null)
+                {
+                    d.CEDULA_EMP = CEDULA_EMP;
+                    d.INDICACIONES_CON = INDICACIONES_CON;
+                    d.MOTIVO_CON = MOTIVO_CON;
+                    d.PRESION_CON = PRESION_CON;
+                    d.FECHA_CON = FECHA_CON;
+                    d.PESO_CON = PESO_CON;
+                    d.TEMPERATURA_CON = TEMPERATURA_CON;
+                    d.SINTOMAS_CON = SINTOMAS_CON;
+                    d.OBSERVACIONES_CON = OBSERVACIONES_CON;
+
+                    ctx.SaveChanges();
+                }
                 return 0;
             }
         }
@@ -249,12 +291,109 @@ namespace ERP_HistoriasClinicas
         {
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {
-                ctx.trx_Remove_CabeceraConsultum(ID_CON);
+                var d = ctx.CABECERA_CONSULTA.Find(ID_CON);
+                if (d!=null)
+                {
+                    ctx.CABECERA_CONSULTA.Remove(d);
+                }
                 return 0;
             }
         }
 
         //CRUD DETALLE
-        
+        public Detalle_Consulta2[] listado_detalle()
+        {
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var lst = from d in ctx.DETALLE_CONSULTA
+                          select d;
+
+                Detalle_Consulta2[] r = new Detalle_Consulta2[lst.Count()];
+                int i = 0;
+                foreach(var d in lst)
+                {
+                    r[i++] = new Detalle_Consulta2
+                    {
+                        ID_DET = d.ID_DET,
+                        ID_CON = d.ID_CON,
+                        CANTIDAD_DET = d.CANTIDAD_DET,
+                        PVP_DET = d.PVP_DET,
+                        CANTDES_DET = d.CANTDES_DET,
+                    };
+                }
+                return r;
+            }
+        }
+
+        public Detalle_Consulta2 un_detalle(string ID_DET)
+        {
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var d = ctx.DETALLE_CONSULTA.Find(ID_DET);
+                Detalle_Consulta2 r = null;
+                if (d!=null)
+                {
+                    r = new Detalle_Consulta2
+                    {
+                        ID_DET = d.ID_DET,
+                        ID_CON = d.ID_CON,
+                        CANTIDAD_DET = d.CANTIDAD_DET,
+                        PVP_DET = d.PVP_DET,
+                        CANTDES_DET = d.CANTDES_DET,
+                    };
+                }
+                return r;
+            }
+        }
+
+        public int insertar_detalle(string ID_DET,Decimal ID_CON,Decimal CANTIDAD_DET,Decimal PVP_DET,
+                        Decimal CANTDES_DET)
+        {
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var d = new DETALLE_CONSULTA();
+                d.ID_DET = ID_DET;
+                d.ID_CON = ID_CON;
+                d.CANTIDAD_DET = CANTIDAD_DET;
+                d.PVP_DET = PVP_DET;
+                d.CANTDES_DET = CANTDES_DET;
+
+                ctx.DETALLE_CONSULTA.Add(d);
+                ctx.SaveChanges();
+            }
+            return 0;
+        }
+
+        public int actualizar_detalle(string ID_DET, Decimal ID_CON, Decimal CANTIDAD_DET, Decimal PVP_DET,
+                        Decimal CANTDES_DET)
+        {
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var d = ctx.DETALLE_CONSULTA.Find(ID_DET);
+                if (d!=null)
+                {
+                    d.ID_CON = ID_CON;
+                    d.CANTIDAD_DET = CANTIDAD_DET;
+                    d.PVP_DET = PVP_DET;
+                    d.CANTDES_DET = CANTDES_DET;
+                    ctx.SaveChanges();
+                }
+            }
+            return 0;
+
+        }
+
+        public int borrar_detalle(string ID_DET)
+        {
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var d = ctx.DETALLE_CONSULTA.Find(ID_DET);
+                if (d!=null)
+                {
+                    ctx.DETALLE_CONSULTA.Remove(d);
+                }
+            }
+            return 0;
+        }
     }
 }
