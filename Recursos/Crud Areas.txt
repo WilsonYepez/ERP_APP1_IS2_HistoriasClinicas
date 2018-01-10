@@ -1,0 +1,115 @@
+//Areas de Trabajo
+        public Areas2[] lista_areas()
+        {
+            using (var ctx = new ClinicaHistoriaEntities1())
+            {
+                var lst = from d in ctx.AREA_TRABAJO
+                          select d;
+                Areas2[] r = new Areas2[lst.Count()];
+                int i = 0;
+                foreach (var d in lst)
+                {
+                    r[i++] = new Areas2
+                    {
+                        CEDULA_EMP = d.CEDULA_EMP,
+                        ID_AREA = d.ID_AREA,
+                        DESCRIPCION_AREA=d.DESCRIPCION_AREA,
+                        ESTADO_AREA=d.ESTADO_AREA,
+                        GERENCIA_AREA=d.ESTADO_AREA,
+                        NOMBRE_AREA=d.NOMBRE_AREA
+                    };
+                }
+                return r;
+            }
+        }
+        public Areas2[] lista_areas_nombre(String NOMBRE_AREA)
+        {
+            using (var ctx = new ClinicaHistoriaEntities1())
+            {
+                var lst = from d in ctx.AREA_TRABAJO
+                          where d.NOMBRE_AREA.ToLower() == NOMBRE_AREA.ToLower()
+                          select d;
+                Areas2[] r = new Areas2[lst.Count()];
+                int i = 0;
+                foreach (var d in lst)
+                {
+                    r[i++] = new Areas2
+                    {
+                        CEDULA_EMP = d.CEDULA_EMP,
+                        ID_AREA = d.ID_AREA,
+                        DESCRIPCION_AREA = d.DESCRIPCION_AREA,
+                        ESTADO_AREA = d.ESTADO_AREA,
+                        GERENCIA_AREA = d.ESTADO_AREA,
+                        NOMBRE_AREA = d.NOMBRE_AREA
+                    };
+                }
+                return r;
+            }
+        }
+        public Areas2 area_idArea(decimal ID_AREA)
+        {
+            using (var ctx = new ClinicaHistoriaEntities1())
+            {
+                var d = ctx.AREA_TRABAJO.Find(ID_AREA);
+                Areas2 r = null;
+                if (d != null)
+                {
+                    r = new Areas2
+                    {
+                        CEDULA_EMP = d.CEDULA_EMP,
+                        ID_AREA = d.ID_AREA,
+                        DESCRIPCION_AREA = d.DESCRIPCION_AREA,
+                        ESTADO_AREA = d.ESTADO_AREA,
+                        GERENCIA_AREA = d.ESTADO_AREA,
+                        NOMBRE_AREA = d.NOMBRE_AREA
+                    };
+                }
+                return r;
+            }
+        }
+        public int insertar_area(decimal ID_AREA, string CEDULA_EMP, string NOMBRE_AREA, string GERENCIA_AREA, string DESCRIPCION_AREA, string ESTADO_AREA)
+        {
+            using (var ctx = new ClinicaHistoriaEntities1())
+            {
+                var d = new AREA_TRABAJO();
+                d.CEDULA_EMP = CEDULA_EMP;
+                d.ID_AREA = ID_AREA;
+                d.NOMBRE_AREA = NOMBRE_AREA;
+                d.ESTADO_AREA = ESTADO_AREA;
+                d.DESCRIPCION_AREA = DESCRIPCION_AREA;
+                d.GERENCIA_AREA = GERENCIA_AREA;
+                ctx.AREA_TRABAJO.Add(d);
+                ctx.SaveChanges();
+            }
+            return 0;
+        }
+        public int update_area(decimal ID_AREA, string CEDULA_EMP, string NOMBRE_AREA, string GERENCIA_AREA, string DESCRIPCION_AREA, string ESTADO_AREA)
+        {
+            using (var ctx = new ClinicaHistoriaEntities1())
+            {
+                var d = ctx.AREA_TRABAJO.Find(ID_AREA);
+                if (d != null)
+                {
+                    d.NOMBRE_AREA = NOMBRE_AREA;
+                    d.CEDULA_EMP = CEDULA_EMP;
+                    d.DESCRIPCION_AREA = DESCRIPCION_AREA;
+                    d.ESTADO_AREA = ESTADO_AREA;
+                    d.GERENCIA_AREA = GERENCIA_AREA;
+                    d.ESTADO_AREA = ESTADO_AREA;
+                }
+                ctx.SaveChanges();
+            }
+            return 0;
+        }
+        public int delete_area(decimal ID_AREA)
+        {
+            using (var ctx = new ClinicaHistoriaEntities1())
+            {
+                var d = ctx.AREA_TRABAJO.Find(ID_AREA);
+                if (d != null)
+                {
+                    ctx.AREA_TRABAJO.Remove(d);
+                }
+            }
+            return 0;
+        }
