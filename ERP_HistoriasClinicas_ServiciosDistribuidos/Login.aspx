@@ -32,7 +32,6 @@
             <h1>Inicio de Sesión</h1>
                 <asp:TextBox ID="TextBox1" runat="server"  CssClass="username" placeholder="Usuario"></asp:TextBox>
                 <asp:TextBox ID="TextBox2" runat="server" placeholder="Contraseña"></asp:TextBox>
-                <a href="">Olvide mi contraseña? </a>
                 <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Iniciar Sesión" CssClass="button" BackColor="#ff6600"/>
                 
                 <div class="error"><span>+</span></div>

@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterAdmin.master.cs" Inherits="Vistas_Admin_MasterAdmin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="~/assets/css/jQueryUI/jquery-ui.min.css" rel="stylesheet" >
+    <link href="~/assets/css/font-awesome.min.css" rel="stylesheet" >
+    <link href="~/assets/css/ionicons.min.css" rel="stylesheet" >
+    <link href="~/assets/css/morris/morris.css" rel="stylesheet">
+    <link href="~/assets/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" >
+    <link href="~/assets/css/datepicker/datepicker3.css" rel="stylesheet" >
+    <link href="~/assets/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" >
+    <link href="~/assets/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" >
+    <link href="~/assets/css/AdminLTE.css" rel="stylesheet" >
+
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="skin-blue" onkeypress="ScanForenterKey(event,true,true);" onload="Processin();">
+    <form id="form1" runat="server" role="form">
+        <header class="header">
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-right">
+                    
+                    <ul class="nav navbar-nav">
+                        <li><asp:Label ID="nombre" runat="server" Text="Label"></asp:Label></li>
+                        <li><a href="Login.aspx">Cerrar sesion</a></li>
+                </ul>
+
+                </div>
+            </nav>
+        </header>
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+        <aside class="left-side sidebar-offcanvas">
+            <ul><h3>Área de Trabajo</h3>
+                <li><a href="area/Crud_area.aspx">Control Área de Trabajo</a></li>
+                <li><a href="area/Insertar_area.aspx">Nueva Área de Trabajo</a></li>
+            </ul>
+        </aside>
+        
+        <aside class="right-side">
+            <div>
+                <section class="content"><div class="row">
+                    <div class="col-md-12">
+                        <asp:ContentPlaceHolder id="body" runat="server"></asp:ContentPlaceHolder>
+
+                           
+                    <asp:ContentPlaceHolder id="body_fixed" runat="server"></asp:ContentPlaceHolder>
+                    </div>
+                </div></section>
+            </div>
+        </aside>
+            </div>
+
+
+      
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </form>
+</body>
+</html>
+

@@ -18,7 +18,7 @@ public partial class Login : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+
     }
 
     protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
@@ -38,6 +38,11 @@ public partial class Login : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
+        login();
+    }
+
+    public void login()
+    {
         WebService obj = new WebService();
 
         string CEDULA_EMP = TextBox1.Text;
@@ -46,7 +51,7 @@ public partial class Login : System.Web.UI.Page
         DataSet ds = obj.login(TextBox1.Text, TextBox2.Text);
         if (ds.Tables[0].Rows.Count > 0)
         {
-            Response.Redirect("WebService.asmx");
+            Response.Redirect("Default.aspx");
         }
         else
         {
