@@ -4,6 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     <h3>CRUD HISTORIAS CLÍNICAS</h3>
+    <p>
+        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="CEDULA_EMP" DataValueField="CEDULA_EMP">
+        </asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ERP_HistoriasClinicasConnectionString5 %>" SelectCommand="Select CEDULA_EMP From PERSONA  where Not CEDULA_EMP In (Select CEDULA_EMP From HISTORIAS) "></asp:SqlDataSource>
+    </p>
     Nombre del Padre: <asp:TextBox ID="T_name_padre" runat="server" Width="238px"></asp:TextBox> &nbsp;Vivo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="live_p" runat="server">
          <asp:ListItem Value="SI">SI</asp:ListItem>
             <asp:ListItem Value="NO">NO</asp:ListItem>
@@ -55,6 +60,7 @@
             <asp:ListItem Value="NO">NO</asp:ListItem>                                                                                 </asp:DropDownList> 
     &nbsp;&nbsp;&nbsp; 
     Frecuencia:&nbsp;&nbsp;&nbsp; <asp:TextBox ID="T_f_in" runat="server" Width="634px"></asp:TextBox><br>
+    Alimentación: <asp:TextBox ID="T_alimen" runat="server" Width="813px" Height="96px"></asp:TextBox>
     Otro: <asp:TextBox ID="T_o" runat="server" Width="813px" Height="96px"></asp:TextBox>
     <br />
     <br />
