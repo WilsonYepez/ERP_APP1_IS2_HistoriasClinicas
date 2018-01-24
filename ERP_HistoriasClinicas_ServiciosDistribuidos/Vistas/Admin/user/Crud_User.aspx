@@ -34,10 +34,47 @@
             OnRowEditing="rowEditingEvent" 
             OnRowUpdating="rowUpdatingEvent" 
               
-            DataKeyNames="CEDULA_EMP">
+            DataKeyNames="CEDULA_EMP" AutoGenerateColumns="false">
 
             <Columns>
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                <asp:TemplateField HeaderText="CEDULA">
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text='<%#Bind("CEDULA_EMP")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtcedu" runat="server" Text='<%#Bind("CEDULA_EMP")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
+                <asp:TemplateField HeaderText="CÓDIGO DE AREA">
+                    <ItemTemplate>
+                        <asp:Label ID="Label2" runat="server" Text='<%#Bind("ID_AREA")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtarea" runat="server" Text='<%#Bind("ID_AREA")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
+                <asp:TemplateField HeaderText="CARGO DE USUARIO">
+                    <ItemTemplate>
+                        <asp:Label ID="Label3" runat="server" Text='<%#Bind("CARGO_US")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtcargo" runat="server" Text='<%#Bind("CARGO_US")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
+
+                <asp:TemplateField HeaderText="CONTRASEÑA">
+                    <ItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%#Bind("PASWORD_US")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtpass" runat="server" Text='<%#Bind("PASWORD_US")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
+                <asp:CommandField ButtonType="Link" ShowEditButton="true" ShowDeleteButton="true"/>
             </Columns>
 
         </asp:GridView>
