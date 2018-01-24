@@ -44,14 +44,14 @@
             </nav>
         </header>
         <div class="wrapper row-offcanvas row-offcanvas-left">
-        <aside class="left-side sidebar-offcanvas bg-light-blue">
-            <br>
-            <ul class="nice-menu"><h3>Menú</h3>
-                <li><a href="../user/Crud_User.aspx">Control de Usuarios</a></li>
-                <li><a href="../area/Crud_area.aspx">Control Área de Trabajo</a></li>
-                <li><a href="../consulta/Crud_Consulta.aspx">Control de Consultas Médicas</a></li>
-                <li><a href="../empleado/Crud_Emp.aspx">Control de Empleados</a></li>
-                <li><a href="../historia/Crud_Historia.aspx">Control de Historias Clinicas</a></li>
+        <aside class="left-side sidebar-offcanvas" >
+
+            <ul class="nice-menu">
+                <li class="blue"><a href="../../../Vistas/Admin/user/Crud_User.aspx">Control de Usuarios</a></li>
+                <li class="blue"><a href="../../../Vistas/Admin/area/Crud_area.aspx">Control Área de Trabajo</a></li>
+                <li class="blue"><a href="../../../Vistas/Admin/consulta/Crud_Consulta.aspx">Control de Consultas Médicas</a></li>
+                <li class="blue"><a href="../../../Vistas/Admin/empleado/Crud_Emp.aspx">Control de Empleados</a></li>
+                <li class="blue"><a href="../../../Vistas/Admin/historia/Crud_Historia.aspx">Control de Historias Clinicas</a></li>
             </ul>
 
         </aside>
