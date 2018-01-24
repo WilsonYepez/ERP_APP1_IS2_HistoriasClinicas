@@ -49,10 +49,11 @@
     </asp:DropDownList>
     <br>
     Ciudadania: <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
-    <br />
+    <br>
 &nbsp;<br>
     <asp:Button ID="ADD_PERSONA" runat="server" Text="Agregar" OnClick="ADD_PERSONA_Click" />
-    <br />
+    <br>
+    <br>
     <asp:GridView ID="GridView1" runat="server" 
         OnRowCancelingEdit="GridView1_RowCancelingEdit" 
         OnRowDeleting="GridView1_RowDeleting" 
@@ -159,6 +160,8 @@
                         <asp:TextBox ID="txtciu" runat="server" Text='<%#Bind("CIUDADNACI_EMP")%>'></asp:TextBox>
                     </EditItemTemplate>
                 </asp:TemplateField>
+
+            <asp:CommandField ButtonType="Link" ShowEditButton="true" ShowDeleteButton="true"/>
 
         </columns>
 

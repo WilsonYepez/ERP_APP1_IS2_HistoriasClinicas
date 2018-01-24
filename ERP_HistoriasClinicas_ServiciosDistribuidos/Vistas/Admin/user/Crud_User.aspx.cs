@@ -42,7 +42,7 @@ public partial class Vistas_Admin_user_Crud_User : System.Web.UI.Page
     protected void rowDeletingEvent(object sender, GridViewDeleteEventArgs e)
     {
         string cod = GridView1.DataKeys[e.RowIndex].Values[0].ToString();
-        obj.delete_Persona(cod);
+        obj.delete_empleado(cod);
         GridView1.EditIndex = -1;
         cargargrilla();
     }
