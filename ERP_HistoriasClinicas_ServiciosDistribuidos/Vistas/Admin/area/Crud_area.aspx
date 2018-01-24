@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     <br />
-    <h1>Conotrol de Areas de Trabajo</h1>
+    <h1>Control de Áreas de Trabajo</h1>
     <br />
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataKeyNames="ID_AREA" DataSourceID="AREA" GridLines="Horizontal" OnRowEditing="GridView1_RowEditing1" OnRowUpdating="GridView1_RowUpdating1" AllowPaging="True" OnDataBinding="Page_Load" OnDataBound="Page_Load" ShowFooter="True">
         <Columns>
