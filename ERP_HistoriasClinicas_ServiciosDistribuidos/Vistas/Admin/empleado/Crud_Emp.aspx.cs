@@ -33,4 +33,24 @@ public partial class Vistas_Admin_empleado_Crud_Emp : System.Web.UI.Page
         obj.insertar_Persona(cedula,nombres,fecha,nacionalidad,direccion,telefono,email,estado, Tipo,"ACTIVO", Ciudadania);
         cargaGrilla();
     }
+
+    protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+
+    }
+
+    protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+
+    }
+
+    protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+
+    }
+
+    protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+    {
+
+    }
 }

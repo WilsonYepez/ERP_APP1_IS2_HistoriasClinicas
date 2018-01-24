@@ -44,9 +44,20 @@
         </header>
         <div class="wrapper row-offcanvas row-offcanvas-left">
         <aside class="left-side sidebar-offcanvas">
-            <ul><h3>Área de Trabajo</h3>
-                <li><a href="area/Crud_area.aspx">Control Área de Trabajo</a></li>
-                <li><a href="area/Insertar_area.aspx">Nueva Área de Trabajo</a></li>
+            <ul><h4>Usuarios</h4>
+                <li><a href="../user/Crud_User.aspx">Control de Usuarios</a></li>
+            </ul>
+            <ul><h4>Área de Trabajo</h4>
+                <li><a href="../area/Crud_area.aspx">Control Área de Trabajo</a></li>
+            </ul>
+            <ul><h4>Consultas Médicas</h4>
+                <li><a href="../consulta/Crud_Consulta.aspx">Control de Consultas Médicas</a></li>
+            </ul>
+            <ul><h4>Empleados</h4>
+                <li><a href="../empleado/Crud_Emp.aspx">Control de Empleados</a></li>
+            </ul>
+            <ul><h4>Historias Clínicas</h4>
+                <li><a href="../historia/Crud_Historia.aspx">Control de Historias Clinicas</a></li>
             </ul>
         </aside>
         
