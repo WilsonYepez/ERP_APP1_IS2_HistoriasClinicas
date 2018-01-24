@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
-    <h3>CRUD PERSONAS</h3>
+    <h3>CONTROL DE PERSONAS</h3>
     Cedula: 
     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
     <br>
@@ -49,11 +49,122 @@
     </asp:DropDownList>
     <br>
     Ciudadania: <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
-    <br />
+    <br>
 &nbsp;<br>
     <asp:Button ID="ADD_PERSONA" runat="server" Text="Agregar" OnClick="ADD_PERSONA_Click" />
-    <br />
-    <asp:GridView ID="GridView1" runat="server">
+    <br>
+    <br>
+    <asp:GridView ID="GridView1" runat="server" 
+        OnRowCancelingEdit="GridView1_RowCancelingEdit" 
+        OnRowDeleting="GridView1_RowDeleting" 
+        OnRowEditing="GridView1_RowEditing" 
+        OnRowUpdating="GridView1_RowUpdating"
+        DatakeyNames="CEDULA_EMP" AutoGenerateColumns="false"
+        >
+        <columns>
+            <asp:TemplateField HeaderText="CEDULA">
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text='<%#Bind("CEDULA_EMP")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtcedu" runat="server" Text='<%#Bind("CEDULA_EMP")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="NOMBRES">
+                    <ItemTemplate>
+                        <asp:Label ID="Label2" runat="server" Text='<%#Bind("NOMBRES_EMP")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtnom" runat="server" Text='<%#Bind("NOMBRES_EMP")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="FECHA DE NACIMIENTO">
+                    <ItemTemplate>
+                        <asp:Label ID="Label3" runat="server" Text='<%#Bind("NACIFECHA_EMP")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtfech" runat="server" Text='<%#Bind("NACIFECHA_EMP")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="NACIONALIDAD">
+                    <ItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%#Bind("NACIONALIDAD_EMP")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtnac" runat="server" Text='<%#Bind("NACIONALIDAD_EMP")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="DIRECCIÓN">
+                    <ItemTemplate>
+                        <asp:Label ID="Label5" runat="server" Text='<%#Bind("DIRECCIO_EMP")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtdic" runat="server" Text='<%#Bind("DIRECCIO_EMP")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="TELEFONO">
+                    <ItemTemplate>
+                        <asp:Label ID="Label6" runat="server" Text='<%#Bind("TELEFONO_EMP")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txttel" runat="server" Text='<%#Bind("TELEFONO_EMP")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="E-MAIL">
+                    <ItemTemplate>
+                        <asp:Label ID="Label7" runat="server" Text='<%#Bind("EMAIL_EMP")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtemail" runat="server" Text='<%#Bind("EMAIL_EMP")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="ESTADO CIVIL">
+                    <ItemTemplate>
+                        <asp:Label ID="Label8" runat="server" Text='<%#Bind("ESTADO_EMP")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtecivil" runat="server" Text='<%#Bind("ESTADO_EMP")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="TIPO DE SANGRE">
+                    <ItemTemplate>
+                        <asp:Label ID="Label9" runat="server" Text='<%#Bind("TIPO_EMP")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtsangre" runat="server" Text='<%#Bind("TIPO_EMP")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="ACTIVO/INACTIVO">
+                    <ItemTemplate>
+                        <asp:Label ID="Label10" runat="server" Text='<%#Bind("ACTIVO_EMP")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtac" runat="server" Text='<%#Bind("ACTIVO_EMP")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="CIUDADANIA">
+                    <ItemTemplate>
+                        <asp:Label ID="Label11" runat="server" Text='<%#Bind("CIUDADNACI_EMP")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtciu" runat="server" Text='<%#Bind("CIUDADNACI_EMP")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
+            <asp:CommandField ButtonType="Link" ShowEditButton="true" ShowDeleteButton="true"/>
+
+        </columns>
+
     </asp:GridView>
     <br />
 </asp:Content>

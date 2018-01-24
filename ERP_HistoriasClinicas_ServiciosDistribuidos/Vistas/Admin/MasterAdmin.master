@@ -17,6 +17,7 @@
     <link href="~/assets/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" >
     <link href="~/assets/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" >
     <link href="~/assets/css/AdminLTE.css" rel="stylesheet" >
+    <link href="../../assets/css/nice-menu.css" rel="stylesheet" >
 
 
     <asp:ContentPlaceHolder id="head" runat="server">
@@ -43,17 +44,22 @@
             </nav>
         </header>
         <div class="wrapper row-offcanvas row-offcanvas-left">
-        <aside class="left-side sidebar-offcanvas">
-            <ul><h3>Área de Trabajo</h3>
-                <li><a href="area/Crud_area.aspx">Control Área de Trabajo</a></li>
-                <li><a href="area/Insertar_area.aspx">Nueva Área de Trabajo</a></li>
+        <aside class="left-side sidebar-offcanvas" >
+
+            <ul class="nice-menu">
+                <li class="blue"><a href="../user/Crud_User.aspx">Control de Usuarios</a></li>
+                <li class="blue"><a href="../area/Crud_area.aspx">Control Área de Trabajo</a></li>
+                <li class="blue"><a href="../consulta/Crud_Consulta.aspx">Control de Consultas Médicas</a></li>
+                <li class="blue"><a href="../empleado/Crud_Emp.aspx">Control de Empleados</a></li>
+                <li class="blue"><a href="../historia/Crud_Historia.aspx">Control de Historias Clinicas</a></li>
             </ul>
+
         </aside>
         
         <aside class="right-side">
             <div>
                 <section class="content"><div class="row">
-                    <div class="col-md-12">
+                    <div class="bg-light-blue" >
                         <asp:ContentPlaceHolder id="body" runat="server"></asp:ContentPlaceHolder>
 
                            
