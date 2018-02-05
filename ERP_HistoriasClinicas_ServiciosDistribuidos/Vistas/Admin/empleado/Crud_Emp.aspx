@@ -4,13 +4,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     <h3>CONTROL DE PERSONAS</h3>
-    Cedula: 
+    Cédula: 
     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
     <br>
     Nombres: 
     <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
     <br>
-    Fecha Nacimineto: <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px">
+    Fecha Nacimiento: <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px">
         <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
         <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
         <OtherMonthDayStyle ForeColor="#999999" />
@@ -25,7 +25,7 @@
     Dirección:
     <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
     <br>
-    Telefono:<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+    Teléfono:<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
     <br />
     Email:<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
     <br />

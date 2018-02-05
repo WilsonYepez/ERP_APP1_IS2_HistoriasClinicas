@@ -37,7 +37,7 @@
                     
                     <ul class="nav navbar-nav">
                         <li><asp:Label ID="nombre" runat="server" Text="Label"></asp:Label></li>
-                        <li><a href="Login.aspx">Cerrar sesion</a></li>
+                        <li><a href="Login.aspx">Cerrar Sesión</a></li>
                 </ul>
 
                 </div>

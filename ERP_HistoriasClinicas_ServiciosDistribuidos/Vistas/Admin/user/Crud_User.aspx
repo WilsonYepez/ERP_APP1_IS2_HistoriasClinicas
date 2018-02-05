@@ -4,14 +4,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     <div class="container">
-        <h3>CURD DE USUARIOS</h3>
+        <h3>CONTROL DE USUARIOS</h3>
         </div>
     <div class="thumbnail">
-       Cedula: <asp:DropDownList AutoPostBack="True" ID="DropDownList2" Width="200px" runat="server" DataSourceID="SqlDataSource_Persona" DataTextField="CEDULA_EMP" DataValueField="CEDULA_EMP"></asp:DropDownList>
+       Cédula: <asp:DropDownList AutoPostBack="True" ID="DropDownList2" Width="200px" runat="server" DataSourceID="SqlDataSource_Persona" DataTextField="CEDULA_EMP" DataValueField="CEDULA_EMP"></asp:DropDownList>
         <asp:SqlDataSource ID="SqlDataSource_Persona" runat="server" ConnectionString="<%$ ConnectionStrings:ERP_HistoriasClinicasConnectionString4 %>" SelectCommand="Select CEDULA_EMP From PERSONA where Not CEDULA_EMP In (Select CEDULA_EMP From EMPLEADO) AND ACTIVO_EMP='ACTIVO'">
         </asp:SqlDataSource>
         <br>
-       Area de Trabajo:
+       Área de Trabajo:
         <asp:DropDownList AutoPostBack="True" ID="DropDownList1" runat="server" Width="200px" DataSourceID="SqlDataSource_Areas" DataTextField="NOMBRE_AREA" DataValueField="ID_AREA"></asp:DropDownList>
 
         <asp:SqlDataSource ID="SqlDataSource_Areas" runat="server" ConnectionString="<%$ ConnectionStrings:ERP_HistoriasClinicasConnectionString3 %>" SelectCommand="SELECT [NOMBRE_AREA], [ID_AREA] FROM [AREA_TRABAJO] WHERE ([ESTADO_AREA] = @ESTADO_AREA)">
