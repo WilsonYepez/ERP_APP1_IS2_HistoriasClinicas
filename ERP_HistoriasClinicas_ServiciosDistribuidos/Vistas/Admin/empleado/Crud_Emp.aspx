@@ -4,56 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     <h3>CONTROL DE PERSONAS</h3>
-    Cédula: 
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-    <br>
-    Nombres: 
-    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-    <br>
-    Fecha Nacimiento: <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px">
-        <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
-        <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
-        <OtherMonthDayStyle ForeColor="#999999" />
-        <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-        <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
-        <TodayDayStyle BackColor="#CCCCCC" />
-    </asp:Calendar>
-    <br>
-    Nacionalidad:
-    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-    <br>
-    Dirección:
-    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-    <br>
-    Teléfono:<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-    <br />
-    Email:<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
-    <br />
-    Estado Civil: <asp:DropDownList ID="DropDownList1" runat="server">
-        <asp:ListItem Value="SOLTERO">SOLTERO</asp:ListItem>
-            <asp:ListItem Value="CASADO">CASADO</asp:ListItem>
-            <asp:ListItem Value="DIVORCIADO">DIVORCIADO</asp:ListItem>
-            <asp:ListItem Value="UNION LIBRE">UNION LIBRE</asp:ListItem>
-    </asp:DropDownList>
-    <br />
-    Tipo:
-    <asp:DropDownList ID="DropDownList2" runat="server">
-        <asp:ListItem Value="O+">O+</asp:ListItem>
-            <asp:ListItem Value="O-">O-</asp:ListItem>
-        <asp:ListItem Value="A+">A-</asp:ListItem>
-            <asp:ListItem Value="B-">B-</asp:ListItem>
-            <asp:ListItem Value="AB-">AB-</asp:ListItem>
-            <asp:ListItem Value="AB+">AB+</asp:ListItem>
-            <asp:ListItem Value="A+">A+</asp:ListItem>
-            <asp:ListItem Value="B+">B+</asp:ListItem>
-    </asp:DropDownList>
-    <br>
-    Ciudadania: <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
-    <br>
-&nbsp;<br>
-    <asp:Button ID="ADD_PERSONA" runat="server" Text="Agregar" OnClick="ADD_PERSONA_Click" />
-    <br>
-    <br>
+    
     <asp:GridView ID="GridView1" runat="server" 
         OnRowCancelingEdit="GridView1_RowCancelingEdit" 
         OnRowDeleting="GridView1_RowDeleting" 
@@ -77,24 +28,6 @@
                     </ItemTemplate>
                     <EditItemTemplate>
                         <asp:TextBox ID="txtnom" runat="server" Text='<%#Bind("NOMBRES_EMP")%>'></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-            <asp:TemplateField HeaderText="FECHA DE NACIMIENTO">
-                    <ItemTemplate>
-                        <asp:Label ID="Label3" runat="server" Text='<%#Bind("NACIFECHA_EMP")%>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtfech" runat="server" Text='<%#Bind("NACIFECHA_EMP")%>'></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-            <asp:TemplateField HeaderText="NACIONALIDAD">
-                    <ItemTemplate>
-                        <asp:Label ID="Label4" runat="server" Text='<%#Bind("NACIONALIDAD_EMP")%>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtnac" runat="server" Text='<%#Bind("NACIONALIDAD_EMP")%>'></asp:TextBox>
                     </EditItemTemplate>
                 </asp:TemplateField>
 
@@ -125,24 +58,6 @@
                     </EditItemTemplate>
                 </asp:TemplateField>
 
-            <asp:TemplateField HeaderText="ESTADO CIVIL">
-                    <ItemTemplate>
-                        <asp:Label ID="Label8" runat="server" Text='<%#Bind("ESTADO_EMP")%>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtecivil" runat="server" Text='<%#Bind("ESTADO_EMP")%>'></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-            <asp:TemplateField HeaderText="TIPO DE SANGRE">
-                    <ItemTemplate>
-                        <asp:Label ID="Label9" runat="server" Text='<%#Bind("TIPO_EMP")%>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtsangre" runat="server" Text='<%#Bind("TIPO_EMP")%>'></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
             <asp:TemplateField HeaderText="CIUDADANIA">
                     <ItemTemplate>
                         <asp:Label ID="Label11" runat="server" Text='<%#Bind("CIUDADNACI_EMP")%>'></asp:Label>
@@ -152,7 +67,7 @@
                     </EditItemTemplate>
                 </asp:TemplateField>
 
-            <asp:CommandField ButtonType="Link" ShowEditButton="true" ShowDeleteButton="true"/>
+            <asp:CommandField ButtonType="Link" ShowDeleteButton="true"/>
 
         </columns>
 

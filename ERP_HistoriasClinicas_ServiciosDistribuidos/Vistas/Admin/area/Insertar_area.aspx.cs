@@ -29,5 +29,7 @@ public partial class Vistas_Admin_area_Insertar_area : System.Web.UI.Page
             mensaje.Text="Ingreso incorrecto";
         }
 
+        Response.Redirect("./Default.aspx");
+
     }
 }
