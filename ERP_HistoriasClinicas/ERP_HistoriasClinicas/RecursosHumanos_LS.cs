@@ -317,17 +317,15 @@ namespace ERP_HistoriasClinicas
             return 0;
         }
         //Listado_Facturacion
-        public Listado_facturacion2[] Listado_Facturacion()
+        public List<Listado_facturacion2> Listado_Facturacion()
         {
+            List<Listado_facturacion2> listaFacturacion = new List<Listado_facturacion2>();
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {
-                var lst = from d in ctx.listado_facturacion
-                          select d;
-                Listado_facturacion2[] r = new Listado_facturacion2[lst.Count()];
-                int i = 0;
+                var lst = from d in ctx.listado_facturacion select d;
                 foreach (var d in lst)
                 {
-                    r[i++] = new Listado_facturacion2
+                    Listado_facturacion2 objeto = new Listado_facturacion2
                     {
                         CEDULA_EMP = d.CEDULA_EMP,
                         ACTIVO_EMP = d.ACTIVO_EMP,
@@ -341,11 +339,12 @@ namespace ERP_HistoriasClinicas
                         TELEFONO_EMP = d.TELEFONO_EMP,
                         CARGO_US = d.CARGO_US,
                         DESCRIPCION_AREA = d.DESCRIPCION_AREA,
-                        NOMBRE_AREA=d.NOMBRE_AREA
-                        
+                        NOMBRE_AREA = d.NOMBRE_AREA
+
                     };
+                    listaFacturacion.Add(objeto);
                 }
-                return r;
+                return listaFacturacion;
             }
         }
     }

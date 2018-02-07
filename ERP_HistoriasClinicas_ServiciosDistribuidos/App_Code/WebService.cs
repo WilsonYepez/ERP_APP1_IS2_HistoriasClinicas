@@ -6,16 +6,24 @@ using System.Web.Services;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Web.Script.Serialization;
 
 /// <summary>
 /// Descripción breve de WebService
 /// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
-// Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
-// [System.Web.Script.Services.ScriptService]
+[System.Web.Script.Services.ScriptService]
 public class WebService : System.Web.Services.WebService
 {
+    [WebMethod]
+    public void Servicio_Facturacion()
+    {
+        List<ERP_HistoriasClinicas.Listado_facturacion2> listaFacturacion;
+        listaFacturacion = new  ERP_HistoriasClinicas.RecursosHumanos_LS().Listado_Facturacion();
+        JavaScriptSerializer js = new JavaScriptSerializer();
+        Context.Response.Write(js.Serialize(listaFacturacion));
+    }
 
     public WebService()
     {
@@ -123,12 +131,7 @@ public  int delete_Persona(string CEDULA_EMP)
     {
         return new ERP_HistoriasClinicas.RecursosHumanos_LS().delete_Persona( CEDULA_EMP);
     }
-
-    [WebMethod]
-public ERP_HistoriasClinicas.Listado_facturacion2[] Listado_Facturacion()
-    {
-        return new ERP_HistoriasClinicas.RecursosHumanos_LS().Listado_Facturacion();
-    }
+    
 
 
 
@@ -235,4 +238,6 @@ public ERP_HistoriasClinicas.Listado_facturacion2[] Listado_Facturacion()
         da.Fill(ds);
         return ds;
     }
+    
+    
 }
