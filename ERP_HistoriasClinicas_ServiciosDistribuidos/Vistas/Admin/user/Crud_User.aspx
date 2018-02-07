@@ -74,6 +74,15 @@
                     </EditItemTemplate>
                 </asp:TemplateField>
 
+                <asp:TemplateField HeaderText="ESTADO">
+                    <ItemTemplate>
+                        <asp:Label ID="Label5" runat="server" Text='<%#Bind("ACTIVO_EMP")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtestado" runat="server" Text='<%#Bind("ACTIVO_EMP")%>'></asp:TextBox>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+
                 <asp:CommandField ButtonType="Link" ShowEditButton="true" ShowDeleteButton="true"/>
             </Columns>
 
