@@ -7,7 +7,8 @@
     <h1>Listado de Áreas de Trabajo</h1>
     <br />
 
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="table-responsive" DataKeyNames="ID_AREA" DataSourceID="AREA" OnRowEditing="GridView1_RowEditing1" OnRowUpdating="GridView1_RowUpdating1" AllowPaging="True" OnDataBinding="Page_Load" OnDataBound="Page_Load" ShowFooter="True">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="table-responsive" DataKeyNames="ID_AREA" DataSourceID="AREA" OnRowEditing="GridView1_RowEditing1" OnRowUpdating="GridView1_RowUpdating1" AllowPaging="True" OnDataBinding="Page_Load" OnDataBound="Page_Load" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:TemplateField HeaderText="ID_AREA" InsertVisible="False" SortExpression="ID_AREA">
                 <ItemTemplate>
@@ -36,6 +37,16 @@
             </asp:TemplateField>
             <asp:CommandField ShowDeleteButton="True" />
         </Columns>
+        <EditRowStyle BackColor="#2461BF" />
+        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#EFF3FB" />
+        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+        <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
     <br />
     <asp:SqlDataSource ID="AREA" runat="server" 

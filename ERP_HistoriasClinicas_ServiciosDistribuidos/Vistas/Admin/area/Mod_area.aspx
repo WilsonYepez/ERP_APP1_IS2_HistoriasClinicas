@@ -4,6 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
      <div>
+         <asp:Label ID="Label2" runat="server" Text="Buscar ID de Área de trabajo"></asp:Label>
+         &nbsp;&nbsp;&nbsp;
+         <asp:TextBox ID="ID" runat="server"></asp:TextBox>
+         <asp:Button ID="Button2" runat="server" Text="Buscar" OnClick="Button2_Click" />
+         <br />
         <asp:Label ID="Nombre_area" runat="server" Text="Nombre Área de Trabajo"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
@@ -13,19 +18,18 @@
         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
         <br />
         <asp:Label ID="Descipción" runat="server" Text="Descripción"></asp:Label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <br />
         <asp:Label ID="Estado" runat="server" Text="Estado"></asp:Label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
         <asp:DropDownList ID="DropDownList1" runat="server">
-            <asp:ListItem>Activo</asp:ListItem>
-            <asp:ListItem>Inactivo</asp:ListItem>
+            <asp:ListItem>ACTIVO</asp:ListItem>
+            <asp:ListItem>INACTIVO</asp:ListItem>
         </asp:DropDownList>
         <br />
         <br />
         <br />
-        <asp:Button ID="Button1" runat="server" Text="Insertar" OnClick="Button1_Click" />
+        <asp:Button ID="Button1" runat="server" Text="Modificar" OnClick="Button1_Click" />
         <br />
         <br /><h1>
         <asp:Label ID="mensaje" runat="server" Text=""></asp:Label>

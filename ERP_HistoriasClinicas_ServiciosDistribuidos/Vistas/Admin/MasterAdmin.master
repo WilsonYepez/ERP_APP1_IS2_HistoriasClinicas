@@ -51,6 +51,7 @@
                         <li ><a href="../../../Vistas/Admin/consulta/Default.aspx"><span></span>Control de Consultas Médicas</a></li>
                         <li ><a href="../../../Vistas/Admin/empleado/Default.aspx"><span></span>Control de Empleados</a></li>
                         <li ><a href="../../../Vistas/Admin/historia/Default.aspx"><span></span>Control de Historias Clinicas</a></li>
+                        <li ><a href="../../../Vistas/Admin/medico/Default.aspx"><span></span>Control Médicos</a></li>
                     </ul>
                 </nav>
         </aside>
