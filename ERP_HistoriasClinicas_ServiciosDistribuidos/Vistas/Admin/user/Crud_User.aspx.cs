@@ -73,6 +73,22 @@ public partial class Vistas_Admin_user_Crud_User : System.Web.UI.Page
 
     protected void search_btn_User_Click(object sender, EventArgs e)
     {
-        SqlDataAdapter da = new SqlDataAdapter("select * from EMPLEADO where  ");
+        try
+        {
+
+
+            SqlDataAdapter da = new SqlDataAdapter("select * from EMPLEADO where CEDULA_EMP like '" + busco.Text + "%'", cn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            this.GridView1.DataSource = dt;
+            GridView1.DataBind();
+
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+      
+        
     }
 }

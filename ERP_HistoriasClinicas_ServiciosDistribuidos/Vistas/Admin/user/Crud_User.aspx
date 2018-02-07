@@ -7,7 +7,7 @@
         <h3>AGREGAR  USUARIOS</h3>
         </div>
     <div class="thumbnail">
-        Valor a buscar : <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox>
+        Valor a buscar : <asp:TextBox ID="busco" runat="server" Width="200px"></asp:TextBox>
         <asp:Button ID="search_btn_User" runat="server" Text="Agregar" OnClick="search_btn_User_Click" /><br><br>
         <br>
 
@@ -22,7 +22,7 @@
             <Columns>
                 <asp:TemplateField HeaderText=" CEDULA ">
                     <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%#WebService.Nombreemp(Bind("CEDULA_EMP")) %>'></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text='<%#Bind("CEDULA_EMP") %>'></asp:Label>
                     </ItemTemplate>
                     <EditItemTemplate>
                         <asp:TextBox ID="txtcedu" runat="server" Text='<%#Bind("CEDULA_EMP")%>' Enabled="false"></asp:TextBox>

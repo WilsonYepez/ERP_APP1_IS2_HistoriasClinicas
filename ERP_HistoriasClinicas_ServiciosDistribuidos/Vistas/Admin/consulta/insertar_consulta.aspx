@@ -6,7 +6,7 @@
 
     </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="body_fixed" Runat="Server">
-    <asp:Label ID="ID Consulta" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="IDConsulta" runat="server" Text="Label"></asp:Label>
     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
     <br />
     <asp:Label ID="Cantidad" runat="server" Text="Label"></asp:Label>
