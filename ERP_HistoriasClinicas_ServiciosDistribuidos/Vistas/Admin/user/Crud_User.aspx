@@ -22,7 +22,7 @@
             <Columns>
                 <asp:TemplateField HeaderText=" CEDULA ">
                     <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%#WebService.Nombreemp(Bind("CEDULA_EMP")) %>'></asp:Label>
+                        <%--<asp:Label ID="Label1" runat="server" Text='<%#WebService.Nombreemp(Bind("CEDULA_EMP")) %>'></asp:Label>--%>
                     </ItemTemplate>
                     <EditItemTemplate>
                         <asp:TextBox ID="txtcedu" runat="server" Text='<%#Bind("CEDULA_EMP")%>' Enabled="false"></asp:TextBox>

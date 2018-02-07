@@ -24,6 +24,6 @@ public partial class Vistas_Admin_user_Default : System.Web.UI.Page
 
     protected void Button5_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Mod_emp.aspx");
+        Response.Redirect("Mod_Emp.aspx");
     }
 }

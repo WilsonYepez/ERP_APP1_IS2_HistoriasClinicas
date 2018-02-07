@@ -73,6 +73,6 @@ public partial class Vistas_Admin_user_Crud_User : System.Web.UI.Page
 
     protected void search_btn_User_Click(object sender, EventArgs e)
     {
-        SqlDataAdapter da = new SqlDataAdapter("select * from EMPLEADO where  ");
+        //SqlDataAdapter da = new SqlDataAdapter("select * from EMPLEADO where  ");
     }
 }
