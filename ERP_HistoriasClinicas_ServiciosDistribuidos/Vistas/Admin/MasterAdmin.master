@@ -36,6 +36,7 @@
                 <div class="navbar-right">
                     
                     <ul class="nav navbar-nav">
+                        <li><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></li>
                         <li><a href="Login.aspx">Cerrar Sesión</a></li>
                 </ul>
 
@@ -46,11 +47,11 @@
         <aside class="left-side bg-black" >
                 <nav class="nav navbar-nav">
                     <ul>
-                        <li ><a href="../../../Vistas/Admin/user/Crud_User.aspx"><span></span> Control de Usuarios</a></li>
-                        <li ><a href="../../../Vistas/Admin/area/Crud_area.aspx"><span></span>Control Área de Trabajo</a></li>
-                        <li ><a href="../../../Vistas/Admin/consulta/Crud_Consulta.aspx"><span></span>Control de Consultas Médicas</a></li>
-                        <li ><a href="../../../Vistas/Admin/empleado/Crud_Emp.aspx"><span></span>Control de Empleados</a></li>
-                        <li ><a href="../../../Vistas/Admin/historia/Crud_Historia.aspx"><span></span>Control de Historias Clinicas</a></li>
+                        <li ><a href="../../../Vistas/Admin/user/Default.aspx"><span></span> Control de Usuarios</a></li>
+                        <li ><a href="../../../Vistas/Admin/area/Default.aspx"><span></span>Control Área de Trabajo</a></li>
+                        <li ><a href="../../../Vistas/Admin/consulta/Default.aspx"><span></span>Control de Consultas Médicas</a></li>
+                        <li ><a href="../../../Vistas/Admin/empleado/Default.aspx"><span></span>Control de Empleados</a></li>
+                        <li ><a href="../../../Vistas/Admin/historia/Default.aspx"><span></span>Control de Historias Clinicas</a></li>
                     </ul>
                 </nav>
         </aside>
