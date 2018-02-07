@@ -143,15 +143,6 @@
                     </EditItemTemplate>
                 </asp:TemplateField>
 
-            <asp:TemplateField HeaderText="ACTIVO/INACTIVO">
-                    <ItemTemplate>
-                        <asp:Label ID="Label10" runat="server" Text='<%#Bind("ACTIVO_EMP")%>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtac" runat="server" Text='<%#Bind("ACTIVO_EMP")%>'></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
             <asp:TemplateField HeaderText="CIUDADANIA">
                     <ItemTemplate>
                         <asp:Label ID="Label11" runat="server" Text='<%#Bind("CIUDADNACI_EMP")%>'></asp:Label>
