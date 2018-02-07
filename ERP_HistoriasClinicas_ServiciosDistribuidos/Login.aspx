@@ -31,8 +31,8 @@
             <asp:Image ID="Image1" runat="server" ImageUrl="~/images/logo kankor.png" Height="189px" Width="131px" />
             <h1>Inicio de Sesión</h1>
                 <asp:TextBox ID="TextBox1" runat="server"  CssClass="username" placeholder="Usuario"></asp:TextBox>
-                <asp:TextBox ID="TextBox2" runat="server" placeholder="Contraseña"></asp:TextBox>
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Iniciar Sesión" CssClass="button" BackColor="#ff6600"/>
+                <asp:TextBox ID="TextBox2" runat="server" placeholder="Contraseña" TextMode="Password" ></asp:TextBox>
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Iniciar Sesión" CssClass="button" BackColor="#ff6600" ForeColor="White"/>
                 
                 <div class="error"><span>+</span></div>
             </form>
