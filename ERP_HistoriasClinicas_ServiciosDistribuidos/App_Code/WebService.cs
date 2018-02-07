@@ -229,7 +229,7 @@ public ERP_HistoriasClinicas.Listado_facturacion2[] Listado_Facturacion()
     [WebMethod]
     public DataSet login(string uname, string pwd)
     {
-        SqlDataAdapter da = new SqlDataAdapter("select * from EMPLEADO where CEDULA_EMP ='" + uname + "' and PASWORD_US='" + pwd + "' ",
+        SqlDataAdapter da = new SqlDataAdapter("select e.CARGO_US from EMPLEADO e , PERSONA p  where e.CEDULA_EMP ='" + uname + "' and e.PASWORD_US='" + pwd + "' and p.ACTIVO_EMP='ACTIVO' and e.CEDULA_EMP=p.CEDULA_EMP ",
             @"data source=.;Initial Catalog=ERP_HistoriasClinicas;Integrated Security=True");
         DataSet ds = new DataSet();
         da.Fill(ds);
