@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ea69f67360eb477a828a706fb0442a6a" Name="Diagram1">
+        <EntityTypeShape EntityType="ERP_HistoriasClinicas_Model.AREA_TRABAJO" Width="1.5" PointX="3.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERP_HistoriasClinicas_Model.CABECERA_CONSULTA" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERP_HistoriasClinicas_Model.DETALLE_CONSULTA" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERP_HistoriasClinicas_Model.EMPLEADO" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERP_HistoriasClinicas_Model.HISTORIAS" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERP_HistoriasClinicas_Model.PERSONA" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERP_HistoriasClinicas_Model.listado_facturacion" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERP_HistoriasClinicas_Model.database_firewall_rules" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="ERP_HistoriasClinicas_Model.FK_EMPLEADO_REFERENCE_AREA_TRA" ManuallyRouted="false" />
+        <AssociationConnector Association="ERP_HistoriasClinicas_Model.FK_CABECERA_REFERENCE_PERSONA" ManuallyRouted="false" />
+        <AssociationConnector Association="ERP_HistoriasClinicas_Model.FK_DETALLE__REFERENCE_CABECERA" ManuallyRouted="false" />
+        <AssociationConnector Association="ERP_HistoriasClinicas_Model.FK_EMPLEADO_REFERENCE_PERSONA" ManuallyRouted="false" />
+        <AssociationConnector Association="ERP_HistoriasClinicas_Model.FK_HISTORIA_REFERENCE_PERSONA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
