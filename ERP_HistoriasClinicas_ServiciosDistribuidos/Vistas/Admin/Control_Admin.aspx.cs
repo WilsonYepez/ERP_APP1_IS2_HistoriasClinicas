@@ -9,6 +9,11 @@ public partial class Vistas_Admin_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        string userid = (string)Session["UsuarioID"];
+        if (!IsPostBack)
+        {
+            if (userid == "" || userid == null)
+                Response.Redirect("../../Login.aspx");
+        }
     }
 }

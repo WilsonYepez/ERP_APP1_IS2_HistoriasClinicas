@@ -51,9 +51,24 @@ public partial class Login : System.Web.UI.Page
         ERP_HistoriasClinicas.Empleado2 ds = obj.login(TextBox1.Text, TextBox2.Text);
         if (ds!=null)
         {
-            Session["UsuarioID"] = obj.Nombreemp(ds.CEDULA_EMP);
-            Session["CARGO_US"] = ds.CARGO_US;
-            Response.Redirect("Vistas/Admin/Control_Admin.aspx");
+            Session["UsuarioID"] = obj.Nombreemp(ds.CEDULA_EMP).ToString();
+            Session["CARGO_US"] = ds.CARGO_US.ToString();
+            if (ds.CARGO_US == "ADMINISTADOR")
+            {
+                Response.Redirect("Vistas/Admin/Control_Admin.aspx");
+            }
+            else{
+                if (ds.CARGO_US == "ADMINISTRADOR")
+                {
+                    Response.Redirect("Vistas/Admin/Control_Admin.aspx");
+                }
+                else
+                {
+                    Response.Redirect("Login.aspx");
+                }
+                
+            }
+            
         }
         else
         {
