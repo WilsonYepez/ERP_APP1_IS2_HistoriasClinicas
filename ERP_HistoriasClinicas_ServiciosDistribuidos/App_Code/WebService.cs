@@ -230,14 +230,61 @@ public  int delete_Persona(string CEDULA_EMP)
     }
 
     [WebMethod]
-    public DataSet login(string uname, string pwd)
+    public ERP_HistoriasClinicas.Empleado2 login(string uname, string pwd)
     {
-        SqlDataAdapter da = new SqlDataAdapter("select e.CARGO_US from EMPLEADO e  where e.CEDULA_EMP ='" + uname + "' and e.PASWORD_US='" + pwd + "' and e.ACTIVO_EMP='ACTIVO' ",
-            @"data source=sqlserver-utn.database.windows.net;initial catalog=hospital;persist security info=True;user id=administrador;password=admin.1234");
-        DataSet ds = new DataSet();
-        da.Fill(ds);
-        return ds;
+        using (var ctx = new ERP_HistoriasClinicas.ERP_HistoriasClinicasEntities())
+        {
+            var d = ctx.EMPLEADO.Find(uname);
+            ERP_HistoriasClinicas.Empleado2 r = null;
+            if (d != null)
+            {
+                r = new ERP_HistoriasClinicas.Empleado2
+                {
+                    ID_AREA = d.ID_AREA,
+                    CEDULA_EMP = d.CEDULA_EMP,
+                    CARGO_US = d.CARGO_US,
+                    PASWORD_US = d.PASWORD_US,
+                    ACTIVO_EMP = d.ACTIVO_EMP
+                };
+            }
+            if (r.ACTIVO_EMP == "ACTIVO") {
+                return r;
+            } else
+            {
+                return null;
+            }
+            
+        }
+        
     }
-    
-    
+
+    [WebMethod]
+    public string Nombreemp(string ced)
+    {
+        using (var ctx = new ERP_HistoriasClinicas.ERP_HistoriasClinicasEntities())
+        {
+            var d = ctx.PERSONA.Find(ced);
+            ERP_HistoriasClinicas.Persona2 r = null;
+            if (d != null)
+            {
+                r = new ERP_HistoriasClinicas.Persona2
+                {
+                    CEDULA_EMP = d.CEDULA_EMP,
+                    CIUDADNACI_EMP = d.CIUDADNACI_EMP,
+                    DIRECCIO_EMP = d.DIRECCIO_EMP,
+                    EMAIL_EMP = d.EMAIL_EMP,
+                    ESTADO_EMP = d.ESTADO_EMP,
+                    NACIFECHA_EMP = d.NACIFECHA_EMP,
+                    NACIONALIDAD_EMP = d.NACIONALIDAD_EMP,
+                    NOMBRES_EMP = d.NOMBRES_EMP,
+                    TELEFONO_EMP = d.TELEFONO_EMP,
+                    TIPO_EMP = d.TIPO_EMP
+                };
+            }
+            return r.NOMBRES_EMP;
+        }
+
+    }
+
+
 }

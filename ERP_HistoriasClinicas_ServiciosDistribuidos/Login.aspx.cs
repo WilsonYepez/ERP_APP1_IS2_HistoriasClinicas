@@ -48,9 +48,11 @@ public partial class Login : System.Web.UI.Page
         string CEDULA_EMP = TextBox1.Text;
         string PASWORD_US = TextBox2.Text;
 
-        DataSet ds = obj.login(TextBox1.Text, TextBox2.Text);
-        if (ds.Tables[0].Rows.Count > 0)
+        ERP_HistoriasClinicas.Empleado2 ds = obj.login(TextBox1.Text, TextBox2.Text);
+        if (ds!=null)
         {
+            Session["UsuarioID"] = obj.Nombreemp(ds.CEDULA_EMP);
+            Session["CARGO_US"] = ds.CARGO_US;
             Response.Redirect("Vistas/Admin/Control_Admin.aspx");
         }
         else
