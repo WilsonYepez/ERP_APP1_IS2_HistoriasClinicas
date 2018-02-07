@@ -4,9 +4,27 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
 
-
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="body_fixed" Runat="Server">
+    <asp:Label ID="ID Consulta" runat="server" Text="Label"></asp:Label>
+    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <br />
+    <asp:Label ID="Cantidad" runat="server" Text="Label"></asp:Label>
+    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+    <br />
+    <asp:Label ID="Precio de Venta" runat="server" Text="Label"></asp:Label>
+    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+    <br />
+    <asp:Label ID="Cantidad de descuento" runat="server" Text="Label"></asp:Label>
+    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+
+
+    <br />
+    <br />
+    <br />
+    <asp:Button ID="Button1" runat="server" Text="Insertar" />
+
+
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 </asp:Content>

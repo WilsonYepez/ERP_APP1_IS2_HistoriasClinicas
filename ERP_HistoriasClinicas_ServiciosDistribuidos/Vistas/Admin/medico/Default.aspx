@@ -4,9 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:LinkButton ID="Button3" runat="server" Height="300px" Text="<h1><br><span class='glyphicon glyphicon-plus' ></span><br>Agregar<br>PRYW</h1>" Width="233px" CssClass="btn btn-info" BackColor="#3C8DBC"/>
+    <asp:LinkButton ID="Button3" runat="server" Height="300px" Text="<h1><br><span class='glyphicon glyphicon-plus' ></span><br>Agregar<br>Médico</h1>" Width="233px" CssClass="btn btn-info" BackColor="#3C8DBC"/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:LinkButton ID="Button4" runat="server" Height="300px" Text="<h1><br><span class='glyphicon glyphicon-plus'></span><br>Listar<br>PRYW</h1>" Width="233px" CssClass="btn btn-info " BackColor="#3C8DBC"/>
+    <asp:LinkButton ID="Button4" runat="server" Height="300px" Text="<h1><br><span class='glyphicon glyphicon-plus'></span><br>Listar<br>Médico</h1>" Width="233px" CssClass="btn btn-info " BackColor="#3C8DBC"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:LinkButton ID="LinkButton1" runat="server" Height="300px" Text="<h1><br><span class='glyphicon glyphicon-plus'></span><br>Modificar<br>Médico</h1>" Width="233px" CssClass="btn btn-info " BackColor="#3C8DBC"/>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="body_fixed" Runat="Server">
 </asp:Content>

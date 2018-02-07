@@ -21,4 +21,9 @@ public partial class Vistas_Admin_user_Default : System.Web.UI.Page
     {
         Response.Redirect("Crud_area.aspx");
     }
+
+    protected void Button5_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Mod_area.aspx");
+    }
 }
