@@ -285,6 +285,7 @@ public  int delete_Persona(string CEDULA_EMP)
         }
 
     }
+    
 
 
 }

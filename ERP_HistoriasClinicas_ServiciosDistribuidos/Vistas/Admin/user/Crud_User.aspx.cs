@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
 
 public partial class Vistas_Admin_user_Crud_User : System.Web.UI.Page
 {
@@ -23,15 +25,7 @@ public partial class Vistas_Admin_user_Crud_User : System.Web.UI.Page
         
     }
 
-    protected void ADD_btn_User_Click(object sender, EventArgs e)
-    {
-        String cedula = DropDownList2.SelectedItem.Value;
-        DropDownList2.Items.RemoveAt(DropDownList2.SelectedIndex);
-        decimal id_area = Convert.ToDecimal(DropDownList1.SelectedItem.Value);
-        String Cargo = DropDownList3.SelectedItem.Value;
-        obj.insertar_Empleado( cedula, id_area , Cargo , TextBox1.Text,"ACTIVO");
-        cargargrilla();
-    }
+  
 
     protected void rowCancelEvent(object sender, GridViewCancelEditEventArgs e)
     {
@@ -60,12 +54,25 @@ public partial class Vistas_Admin_user_Crud_User : System.Web.UI.Page
         Decimal area = Convert.ToDecimal((fila.FindControl("txtarea") as TextBox).Text);
         string cargo = (fila.FindControl("txtcargo") as TextBox).Text;
         string pass = (fila.FindControl("txtpass") as TextBox).Text;
-
+        string estado = (fila.FindControl("estado") as TextBox).Text;
+        if (estado == "ACTIVO")
+        {
+            estado = "INACTIVO";
+        }
+        else
+        {
+            estado = "ACTIVO";
+        }
         obj.Persona_Cedula(cod);
-
-        obj.update_empleado(cod,area,cargo,pass, "ACTIVO");
+        obj.update_empleado(cod, area, cargo, pass, estado);
         GridView1.EditIndex = -1;
         cargargrilla();
 
+    }
+    public SqlConnection cn = new SqlConnection("data source = sqlserver - utn.database.windows.net; initial catalog = hospital; persist security info=True;user id = administrador; password=admin.1234");
+
+    protected void search_btn_User_Click(object sender, EventArgs e)
+    {
+        SqlDataAdapter da = new SqlDataAdapter("select * from EMPLEADO where  ");
     }
 }
