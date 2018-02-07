@@ -6,6 +6,15 @@
     <br />
     <h1>Control de Áreas de Trabajo</h1>
     <br />
+
+    <asp:Button ID="Button2" runat="server" Text="Litado de Usuario " Height="136px" Width="238px"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <asp:Button ID="Button3" runat="server" Text="Litado de Usuario " Height="136px" Width="238px" />
+    <br />
+    <br />
+
+
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="table-responsive" DataKeyNames="ID_AREA" DataSourceID="AREA" OnRowEditing="GridView1_RowEditing1" OnRowUpdating="GridView1_RowUpdating1" AllowPaging="True" OnDataBinding="Page_Load" OnDataBound="Page_Load" ShowFooter="True">
         <Columns>
             <asp:TemplateField HeaderText="ID_AREA" InsertVisible="False" SortExpression="ID_AREA">
@@ -67,6 +76,7 @@
             <asp:CommandField ShowDeleteButton="True" />
         </Columns>
     </asp:GridView>
+    <br />
     <asp:SqlDataSource ID="AREA" runat="server" 
         ConnectionString="<%$ ConnectionStrings:ERP_HistoriasClinicasConnectionString2 %>" 
         SelectCommand="SELECT * FROM [AREA_TRABAJO]" UpdateCommand="UPDATE AREA_TRABAJO SET NOMBRE_AREA = @NOMBRE_AREA, GERENCIA_AREA = @GERENCIA_AREA, DESCRIPCION_AREA = @DESCRIPCION_AREA, ESTADO_AREA = @ESTADO_AREA WHERE (ID_AREA = @ID_AREA)" DeleteCommand="DELETE FROM AREA_TRABAJO WHERE (ID_AREA = @ID_AREA)" ></asp:SqlDataSource>

@@ -36,16 +36,15 @@
                 <div class="navbar-right">
                     
                     <ul class="nav navbar-nav">
-                        <li><asp:Label ID="nombre" runat="server" Text="Label"></asp:Label></li>
                         <li><a href="Login.aspx">Cerrar Sesión</a></li>
                 </ul>
 
                 </div>
             </nav>
         </header>
-        <div class="wrapper">
-        <aside class="left-side" >
-                <nav class="menu">
+        <div class="wrapper navbar-left">
+        <aside class="left-side bg-black" >
+                <nav class="nav navbar-nav">
                     <ul>
                         <li ><a href="../../../Vistas/Admin/user/Crud_User.aspx"><span></span> Control de Usuarios</a></li>
                         <li ><a href="../../../Vistas/Admin/area/Crud_area.aspx"><span></span>Control Área de Trabajo</a></li>
