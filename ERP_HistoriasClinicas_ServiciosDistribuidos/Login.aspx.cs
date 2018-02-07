@@ -51,7 +51,7 @@ public partial class Login : System.Web.UI.Page
         DataSet ds = obj.login(TextBox1.Text, TextBox2.Text);
         if (ds.Tables[0].Rows.Count > 0)
         {
-            Response.Redirect("Default.aspx");
+            Response.Redirect("Vistas/Admin/Control_Admin.aspx");
         }
         else
         {
