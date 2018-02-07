@@ -40,6 +40,7 @@ namespace ERP_HistoriasClinicas
         public decimal ID_AREA { get; set; }
         public string CARGO_US { get; set; }
         public string PASWORD_US { get; set; }
+        public string ACTIVO_EMP { get; set; }
     }
     public class Historias2
     {
@@ -99,7 +100,6 @@ namespace ERP_HistoriasClinicas
         public string EMAIL_EMP { get; set; }
         public string ESTADO_EMP { get; set; }
         public string TIPO_EMP { get; set; }
-        public string ACTIVO_EMP { get; set; }
         public string CIUDADNACI_EMP { get; set; }
     }
 

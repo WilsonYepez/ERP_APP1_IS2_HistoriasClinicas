@@ -134,7 +134,8 @@ namespace ERP_HistoriasClinicas
                         CARGO_US= d.CARGO_US,
                         CEDULA_EMP=d.CEDULA_EMP,
                         PASWORD_US=d.PASWORD_US,
-                        ID_AREA = d.ID_AREA
+                        ID_AREA = d.ID_AREA,
+                        ACTIVO_EMP = d.ACTIVO_EMP
                     };
                 }
                 return r;
@@ -153,13 +154,14 @@ namespace ERP_HistoriasClinicas
                         ID_AREA = d.ID_AREA,
                         CEDULA_EMP = d.CEDULA_EMP,
                         CARGO_US = d.CARGO_US,
-                        PASWORD_US = d.PASWORD_US
+                        PASWORD_US = d.PASWORD_US,
+                        ACTIVO_EMP = d.ACTIVO_EMP
                     };
                 }
                 return r;
             }
         }
-        public int insertar_Empleado( string CEDULA_EMP,decimal ID_AREA ,string CARGO_US , string PASWORD_US)
+        public int insertar_Empleado( string CEDULA_EMP,decimal ID_AREA ,string CARGO_US , string PASWORD_US, string ACTIVO_EMP)
         {
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {
@@ -168,13 +170,14 @@ namespace ERP_HistoriasClinicas
                 d.CARGO_US = CARGO_US;
                 d.PASWORD_US = PASWORD_US;
                 d.ID_AREA = ID_AREA;
+                d.ACTIVO_EMP = ACTIVO_EMP;
                 ctx.EMPLEADO.Add(d);
                 ctx.SaveChanges();
             }
             return 0;
 
         }
-        public int update_empleado(string CEDULA_EMP, decimal ID_AREA, string CARGO_US, string PASWORD_US)
+        public int update_empleado(string CEDULA_EMP, decimal ID_AREA, string CARGO_US, string PASWORD_US, string ACTIVO_EMP)
         {
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {
@@ -183,6 +186,7 @@ namespace ERP_HistoriasClinicas
                 {
                     d.CARGO_US = CARGO_US;
                     d.PASWORD_US = PASWORD_US;
+                    d.ACTIVO_EMP = ACTIVO_EMP;
                     d.ID_AREA = ID_AREA;
                 }
                 ctx.SaveChanges();
@@ -216,7 +220,6 @@ namespace ERP_HistoriasClinicas
                     r[i++] = new Persona2
                     {
                         CEDULA_EMP=d.CEDULA_EMP,
-                        ACTIVO_EMP=d.ACTIVO_EMP,
                         CIUDADNACI_EMP=d.CIUDADNACI_EMP,
                         DIRECCIO_EMP=d.DIRECCIO_EMP,
                         EMAIL_EMP=d.EMAIL_EMP,
@@ -242,7 +245,6 @@ namespace ERP_HistoriasClinicas
                     r = new Persona2
                     {
                         CEDULA_EMP = d.CEDULA_EMP,
-                        ACTIVO_EMP = d.ACTIVO_EMP,
                         CIUDADNACI_EMP = d.CIUDADNACI_EMP,
                         DIRECCIO_EMP = d.DIRECCIO_EMP,
                         EMAIL_EMP = d.EMAIL_EMP,
@@ -258,7 +260,7 @@ namespace ERP_HistoriasClinicas
             }
         }
         public int insertar_Persona( string CEDULA_EMP , string NOMBRES_EMP , System.DateTime NACIFECHA_EMP , string NACIONALIDAD_EMP, string DIRECCIO_EMP , 
-            string TELEFONO_EMP , string EMAIL_EMP , string ESTADO_EMP , string TIPO_EMP , string ACTIVO_EMP , string CIUDADNACI_EMP )
+            string TELEFONO_EMP , string EMAIL_EMP , string ESTADO_EMP , string TIPO_EMP  , string CIUDADNACI_EMP )
         {
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {
@@ -271,8 +273,7 @@ namespace ERP_HistoriasClinicas
                 d.TELEFONO_EMP = TELEFONO_EMP;
                 d.EMAIL_EMP = EMAIL_EMP;
                 d.ESTADO_EMP = ESTADO_EMP;
-                d.TIPO_EMP = TIPO_EMP;
-                d.ACTIVO_EMP = ACTIVO_EMP;
+                d.TIPO_EMP = TIPO_EMP;                
                 d.CIUDADNACI_EMP = CIUDADNACI_EMP;
                 ctx.PERSONA.Add(d);
                 ctx.SaveChanges();
@@ -281,7 +282,7 @@ namespace ERP_HistoriasClinicas
 
         }
         public int update_Persona(string CEDULA_EMP, string NOMBRES_EMP, System.DateTime NACIFECHA_EMP, string NACIONALIDAD_EMP, string DIRECCIO_EMP,
-            string TELEFONO_EMP, string EMAIL_EMP, string ESTADO_EMP, string TIPO_EMP, string ACTIVO_EMP, string CIUDADNACI_EMP)
+            string TELEFONO_EMP, string EMAIL_EMP, string ESTADO_EMP, string TIPO_EMP, string CIUDADNACI_EMP)
         {
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {
@@ -296,7 +297,6 @@ namespace ERP_HistoriasClinicas
                     d.EMAIL_EMP = EMAIL_EMP;
                     d.ESTADO_EMP = ESTADO_EMP;
                     d.TIPO_EMP = TIPO_EMP;
-                    d.ACTIVO_EMP = ACTIVO_EMP;
                     d.CIUDADNACI_EMP = CIUDADNACI_EMP;
                 }
                 ctx.SaveChanges();

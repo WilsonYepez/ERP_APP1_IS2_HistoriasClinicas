@@ -29,7 +29,7 @@ public partial class Vistas_Admin_user_Crud_User : System.Web.UI.Page
         DropDownList2.Items.RemoveAt(DropDownList2.SelectedIndex);
         decimal id_area = Convert.ToDecimal(DropDownList1.SelectedItem.Value);
         String Cargo = DropDownList3.SelectedItem.Value;
-        obj.insertar_Empleado( cedula, id_area , Cargo , TextBox1.Text);
+        obj.insertar_Empleado( cedula, id_area , Cargo , TextBox1.Text,"ACTIVO");
         cargargrilla();
     }
 
@@ -63,7 +63,7 @@ public partial class Vistas_Admin_user_Crud_User : System.Web.UI.Page
 
         obj.Persona_Cedula(cod);
 
-        obj.update_empleado(cod,area,cargo,pass);
+        obj.update_empleado(cod,area,cargo,pass, "ACTIVO");
         GridView1.EditIndex = -1;
         cargargrilla();
 

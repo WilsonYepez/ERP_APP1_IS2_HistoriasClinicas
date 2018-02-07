@@ -34,7 +34,7 @@ public partial class Vistas_Admin_empleado_Crud_Emp : System.Web.UI.Page
         String estado = DropDownList1.SelectedItem.Value;
         String Tipo = DropDownList2.SelectedItem.Value;
         String Ciudadania=TextBox7.Text;
-        obj.insertar_Persona(cedula,nombres,fecha,nacionalidad,direccion,telefono,email,estado, Tipo,"ACTIVO", Ciudadania);
+        obj.insertar_Persona(cedula,nombres,fecha,nacionalidad,direccion,telefono,email,estado, Tipo, Ciudadania);
         cargaGrilla();
     }
 
@@ -53,7 +53,7 @@ public partial class Vistas_Admin_empleado_Crud_Emp : System.Web.UI.Page
         string activo = (fila.FindControl("txtac") as TextBox).Text;
         string Ciudadania = (fila.FindControl("txtciu") as TextBox).Text;
 
-        obj.update_Persona(cedula,nombres,fecha,nacionalidad,direccion,telefono,email,estado,Tipo,activo,Ciudadania);
+        obj.update_Persona(cedula,nombres,fecha,nacionalidad,direccion,telefono,email,estado,Tipo,Ciudadania);
         GridView1.EditIndex = -1;
         cargaGrilla();
     }

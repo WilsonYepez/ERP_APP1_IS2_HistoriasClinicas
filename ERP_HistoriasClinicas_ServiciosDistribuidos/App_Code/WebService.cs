@@ -73,15 +73,15 @@ public ERP_HistoriasClinicas.Empleado2 Empleado_Cedula(string CEDULA_EMP)
     }
 
     [WebMethod]
-public int insertar_Empleado(string CEDULA_EMP, decimal ID_AREA, string CARGO_US, string PASWORD_US)
+public int insertar_Empleado(string CEDULA_EMP, decimal ID_AREA, string CARGO_US, string PASWORD_US, string ACTIVO_EMP)
     {
-        return new ERP_HistoriasClinicas.RecursosHumanos_LS().insertar_Empleado(CEDULA_EMP, ID_AREA, CARGO_US, PASWORD_US);
+        return new ERP_HistoriasClinicas.RecursosHumanos_LS().insertar_Empleado(CEDULA_EMP, ID_AREA, CARGO_US, PASWORD_US, ACTIVO_EMP);
     }
 
     [WebMethod]
-public int update_empleado(string CEDULA_EMP, decimal ID_AREA, string CARGO_US, string PASWORD_US)
+public int update_empleado(string CEDULA_EMP, decimal ID_AREA, string CARGO_US, string PASWORD_US, string ACTIVO_EMP)
     {
-        return new ERP_HistoriasClinicas.RecursosHumanos_LS().update_empleado(CEDULA_EMP, ID_AREA, CARGO_US,PASWORD_US);
+        return new ERP_HistoriasClinicas.RecursosHumanos_LS().update_empleado(CEDULA_EMP, ID_AREA, CARGO_US,PASWORD_US, ACTIVO_EMP);
     }
 
     [WebMethod]
@@ -104,18 +104,18 @@ public ERP_HistoriasClinicas.Persona2[] Listado_Persona()
 
     [WebMethod]
 public int update_Persona(string CEDULA_EMP, string NOMBRES_EMP, System.DateTime NACIFECHA_EMP, string NACIONALIDAD_EMP, string DIRECCIO_EMP,
-            string TELEFONO_EMP, string EMAIL_EMP, string ESTADO_EMP, string TIPO_EMP, string ACTIVO_EMP, string CIUDADNACI_EMP)
+            string TELEFONO_EMP, string EMAIL_EMP, string ESTADO_EMP, string TIPO_EMP, string CIUDADNACI_EMP)
     {
         return new ERP_HistoriasClinicas.RecursosHumanos_LS().update_Persona(CEDULA_EMP, NOMBRES_EMP, NACIFECHA_EMP, NACIONALIDAD_EMP,  DIRECCIO_EMP,
-            TELEFONO_EMP,  EMAIL_EMP,  ESTADO_EMP,  TIPO_EMP,  ACTIVO_EMP,  CIUDADNACI_EMP);
+            TELEFONO_EMP,  EMAIL_EMP,  ESTADO_EMP,  TIPO_EMP,  CIUDADNACI_EMP);
     }
 
     [WebMethod]
 public int insertar_Persona(string CEDULA_EMP, string NOMBRES_EMP, System.DateTime NACIFECHA_EMP, string NACIONALIDAD_EMP, string DIRECCIO_EMP,
-            string TELEFONO_EMP, string EMAIL_EMP, string ESTADO_EMP, string TIPO_EMP, string ACTIVO_EMP, string CIUDADNACI_EMP)
+            string TELEFONO_EMP, string EMAIL_EMP, string ESTADO_EMP, string TIPO_EMP, string CIUDADNACI_EMP)
 {
         return new ERP_HistoriasClinicas.RecursosHumanos_LS().insertar_Persona(CEDULA_EMP,  NOMBRES_EMP,  NACIFECHA_EMP,  NACIONALIDAD_EMP,  DIRECCIO_EMP,
-             TELEFONO_EMP,  EMAIL_EMP,  ESTADO_EMP, TIPO_EMP,  ACTIVO_EMP,  CIUDADNACI_EMP);
+             TELEFONO_EMP,  EMAIL_EMP,  ESTADO_EMP, TIPO_EMP,  CIUDADNACI_EMP);
     }
 
     [WebMethod]

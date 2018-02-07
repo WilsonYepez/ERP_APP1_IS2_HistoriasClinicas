@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0435c6547ceb404fa2ccabf8f7f1c86d" Name="Diagram1">
+        <EntityTypeShape EntityType="hospitalModel.AREA_TRABAJO" Width="1.5" PointX="3.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="hospitalModel.CABECERA_CONSULTA" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="hospitalModel.DETALLE_CONSULTA" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hospitalModel.EMPLEADO" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="hospitalModel.HISTORIAS" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="hospitalModel.PERSONA" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hospitalModel.listado_facturacion" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hospitalModel.database_firewall_rules" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="hospitalModel.FK_EMPLEADO_REFERENCE_AREA_TRA" ManuallyRouted="false" />
+        <AssociationConnector Association="hospitalModel.FK_CABECERA_REFERENCE_PERSONA" ManuallyRouted="false" />
+        <AssociationConnector Association="hospitalModel.FK_DETALLE__REFERENCE_CABECERA" ManuallyRouted="false" />
+        <AssociationConnector Association="hospitalModel.FK_EMPLEADO_REFERENCE_PERSONA" ManuallyRouted="false" />
+        <AssociationConnector Association="hospitalModel.FK_HISTORIA_REFERENCE_PERSONA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

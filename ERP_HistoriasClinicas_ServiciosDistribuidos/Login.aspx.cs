@@ -47,14 +47,10 @@ public partial class Login : System.Web.UI.Page
 
         string CEDULA_EMP = TextBox1.Text;
         string PASWORD_US = TextBox2.Text;
-        String Control = Medico;
 
         DataSet ds = obj.login(TextBox1.Text, TextBox2.Text);
         if (ds.Tables[0].Rows.Count > 0)
         {
-            if (ds.Tables[0]==Control){
-
-            }
             Response.Redirect("Vistas/Admin/Control_Admin.aspx");
         }
         else

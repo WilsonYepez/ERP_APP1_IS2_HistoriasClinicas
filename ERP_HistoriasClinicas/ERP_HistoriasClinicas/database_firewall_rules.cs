@@ -12,15 +12,13 @@ namespace ERP_HistoriasClinicas
     using System;
     using System.Collections.Generic;
     
-    public partial class EMPLEADO
+    public partial class database_firewall_rules
     {
-        public string CEDULA_EMP { get; set; }
-        public decimal ID_AREA { get; set; }
-        public string CARGO_US { get; set; }
-        public string PASWORD_US { get; set; }
-        public string ACTIVO_EMP { get; set; }
-    
-        public virtual AREA_TRABAJO AREA_TRABAJO { get; set; }
-        public virtual PERSONA PERSONA { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string start_ip_address { get; set; }
+        public string end_ip_address { get; set; }
+        public System.DateTime create_date { get; set; }
+        public System.DateTime modify_date { get; set; }
     }
 }

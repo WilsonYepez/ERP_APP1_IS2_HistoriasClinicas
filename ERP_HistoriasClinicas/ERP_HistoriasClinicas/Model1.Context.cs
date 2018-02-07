@@ -34,6 +34,7 @@ namespace ERP_HistoriasClinicas
         public virtual DbSet<HISTORIAS> HISTORIAS { get; set; }
         public virtual DbSet<PERSONA> PERSONA { get; set; }
         public virtual DbSet<listado_facturacion> listado_facturacion { get; set; }
+        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
     
         public virtual ObjectResult<trx_Get_AreaTrabajo_Result> trx_Get_AreaTrabajo(Nullable<decimal> iD_AREA)
         {

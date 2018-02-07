@@ -29,7 +29,6 @@ namespace ERP_HistoriasClinicas
         public string EMAIL_EMP { get; set; }
         public string ESTADO_EMP { get; set; }
         public string TIPO_EMP { get; set; }
-        public string ACTIVO_EMP { get; set; }
         public string CIUDADNACI_EMP { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
