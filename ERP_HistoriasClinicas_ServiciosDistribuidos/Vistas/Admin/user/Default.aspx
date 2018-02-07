@@ -4,11 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:LinkButton ID="Button3" runat="server" Height="300px" Text="<h1><br><span class='glyphicon glyphicon-plus' ></span><br>Agregar<br>PRYW</h1>" Width="233px" CssClass="btn btn-info" BackColor="#3C8DBC"/>
+    <asp:LinkButton ID="Button3" runat="server" Height="300px" Text="<h1><br><span class='glyphicon glyphicon-plus' ></span><br>Agregar<br>Usuario</h1>" Width="233px" CssClass="btn btn-info" BackColor="#3C8DBC" OnClick="Button3_Click"/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:LinkButton ID="Button4" runat="server" Height="300px" Text="<h1><br><span class='glyphicon glyphicon-plus'></span><br>Listar<br>PRYW</h1>" Width="233px" CssClass="btn btn-info " BackColor="#3C8DBC"/>
+    <asp:LinkButton ID="Button4" runat="server" Height="300px" Text="<h1><br><span class='glyphicon glyphicon-plus'></span><br>Listar<br>Usuarios</h1>" Width="233px" CssClass="btn btn-info " BackColor="#3C8DBC" OnClick="Button4_Click"/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:LinkButton ID="Button5" runat="server" Height="300px" Text="<h1><br><span class='glyphicon glyphicon-plus' ></span><br>Modificar<br>PRYW</h1>" Width="233px" CssClass="btn btn-info" BackColor="#3C8DBC"/>
+    <asp:LinkButton ID="Button5" runat="server" Height="300px" Text="<h1><br><span class='glyphicon glyphicon-plus' ></span><br>Modificar<br>Usuario</h1>" Width="233px" CssClass="btn btn-info" BackColor="#3C8DBC" OnClick="Button5_Click"/>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="body_fixed" Runat="Server">
 </asp:Content>

@@ -5,6 +5,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
 
     <div>
+        <h1><asp:Label ID="Label1" runat="server" Text="Nueva Área de Trabajo"></asp:Label></h1>
+    </div>
+
+
+    <div>
         <asp:Label ID="Nombre_area" runat="server" Text="Nombre Área de Trabajo"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
