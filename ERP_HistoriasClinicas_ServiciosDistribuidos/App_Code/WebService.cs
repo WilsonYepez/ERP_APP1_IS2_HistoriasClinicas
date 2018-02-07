@@ -230,7 +230,7 @@ public ERP_HistoriasClinicas.Listado_facturacion2[] Listado_Facturacion()
     public DataSet login(string uname, string pwd)
     {
         SqlDataAdapter da = new SqlDataAdapter("select e.CARGO_US from EMPLEADO e  where e.CEDULA_EMP ='" + uname + "' and e.PASWORD_US='" + pwd + "' and e.ACTIVO_EMP='ACTIVO' ",
-            @"data source=.;Initial Catalog=ERP_HistoriasClinicas;Integrated Security=True");
+            @"data source=sqlserver-utn.database.windows.net;initial catalog=hospital;persist security info=True;user id=administrador;password=admin.1234");
         DataSet ds = new DataSet();
         da.Fill(ds);
         return ds;
