@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     <h3>HISTORIA CLÍNICA</h3>
     <p>Elija el paciente:<asp:DropDownList AutoPostBack="True" ID="DropDownList66" Width="200px" runat="server" DataSourceID="SqlDataSource_Persona" DataTextField="NOMBRES_EMP" DataValueField="CEDULA_EMP" OnSelectedIndexChanged="ADD_Historia_Click" ></asp:DropDownList>
-        <asp:SqlDataSource ID="SqlDataSource_Persona" runat="server" ConnectionString="<%$ ConnectionStrings:ERP_HistoriasClinicasConnectionString4 %>" SelectCommand="Select CEDULA_EMP,NOMBRES_EMP  From PERSONA ">
+        <asp:SqlDataSource ID="SqlDataSource_Persona" runat="server" ConnectionString="<%$ ConnectionStrings:ERP_HistoriasClinicasConnectionString4 %>" SelectCommand="Select h.CEDULA_EMP,p.NOMBRES_EMP  From HISTORIAS h, PERSONA p where h.CEDULA_EMP=p.CEDULA_EMP ">
         </asp:SqlDataSource>
 &nbsp;</p>
     <p>Cedula:&nbsp;&nbsp;&nbsp;

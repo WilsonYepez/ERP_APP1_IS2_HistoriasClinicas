@@ -21,6 +21,7 @@ public partial class Vistas_Admin_user_Crud_User : System.Web.UI.Page
         if (!IsPostBack)
         {
             cargargrilla();
+
         }
         
     }
