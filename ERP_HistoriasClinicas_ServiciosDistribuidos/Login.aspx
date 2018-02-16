@@ -22,14 +22,22 @@
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
+        <style type="text/css">
+            .auto-style1 {
+                width: 201px;
+                height: 202px;
+            }
+        </style>
+
     </head>
 
     <body>
         
         <div class="page-container">
             <form method="post" runat="server">
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/images/logo kankor.png" Height="189px" Width="131px" />
-            <h1>Inicio de Sesión</h1>
+            <h1>
+                <img alt="" class="auto-style1" src="assets/img/Clinica%20Care.png" /> </h1>
+                <h1>Inicio de Sesión</h1>
                 <asp:TextBox ID="TextBox1" runat="server"  CssClass="username" placeholder="Usuario"></asp:TextBox>
                 <asp:TextBox ID="TextBox2" runat="server" placeholder="Contraseña" TextMode="Password" ></asp:TextBox>
                 <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Iniciar Sesión" CssClass="button" BackColor="#ff6600" ForeColor="White"/>
