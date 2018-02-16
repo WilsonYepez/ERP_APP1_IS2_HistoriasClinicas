@@ -27,12 +27,7 @@
     <form id="form1" runat="server" role="form">
         <header class="header">
             <nav class="navbar navbar-static-top" role="navigation">
-                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
+                
                 <div class="navbar-right">
                     
                     <ul class="nav navbar-nav">
@@ -44,15 +39,71 @@
         </header>
         <div class="wrapper navbar-left">
         <aside class="left-side bg-black" >
-                <nav class="nav navbar-nav">
-                    <ul>
-                        <li ><a href="../../../Vistas/Admin/user/Default.aspx"><span></span> Control de Usuarios</a></li>
-                        <li ><a href="../../../Vistas/Admin/area/Default.aspx"><span></span>Control Área de Trabajo</a></li>
-                        <li ><a href="../../../Vistas/Admin/consulta/Default.aspx"><span></span>Control de Consultas Médicas</a></li>
-                        <li ><a href="../../../Vistas/Admin/empleado/Default.aspx"><span></span>Control de Empleados</a></li>
-                        <li ><a href="../../../Vistas/Admin/historia/Default.aspx"><span></span>Control de Historias Clinicas</a></li>
+    <nav>
+    <ol class="menu-arbol">
+                   <li>
+                    <input type="checkbox" name="nivel-1" class="mostrar-menu" id="menu1">
+                    <label for="menu1" class="ampliar"></label>
+                    <a href="">Usuarios</a>
+                    <ul class="nivel-04">
+                      <li><a href="../../../Vistas/Admin/user/Insertar_User.aspx">Agregar</a></li>
+                      <li><a href="../../../Vistas/Admin/user/Insertar_User.aspx">Listados</a></li>
+                      <li><a href="../../../Vistas/Admin/user/Mod_User.aspx">Modificar</a></li>
                     </ul>
-                </nav>
+                  </li>
+                  <li>
+                    <input type="checkbox" class="mostrar-menu" id="menu2">
+                    <label for="menu2" class="ampliar"></label>
+                    <a href="">Empleados</a>
+                    <ul class="nivel-04">
+                      <li><a href="">Agregar</a></li>
+                      <li><a href="">Listados</a></li>
+                      <li><a href="">Modificar</a></li>
+                        </ul>
+                        </li>
+        <li>
+                    <input type="checkbox" class="mostrar-menu" id="menu3">
+                    <label for="menu3" class="ampliar"></label>
+                    <a href="">Areas de Trabajo</a>
+                    <ul class="nivel-04">
+                      <li><a href="">Agregar</a></li>
+                      <li><a href="">Listados</a></li>
+                      <li><a href="">Modificar</a></li>
+                        </ul>
+                        </li>
+        <li>
+                    <input type="checkbox" class="mostrar-menu" id="menu4">
+                    <label for="menu4" class="ampliar"></label>
+                    <a href="">Historia Clinica</a>
+                    <ul class="nivel-04">
+                      <li><a href="">Agregar</a></li>
+                      <li><a href="">Listados</a></li>
+                      <li><a href="">Modificar</a></li>
+                        </ul>
+                        </li>
+        <li>
+                    <input type="checkbox" class="mostrar-menu" id="menu5">
+                    <label for="menu5" class="ampliar"></label>
+                    <a href="">Consulta Medica</a>
+                    <ul class="nivel-04">
+                      <li><a href="">Agregar</a></li>
+                      <li><a href="">Listados</a></li>
+                      <li><a href="">Modificar</a></li>
+                        </ul>
+                        </li>
+        <li>
+                    <input type="checkbox" class="mostrar-menu" id="menu6">
+                    <label for="menu6" class="ampliar"></label>
+                    <a href="">Servicios Web</a>
+                    <ul class="nivel-04">
+                      <li><a href="">Cosumo</a></li>
+                      <li><a href="">Envio</a></li>
+                        </ul>
+                        </li>
+    </ol>
+  </nav>
+            <br>
+            <a href="../../../Vistas/Admin/Control_Admin.aspx"><h1 align="center">INICIO</h1></a>
         </aside>
         
         <aside class="right-side">
@@ -76,5 +127,13 @@
 
     </form>
 </body>
+<script>
+
+    (nav > ul.menu - arbol > li.*3 > (input[id = "menu$" type= "checkbox"])+(label[for="menu$"])+(a{menu$ })+(ul.nivel - 01 > li * 2 > ()))
+
+    Codigo EMMET largo
+
+        (nav > ul.menu - arbol > li * 3 > (input.mostrar - menu[id = "menu$" type= "checkbox"]) + (label.ampliar[for="menu$"])+(a{menu$ })+(ul.nivel - 01 > li * 2 > ((input.mostrar - menu[id = "menu$$" type= "checkbox"])+(label.ampliar[for="menu$$"])+(a{menu$ })+(ul.nivel - 02 > li * 2 > ((input.mostrar - menu[id = "menu$$$" type= "checkbox"])+(label.ampliar[for="menu$$$"])+(a{menu$ })+(ul.nivel - 03 > li * 2 > ((input.mostrar - menu[id = "menu$$$$" type= "checkbox"])+(label.ampliar[for="menu$$$$"])+(a{menu$ })+(ul.nivel - 04 > li * 2 > (a{enlace })))))))))	
+        </script>
 </html>
 

@@ -61,3 +61,20 @@ html, body {
     max-height: 0;
     -webkit-transition: all 0.5s ease-out;
 }
+
+/*======================
+SOLO ESTO HACE LA MAGIA
+========================*/
+
+.menu-arbol .mostrar-menu:not(:checked) ~ ul {
+    opacity: 0.5;
+    height: 1px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.menu-arbol .mostrar-menu:checked ~ ul {
+    opacity: 1;
+    height: auto;
+    overflow: hidden;
+}
