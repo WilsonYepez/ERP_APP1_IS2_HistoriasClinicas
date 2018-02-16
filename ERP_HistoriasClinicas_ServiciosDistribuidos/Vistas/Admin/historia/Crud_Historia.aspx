@@ -8,26 +8,26 @@
         <asp:SqlDataSource ID="SqlDataSource_Persona" runat="server" ConnectionString="<%$ ConnectionStrings:ERP_HistoriasClinicasConnectionString4 %>" SelectCommand="Select h.CEDULA_EMP,p.NOMBRES_EMP  From HISTORIAS h, PERSONA p where h.CEDULA_EMP=p.CEDULA_EMP ">
         </asp:SqlDataSource>
 &nbsp;</p>
-    <p>Cedula:&nbsp;&nbsp;&nbsp;
+    <p>Cedula:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </p>
-    <p>Nombre:&nbsp;&nbsp;&nbsp;
+    <p>Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
     </p>
-    <p>Nombre Padre:&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vivo?:&nbsp;&nbsp;&nbsp;&nbsp;
+    <p>Nombre Padre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vivo?:&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Causas:&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
 &nbsp;</p>
-    <p>Nombre Madre:&nbsp;&nbsp;&nbsp;&nbsp;
+    <p>Nombre Madre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp; Viva?:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Viva?:&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Causas:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label8" runat="server" Text="Label"></asp:Label>
 &nbsp;</p>
     <p>Número de Hijos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="Label9" runat="server" Text="Label"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vivos:&nbsp;&nbsp;&nbsp;<asp:Label ID="Label10" runat="server" Text="Label"></asp:Label>
-    &nbsp;&nbsp;&nbsp;&nbsp; Muertos:&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vivos:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="Label10" runat="server" Text="Label"></asp:Label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Muertos:&nbsp;&nbsp;&nbsp;
         <asp:Label ID="Label11" runat="server" Text="Label"></asp:Label>
 &nbsp;&nbsp;&nbsp; causas:&nbsp;&nbsp;&nbsp;
         <asp:Label ID="Label12" runat="server" Text="Label"></asp:Label>
