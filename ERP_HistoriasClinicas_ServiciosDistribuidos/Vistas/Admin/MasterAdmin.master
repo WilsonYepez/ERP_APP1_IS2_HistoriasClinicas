@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Clinica Care</title>
 
     <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" >
     <link href="~/assets/css/jQueryUI/jquery-ui.min.css" rel="stylesheet" >
@@ -27,7 +27,7 @@
     <form id="form1" runat="server" role="form">
         <header class="header">
                         <a class="logo">
-            <img src="../../assets/img/Clinica%20Care.png" style='height:43px;/*width:35px;margin-right:5px*/;' />
+            <img src="./../../../assets/img/Clinica%20Care.png" style='height:43px;/*width:35px;margin-right:5px*/;' />
             </a>
             <nav class="navbar navbar-static-top" role="navigation">
                 
