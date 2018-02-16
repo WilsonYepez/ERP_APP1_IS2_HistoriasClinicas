@@ -70,7 +70,7 @@
                     <a href="">Areas de Trabajo</a>
                     <ul class="nivel-04">
                       <li><a href="../../../Vistas/Admin/area/Insertar_area.aspx">Agregar</a></li>
-                      <li><a href="../../../Vistas/Admin/area/Crud_area.aspx">Listados</a></li>
+                      <li><a href="../../../Vistas/Admin/area/Listado_area.aspx">Listados</a></li>
                       <li><a href="../../../Vistas/Admin/area/Mod_area.aspx">Modificar</a></li>
                         </ul>
                         </li>
