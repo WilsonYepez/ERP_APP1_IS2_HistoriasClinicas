@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Clinica Care</title>
 
     <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" >
     <link href="~/assets/css/jQueryUI/jquery-ui.min.css" rel="stylesheet" >
@@ -27,7 +27,7 @@
     <form id="form1" runat="server" role="form">
         <header class="header">
                         <a class="logo">
-            <img src="../../assets/img/Clinica%20Care.png" style='height:43px;/*width:35px;margin-right:5px*/;' />
+            <img src="./../../../assets/img/Clinica%20Care.png" style='height:43px;/*width:35px;margin-right:5px*/;' />
             </a>
             <nav class="navbar navbar-static-top" role="navigation">
                 
@@ -50,7 +50,7 @@
                     <a href="">Usuarios</a>
                     <ul class="nivel-04">
                       <li><a href="../../../Vistas/Admin/user/Insertar_User.aspx">Agregar</a></li>
-                      <li><a href="../../../Vistas/Admin/user/Insertar_User.aspx">Listados</a></li>
+                      <li><a href="../../../Vistas/Admin/user/Crud_User.aspx">Listados</a></li>
                       <li><a href="../../../Vistas/Admin/user/Mod_User.aspx">Modificar</a></li>
                     </ul>
                   </li>
@@ -59,9 +59,9 @@
                     <label for="menu2" class="ampliar"></label>
                     <a href="">Empleados</a>
                     <ul class="nivel-04">
-                      <li><a href="">Agregar</a></li>
-                      <li><a href="">Listados</a></li>
-                      <li><a href="">Modificar</a></li>
+                      <li><a href="../../../Vistas/Admin/empleado/Insertar_Emp.aspx">Agregar</a></li>
+                      <li><a href="../../../Vistas/Admin/empleado/Crud_Emp.aspx">Listados</a></li>
+                      <li><a href="../../../Vistas/Admin/empleado/Mod_Emp.aspx">Modificar</a></li>
                         </ul>
                         </li>
         <li>
@@ -69,9 +69,9 @@
                     <label for="menu3" class="ampliar"></label>
                     <a href="">Areas de Trabajo</a>
                     <ul class="nivel-04">
-                      <li><a href="">Agregar</a></li>
-                      <li><a href="">Listados</a></li>
-                      <li><a href="">Modificar</a></li>
+                      <li><a href="../../../Vistas/Admin/area/Insertar_area.aspx">Agregar</a></li>
+                      <li><a href="../../../Vistas/Admin/area/Crud_area.aspx">Listados</a></li>
+                      <li><a href="../../../Vistas/Admin/area/Mod_area.aspx">Modificar</a></li>
                         </ul>
                         </li>
         <li>
@@ -79,9 +79,9 @@
                     <label for="menu4" class="ampliar"></label>
                     <a href="">Historia Clinica</a>
                     <ul class="nivel-04">
-                      <li><a href="">Agregar</a></li>
-                      <li><a href="">Listados</a></li>
-                      <li><a href="">Modificar</a></li>
+                      <li><a href="../../../Vistas/Admin/historia/Insertar_Historia.aspx">Agregar</a></li>
+                      <li><a href="../../../Vistas/Admin/historia/Crud_Historia.aspx">Listados</a></li>
+                      <li><a href="../../../Vistas/Admin/historia/Mod_Historia.aspx">Modificar</a></li>
                         </ul>
                         </li>
         <li>
@@ -89,9 +89,9 @@
                     <label for="menu5" class="ampliar"></label>
                     <a href="">Consulta Medica</a>
                     <ul class="nivel-04">
-                      <li><a href="">Agregar</a></li>
-                      <li><a href="">Listados</a></li>
-                      <li><a href="">Modificar</a></li>
+                      <li><a href="../../../Vistas/Admin/consulta/Insertar_consulta.aspx">Agregar</a></li>
+                      <li><a href="../../../Vistas/Admin/consulta/Crud_Consulta.aspx">Listados</a></li>
+                      <li><a href="../../../Vistas/Admin/consulta/Mod_consulta.aspx">Modificar</a></li>
                         </ul>
                         </li>
         <li>
