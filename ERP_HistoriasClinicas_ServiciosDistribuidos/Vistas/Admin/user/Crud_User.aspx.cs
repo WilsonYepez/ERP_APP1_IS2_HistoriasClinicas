@@ -84,8 +84,6 @@ public partial class Vistas_Admin_user_Crud_User : System.Web.UI.Page
         catch (Exception ex)
         {
             throw ex;
-        }
-      
-        
+        }  
     }
 }
