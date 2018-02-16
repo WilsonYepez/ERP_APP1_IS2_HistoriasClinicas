@@ -3,20 +3,24 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
-    Cédula: 
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox><asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="Button1_Click" />
+Cédula:&nbsp;&nbsp;<asp:DropDownList AutoPostBack="True" ID="DropDownList66" Width="200px" runat="server" DataSourceID="SqlDataSource_Persona" DataTextField="NOMBRES_EMP" DataValueField="CEDULA_EMP" OnSelectedIndexChanged="ADD_PERSONA_Click" ></asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource_Persona" runat="server" ConnectionString="<%$ ConnectionStrings:ERP_HistoriasClinicasConnectionString4 %>" SelectCommand="Select CEDULA_EMP,NOMBRES_EMP  From PERSONA ">
+        </asp:SqlDataSource>
     <br>
     Nombres: 
     <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
     <br>
-    Fecha Nacimiento: <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px">
-        <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
-        <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+    Fecha Nacimiento: <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" CellPadding="1" DayNameFormat="Shortest" OnSelectionChanged="validaFecha">
+        <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
+        <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
         <OtherMonthDayStyle ForeColor="#999999" />
-        <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-        <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
-        <TodayDayStyle BackColor="#CCCCCC" />
+        <SelectedDayStyle BackColor="#009999" ForeColor="#CCFF99" Font-Bold="True" />
+        <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
+        <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
+        <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
+        <WeekendDayStyle BackColor="#CCCCFF" />
     </asp:Calendar>
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     <br>
     Nacionalidad:
     <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
@@ -50,7 +54,7 @@
     Ciudadania: <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
     <br>
 &nbsp;<br>
-    <asp:Button ID="ADD_PERSONA" runat="server" Text="Agregar" OnClick="ADD_PERSONA_Click" />
+    <asp:Button ID="ADD_PERSONA" runat="server" Text="Agregar" OnClick="Button1_Click" />
     <br>
     <br>
 </asp:Content>
