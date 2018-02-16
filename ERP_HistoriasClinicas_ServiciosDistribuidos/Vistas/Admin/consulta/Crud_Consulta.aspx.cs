@@ -10,7 +10,7 @@ public partial class Vistas_Admin_consulta_Crud_Consulta : System.Web.UI.Page
     private WebService obj = new WebService();
     private void cargaGrilla()
     {
-        GridView1.DataSource = obj.listado_detalle();
+        GridView1.DataSource = obj.lista_consulta();
         GridView1.DataBind();
     }
     protected void Page_Load(object sender, EventArgs e)
@@ -23,8 +23,8 @@ public partial class Vistas_Admin_consulta_Crud_Consulta : System.Web.UI.Page
 
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
-        string cod = GridView1.DataKeys[e.RowIndex].Values[0].ToString();
-        obj.borrar_detalle(cod);
+        Decimal cod = Convert.ToDecimal(GridView1.DataKeys[e.RowIndex].Values[0]);
+        obj.borrar_consulta(cod);
         GridView1.EditIndex = -1;
         cargaGrilla();
     }
