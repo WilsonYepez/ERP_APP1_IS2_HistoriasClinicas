@@ -4,6 +4,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     <h1>Control de Consultas</h1>
+    <p>
+        <asp:Label ID="Label11" runat="server" Text="Label">Ingrese Cédula</asp:Label>
+&nbsp;<asp:TextBox ID="busced" runat="server" Width="193px"></asp:TextBox>
+&nbsp;<asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="Button1_Click" />
+    </p>
+    <p>&nbsp;</p>
 
     <asp:GridView ID="GridView1" runat="server" DatakeyNames="ID_CON" AutoGenerateColumns="false" OnRowDeleting="GridView1_RowDeleting">
         <columns>
