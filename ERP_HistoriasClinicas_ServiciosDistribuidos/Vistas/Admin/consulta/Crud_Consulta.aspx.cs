@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
 
 public partial class Vistas_Admin_consulta_Crud_Consulta : System.Web.UI.Page
 {
@@ -21,11 +23,27 @@ public partial class Vistas_Admin_consulta_Crud_Consulta : System.Web.UI.Page
         }
     }
 
-    protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    public SqlConnection cn = new SqlConnection("data source=sqlserver-utn.database.windows.net;initial catalog=hospital;persist security info=True;user id=administrador;password=admin.1234");
+
+    protected void Button1_Click(object sender, EventArgs e)
     {
-        Decimal cod = Convert.ToDecimal(GridView1.DataKeys[e.RowIndex].Values[0]);
-        obj.borrar_consulta(cod);
-        GridView1.EditIndex = -1;
-        cargaGrilla();
+        try
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select * from CABECERA_CONSULTA where CEDULA_EMP like '" + busced.Text + "%'", cn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            this.GridView1.DataSource = dt;
+            GridView1.DataBind();
+
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
+
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
     }
 }
