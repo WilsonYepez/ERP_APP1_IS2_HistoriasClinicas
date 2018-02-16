@@ -12,9 +12,9 @@
 
     <div>
         <p>
-            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="CEDULA_EMP" DataValueField="CEDULA_EMP">
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="NOMBRES_EMP" DataValueField="CEDULA_EMP">
             </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ERP_HistoriasClinicasConnectionString5 %>" SelectCommand="Select CEDULA_EMP From PERSONA  where Not CEDULA_EMP In (Select CEDULA_EMP From HISTORIAS) "></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ERP_HistoriasClinicasConnectionString5 %>" SelectCommand="Select CEDULA_EMP,NOMBRES_EMP From PERSONA  where Not CEDULA_EMP In (Select CEDULA_EMP From HISTORIAS) "></asp:SqlDataSource>
         </p>
         <p>
             &nbsp;</p>

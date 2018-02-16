@@ -10,17 +10,18 @@ public partial class Vistas_Admin_consulta_insertar_consulta : System.Web.UI.Pag
     WebService obj = new WebService();
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        DateTime fechita= DateTime.Today;
+        Label2.Text = fechita.ToString("D")+"";
     }
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        string cedula = TextBox1.Text;
+        string cedula = DropDownList1.SelectedItem.Value;
         string msg = "Ingreso Correcto";
         string indicaciones = TextBox2.Text;
         string motivos = TextBox3.Text;
         Decimal presion = Convert.ToDecimal(TextBox4.Text);
-        DateTime fecha = Calendar1.SelectedDate;
+        DateTime fecha = DateTime.Today;
         Decimal peso = Convert.ToDecimal(TextBox6.Text);
         Decimal temp = Convert.ToDecimal(TextBox7.Text);
         string sintomas = TextBox8.Text;
