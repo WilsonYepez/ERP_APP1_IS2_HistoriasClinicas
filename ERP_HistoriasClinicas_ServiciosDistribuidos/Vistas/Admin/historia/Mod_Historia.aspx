@@ -12,10 +12,10 @@
 
     <div>
         <p>
-            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="CEDULA_EMP" DataValueField="CEDULA_EMP">
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="NOMBRES_EMP" DataValueField="CEDULA_EMP" >
             </asp:DropDownList>
-            <asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="Button1_Click" />
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:hospitalConnectionString %>" SelectCommand="SELECT [CEDULA_EMP] FROM [HISTORIAS]"></asp:SqlDataSource>
+            <asp:Button ID="Button1" runat="server" Text="Cargar" OnClick="Button1_Click" />
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:hospitalConnectionString %>" SelectCommand="SELECT h.CEDULA_EMP,p.NOMBRES_EMP FROM HISTORIAS h, PERSONA p where p.CEDULA_EMP=h.CEDULA_EMP"></asp:SqlDataSource>
         </p>
         Nombre del Padre: <asp:TextBox ID="T_name_padre" runat="server" Width="238px"></asp:TextBox> &nbsp;Vivo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="live_p" runat="server">
             <asp:ListItem Value="SI">SI</asp:ListItem>

@@ -3,131 +3,88 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
-    <h3>CRUD HISTORIAS CLÍNICAS</h3>
+    <h3>HISTORIA CLÍNICA</h3>
+    <p>Elija el paciente:<asp:DropDownList AutoPostBack="True" ID="DropDownList66" Width="200px" runat="server" DataSourceID="SqlDataSource_Persona" DataTextField="NOMBRES_EMP" DataValueField="CEDULA_EMP" OnSelectedIndexChanged="ADD_Historia_Click" ></asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource_Persona" runat="server" ConnectionString="<%$ ConnectionStrings:ERP_HistoriasClinicasConnectionString4 %>" SelectCommand="Select CEDULA_EMP,NOMBRES_EMP  From PERSONA ">
+        </asp:SqlDataSource>
+&nbsp;</p>
+    <p>Cedula:&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    </p>
+    <p>Nombre:&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+    </p>
+    <p>Nombre Padre:&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vivo?:&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Causas:&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+&nbsp;</p>
+    <p>Nombre Madre:&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp; Viva?:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Causas:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label8" runat="server" Text="Label"></asp:Label>
+&nbsp;</p>
+    <p>Número de Hijos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label9" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vivos:&nbsp;&nbsp;&nbsp;<asp:Label ID="Label10" runat="server" Text="Label"></asp:Label>
+    &nbsp;&nbsp;&nbsp;&nbsp; Muertos:&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label11" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp; causas:&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label12" runat="server" Text="Label"></asp:Label>
+    </p>
     
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="CEDULA_EMP">
-        <columns>
-            <asp:TemplateField HeaderText=" CEDULA ">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%#Bind("CEDULA_EMP") %>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtcedu" runat="server" Text='<%#Bind("CEDULA_EMP")%>' Enabled="false"></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-             <asp:TemplateField HeaderText=" NOMBRE DEL PADRE ">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%#Bind("PADRE_H") %>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtpadre" runat="server" Text='<%#Bind("PADRE_H")%>' Enabled="false"></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-             <asp:TemplateField HeaderText=" NOMBRE DE LA MADRE ">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%#Bind("MADRE_H") %>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtmadre" runat="server" Text='<%#Bind("MADRE_H")%>' Enabled="false"></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-             <asp:TemplateField HeaderText=" NUMERO DE HIJOS ">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%#Bind("NUM_H_H") %>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtnum" runat="server" Text='<%#Bind("NUM_H_H")%>' Enabled="false"></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-             <asp:TemplateField HeaderText=" NUMERO DE HERMANOS ">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%#Bind("SON_H") %>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtson" runat="server" Text='<%#Bind("SON_H")%>' Enabled="false"></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-             <asp:TemplateField HeaderText="ALCOHOL">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%#Bind("ALCOHOL_H") %>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtalcohol" runat="server" Text='<%#Bind("ALCOHOL_H")%>' Enabled="false"></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-             <asp:TemplateField HeaderText=" TABACO ">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%#Bind("TABACO_H") %>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txttabaco" runat="server" Text='<%#Bind("TABACO_H")%>' Enabled="false"></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-             <asp:TemplateField HeaderText=" DROGAS ">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%#Bind("DROGAS_H") %>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtdrogas" runat="server" Text='<%#Bind("DROGAS_H")%>' Enabled="false"></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-             <asp:TemplateField HeaderText="ALIMENTACIÓN">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%#Bind("ALIMENTACION_H") %>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtali" runat="server" Text='<%#Bind("ALIMENTACION_H")%>' Enabled="false"></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-            <asp:TemplateField HeaderText="DIPSIA">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%#Bind("DIPSIA_H") %>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtdipsia" runat="server" Text='<%#Bind("DIPSIA_H")%>' Enabled="false"></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-            <asp:TemplateField HeaderText="PARADIPSIA">
-                    <ItemTemplate>
-                        <%--<asp:Label ID="Label1" runat="server" Text='<%#Bind("PARADIPSIA_H") %>'></asp:Label>--%>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <%--<asp:TextBox ID="txtparadi" runat="server" Text='<%#Bind("PARADIPSIA_H")%>' Enabled="false"></asp:TextBox>--%>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-            <asp:TemplateField HeaderText="INSOMNIO">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%#Bind("INSOMNIO_H") %>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtinsom" runat="server" Text='<%#Bind("INSOMNIO_H")%>' Enabled="false"></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-            <asp:TemplateField HeaderText="OTROS">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%#Bind("OTRO_H") %>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtotros" runat="server" Text='<%#Bind("OTRO_H")%>' Enabled="false"></asp:TextBox>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-
-        </columns>
-    </asp:GridView>
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="body_fixed" Runat="Server">
+    <p>
+        Número de Hermanos:&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label13" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp; Vivos:&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label14" runat="server" Text="Label"></asp:Label>
+    &nbsp;&nbsp;&nbsp;&nbsp; Muertos:&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label15" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp; causas:&nbsp;&nbsp;<asp:Label ID="Label16" runat="server" Text="Label"></asp:Label>
+        &nbsp;
+    </p>
+    <p>
+        Consume&nbsp;&nbsp;&nbsp;&nbsp; ALCOHOL:&nbsp;&nbsp;&nbsp;<asp:Label ID="Label17" runat="server" Text="Label"></asp:Label>
+        &nbsp;
+&nbsp;&nbsp;&nbsp; FRECUENCIA:&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label18" runat="server" Text="Label"></asp:Label>
+    </p>
+    <p>
+        Consume&nbsp;&nbsp;&nbsp;&nbsp; DROGA:&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label19" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp; FRECUENCIA:&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label20" runat="server" Text="Label"></asp:Label>
+    </p>
+    <p>
+        Consume&nbsp;&nbsp;&nbsp;&nbsp; TABACO:&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label21" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp; FRECUENCIA:&nbsp;&nbsp;&nbsp;<asp:Label ID="Label22" runat="server" Text="Label"></asp:Label>
+        &nbsp;
+    </p>
+    <p>
+        ALIMENTACION:
+    </p>
+    <p>
+        <asp:TextBox ID="TextBox1" runat="server" Height="133px" Width="527px"></asp:TextBox>
+    </p>
+    <p>
+        DIPSIA:&nbsp;&nbsp;
+        <asp:Label ID="Label23" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp; PARADIPSIA:&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label25" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp; FRECUENCIA:&nbsp;&nbsp;&nbsp;<asp:Label ID="Label24" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </p>
+    <p>
+        INSOMNIO:&nbsp;&nbsp;&nbsp;<asp:Label ID="Label26" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;FRECUENCIA:&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label27" runat="server" Text="Label"></asp:Label>
+    </p>
+    <p>
+        OTRO:</p>
+    <p>
+        <asp:TextBox ID="TextBox2" runat="server" Height="174px" Width="521px"></asp:TextBox>
+    </p>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 </asp:Content>
