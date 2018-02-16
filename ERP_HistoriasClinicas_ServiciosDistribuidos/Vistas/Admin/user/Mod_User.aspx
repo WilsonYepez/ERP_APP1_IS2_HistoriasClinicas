@@ -4,7 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
 
-
+    Cedula: 
+    Código de Área de Trabajo
+    Cargo de Usuario
+    Password
+    Activo
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="body_fixed" Runat="Server">

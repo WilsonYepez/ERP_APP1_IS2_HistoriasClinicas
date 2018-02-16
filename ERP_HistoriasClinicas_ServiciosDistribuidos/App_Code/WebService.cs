@@ -69,6 +69,9 @@ public class WebService : System.Web.Services.WebService
         return new ERP_HistoriasClinicas.RecursosHumanos_LS().delete_area(ID_AREA);
     }
 
+
+
+    /// empleado
 [WebMethod]
 public ERP_HistoriasClinicas.Empleado2[] Listado_Empleados()
     {
@@ -98,6 +101,8 @@ public int delete_empleado(string CEDULA_EMP)
         return new ERP_HistoriasClinicas.RecursosHumanos_LS().delete_empleado(CEDULA_EMP);
     }
 
+
+    //persona
     [WebMethod]
 public ERP_HistoriasClinicas.Persona2 Persona_Cedula(string CEDULA_EMP)
     {
@@ -131,9 +136,7 @@ public  int delete_Persona(string CEDULA_EMP)
     {
         return new ERP_HistoriasClinicas.RecursosHumanos_LS().delete_Persona( CEDULA_EMP);
     }
-    
-
-
+ 
 
     //Consultorio
     
