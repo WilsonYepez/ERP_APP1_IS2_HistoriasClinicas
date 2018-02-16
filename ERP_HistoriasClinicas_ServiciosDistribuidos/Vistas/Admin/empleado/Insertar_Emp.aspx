@@ -4,29 +4,36 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     Cédula: 
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <asp:TextBox ID="TextBox1" runat="server" ValidationGroup="GruposoloNumeros"></asp:TextBox>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="TextBox1" Display="Dynamic" ErrorMessage="La cedula debe tener 10 digitos solo Numeros" Font-Bold="true" SetFocusOnError="true" ValidationExpression="[0-9]{10}" ValidationGroup="GruposoloNumeros"></asp:RegularExpressionValidator>
     <br>
     Nombres: 
-    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+    <asp:TextBox ID="TextBox2" runat="server" ValidationGroup="GruposoloLetras" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TextBox2" Display="Dynamic" ErrorMessage="Error solo Letras Mayúsculas" Font-Bold="true" SetFocusOnError="true" ValidationExpression="([A-Z]|\ )+" ValidationGroup="GruposoloLetras"></asp:RegularExpressionValidator>
     <br>
-    Fecha Nacimiento: <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px">
-        <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
-        <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+    Fecha Nacimiento: <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" CellPadding="1" DayNameFormat="Shortest" OnSelectionChanged="validaFecha">
+        <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
+        <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
         <OtherMonthDayStyle ForeColor="#999999" />
-        <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-        <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
-        <TodayDayStyle BackColor="#CCCCCC" />
+        <SelectedDayStyle BackColor="#009999" ForeColor="#CCFF99" Font-Bold="True" />
+        <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
+        <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
+        <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
+        <WeekendDayStyle BackColor="#CCCCFF" />
     </asp:Calendar>
     <br>
     Nacionalidad:
-    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+    <asp:TextBox ID="TextBox3" ValidationGroup="GruposoloLetras" runat="server"></asp:TextBox>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox3" Display="Dynamic" ErrorMessage="Error Solo Letras" Font-Bold="true" SetFocusOnError="true" ValidationExpression="([a-zA-z]|\ )+" ValidationGroup="GruposoloLetras"></asp:RegularExpressionValidator>
     <br>
     Dirección:
-    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+    <asp:TextBox ID="TextBox4"  runat="server"></asp:TextBox>
     <br>
-    Teléfono:<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+    Teléfono:<asp:TextBox ID="TextBox5" runat="server" ValidationGroup="GrupoTelefonos"></asp:TextBox>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="TextBox5" Display="Dynamic" ErrorMessage="Requiere Un Numero de Telefono de entre 6 a 15 digitos" Font-Bold="true" SetFocusOnError="true" ValidationExpression="[0-9]{6,15}" ValidationGroup="GrupoTelefonos"></asp:RegularExpressionValidator>
     <br />
-    Email:<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+    Email:<asp:TextBox ID="TextBox6" ValidationGroup="GrupoCorreo" runat="server"></asp:TextBox>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox4" Display="Dynamic" ErrorMessage="Requiere Correo" Font-Bold="true" SetFocusOnError="true" ValidationExpression="[a-z0-9]+\@[a-z0-9]+(\.[a-z]{2,3})+" ValidationGroup="GrupoCorreo"></asp:RegularExpressionValidator>
     <br />
     Estado Civil: <asp:DropDownList ID="DropDownList1" runat="server">
         <asp:ListItem Value="SOLTERO">SOLTERO</asp:ListItem>
@@ -47,7 +54,8 @@
             <asp:ListItem Value="B+">B+</asp:ListItem>
     </asp:DropDownList>
     <br>
-    Ciudadania: <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+    Ciudadania: <asp:TextBox ID="TextBox7" runat="server" ValidationGroup="GruposoloLetras"></asp:TextBox>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="TextBox7" Display="Dynamic" ErrorMessage="Error Solo Letras" Font-Bold="true" SetFocusOnError="true" ValidationExpression="([a-zA-z]|\ )+" ValidationGroup="GruposoloLetras"></asp:RegularExpressionValidator>
     <br>
 &nbsp;<br>
     <asp:Button ID="ADD_PERSONA" runat="server" Text="Agregar" OnClick="ADD_PERSONA_Click" />

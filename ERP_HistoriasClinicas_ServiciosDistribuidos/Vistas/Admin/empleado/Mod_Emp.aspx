@@ -8,7 +8,8 @@ Cédula:&nbsp;&nbsp;<asp:DropDownList AutoPostBack="True" ID="DropDownList66" Wi
         </asp:SqlDataSource>
     <br>
     Nombres: 
-    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+    <asp:TextBox ID="TextBox2" runat="server" ValidationGroup="GruposoloLetras"></asp:TextBox>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TextBox2" Display="Dynamic" ErrorMessage="Error solo Letras Mayúsculas" Font-Bold="true" SetFocusOnError="true" ValidationExpression="([A-Z]|\ )+" ValidationGroup="GruposoloLetras"></asp:RegularExpressionValidator>
     <br>
     Fecha Nacimiento: <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" CellPadding="1" DayNameFormat="Shortest" OnSelectionChanged="validaFecha">
         <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
@@ -22,14 +23,17 @@ Cédula:&nbsp;&nbsp;<asp:DropDownList AutoPostBack="True" ID="DropDownList66" Wi
     </asp:Calendar>
     <br>
     Nacionalidad:
-    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+    <asp:TextBox ID="TextBox3" runat="server" ValidationGroup="GruposoloLetras"></asp:TextBox>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox3" Display="Dynamic" ErrorMessage="Error Solo Letras" Font-Bold="true" SetFocusOnError="true" ValidationExpression="([a-zA-z]|\ )+" ValidationGroup="GruposoloLetras"></asp:RegularExpressionValidator>
     <br>
     Dirección:
     <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
     <br>
-    Teléfono:<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+    Teléfono:<asp:TextBox ID="TextBox5" runat="server" ValidationGroup="GrupoTelefonos"></asp:TextBox>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="TextBox5" Display="Dynamic" ErrorMessage="Requiere Un Numero de Telefono de entre 6 a 15 digitos" Font-Bold="true" SetFocusOnError="true" ValidationExpression="[0-9]{6,15}" ValidationGroup="GrupoTelefonos"></asp:RegularExpressionValidator>
     <br />
-    Email:<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+    Email:<asp:TextBox ID="TextBox6" runat="server" ValidationGroup="GrupoCorreo"></asp:TextBox>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox4" Display="Dynamic" ErrorMessage="Requiere Correo" Font-Bold="true" SetFocusOnError="true" ValidationExpression="[a-z0-9]+\@[a-z0-9]+(\.[a-z]{2,3})+" ValidationGroup="GrupoCorreo"></asp:RegularExpressionValidator>
     <br />
     Estado Civil: <asp:DropDownList ID="DropDownList1" runat="server">
         <asp:ListItem Value="SOLTERO">SOLTERO</asp:ListItem>
@@ -50,7 +54,8 @@ Cédula:&nbsp;&nbsp;<asp:DropDownList AutoPostBack="True" ID="DropDownList66" Wi
             <asp:ListItem Value="B+">B+</asp:ListItem>
     </asp:DropDownList>
     <br>
-    Ciudadania: <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+    Ciudadania: <asp:TextBox ID="TextBox7" runat="server" ValidationGroup="GruposoloLetras"></asp:TextBox>
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="TextBox7" Display="Dynamic" ErrorMessage="Error Solo Letras" Font-Bold="true" SetFocusOnError="true" ValidationExpression="([a-zA-z]|\ )+" ValidationGroup="GruposoloLetras"></asp:RegularExpressionValidator>
     <br>
 &nbsp;<br>
     <asp:Button ID="ADD_PERSONA" runat="server" Text="Agregar" OnClick="Button1_Click" />
