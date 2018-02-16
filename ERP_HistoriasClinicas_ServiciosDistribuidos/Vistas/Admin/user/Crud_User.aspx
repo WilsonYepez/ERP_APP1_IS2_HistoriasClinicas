@@ -8,7 +8,7 @@
         </div>
     <div class="thumbnail">
         Valor a buscar : <asp:TextBox ID="busco" runat="server" Width="200px"></asp:TextBox>
-        <asp:Button ID="search_btn_User" runat="server" Text="Agregar" OnClick="search_btn_User_Click" /><br><br>
+        <asp:Button ID="search_btn_User" runat="server" Text="Filtrar" OnClick="search_btn_User_Click" /><br><br>
         <br>
 
         <asp:GridView ID="GridView1" runat="server" 

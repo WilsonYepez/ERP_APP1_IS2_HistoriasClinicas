@@ -15,21 +15,21 @@ public partial class Vistas_Admin_user_Mod_User : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        string cedula = TextBox1.Text;
+        string cedula = DropDownList66.SelectedItem.Value;
         obj.Empleado_Cedula(cedula);
-        TextBox2.Text = obj.Empleado_Cedula(cedula).ID_AREA.ToString();
-        TextBox3.Text = obj.Empleado_Cedula(cedula).CARGO_US;
+        DropDownList2.SelectedValue = obj.Empleado_Cedula(cedula).ID_AREA.ToString();
+        DropDownList3.SelectedValue = obj.Empleado_Cedula(cedula).CARGO_US;
         TextBox4.Text = obj.Empleado_Cedula(cedula).PASWORD_US;
         DropDownList1.SelectedValue = obj.Empleado_Cedula(cedula).ACTIVO_EMP;
     }
 
     protected void Button2_Click(object sender, EventArgs e)
     {
-        Decimal area = Convert.ToDecimal(TextBox2.Text);
-        string carg = TextBox3.Text;
+        Decimal area = Convert.ToDecimal(DropDownList2.SelectedItem.Value);  
+        string carg = DropDownList3.SelectedItem.Value;
         string pass = TextBox4.Text;
         string acti = DropDownList1.SelectedItem.Value;
 
-        obj.update_empleado(TextBox1.Text,area,carg,pass,acti);
+        obj.update_empleado(DropDownList66.SelectedItem.Value,area,carg,pass,acti);
     }
 }
