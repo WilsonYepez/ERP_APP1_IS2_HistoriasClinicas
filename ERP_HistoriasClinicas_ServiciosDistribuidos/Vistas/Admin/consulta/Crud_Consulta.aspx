@@ -40,7 +40,7 @@
                     </EditItemTemplate>
                 </asp:TemplateField>
 
-            <asp:TemplateField HeaderText="MOTIVO">
+            <asp:TemplateField HeaderText="RECETA">
                     <ItemTemplate>
                         <asp:Label ID="Label4" runat="server" Text='<%#Bind("MOTIVO_CON")%>'></asp:Label>
                     </ItemTemplate>
