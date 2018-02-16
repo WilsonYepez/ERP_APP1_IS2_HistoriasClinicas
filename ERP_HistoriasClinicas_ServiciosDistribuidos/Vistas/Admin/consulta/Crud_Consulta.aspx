@@ -103,7 +103,7 @@
                     </EditItemTemplate>
                 </asp:TemplateField>
 
-            <asp:ButtonField Text="Botón" />
+            <asp:ButtonField Text="Reporte" />
         </columns>
 
     </asp:GridView>
