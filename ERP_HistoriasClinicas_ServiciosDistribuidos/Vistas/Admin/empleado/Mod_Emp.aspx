@@ -20,7 +20,6 @@ Cédula:&nbsp;&nbsp;<asp:DropDownList AutoPostBack="True" ID="DropDownList66" Wi
         <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
         <WeekendDayStyle BackColor="#CCCCFF" />
     </asp:Calendar>
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     <br>
     Nacionalidad:
     <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
