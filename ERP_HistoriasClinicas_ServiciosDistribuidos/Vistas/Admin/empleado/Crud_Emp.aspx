@@ -3,7 +3,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
-    <h3>CONTROL DE PERSONAS</h3>
+    <h1>CONTROL DE EMPLEADOS</h1>
+    <p>&nbsp;</p>
+
+    <asp:Label ID="Label6" runat="server" Text="Label">Ingrese Nombre</asp:Label>
+&nbsp;<asp:TextBox ID="nom_bus" runat="server" Width="256px"></asp:TextBox>
+&nbsp;<asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="Button1_Click2" />
+    
+    <br />
+    <br />
     
     <asp:GridView ID="GridView1" runat="server" 
         OnRowCancelingEdit="GridView1_RowCancelingEdit" 

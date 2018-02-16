@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
-    <h3>CRUD HISTORIAS CLÍNICAS</h3>
+    <h3>HISTORIAS CLÍNICAS</h3>
     
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="CEDULA_EMP">
         <columns>

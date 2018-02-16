@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+
 
 public partial class Vistas_Admin_empleado_Crud_Emp : System.Web.UI.Page
 {
@@ -65,5 +68,23 @@ public partial class Vistas_Admin_empleado_Crud_Emp : System.Web.UI.Page
     {
         GridView1.EditIndex = -1;
         cargaGrilla();
+    }
+    public SqlConnection cn = new SqlConnection("data source=sqlserver-utn.database.windows.net;initial catalog=hospital;persist security info=True;user id=administrador;password=admin.1234");
+
+    protected void Button1_Click2(object sender, EventArgs e)
+    {
+        try
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select * from PERSONA where NOMBRES_EMP like '" + nom_bus.Text + "%'", cn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            this.GridView1.DataSource = dt;
+            GridView1.DataBind();
+
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
     }
 }

@@ -7,10 +7,10 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 
-public partial class Vistas_Admin_area_Crud_area : System.Web.UI.Page
+public partial class Vistas_Admin_area_Listado_area : System.Web.UI.Page
 {
     WebService obj = new WebService();
-
+    public SqlConnection cn = new SqlConnection("data source=sqlserver-utn.database.windows.net;initial catalog=hospital;persist security info=True;user id=administrador;password=admin.1234");
     private void cargargrilla()
     {
         GridView1.DataSource = obj.Listado_Areas();
@@ -19,7 +19,7 @@ public partial class Vistas_Admin_area_Crud_area : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(!IsPostBack)
+        if (!IsPostBack)
         {
             cargargrilla();
         }
@@ -60,23 +60,26 @@ public partial class Vistas_Admin_area_Crud_area : System.Web.UI.Page
     {
         int area = Convert.ToInt16(((Label)GridView1.Rows[e.RowIndex].FindControl("Label1")).Text);
         obj.delete_area(area);
-      
+        GridView1.EditIndex = -1;
+        cargargrilla();
+
+
     }
-    
+
     protected void Button1_Click1(object sender, EventArgs e)
     {
-        
+
         int area = 0;
         String nombre = ((TextBox)GridView1.FooterRow.FindControl("TextBox5")).Text;
         String gerencia = ((TextBox)GridView1.FooterRow.FindControl("TextBox6")).Text;
         String descripcion = ((TextBox)GridView1.FooterRow.FindControl("TextBox7")).Text;
         String estado = ((TextBox)GridView1.FooterRow.FindControl("TextBox8")).Text;
-        obj.insertar_area(area,nombre,gerencia,descripcion,estado);
+        obj.insertar_area(area, nombre, gerencia, descripcion, estado);
         GridView1.DataBind();
 
     }
 
-    public SqlConnection cn = new SqlConnection("data source=sqlserver-utn.database.windows.net;initial catalog=hospital;persist security info=True;user id=administrador;password=admin.1234");
+
 
 
     protected void Button1_Click2(object sender, EventArgs e)
@@ -90,7 +93,7 @@ public partial class Vistas_Admin_area_Crud_area : System.Web.UI.Page
             GridView1.DataBind();
 
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             throw ex;
         }
