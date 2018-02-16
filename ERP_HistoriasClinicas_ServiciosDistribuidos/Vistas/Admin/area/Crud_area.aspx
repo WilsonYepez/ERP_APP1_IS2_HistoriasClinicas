@@ -6,8 +6,13 @@
     <br />
     <h1>Listado de Áreas de Trabajo</h1>
     <br />
+    <asp:Label ID="Label6" runat="server" Text="Label">Ingrese Nombre</asp:Label>
+&nbsp;<asp:TextBox ID="nom_bus" runat="server" Width="256px"></asp:TextBox>
+&nbsp;<asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="Button1_Click2" />
+    <br />
+    <br />
 
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="table-responsive" DataKeyNames="ID_AREA" DataSourceID="AREA" OnRowEditing="GridView1_RowEditing1" OnRowUpdating="GridView1_RowUpdating1" AllowPaging="True" OnDataBinding="Page_Load" OnDataBound="Page_Load" CellPadding="4" ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="table-responsive" DataKeyNames="ID_AREA" OnRowEditing="GridView1_RowEditing1" OnRowUpdating="GridView1_RowUpdating1" AllowPaging="True" OnDataBinding="Page_Load" OnDataBound="Page_Load" CellPadding="4" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:TemplateField HeaderText="ID_AREA" InsertVisible="False" SortExpression="ID_AREA">

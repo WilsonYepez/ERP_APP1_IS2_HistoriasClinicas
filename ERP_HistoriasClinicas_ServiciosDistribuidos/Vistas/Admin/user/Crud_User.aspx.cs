@@ -25,8 +25,6 @@ public partial class Vistas_Admin_user_Crud_User : System.Web.UI.Page
         
     }
 
-  
-
     protected void rowCancelEvent(object sender, GridViewCancelEditEventArgs e)
     {
         GridView1.EditIndex = -1;
@@ -69,14 +67,13 @@ public partial class Vistas_Admin_user_Crud_User : System.Web.UI.Page
         cargargrilla();
 
     }
-    public SqlConnection cn = new SqlConnection("data source = sqlserver - utn.database.windows.net; initial catalog = hospital; persist security info=True;user id = administrador; password=admin.1234");
+
+    public SqlConnection cn = new SqlConnection("data source=sqlserver-utn.database.windows.net;initial catalog=hospital;persist security info=True;user id=administrador;password=admin.1234");
 
     protected void search_btn_User_Click(object sender, EventArgs e)
     {
         try
         {
-
-
             SqlDataAdapter da = new SqlDataAdapter("select * from EMPLEADO where CEDULA_EMP like '" + busco.Text + "%'", cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
