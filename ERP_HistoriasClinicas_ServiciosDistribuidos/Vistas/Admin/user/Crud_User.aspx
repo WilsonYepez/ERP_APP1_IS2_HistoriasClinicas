@@ -17,7 +17,7 @@
             OnRowEditing="rowEditingEvent" 
             OnRowUpdating="rowUpdatingEvent" 
               
-            DataKeyNames="CEDULA_EMP" AutoGenerateColumns="false">
+            DataKeyNames="CEDULA_EMP" AutoGenerateColumns="false" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
 
             <Columns>
                 <asp:TemplateField HeaderText=" CEDULA ">
