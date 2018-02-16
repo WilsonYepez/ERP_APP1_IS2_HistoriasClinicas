@@ -80,7 +80,7 @@
                     <a href="">Historia Clinica</a>
                     <ul class="nivel-04">
                       <li><a href="../../../Vistas/Admin/historia/Insertar_Historia.aspx">Agregar</a></li>
-                      <li><a href="../../../Vistas/Admin/historia/Crud_Historia.aspx">Listados</a></li>
+                      <li><a href="../../../Vistas/Admin/historia/Crud_Historia.aspx">Reporte</a></li>
                       <li><a href="../../../Vistas/Admin/historia/Mod_Historia.aspx">Modificar</a></li>
                         </ul>
                         </li>
