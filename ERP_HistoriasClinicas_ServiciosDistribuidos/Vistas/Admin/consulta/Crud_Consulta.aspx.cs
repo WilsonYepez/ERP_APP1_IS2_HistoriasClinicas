@@ -23,14 +23,6 @@ public partial class Vistas_Admin_consulta_Crud_Consulta : System.Web.UI.Page
         }
     }
 
-    protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-    {
-        Decimal cod = Convert.ToDecimal(GridView1.DataKeys[e.RowIndex].Values[0]);
-        obj.borrar_consulta(cod);
-        GridView1.EditIndex = -1;
-        cargaGrilla();
-    }
-
     public SqlConnection cn = new SqlConnection("data source=sqlserver-utn.database.windows.net;initial catalog=hospital;persist security info=True;user id=administrador;password=admin.1234");
 
     protected void Button1_Click(object sender, EventArgs e)
@@ -48,5 +40,10 @@ public partial class Vistas_Admin_consulta_Crud_Consulta : System.Web.UI.Page
         {
             throw ex;
         }
+    }
+
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
     }
 }

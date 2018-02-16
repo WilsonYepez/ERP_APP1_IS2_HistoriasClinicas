@@ -11,7 +11,7 @@
     </p>
     <p>&nbsp;</p>
 
-    <asp:GridView ID="GridView1" runat="server" DatakeyNames="ID_CON" AutoGenerateColumns="false" OnRowDeleting="GridView1_RowDeleting">
+    <asp:GridView ID="GridView1" runat="server" DatakeyNames="ID_CON" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
         <columns>
             <asp:TemplateField HeaderText="CÓDIGO CONSULTA">
                     <ItemTemplate>
@@ -103,7 +103,7 @@
                     </EditItemTemplate>
                 </asp:TemplateField>
 
-            <asp:CommandField ButtonType="Link" ShowDeleteButton="true"/>
+            <asp:ButtonField Text="Botón" />
         </columns>
 
     </asp:GridView>
