@@ -58,7 +58,7 @@ public partial class Login : System.Web.UI.Page
                 Response.Redirect("Vistas/Admin/Control_Admin.aspx");
             }
             else{
-                if (ds.CARGO_US == "ADMINISTRADOR")
+                if (ds.CARGO_US == "ADMINISTRADOR" || ds.CARGO_US == "MEDICO")
                 {
                     Response.Redirect("Vistas/Admin/Control_Admin.aspx");
                 }

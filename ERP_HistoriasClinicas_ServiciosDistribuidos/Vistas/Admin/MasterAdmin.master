@@ -47,7 +47,7 @@
                    <li>
                     <input type="checkbox" name="nivel-1" class="mostrar-menu" id="menu1">
                     <label for="menu1" class="ampliar"></label>
-                    <a href="">Usuarios</a>
+                    <a href="../../../Vistas/Admin/Control_Admin.aspx">Usuarios</a>
                     <ul class="nivel-04">
                       <li><a href="../../../Vistas/Admin/user/Insertar_User.aspx">Agregar</a></li>
                       <li><a href="../../../Vistas/Admin/user/Crud_User.aspx">Listados</a></li>
@@ -57,7 +57,7 @@
                   <li>
                     <input type="checkbox" class="mostrar-menu" id="menu2">
                     <label for="menu2" class="ampliar"></label>
-                    <a href="">Empleados</a>
+                    <a href="../../../Vistas/Admin/Control_Admin.aspx">Empleados</a>
                     <ul class="nivel-04">
                       <li><a href="../../../Vistas/Admin/empleado/Insertar_Emp.aspx">Agregar</a></li>
                       <li><a href="../../../Vistas/Admin/empleado/Crud_Emp.aspx">Listados</a></li>
@@ -67,7 +67,7 @@
         <li>
                     <input type="checkbox" class="mostrar-menu" id="menu3">
                     <label for="menu3" class="ampliar"></label>
-                    <a href="">Areas de Trabajo</a>
+                    <a href="../../../Vistas/Admin/Control_Admin.aspx">Areas de Trabajo</a>
                     <ul class="nivel-04">
                       <li><a href="../../../Vistas/Admin/area/Insertar_area.aspx">Agregar</a></li>
                       <li><a href="../../../Vistas/Admin/area/Listado_area.aspx">Listados</a></li>
@@ -77,7 +77,7 @@
         <li>
                     <input type="checkbox" class="mostrar-menu" id="menu4">
                     <label for="menu4" class="ampliar"></label>
-                    <a href="">Historia Clinica</a>
+                    <a href="../../../Vistas/Admin/Control_Admin.aspx">Historia Clinica</a>
                     <ul class="nivel-04">
                       <li><a href="../../../Vistas/Admin/historia/Insertar_Historia.aspx">Agregar</a></li>
                       <li><a href="../../../Vistas/Admin/historia/Crud_Historia.aspx">Reporte</a></li>
@@ -87,19 +87,18 @@
         <li>
                     <input type="checkbox" class="mostrar-menu" id="menu5">
                     <label for="menu5" class="ampliar"></label>
-                    <a href="">Consulta Medica</a>
+                    <a href="../../../Vistas/Admin/Control_Admin.aspx">Consulta Medica</a>
                     <ul class="nivel-04">
                       <li><a href="../../../Vistas/Admin/consulta/Insertar_consulta.aspx">Agregar</a></li>
                       <li><a href="../../../Vistas/Admin/consulta/Crud_Consulta.aspx">Listados</a></li>
-                      <li><a href="../../../Vistas/Admin/consulta/Mod_consulta.aspx">Modificar</a></li>
                         </ul>
                         </li>
         <li>
                     <input type="checkbox" class="mostrar-menu" id="menu6">
                     <label for="menu6" class="ampliar"></label>
-                    <a href="">Servicios Web</a>
+                    <a href="../../../Vistas/Admin/Control_Admin.aspx">Servicios Web</a>
                     <ul class="nivel-04">
-                      <li><a href="">Cosumo</a></li>
+                      <li><a href="../../../../WebService.asmx?op=Servicio_Facturacion">Cosumo</a></li>
                       <li><a href="">Envio</a></li>
                         </ul>
                         </li>
