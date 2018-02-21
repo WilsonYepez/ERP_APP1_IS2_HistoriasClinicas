@@ -41,9 +41,32 @@ public partial class Vistas_Admin_consulta_Crud_Consulta : System.Web.UI.Page
             throw ex;
         }
     }
-
+    
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
+        
+    }
 
+    protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        
+    }
+
+    protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+
+    }
+
+    protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+
+    }
+
+    protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
+    {
+        Session["indi"] = GridView1.SelectedRow.Cells[2].Text;
+        Session["receta"] = GridView1.SelectedRow.Cells[3].Text;
+        Session["obes"] = GridView1.SelectedRow.Cells[9].Text;
+        Response.Redirect("Reporte_con.aspx");
     }
 }

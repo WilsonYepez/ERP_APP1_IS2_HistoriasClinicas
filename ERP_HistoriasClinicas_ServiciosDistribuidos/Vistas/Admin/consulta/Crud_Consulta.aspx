@@ -11,7 +11,7 @@
     </p>
     <p>&nbsp;</p>
 
-    <asp:GridView ID="GridView1" runat="server" DatakeyNames="ID_CON" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+    <asp:GridView ID="GridView1" runat="server" DatakeyNames="ID_CON" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" >
         <columns>
             <asp:TemplateField HeaderText="CÓDIGO CONSULTA">
                     <ItemTemplate>
@@ -102,8 +102,9 @@
                         <asp:TextBox ID="txtdic" runat="server" Text='<%#Bind("OBSERVACIONES_CON")%>'></asp:TextBox>
                     </EditItemTemplate>
                 </asp:TemplateField>
-
-            <asp:ButtonField Text="Reporte" />
+            
+            <asp:CommandField SelectText="Reporte" ShowSelectButton="True" />
+            
         </columns>
 
     </asp:GridView>
