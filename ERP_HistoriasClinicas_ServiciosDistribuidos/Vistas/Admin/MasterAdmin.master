@@ -29,7 +29,7 @@
                         <a class="logo">
             <img src="./../../../assets/img/Clinica%20Care.png" style='height:43px;/*width:35px;margin-right:5px*/;' />
             </a>
-            <nav class="navbar navbar-static-top" role="navigation">
+            <nav class="navbar navbar-static-top bg-black" role="navigation">
                 
                 <div class="navbar-right">
                     
@@ -41,7 +41,7 @@
             </nav>
         </header>
         <div class="wrapper navbar-left">
-        <aside class="left-side bg-black" >
+        <aside class="left-side bg-blue" >
     <nav>
     <ol class="menu-arbol">
                    <li>
@@ -110,7 +110,7 @@
         <aside class="right-side">
             <div>
                 <section class="content"><div class="row">
-                    <div class="col-lg-123" >
+                    <div class="col-lg-123 bg-gray" >
                         <asp:ContentPlaceHolder id="body" runat="server" >
 
                         </asp:ContentPlaceHolder>

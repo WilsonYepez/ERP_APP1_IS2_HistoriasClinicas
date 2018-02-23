@@ -31,11 +31,11 @@
     </asp:DropDownList>
     <br />
     País:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:DropDownList ID="DropDownList67" runat="server">
+    <asp:DropDownList ID="drppais" runat="server" AutoPostBack="True" OnSelectedIndexChanged="drppais_SelectedIndexChanged">
     </asp:DropDownList>
     <br />
     Provincia:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:DropDownList ID="DropDownList68" runat="server">
+    <asp:DropDownList ID="drpprovincia" runat="server" AutoPostBack="True">
     </asp:DropDownList>
     <br />
     <br />
