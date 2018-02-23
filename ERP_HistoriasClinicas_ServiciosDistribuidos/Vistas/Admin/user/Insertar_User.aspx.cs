@@ -69,17 +69,21 @@ public partial class Vistas_Admin_user_Crud_User : System.Web.UI.Page
         con.Close();
     }
 
-    public void ddl_provincia()
+    protected void drppais_SelectedIndexChanged(object sender, EventArgs e)
     {
         con.Open();
-        SqlCommand cmd = new SqlCommand("select cod_provincia,descripcion,cod_pais from PROVINCIA where cod_pais=" + Convert.ToUInt32(drppais.SelectedValue),con);
+        int cod_pais = Convert.ToInt32(drppais.SelectedValue);
+        SqlCommand cmd = new SqlCommand("select * from PROVINCIA where cod_pais=" + cod_pais, con);
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        DataSet ds = new DataSet();
+        da.Fill(ds);
         SqlDataReader dr = cmd.ExecuteReader();
         drpprovincia.DataSource = dr;
         drpprovincia.Items.Clear();
-        drpprovincia.Items.Add("Seleccionar");
         drpprovincia.DataTextField = "descripcion";
         drpprovincia.DataValueField = "cod_provincia";
         drpprovincia.DataBind();
+        drpprovincia.Items.Insert(0, new ListItem("seleccionar1", "0"));
         con.Close();
     }
 }
