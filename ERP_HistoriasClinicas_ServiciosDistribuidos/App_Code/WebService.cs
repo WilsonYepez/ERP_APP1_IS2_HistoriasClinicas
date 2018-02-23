@@ -84,15 +84,16 @@ public ERP_HistoriasClinicas.Empleado2 Empleado_Cedula(string CEDULA_EMP)
     }
 
     [WebMethod]
-public int insertar_Empleado(string CEDULA_EMP, decimal ID_AREA, string CARGO_US, string PASWORD_US, string ACTIVO_EMP)
+public int insertar_Empleado(string CEDULA_EMP, decimal ID_AREA, string CARGO_US, string PASWORD_US, string ACTIVO_EMP, string PAIS, string PROVINCIA)
     {
-        return new ERP_HistoriasClinicas.RecursosHumanos_LS().insertar_Empleado(CEDULA_EMP, ID_AREA, CARGO_US, PASWORD_US, ACTIVO_EMP);
+        return new ERP_HistoriasClinicas.RecursosHumanos_LS().insertar_Empleado(CEDULA_EMP, ID_AREA, CARGO_US, PASWORD_US, ACTIVO_EMP, PAIS, PROVINCIA);
+        
     }
 
     [WebMethod]
-public int update_empleado(string CEDULA_EMP, decimal ID_AREA, string CARGO_US, string PASWORD_US, string ACTIVO_EMP)
+public int update_empleado(string CEDULA_EMP, decimal ID_AREA, string CARGO_US, string PASWORD_US, string ACTIVO_EMP, string PAIS, string PROVINCIA)
     {
-        return new ERP_HistoriasClinicas.RecursosHumanos_LS().update_empleado(CEDULA_EMP, ID_AREA, CARGO_US,PASWORD_US, ACTIVO_EMP);
+        return new ERP_HistoriasClinicas.RecursosHumanos_LS().update_empleado(CEDULA_EMP, ID_AREA, CARGO_US,PASWORD_US, ACTIVO_EMP, PAIS, PROVINCIA);
     }
 
     [WebMethod]
@@ -247,19 +248,83 @@ public  int delete_Persona(string CEDULA_EMP)
                     CEDULA_EMP = d.CEDULA_EMP,
                     CARGO_US = d.CARGO_US,
                     PASWORD_US = d.PASWORD_US,
-                    ACTIVO_EMP = d.ACTIVO_EMP
+                    ACTIVO_EMP = d.ACTIVO_EMP,
+                    PAIS = d.PAIS
                 };
             }
-            if (r.ACTIVO_EMP == "ACTIVO") {
+            if (r.ACTIVO_EMP == "ACTIVO")
+            {
                 return r;
-            } else
+            }
+            else
             {
                 return null;
             }
-            
+
         }
-        
+
     }
+
+    [WebMethod]
+    public ERP_HistoriasClinicas.Pais2[] lista_pais()
+    {
+        return new ERP_HistoriasClinicas.RecursosHumanos_LS().Lista_pais();
+    }
+
+    [WebMethod]
+    public ERP_HistoriasClinicas.Pais2 un_pais(int cod)
+    {
+        return new ERP_HistoriasClinicas.RecursosHumanos_LS().pais_uno(cod);
+    }
+
+    [WebMethod]
+    public int insertar_pais(int cod, string desc)
+    {
+        return new ERP_HistoriasClinicas.RecursosHumanos_LS().insertar_Pais(cod,desc);
+    }
+
+    [WebMethod]
+    public int update_pais(int cod, string desc)
+    {
+        return new ERP_HistoriasClinicas.RecursosHumanos_LS().update_Pais(cod,desc);
+    }
+
+    [WebMethod]
+    public int delete_pais(int cod)
+    {
+        return new ERP_HistoriasClinicas.RecursosHumanos_LS().delete_Pais(cod);
+    }
+
+    [WebMethod]
+    public ERP_HistoriasClinicas.Provincia2[] lista_provincia()
+    {
+        return new ERP_HistoriasClinicas.RecursosHumanos_LS().Lista_pro();
+    }
+
+    [WebMethod]
+    public ERP_HistoriasClinicas.Provincia2 un_provincia(int cod)
+    {
+        return new ERP_HistoriasClinicas.RecursosHumanos_LS().provincia_uno(cod);
+    }
+
+    [WebMethod]
+    public int insertar_provincia(int cod, string desc, int cod_p)
+    {
+        return new ERP_HistoriasClinicas.RecursosHumanos_LS().insertar_Provincia(cod, desc,cod_p);
+    }
+
+    [WebMethod]
+    public int update_provincia(int cod, string desc, int cod_p)
+    {
+        return new ERP_HistoriasClinicas.RecursosHumanos_LS().update_PROVINCIA(cod, desc,cod_p);
+    }
+
+    [WebMethod]
+    public int delete_provincia(int cod)
+    {
+        return new ERP_HistoriasClinicas.RecursosHumanos_LS().delete_Provin(cod);
+    }
+
 
     [WebMethod]
     public string Nombreemp(string ced)
@@ -288,7 +353,7 @@ public  int delete_Persona(string CEDULA_EMP)
         }
 
     }
-    
+
 
 
 }

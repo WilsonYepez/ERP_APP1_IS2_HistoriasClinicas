@@ -63,7 +63,7 @@ public partial class Vistas_Admin_user_Crud_User : System.Web.UI.Page
             estado = "ACTIVO";
         }
         obj.Persona_Cedula(cod);
-        obj.update_empleado(cod, area, cargo, pass, estado);
+        //obj.update_empleado(cod, area, cargo, pass, estado);
         GridView1.EditIndex = -1;
         cargargrilla();
 
@@ -86,5 +86,10 @@ public partial class Vistas_Admin_user_Crud_User : System.Web.UI.Page
         {
             throw ex;
         }  
+    }
+
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
     }
 }

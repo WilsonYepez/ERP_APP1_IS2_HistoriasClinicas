@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="hospitalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="hospitalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AREA_TRABAJO">
           <Key>
             <PropertyRef Name="ID_AREA" />
@@ -49,6 +49,8 @@
           <Property Name="CARGO_US" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="PASWORD_US" Type="varchar" MaxLength="26" Nullable="false" />
           <Property Name="ACTIVO_EMP" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PAIS" Type="varchar" MaxLength="100" />
+          <Property Name="PROVINCIA" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="HISTORIAS">
           <Key>
@@ -83,6 +85,13 @@
           <Property Name="FRECUENCIA_INSOM_H" Type="text" />
           <Property Name="OTRO_H" Type="text" />
         </EntityType>
+        <EntityType Name="PAIS">
+          <Key>
+            <PropertyRef Name="cod_pais" />
+          </Key>
+          <Property Name="cod_pais" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="PERSONA">
           <Key>
             <PropertyRef Name="CEDULA_EMP" />
@@ -97,6 +106,14 @@
           <Property Name="ESTADO_EMP" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="TIPO_EMP" Type="varchar" MaxLength="3" Nullable="false" />
           <Property Name="CIUDADNACI_EMP" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="PROVINCIA">
+          <Key>
+            <PropertyRef Name="cod_provincia" />
+          </Key>
+          <Property Name="cod_provincia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="cod_pais" Type="int" />
         </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'hospital.dbo.listado_facturacion' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -147,6 +164,18 @@ advertencia 6002: La tabla o vista 'hospital.sys.database_firewall_rules' no tie
           <Property Name="create_date" Type="datetime" Nullable="false" />
           <Property Name="modify_date" Type="datetime" Nullable="false" />
         </EntityType>
+        <Association Name="FK__PROVINCIA__cod_p__3E1D39E1">
+          <End Role="PAIS" Type="Self.PAIS" Multiplicity="0..1" />
+          <End Role="PROVINCIA" Type="Self.PROVINCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAIS">
+              <PropertyRef Name="cod_pais" />
+            </Principal>
+            <Dependent Role="PROVINCIA">
+              <PropertyRef Name="cod_pais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_CABECERA_REFERENCE_PERSONA">
           <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="0..1" />
           <End Role="CABECERA_CONSULTA" Type="Self.CABECERA_CONSULTA" Multiplicity="*" />
@@ -434,7 +463,9 @@ advertencia 6002: La tabla o vista 'hospital.sys.database_firewall_rules' no tie
           <EntitySet Name="DETALLE_CONSULTA" EntityType="Self.DETALLE_CONSULTA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HISTORIAS" EntityType="Self.HISTORIAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PAIS" EntityType="Self.PAIS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PERSONA" EntityType="Self.PERSONA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROVINCIA" EntityType="Self.PROVINCIA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="listado_facturacion" EntityType="Self.listado_facturacion" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [listado_facturacion].[CEDULA_EMP] AS [CEDULA_EMP], 
@@ -462,6 +493,10 @@ advertencia 6002: La tabla o vista 'hospital.sys.database_firewall_rules' no tie
     [database_firewall_rules].[modify_date] AS [modify_date]
     FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK__PROVINCIA__cod_p__3E1D39E1" Association="Self.FK__PROVINCIA__cod_p__3E1D39E1">
+            <End Role="PAIS" EntitySet="PAIS" />
+            <End Role="PROVINCIA" EntitySet="PROVINCIA" />
+          </AssociationSet>
           <AssociationSet Name="FK_CABECERA_REFERENCE_PERSONA" Association="Self.FK_CABECERA_REFERENCE_PERSONA">
             <End Role="PERSONA" EntitySet="PERSONA" />
             <End Role="CABECERA_CONSULTA" EntitySet="CABECERA_CONSULTA" />
@@ -483,8 +518,7 @@ advertencia 6002: La tabla o vista 'hospital.sys.database_firewall_rules' no tie
             <End Role="HISTORIAS" EntitySet="HISTORIAS" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="hospitalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -538,6 +572,8 @@ advertencia 6002: La tabla o vista 'hospital.sys.database_firewall_rules' no tie
           <Property Name="ACTIVO_EMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="AREA_TRABAJO" Relationship="Self.FK_EMPLEADO_REFERENCE_AREA_TRA" FromRole="EMPLEADO" ToRole="AREA_TRABAJO" />
           <NavigationProperty Name="PERSONA" Relationship="Self.FK_EMPLEADO_REFERENCE_PERSONA" FromRole="EMPLEADO" ToRole="PERSONA" />
+          <Property Name="PAIS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PROVINCIA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="HISTORIAS">
           <Key>
@@ -726,23 +762,23 @@ advertencia 6002: La tabla o vista 'hospital.sys.database_firewall_rules' no tie
             <End Role="HISTORIAS" EntitySet="HISTORIAS" />
           </AssociationSet>
           <FunctionImport Name="trx_Get_AreaTrabajo" ReturnType="Collection(hospitalModel.trx_Get_AreaTrabajo_Result)">
-            <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
+          <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="trx_Get_AreaTrabajosAll" ReturnType="Collection(hospitalModel.trx_Get_AreaTrabajosAll_Result)" />
           <FunctionImport Name="trx_Get_CabeceraConsultasAll" ReturnType="Collection(hospitalModel.trx_Get_CabeceraConsultasAll_Result)" />
           <FunctionImport Name="trx_Get_CabeceraConsultum" ReturnType="Collection(hospitalModel.trx_Get_CabeceraConsultum_Result)">
-            <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
+          <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="trx_Get_DetalleConsultasAll" ReturnType="Collection(hospitalModel.trx_Get_DetalleConsultasAll_Result)" />
           <FunctionImport Name="trx_Get_DetalleConsultum" ReturnType="Collection(hospitalModel.trx_Get_DetalleConsultum_Result)">
-            <Parameter Name="ID_DET" Mode="In" Type="String" />
+          <Parameter Name="ID_DET" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="trx_Get_Empleado" ReturnType="Collection(hospitalModel.trx_Get_Empleado_Result)">
-            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+          <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="trx_Get_EmpleadosAll" ReturnType="Collection(hospitalModel.trx_Get_EmpleadosAll_Result)" />
           <FunctionImport Name="trx_Get_Historia" ReturnType="Collection(hospitalModel.trx_Get_Historia_Result)">
-            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+          <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="trx_Get_HistoriasAll" ReturnType="Collection(hospitalModel.trx_Get_HistoriasAll_Result)" />
           <FunctionImport Name="trx_Insert_AreaTrabajo">
@@ -808,19 +844,19 @@ advertencia 6002: La tabla o vista 'hospital.sys.database_firewall_rules' no tie
             <Parameter Name="OTRO_H" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="trx_Remove_AreaTrabajo">
-            <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
+          <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="trx_Remove_CabeceraConsultum">
-            <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
+          <Parameter Name="ID_CON" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="trx_Remove_DetalleConsultum">
-            <Parameter Name="ID_DET" Mode="In" Type="String" />
+          <Parameter Name="ID_DET" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="trx_Remove_Empleado">
-            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+          <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="trx_Remove_Historia">
-            <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
+          <Parameter Name="CEDULA_EMP" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="trx_Save_AreaTrabajo" ReturnType="Collection(Decimal)">
             <Parameter Name="ID_AREA" Mode="In" Type="Decimal" />
@@ -946,6 +982,12 @@ advertencia 6002: La tabla o vista 'hospital.sys.database_firewall_rules' no tie
             <Parameter Name="FRECUENCIA_INSOM_H" Mode="In" Type="String" />
             <Parameter Name="OTRO_H" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="PAIS" EntityType="hospitalModel.PAI" />
+          <EntitySet Name="PROVINCIAs" EntityType="hospitalModel.PROVINCIA" />
+          <AssociationSet Name="FK__PROVINCIA__cod_p__3E1D39E1" Association="hospitalModel.FK__PROVINCIA__cod_p__3E1D39E1">
+            <End Role="PAI" EntitySet="PAIS" />
+            <End Role="PROVINCIA" EntitySet="PROVINCIAs" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="trx_Get_AreaTrabajo_Result">
           <Property Type="Decimal" Name="ID_AREA" Nullable="false" Precision="15" Scale="0" />
@@ -1071,6 +1113,35 @@ advertencia 6002: La tabla o vista 'hospital.sys.database_firewall_rules' no tie
           <Property Type="String" Name="FRECUENCIA_INSOM_H" Nullable="true" MaxLength="Max" />
           <Property Type="String" Name="OTRO_H" Nullable="true" MaxLength="Max" />
         </ComplexType>
+        <EntityType Name="PAI">
+          <Key>
+            <PropertyRef Name="cod_pais" />
+          </Key>
+          <Property Name="cod_pais" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PROVINCIAs" Relationship="hospitalModel.FK__PROVINCIA__cod_p__3E1D39E1" FromRole="PAI" ToRole="PROVINCIA" />
+        </EntityType>
+        <EntityType Name="PROVINCIA">
+          <Key>
+            <PropertyRef Name="cod_provincia" />
+          </Key>
+          <Property Name="cod_provincia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cod_pais" Type="Int32" />
+          <NavigationProperty Name="PAI" Relationship="hospitalModel.FK__PROVINCIA__cod_p__3E1D39E1" FromRole="PROVINCIA" ToRole="PAI" />
+        </EntityType>
+        <Association Name="FK__PROVINCIA__cod_p__3E1D39E1">
+          <End Type="hospitalModel.PAI" Role="PAI" Multiplicity="0..1" />
+          <End Type="hospitalModel.PROVINCIA" Role="PROVINCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAI">
+              <PropertyRef Name="cod_pais" />
+            </Principal>
+            <Dependent Role="PROVINCIA">
+              <PropertyRef Name="cod_pais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1118,6 +1189,8 @@ advertencia 6002: La tabla o vista 'hospital.sys.database_firewall_rules' no tie
           <EntitySetMapping Name="EMPLEADO">
             <EntityTypeMapping TypeName="hospitalModel.EMPLEADO">
               <MappingFragment StoreEntitySet="EMPLEADO">
+                <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+                <ScalarProperty Name="PAIS" ColumnName="PAIS" />
                 <ScalarProperty Name="CEDULA_EMP" ColumnName="CEDULA_EMP" />
                 <ScalarProperty Name="ID_AREA" ColumnName="ID_AREA" />
                 <ScalarProperty Name="CARGO_US" ColumnName="CARGO_US" />
@@ -1391,6 +1464,23 @@ advertencia 6002: La tabla o vista 'hospital.sys.database_firewall_rules' no tie
           <FunctionImportMapping FunctionImportName="trx_Update_DetalleConsultum" FunctionName="hospitalModel.Store.trx_Update_DetalleConsultum" />
           <FunctionImportMapping FunctionImportName="trx_Update_Empleado" FunctionName="hospitalModel.Store.trx_Update_Empleado" />
           <FunctionImportMapping FunctionImportName="trx_Update_Historia" FunctionName="hospitalModel.Store.trx_Update_Historia" />
+          <EntitySetMapping Name="PAIS">
+            <EntityTypeMapping TypeName="hospitalModel.PAI">
+              <MappingFragment StoreEntitySet="PAIS">
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="cod_pais" ColumnName="cod_pais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROVINCIAs">
+            <EntityTypeMapping TypeName="hospitalModel.PROVINCIA">
+              <MappingFragment StoreEntitySet="PROVINCIA">
+                <ScalarProperty Name="cod_pais" ColumnName="cod_pais" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="cod_provincia" ColumnName="cod_provincia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1405,7 +1495,7 @@ advertencia 6002: La tabla o vista 'hospital.sys.database_firewall_rules' no tie
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />

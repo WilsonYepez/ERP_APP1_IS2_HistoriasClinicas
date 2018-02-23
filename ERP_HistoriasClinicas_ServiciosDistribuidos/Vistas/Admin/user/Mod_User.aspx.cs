@@ -29,7 +29,8 @@ public partial class Vistas_Admin_user_Mod_User : System.Web.UI.Page
         string carg = DropDownList3.SelectedItem.Value;
         string pass = TextBox4.Text;
         string acti = DropDownList1.SelectedItem.Value;
-
-        obj.update_empleado(DropDownList66.SelectedItem.Value,area,carg,pass,acti);
+        string pais = DropDownList67.SelectedItem.Value;
+        string provincia = DropDownList68.SelectedItem.Value;
+        obj.update_empleado(DropDownList66.SelectedItem.Value,area,carg,pass,acti,pais,provincia);
     }
 }

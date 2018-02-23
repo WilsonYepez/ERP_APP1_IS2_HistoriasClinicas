@@ -12,17 +12,18 @@ namespace ERP_HistoriasClinicas
     using System;
     using System.Collections.Generic;
     
-    public partial class EMPLEADO
+    public partial class PAI
     {
-        public string CEDULA_EMP { get; set; }
-        public decimal ID_AREA { get; set; }
-        public string CARGO_US { get; set; }
-        public string PASWORD_US { get; set; }
-        public string ACTIVO_EMP { get; set; }
-        public string PAIS { get; set; }
-        public string PROVINCIA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public PAI()
+        {
+            this.PROVINCIAs = new HashSet<PROVINCIA>();
+        }
     
-        public virtual AREA_TRABAJO AREA_TRABAJO { get; set; }
-        public virtual PERSONA PERSONA { get; set; }
+        public int cod_pais { get; set; }
+        public string descripcion { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PROVINCIA> PROVINCIAs { get; set; }
     }
 }

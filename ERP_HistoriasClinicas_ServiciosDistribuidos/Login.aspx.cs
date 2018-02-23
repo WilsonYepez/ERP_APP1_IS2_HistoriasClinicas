@@ -11,10 +11,6 @@ using System.Configuration;
 
 public partial class Login : System.Web.UI.Page
 {
-    SqlConnection cn;
-    SqlCommand cmd;
-    SqlDataAdapter da;
-    DataSet ds;
 
     protected void Page_Load(object sender, EventArgs e)
     {

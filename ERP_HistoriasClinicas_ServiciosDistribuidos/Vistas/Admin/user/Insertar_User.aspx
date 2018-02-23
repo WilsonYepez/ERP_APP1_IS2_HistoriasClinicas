@@ -37,7 +37,19 @@
             <asp:ListItem Value="ADMINISTRADOR">ADMINISTRADOR</asp:ListItem>
             <asp:ListItem Value="MEDICO">MEDICO</asp:ListItem>
         </asp:DropDownList>
-        <br>Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox TextMode="Password" ID="TextBox1" Placeholder="******" runat="server"></asp:TextBox><br><br>
+        <br>Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox TextMode="Password" ID="TextBox1" Placeholder="******" runat="server"></asp:TextBox><br>País:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:DropDownList ID="drppais" runat="server" >
+        </asp:DropDownList>
+        <br />
+        Provincia:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="drpprovincia" runat="server" AppendDataBoundItems="True" AutoPostBack="True">
+        </asp:DropDownList>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br>
+        
+
         <asp:Button ID="ADD_btn_User" runat="server" Text="Agregar" OnClick="ADD_btn_User_Click" /><br><br>
 
     </div>

@@ -30,6 +30,15 @@
         <asp:ListItem>INACITVO</asp:ListItem>
     </asp:DropDownList>
     <br />
+    País:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:DropDownList ID="DropDownList67" runat="server">
+    </asp:DropDownList>
+    <br />
+    Provincia:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:DropDownList ID="DropDownList68" runat="server">
+    </asp:DropDownList>
+    <br />
+    <br />
     <br />
     <asp:Button ID="Button2" runat="server" Text="Modificar" OnClick="Button2_Click" />
 </asp:Content>

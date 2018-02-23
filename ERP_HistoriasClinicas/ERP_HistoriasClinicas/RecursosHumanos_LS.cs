@@ -25,6 +25,7 @@ namespace ERP_HistoriasClinicas
                         DESCRIPCION_AREA = d.DESCRIPCION_AREA,
                         ESTADO_AREA = d.ESTADO_AREA,
                         GERENCIA_AREA = d.GERENCIA_AREA
+                        
                     };
                 }
                 return r;
@@ -124,18 +125,20 @@ namespace ERP_HistoriasClinicas
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {
                 var lst = from d in ctx.EMPLEADO
-                          select d;
+                    select d;
                 Empleado2[] r = new Empleado2[lst.Count()];
                 int i = 0;
-                foreach (var d in lst)
+                foreach(var d in lst)
                 {
                     r[i++] = new Empleado2
                     {
-                        CARGO_US= d.CARGO_US,
-                        CEDULA_EMP=d.CEDULA_EMP,
-                        PASWORD_US=d.PASWORD_US,
+                        CARGO_US = d.CARGO_US,
+                        CEDULA_EMP = d.CEDULA_EMP,
+                        PASWORD_US = d.PASWORD_US,
                         ID_AREA = d.ID_AREA,
-                        ACTIVO_EMP = d.ACTIVO_EMP
+                        ACTIVO_EMP = d.ACTIVO_EMP,
+                        PAIS = d.PAIS,
+                        PROVINCIA = d.PROVINCIA
                     };
                 }
                 return r;
@@ -155,13 +158,15 @@ namespace ERP_HistoriasClinicas
                         CEDULA_EMP = d.CEDULA_EMP,
                         CARGO_US = d.CARGO_US,
                         PASWORD_US = d.PASWORD_US,
-                        ACTIVO_EMP = d.ACTIVO_EMP
+                        ACTIVO_EMP = d.ACTIVO_EMP,
+                        PAIS = d.PAIS,
+                        PROVINCIA = d.PROVINCIA
                     };
                 }
                 return r;
             }
         }
-        public int insertar_Empleado( string CEDULA_EMP,decimal ID_AREA ,string CARGO_US , string PASWORD_US, string ACTIVO_EMP)
+        public int insertar_Empleado( string CEDULA_EMP,decimal ID_AREA ,string CARGO_US , string PASWORD_US, string ACTIVO_EMP, string PAIS, string PROVINCIA)
         {
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {
@@ -171,13 +176,15 @@ namespace ERP_HistoriasClinicas
                 d.PASWORD_US = PASWORD_US;
                 d.ID_AREA = ID_AREA;
                 d.ACTIVO_EMP = ACTIVO_EMP;
+                d.PAIS = PAIS;
+                d.PROVINCIA = PROVINCIA;
                 ctx.EMPLEADO.Add(d);
                 ctx.SaveChanges();
             }
             return 0;
 
         }
-        public int update_empleado(string CEDULA_EMP, decimal ID_AREA, string CARGO_US, string PASWORD_US, string ACTIVO_EMP)
+        public int update_empleado(string CEDULA_EMP, decimal ID_AREA, string CARGO_US, string PASWORD_US, string ACTIVO_EMP, string PAIS, string PROVINCIA)
         {
             using (var ctx = new ERP_HistoriasClinicasEntities())
             {
@@ -188,6 +195,8 @@ namespace ERP_HistoriasClinicas
                     d.PASWORD_US = PASWORD_US;
                     d.ACTIVO_EMP = ACTIVO_EMP;
                     d.ID_AREA = ID_AREA;
+                    d.PAIS = PAIS;
+                    d.PROVINCIA = PROVINCIA;
                 }
                 ctx.SaveChanges();
             }
@@ -346,6 +355,169 @@ namespace ERP_HistoriasClinicas
                 }
                 return listaFacturacion;
             }
+        }
+
+        public Pais2[] Lista_pais()
+        {
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var lst = from d in ctx.PAIS
+                          select d;
+                Pais2[] r = new Pais2[lst.Count()];
+                int i = 0;
+                foreach (var d in lst)
+                {
+                    r[i++] = new Pais2
+                    {
+                        cod_pais = d.cod_pais,
+                        descripcion = d.descripcion
+                    };
+                }
+                return r;
+            }
+        }
+
+        public Pais2 pais_uno(int cod)
+        { 
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var d = ctx.PAIS.Find(cod);
+                Pais2 r = null;
+                if (d != null)
+                {
+                    r = new Pais2
+                    {
+                        cod_pais = d.cod_pais,
+                        descripcion = d.descripcion
+                    };
+                }
+                return r;
+            }
+        }
+
+        public int insertar_Pais(int cod, string desc)
+        {
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var d = new PAI();
+                d.cod_pais = cod;
+                d.descripcion = desc;
+                ctx.PAIS.Add(d);
+                ctx.SaveChanges();
+            }
+            return 0;
+
+        }
+        public int update_Pais(int cod, string desc)
+        {
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var d = ctx.PAIS.Find(cod);
+                if (d != null)
+                {
+                    d.cod_pais = cod;
+                    d.descripcion = desc;
+                }
+                ctx.SaveChanges();
+            }
+            return 0;
+        }
+        public int delete_Pais(int cod)
+        {
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var d = ctx.PAIS.Find(cod);
+                if (d != null)
+                {
+                    ctx.PAIS.Remove(d);
+                }
+                ctx.SaveChanges();
+            }
+            return 0;
+        }
+
+
+        public Provincia2[] Lista_pro()
+        {
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var lst = from d in ctx.PROVINCIAs
+                          select d;
+                Provincia2[] r = new Provincia2[lst.Count()];
+                int i = 0;
+                foreach (var d in lst)
+                {
+                    r[i++] = new Provincia2
+                    {
+                        cod_provincia = d.cod_provincia,
+                        descripcion = d.descripcion,
+                        cod_pais = d.cod_pais
+                    };
+                }
+                return r;
+            }
+        }
+
+        public Provincia2 provincia_uno(int cod)
+        {
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var d = ctx.PROVINCIAs.Find(cod);
+                Provincia2 r = null;
+                if (d != null)
+                {
+                    r = new Provincia2
+                    {
+                        cod_provincia = d.cod_provincia,
+                        descripcion = d.descripcion,
+                        cod_pais = d.cod_pais
+                    };
+                }
+                return r;
+            }
+        }
+
+        public int insertar_Provincia(int cod, string desc,int cod_p)
+        {
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var d = new PROVINCIA();
+                d.cod_provincia = cod;
+                d.descripcion = desc;
+                d.cod_pais = cod;
+                ctx.PROVINCIAs.Add(d);
+                ctx.SaveChanges();
+            }
+            return 0;
+
+        }
+        public int update_PROVINCIA(int cod, string desc, int cod_p)
+        {
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var d = ctx.PROVINCIAs.Find(cod);
+                if (d != null)
+                {
+                    d.cod_provincia = cod;
+                    d.descripcion = desc;
+                    d.cod_pais = cod;
+                }
+                ctx.SaveChanges();
+            }
+            return 0;
+        }
+        public int delete_Provin(int cod)
+        {
+            using (var ctx = new ERP_HistoriasClinicasEntities())
+            {
+                var d = ctx.PROVINCIAs.Find(cod);
+                if (d != null)
+                {
+                    ctx.PROVINCIAs.Remove(d);
+                }
+                ctx.SaveChanges();
+            }
+            return 0;
         }
     }
 }

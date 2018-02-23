@@ -18,6 +18,9 @@
         <AssociationConnector Association="hospitalModel.FK_DETALLE__REFERENCE_CABECERA" ManuallyRouted="false" />
         <AssociationConnector Association="hospitalModel.FK_EMPLEADO_REFERENCE_PERSONA" ManuallyRouted="false" />
         <AssociationConnector Association="hospitalModel.FK_HISTORIA_REFERENCE_PERSONA" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="hospitalModel.PAI" Width="1.5" PointX="8.375" PointY="9" />
+        <EntityTypeShape EntityType="hospitalModel.PROVINCIA" Width="1.5" PointX="10.625" PointY="8.875" />
+        <AssociationConnector Association="hospitalModel.FK__PROVINCIA__cod_p__3E1D39E1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

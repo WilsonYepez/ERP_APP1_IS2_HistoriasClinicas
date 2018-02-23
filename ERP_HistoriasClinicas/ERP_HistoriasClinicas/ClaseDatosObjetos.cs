@@ -41,6 +41,8 @@ namespace ERP_HistoriasClinicas
         public string CARGO_US { get; set; }
         public string PASWORD_US { get; set; }
         public string ACTIVO_EMP { get; set; }
+        public string PAIS { get; set; }
+        public string PROVINCIA { get; set; }
     }
     public class Historias2
     {
@@ -101,6 +103,19 @@ namespace ERP_HistoriasClinicas
         public string ESTADO_EMP { get; set; }
         public string TIPO_EMP { get; set; }
         public string CIUDADNACI_EMP { get; set; }
+    }
+
+    public class Pais2
+    {
+        public int cod_pais { get; set; }
+        public string descripcion { get; set; }
+    }
+
+    public class Provincia2
+    {
+        public int cod_provincia { get; set; }
+        public string descripcion { get; set; }
+        public Nullable<int> cod_pais { get; set; }
     }
 
 }
